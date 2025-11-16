@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f8c230c85e99ac44a528e292bbe741e, type: 3}
+  m_Name: GameState
+  m_EditorClassIdentifier: 
+  _guid: 8566af23142b270488c6005d40819d99
+  description: Holds the current game state, and fires an event to notify when Combat
+    state is entered or left
+  _currentGameState: 1
+  _previousGameState: 0
+  _onCombatStateEvent: {fileID: 11400000, guid: e0afa0d5c4db1224a82430187701d26f, type: 2}

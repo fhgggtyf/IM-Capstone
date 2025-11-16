@@ -1,0 +1,357 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|c:\\users\\user\\documents\\github\\im-capstone\\jason\\im_capstone\\assets\\scripts\\savesystem\\savesystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\savesystem\\savesystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\assets\\scripts\\inventory\\scriptableobject\\itemso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\inventory\\scriptableobject\\itemso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\assets\\scripts\\inventory\\itemstack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\inventory\\itemstack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\assets\\scripts\\inventory\\scriptableobject\\inventoryso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\inventory\\scriptableobject\\inventoryso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\assets\\scripts\\scenemanagement\\scriptableobject\\pathso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scenemanagement\\scriptableobject\\pathso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\assets\\scripts\\editortools\\monobehaviours\\editorcoldstartup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\editortools\\monobehaviours\\editorcoldstartup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\assets\\scripts\\runtimeanchors\\pathstorageso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\runtimeanchors\\pathstorageso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\assets\\scripts\\editortools\\attributes\\readonlyattribute\\readonlyattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\editortools\\attributes\\readonlyattribute\\readonlyattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8FABD67-34FF-01A7-5BB1-987050C395B6}|UnityEditor.TestRunner.csproj|C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\library\\packagecache\\com.unity.test-framework@1.1.33\\unityeditor.testrunner\\testlaunchers\\playerlauncher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8FABD67-34FF-01A7-5BB1-987050C395B6}|UnityEditor.TestRunner.csproj|solutionrelative:library\\packagecache\\com.unity.test-framework@1.1.33\\unityeditor.testrunner\\testlaunchers\\playerlauncher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\Events\\ScriptableObjects\\AudioCueEventChannelSO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|solutionrelative:Assets\\Scripts\\Events\\ScriptableObjects\\AudioCueEventChannelSO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\assets\\scripts\\audio\\audiodata\\audiocuekey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\audio\\audiodata\\audiocuekey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\Audio\\AudioData\\AudioConfigurationSO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|solutionrelative:Assets\\Scripts\\Audio\\AudioData\\AudioConfigurationSO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\assets\\scripts\\audio\\musicplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\audio\\musicplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\assets\\scripts\\events\\scriptableobjects\\booleventchannelso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\events\\scriptableobjects\\booleventchannelso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\assets\\scripts\\baseclasses\\descriptionbaseso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\baseclasses\\descriptionbaseso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\assets\\scripts\\scenemanagement\\scriptableobject\\gamesceneso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scenemanagement\\scriptableobject\\gamesceneso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\Events\\ScriptableObjects\\LoadEventChannelSO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|solutionrelative:Assets\\Scripts\\Events\\ScriptableObjects\\LoadEventChannelSO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\assets\\scripts\\boot\\bootloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\boot\\bootloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\SaveSystem\\SerializableScriptableObject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|solutionrelative:Assets\\Scripts\\SaveSystem\\SerializableScriptableObject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\assets\\scripts\\audio\\audiodata\\audiocueso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\audio\\audiodata\\audiocueso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\Events\\ScriptableObjects\\VoidEventChannelSO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C0BC455-1A17-2191-8612-5F430EAF3007}|Assembly-CSharp.csproj|solutionrelative:Assets\\Scripts\\Events\\ScriptableObjects\\VoidEventChannelSO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ItemSO.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\Inventory\\ScriptableObject\\ItemSO.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Inventory\\ScriptableObject\\ItemSO.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\Inventory\\ScriptableObject\\ItemSO.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Inventory\\ScriptableObject\\ItemSO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T20:42:56.131Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ItemStack.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\Inventory\\ItemStack.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Inventory\\ItemStack.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\Inventory\\ItemStack.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Inventory\\ItemStack.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T20:42:29.083Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "InventorySO.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\Inventory\\ScriptableObject\\InventorySO.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Inventory\\ScriptableObject\\InventorySO.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\Inventory\\ScriptableObject\\InventorySO.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Inventory\\ScriptableObject\\InventorySO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T20:41:05.835Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SaveSystem.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\SaveSystem\\SaveSystem.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SaveSystem\\SaveSystem.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\SaveSystem\\SaveSystem.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SaveSystem\\SaveSystem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T11:09:06.46Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PathSO.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\SceneManagement\\ScriptableObject\\PathSO.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SceneManagement\\ScriptableObject\\PathSO.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\SceneManagement\\ScriptableObject\\PathSO.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SceneManagement\\ScriptableObject\\PathSO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T11:07:50.501Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ReadOnlyAttribute.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\EditorTools\\Attributes\\ReadOnlyAttribute\\ReadOnlyAttribute.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\EditorTools\\Attributes\\ReadOnlyAttribute\\ReadOnlyAttribute.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\EditorTools\\Attributes\\ReadOnlyAttribute\\ReadOnlyAttribute.cs",
+              "RelativeToolTip": "Assets\\Scripts\\EditorTools\\Attributes\\ReadOnlyAttribute\\ReadOnlyAttribute.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T11:06:31.371Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PathStorageSO.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\RuntimeAnchors\\PathStorageSO.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\RuntimeAnchors\\PathStorageSO.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\RuntimeAnchors\\PathStorageSO.cs",
+              "RelativeToolTip": "Assets\\Scripts\\RuntimeAnchors\\PathStorageSO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T11:04:56.616Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EditorColdStartup.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\EditorTools\\MonoBehaviours\\EditorColdStartup.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\EditorTools\\MonoBehaviours\\EditorColdStartup.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\EditorTools\\MonoBehaviours\\EditorColdStartup.cs",
+              "RelativeToolTip": "Assets\\Scripts\\EditorTools\\MonoBehaviours\\EditorColdStartup.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAIwDEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T11:02:00.34Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PlayerLauncher.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Library\\PackageCache\\com.unity.test-framework@1.1.33\\UnityEditor.TestRunner\\TestLaunchers\\PlayerLauncher.cs",
+              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.test-framework@1.1.33\\UnityEditor.TestRunner\\TestLaunchers\\PlayerLauncher.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Library\\PackageCache\\com.unity.test-framework@1.1.33\\UnityEditor.TestRunner\\TestLaunchers\\PlayerLauncher.cs",
+              "RelativeToolTip": "Library\\PackageCache\\com.unity.test-framework@1.1.33\\UnityEditor.TestRunner\\TestLaunchers\\PlayerLauncher.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIEAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-05T16:58:25.215Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AudioCueKey.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\Audio\\AudioData\\AudioCueKey.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Audio\\AudioData\\AudioCueKey.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\Audio\\AudioData\\AudioCueKey.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Audio\\AudioData\\AudioCueKey.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-05T15:50:33.197Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "BoolEventChannelSO.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\Events\\ScriptableObjects\\BoolEventChannelSO.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Events\\ScriptableObjects\\BoolEventChannelSO.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\Events\\ScriptableObjects\\BoolEventChannelSO.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Events\\ScriptableObjects\\BoolEventChannelSO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-05T15:48:20.607Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AudioConfigurationSO.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\Audio\\AudioData\\AudioConfigurationSO.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Audio\\AudioData\\AudioConfigurationSO.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\Audio\\AudioData\\AudioConfigurationSO.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Audio\\AudioData\\AudioConfigurationSO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-05T15:47:05.786Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AudioCueEventChannelSO.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\Events\\ScriptableObjects\\AudioCueEventChannelSO.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Events\\ScriptableObjects\\AudioCueEventChannelSO.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\Events\\ScriptableObjects\\AudioCueEventChannelSO.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Events\\ScriptableObjects\\AudioCueEventChannelSO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-05T15:45:59.554Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "VoidEventChannelSO.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\Events\\ScriptableObjects\\VoidEventChannelSO.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Events\\ScriptableObjects\\VoidEventChannelSO.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\Events\\ScriptableObjects\\VoidEventChannelSO.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Events\\ScriptableObjects\\VoidEventChannelSO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-05T15:44:40.532Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "MusicPlayer.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\Audio\\MusicPlayer.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Audio\\MusicPlayer.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\Audio\\MusicPlayer.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Audio\\MusicPlayer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-05T15:44:02.078Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "AudioCueSO.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\Audio\\AudioData\\AudioCueSO.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Audio\\AudioData\\AudioCueSO.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\Audio\\AudioData\\AudioCueSO.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Audio\\AudioData\\AudioCueSO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-05T14:42:32.064Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "BootLoader.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\Boot\\BootLoader.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Boot\\BootLoader.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\Boot\\BootLoader.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Boot\\BootLoader.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-05T10:06:07.997Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "SerializableScriptableObject.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\SaveSystem\\SerializableScriptableObject.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SaveSystem\\SerializableScriptableObject.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\SaveSystem\\SerializableScriptableObject.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SaveSystem\\SerializableScriptableObject.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-05T09:53:34.477Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "LoadEventChannelSO.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\Events\\ScriptableObjects\\LoadEventChannelSO.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Events\\ScriptableObjects\\LoadEventChannelSO.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\Events\\ScriptableObjects\\LoadEventChannelSO.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Events\\ScriptableObjects\\LoadEventChannelSO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-05T10:01:55.297Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "GameSceneSO.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\SceneManagement\\ScriptableObject\\GameSceneSO.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SceneManagement\\ScriptableObject\\GameSceneSO.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\SceneManagement\\ScriptableObject\\GameSceneSO.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SceneManagement\\ScriptableObject\\GameSceneSO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-05T09:52:26.262Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "DescriptionBaseSO.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\BaseClasses\\DescriptionBaseSO.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\BaseClasses\\DescriptionBaseSO.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\IM-Capstone\\Jason\\IM_Capstone\\Assets\\Scripts\\BaseClasses\\DescriptionBaseSO.cs",
+              "RelativeToolTip": "Assets\\Scripts\\BaseClasses\\DescriptionBaseSO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-05T09:51:19.785Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

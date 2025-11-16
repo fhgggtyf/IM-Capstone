@@ -3,13 +3,20 @@
 # It excludes files and folders that are generated locally and should not be committed to version control.
 
 # Build results
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
-/[Uu]ser[Ss]ettings/
+/Jason/IM_[Cc]apstone/[Ll]ibrary/
+/Jason/IM_Capstone_Revise/[Cc]apstone/[Ll]ibrary/
+/Jason/IM_[Cc]apstone/[Tt]emp/
+/Jason/IM_Capstone_Revise/[Cc]apstone/[Tt]emp/
+/Jason/IM_[Cc]apstone/[Oo]bj/
+/Jason/IM_Capstone_Revise/[Cc]apstone/[Oo]bj/
+/Jason/IM_[Cc]apstone/[Bb]uild/
+/Jason/IM_Capstone_Revise/[Cc]apstone/[Bb]uild/
+/Jason/IM_[Cc]apstone/[Bb]uilds/
+/Jason/IM_Capstone_Revise/[Cc]apstone/[Bb]uilds/
+/Jason/IM_[Cc]apstone/[Ll]ogs/
+/Jason/IM_Capstone_Revise/[Cc]apstone/[Ll]ogs/
+/Jason/IM_[Cc]apstone/[Uu]ser[Ss]ettings/
+/Jason/IM_Capstone_Revise/[Cc]apstone/[Uu]ser[Ss]ettings/
 
 # MemoryCaptures can get large.
 # You probably don't want them in your version control unless you know what you are doing.

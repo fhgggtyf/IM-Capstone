@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c85c74995c284f04bbed720d4b9f6e4c, type: 3}
+  m_Name: InputReader
+  m_EditorClassIdentifier: 
+  _guid: e56ee6ed7dd16a744a29977a83f84ef7
+  description: 
+  _onSceneReady: {fileID: 11400000, guid: 6c182f36fdb706a44b6573738b32654a, type: 2}
+  _playerStatsInitialized: {fileID: 11400000, guid: ce1a7d19649f747498c7c26c2000b555, type: 2}

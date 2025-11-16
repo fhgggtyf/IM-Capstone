@@ -1,0 +1,117 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e658d92186915e445ad89f2c5ffc3cda, type: 3}
+  m_Name: PlayersPotential
+  m_EditorClassIdentifier: 
+  _potentialHealth: 0
+  _potentialArmor: 0
+  _potentialMR: 0
+  _potentialAttack: 0
+  _potentialAP: 0
+  _potentialAttackSpeed: 0
+  _potentialMana: 0
+  _potentialTenacity: 0
+  _potentialStamina: 0
+  _potentialLuck: 0
+  PotentialHPLocale:
+    m_TableReference:
+      m_TableCollectionName: GUID:a2fc5afabd56878469d7290b2b23a997
+    m_TableEntryReference:
+      m_KeyId: 540770697216
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  PotentialArmorLocale:
+    m_TableReference:
+      m_TableCollectionName: GUID:a2fc5afabd56878469d7290b2b23a997
+    m_TableEntryReference:
+      m_KeyId: 111437545472
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  PotentialMRLocale:
+    m_TableReference:
+      m_TableCollectionName: GUID:a2fc5afabd56878469d7290b2b23a997
+    m_TableEntryReference:
+      m_KeyId: 260977065984
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  PotentialAtkLocale:
+    m_TableReference:
+      m_TableCollectionName: GUID:a2fc5afabd56878469d7290b2b23a997
+    m_TableEntryReference:
+      m_KeyId: 341771943936
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  PotentialAPLocale:
+    m_TableReference:
+      m_TableCollectionName: GUID:a2fc5afabd56878469d7290b2b23a997
+    m_TableEntryReference:
+      m_KeyId: 462144274432
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  PotentialTenacityLocale:
+    m_TableReference:
+      m_TableCollectionName: GUID:a2fc5afabd56878469d7290b2b23a997
+    m_TableEntryReference:
+      m_KeyId: 657598840832
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  PotentialStaminaLocale:
+    m_TableReference:
+      m_TableCollectionName: GUID:a2fc5afabd56878469d7290b2b23a997
+    m_TableEntryReference:
+      m_KeyId: 779862802432
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  PotentialLuckLocale:
+    m_TableReference:
+      m_TableCollectionName: GUID:a2fc5afabd56878469d7290b2b23a997
+    m_TableEntryReference:
+      m_KeyId: 856429821952
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  PotentialAttackSpeedLocale:
+    m_TableReference:
+      m_TableCollectionName: GUID:a2fc5afabd56878469d7290b2b23a997
+    m_TableEntryReference:
+      m_KeyId: 949727920128
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  PotentialManaLocale:
+    m_TableReference:
+      m_TableCollectionName: GUID:a2fc5afabd56878469d7290b2b23a997
+    m_TableEntryReference:
+      m_KeyId: 1046570205184
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []

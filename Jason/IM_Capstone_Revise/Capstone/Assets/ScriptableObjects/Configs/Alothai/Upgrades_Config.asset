@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d277571e4297fd4a98bfc0fd2596b17, type: 3}
+  m_Name: Upgrades_Config
+  m_EditorClassIdentifier: 
+  _guid: 366da4d83f70ad949a5e29d4b138e42b
+  _pointsAvailable: 0
+  _PotentialHealthLv: 0
+  _PotentialArmorLv: 0
+  _PotentialMagicResistLv: 0
+  _PotentialAttackLv: 0
+  _PotentialAbilityPowerLv: 0
+  _PotentialAttackSpeedLv: 0
+  _PotentialManaLv: 0
+  _PotentialTenacityLv: 0
+  _PotentialStaminaLv: 0
+  _PotentialLuckLv: 0
+  _BaseHealthLv: 0
+  _BaseArmorLv: 0
+  _BaseMagicResistLv: 0
+  _BaseAttackLv: 0
+  _BaseAbilityPowerLv: 0
+  _BaseAttackSpeedLv: 0
+  _BaseManaLv: 0
+  _BaseTenacityLv: 0
+  _BaseStaminaLv: 0
+  _BaseLuckLv: 0

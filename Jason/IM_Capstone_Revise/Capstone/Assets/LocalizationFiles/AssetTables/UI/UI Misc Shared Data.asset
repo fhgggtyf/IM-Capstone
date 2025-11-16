@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: UI Misc Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: UI Misc
+  m_TableCollectionNameGuidString: 7f6dcfa34613e61469c39d0655152e98
+  m_Entries:
+  - m_Id: 81083367424
+    m_Key: QuitPopupTitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1091939991552
+    m_Key: QuitPopupDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2495131811840
+    m_Key: ConfirmQuit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2571799494656
+    m_Key: CancelQuit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5754017939456
+    m_Key: NewGamePopupTitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5964022546432
+    m_Key: NewGamePopupDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6220273549312
+    m_Key: ConfirmNewGame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6298228883456
+    m_Key: CancelNewGame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14951938574647296
+    m_Key: UseItem
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 6012114483608813570
+  references:
+    version: 2
+    RefIds:
+    - rid: 6012114483608813570
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1718244190418
