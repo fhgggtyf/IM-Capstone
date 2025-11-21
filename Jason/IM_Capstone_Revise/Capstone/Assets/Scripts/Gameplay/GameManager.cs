@@ -58,6 +58,6 @@ public class GameManager : MonoBehaviour
 	void StartGame()
 	{
 		_gameState.UpdateGameState(GameState.Gameplay);
-		//_questManager.StartGame();
+		//_questManager.StartPrologue();
 	}
 }

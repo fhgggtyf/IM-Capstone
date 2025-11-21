@@ -63,7 +63,7 @@ public class StartGame : MonoBehaviour
 		if (asyncOperationHandle.Status == AsyncOperationStatus.Succeeded)
 		{
 			LocationSO locationSO = asyncOperationHandle.Result;
-			if(locationSO.sceneType == GameSceneSO.GameSceneType.Home)
+			if(locationSO.sceneType == GameSceneSO.GameSceneType.Prologue)
             {
 				_loadHome.RaiseEvent(locationSO, _showLoadScreen);
 			}

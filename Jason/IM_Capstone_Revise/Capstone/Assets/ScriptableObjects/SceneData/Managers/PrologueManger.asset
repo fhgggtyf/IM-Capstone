@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd39a0e5655ea6e419033491fb2ff385, type: 3}
+  m_Name: PrologueManger
+  m_EditorClassIdentifier: 
+  _guid: ba5aeeb5237a95b49a9f4b7524277aeb
+  description: 
+  sceneType: 0
+  sceneReference:
+    m_AssetGUID: 429bda126fcbaee4098c084954e50eba
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  musicTrack: {fileID: 0}

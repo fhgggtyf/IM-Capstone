@@ -510,17 +510,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameplayScene: {fileID: 11400000, guid: 85beedb87228dae48a35711e7ed479e6, type: 2}
+  _prologueScene: {fileID: 11400000, guid: ba5aeeb5237a95b49a9f4b7524277aeb, type: 2}
   _sessionScene: {fileID: 11400000, guid: 999a6d64a109424489bd2c7c006fef5c, type: 2}
   _inputReader: {fileID: 11400000, guid: e56ee6ed7dd16a744a29977a83f84ef7, type: 2}
   _loadLocation: {fileID: 11400000, guid: 8a3cfd366d7285f4e98a2138a6db5a3b, type: 2}
   _loadMenu: {fileID: 11400000, guid: a8d9c67252b65f943a9ad544e8f909f3, type: 2}
-  _loadHome: {fileID: 11400000, guid: 15a2a53497fe42744a1882ec8c1e085e, type: 2}
+  _loadPrologue: {fileID: 11400000, guid: 15a2a53497fe42744a1882ec8c1e085e, type: 2}
   _coldStartupLocation: {fileID: 11400000, guid: d585d6c66b7db27478771c8f0b4a7967, type: 2}
   _toggleLoadingScreen: {fileID: 11400000, guid: 8c9a2dc69d1f5ff44a5540ab93de7420, type: 2}
   _onSceneReady: {fileID: 11400000, guid: 6c182f36fdb706a44b6573738b32654a, type: 2}
   _onSessionStart: {fileID: 11400000, guid: b23f99d88f2e4fd43a28a60f002485c3, type: 2}
-  _onEnterTutorial: {fileID: 11400000, guid: 161ec19cfea9d224b8a97458471bf427, type: 2}
-  _onEnterHome: {fileID: 11400000, guid: 3c51108822fc24b25b020711ad7639ef, type: 2}
+  _onEnterPrologue: {fileID: 11400000, guid: 161ec19cfea9d224b8a97458471bf427, type: 2}
   _onEnterLocation: {fileID: 11400000, guid: d17675f4e68d44605a9908a995a8dac5, type: 2}
   _fadeRequestChannel: {fileID: 11400000, guid: 306df8a505d7cd347890c4d8aef4fd16, type: 2}
 --- !u!1 &1242883679

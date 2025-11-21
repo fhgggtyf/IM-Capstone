@@ -11,26 +11,27 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
     [SerializeField] private GameSceneSO _gameplayScene = default;
+    [SerializeField] private GameSceneSO _prologueScene = default;
     [SerializeField] private GameSceneSO _sessionScene = default;
     [SerializeField] private InputReader _inputReader = default;
 
     [Header("Listening to")]
     [SerializeField] private LoadEventChannelSO _loadLocation = default;
     [SerializeField] private LoadEventChannelSO _loadMenu = default;
-    [SerializeField] private LoadEventChannelSO _loadHome = default;
+    [SerializeField] private LoadEventChannelSO _loadPrologue = default;
     [SerializeField] private LoadEventChannelSO _coldStartupLocation = default;
 
     [Header("Broadcasting on")]
     [SerializeField] private BoolEventChannelSO _toggleLoadingScreen = default;
     [SerializeField] private VoidEventChannelSO _onSceneReady = default; //picked up by the SpawnSystem
     [SerializeField] private VoidEventChannelSO _onSessionStart = default; //picked up by SaveSystem
-    [SerializeField] private VoidEventChannelSO _onEnterTutorial = default;
-    [SerializeField] private VoidEventChannelSO _onEnterHome = default;
+    [SerializeField] private VoidEventChannelSO _onEnterPrologue = default;
     [SerializeField] private VoidEventChannelSO _onEnterLocation = default;
     [SerializeField] private FadeChannelSO _fadeRequestChannel = default;
 
     private AsyncOperationHandle<SceneInstance> _loadingOperationHandle;
     private AsyncOperationHandle<SceneInstance> _gameplayManagerLoadingOpHandle;
+    private AsyncOperationHandle<SceneInstance> _prologueManagerLoadingOpHandle;
     private AsyncOperationHandle<SceneInstance> _sessionManagerLoadingOpHandle;
 
     //Parameters coming from scene loading requests
@@ -39,6 +40,7 @@ public class SceneLoader : MonoBehaviour
     private bool _showLoadingScreen;
 
     private SceneInstance _gameplayManagerSceneInstance = new SceneInstance();
+    private SceneInstance _prologueManagerSceneInstance = new SceneInstance();
     private SceneInstance _sessionManagerSceneInstance = new SceneInstance();
     private float _fadeOutDuration = .5f;
     private float _fadeInDuration = .5f;
@@ -48,7 +50,7 @@ public class SceneLoader : MonoBehaviour
     {
         _loadLocation.OnLoadingRequested += LoadLocation;
         _loadMenu.OnLoadingRequested += LoadMenu;
-        _loadHome.OnLoadingRequested += LoadHome;
+        _loadPrologue.OnLoadingRequested += LoadPrologue;
 #if UNITY_EDITOR
         _coldStartupLocation.OnLoadingRequested += LocationColdStartup;
 #endif
@@ -58,7 +60,7 @@ public class SceneLoader : MonoBehaviour
     {
         _loadLocation.OnLoadingRequested -= LoadLocation;
         _loadMenu.OnLoadingRequested -= LoadMenu;
-        _loadHome.OnLoadingRequested -= LoadHome;
+        _loadPrologue.OnLoadingRequested -= LoadPrologue;
 #if UNITY_EDITOR
         _coldStartupLocation.OnLoadingRequested -= LocationColdStartup;
 #endif
@@ -87,12 +89,12 @@ public class SceneLoader : MonoBehaviour
 
             StartGameplay();
         }
-        else if (_currentlyLoadedScene.sceneType == GameSceneSO.GameSceneType.Home)
+        else if (_currentlyLoadedScene.sceneType == GameSceneSO.GameSceneType.Prologue)
         {
             //Gameplay managers is loaded synchronously
-            _gameplayManagerLoadingOpHandle = _gameplayScene.sceneReference.LoadSceneAsync(LoadSceneMode.Additive, true);
-            _gameplayManagerLoadingOpHandle.WaitForCompletion();
-            _gameplayManagerSceneInstance = _gameplayManagerLoadingOpHandle.Result;
+            _prologueManagerLoadingOpHandle = _prologueScene.sceneReference.LoadSceneAsync(LoadSceneMode.Additive, true);
+            _prologueManagerLoadingOpHandle.WaitForCompletion();
+            _prologueManagerSceneInstance = _prologueManagerLoadingOpHandle.Result;
 
             StartGameplay();
         }
@@ -102,9 +104,9 @@ public class SceneLoader : MonoBehaviour
     /// <summary>
     /// This function loads the home scenes passed as array parameter
     /// </summary>
-    private void LoadHome(GameSceneSO locationToLoad, bool showLoadingScreen, bool fadeScreen)
+    private void LoadPrologue(GameSceneSO locationToLoad, bool showLoadingScreen, bool fadeScreen)
     {
-        Debug.Log("Homecoming");
+        Debug.Log("Prologuecoming");
 
         //Prevent a double-loading, for situations where the player falls in two Exit colliders in one frame
         if (_isLoading)
@@ -119,11 +121,11 @@ public class SceneLoader : MonoBehaviour
             Addressables.UnloadSceneAsync(_sessionManagerLoadingOpHandle, true);
 
         //In case we are coming from the main menu, we need to load the Gameplay manager scene first
-        if (_gameplayManagerSceneInstance.Scene == null
-            || !_gameplayManagerSceneInstance.Scene.isLoaded)
+        if (_prologueManagerSceneInstance.Scene == null
+            || !_prologueManagerSceneInstance.Scene.isLoaded)
         {
-            _gameplayManagerLoadingOpHandle = _gameplayScene.sceneReference.LoadSceneAsync(LoadSceneMode.Additive, true);
-            _gameplayManagerLoadingOpHandle.Completed += OnGameplayManagersLoaded;
+            _prologueManagerLoadingOpHandle = _prologueScene.sceneReference.LoadSceneAsync(LoadSceneMode.Additive, true);
+            _prologueManagerLoadingOpHandle.Completed += OnPrologueManagersLoaded;
         }
         else
         {
@@ -181,6 +183,12 @@ public class SceneLoader : MonoBehaviour
     private void OnGameplayManagersLoaded(AsyncOperationHandle<SceneInstance> obj)
     {
         _gameplayManagerSceneInstance = _gameplayManagerLoadingOpHandle.Result;
+
+        StartCoroutine(UnloadPreviousScene());
+    }
+    private void OnPrologueManagersLoaded(AsyncOperationHandle<SceneInstance> obj)
+    {
+        _prologueManagerSceneInstance = _prologueManagerLoadingOpHandle.Result;
 
         StartCoroutine(UnloadPreviousScene());
     }
@@ -281,11 +289,8 @@ public class SceneLoader : MonoBehaviour
 
         switch (_currentlyLoadedScene.sceneType)
         {
-            case GameSceneSO.GameSceneType.Home:
-                _onEnterHome.RaiseEvent();
-                goto case GameSceneSO.GameSceneType.Tutorial;
-            case GameSceneSO.GameSceneType.Tutorial:
-                _onEnterTutorial.RaiseEvent();
+            case GameSceneSO.GameSceneType.Prologue:
+                _onEnterPrologue.RaiseEvent();
                 break;
             case GameSceneSO.GameSceneType.Location:
                 _onEnterLocation.RaiseEvent();
