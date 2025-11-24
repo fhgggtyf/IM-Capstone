@@ -1,5 +1,5 @@
 {
-    "name": "Zephyr",
+    "name": "Domicile",
     "maps": [
         {
             "name": "Gameplay",
@@ -15,33 +15,6 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Jump",
-                    "type": "Button",
-                    "id": "3bebc558-2c5e-4762-8179-4fe5a1eb96fc",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "RunPrep",
-                    "type": "Value",
-                    "id": "f3d47076-a4d6-4804-82ae-1414c31b75d8",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "MultiTap(tapCount=1)",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "Crouch",
-                    "type": "Button",
-                    "id": "fbb51f3c-b564-48a4-8298-3de335a3881e",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Interact",
                     "type": "Button",
                     "id": "c3a8d3ec-072d-47ad-b4d9-7d6cdb67628c",
@@ -51,25 +24,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "PrimaryAttack",
-                    "type": "Button",
-                    "id": "b61ec9d5-2046-4f5a-9d1e-7483d488dd95",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "SecondaryAttack",
-                    "type": "Button",
-                    "id": "bd2601b7-19cd-4ab1-a84f-b913df55b2f8",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Roll",
+                    "name": "HoldBreath",
                     "type": "Button",
                     "id": "a0fc6317-62df-4bdc-bc9a-82eac3010623",
                     "expectedControlType": "Button",
@@ -145,72 +100,6 @@
                 },
                 {
                     "name": "",
-                    "id": "bae96314-3d20-4f87-b1b4-99f252260aef",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "Keyboard WASD",
-                    "id": "fbe0c223-6450-48c8-83c1-ed0b654c19a5",
-                    "path": "2DVector",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "RunPrep",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "2a976e4b-0aac-4028-8ab2-f50e8aec5b52",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "RunPrep",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "adec72a8-1ca8-4c2c-8822-6de1650d328b",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "RunPrep",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "e0538057-0106-40e0-b274-ed55a2877bb7",
-                    "path": "<Keyboard>/a",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "RunPrep",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "b4648fb2-b2be-49cb-8974-fafa117b0d2b",
-                    "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "RunPrep",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "",
                     "id": "d2bb434f-4b78-4138-83b1-ae81d7d25782",
                     "path": "<Keyboard>/f",
                     "interactions": "",
@@ -222,45 +111,12 @@
                 },
                 {
                     "name": "",
-                    "id": "c05f03a0-bfca-4d32-92df-36345596535f",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "PrimaryAttack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e56de2d9-25ce-4d89-b33e-de86ef19919c",
-                    "path": "<Mouse>/rightButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SecondaryAttack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "223bb81d-63e4-4c85-8a4e-c2a4f5254860",
-                    "path": "<Keyboard>/shift",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Crouch",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "80a1aaad-1701-4865-a479-a71d1e40c2e6",
                     "path": "<Keyboard>/leftCtrl",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Roll",
+                    "action": "HoldBreath",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -813,6 +669,76 @@
                     "processors": "",
                     "groups": "",
                     "action": "AdvanceDialogue",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Journal",
+            "id": "6444f05b-78f5-4039-a2fa-050c779d7642",
+            "actions": [
+                {
+                    "name": "FlipNext",
+                    "type": "Button",
+                    "id": "a887c31c-5b2c-44a0-b21d-5e2c5214ef97",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "FlipPrevious",
+                    "type": "Button",
+                    "id": "bf9402ee-590c-429c-b114-6cd9d944f4b4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "06de9db9-b268-4a0f-b4d0-c8e8be1e4dc4",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FlipNext",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "53ab1180-5296-4e73-9519-233b4354853c",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FlipNext",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3e36b876-46f8-4a23-9a54-74154d667ce8",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FlipPrevious",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6ae469bc-e48a-486f-acf6-22fb88c0af24",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FlipPrevious",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -6,7 +6,9 @@ using UnityEngine;
 public class CGFormatSO : PrologueSectionSO
 {
     [SerializeField] private CGDataSO _data;
+    [SerializeField] public bool CanBeSkipped = true;
 
     public CGDataSO CGData => _data;
 
 }
+                                                                                                         

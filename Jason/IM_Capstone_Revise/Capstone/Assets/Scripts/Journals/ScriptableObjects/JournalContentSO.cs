@@ -22,5 +22,6 @@ public class JournalContentSO : ScriptableObject
     public LocalizedString Text => _text;
     public LocalizedString Date => _date;
     public LocalizedString Time => _time;
+    public Sprite Image => _image;
 }
 

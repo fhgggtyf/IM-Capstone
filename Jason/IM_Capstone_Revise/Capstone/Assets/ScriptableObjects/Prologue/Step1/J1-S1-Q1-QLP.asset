@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pages:
   - {fileID: 11400000, guid: 847dbe0f440538741a37ad38b4dad663, type: 2}
-  _endOfJournalSectionEvent: {fileID: 0}
+  - {fileID: 11400000, guid: 847dbe0f440538741a37ad38b4dad663, type: 2}
+  _endOfJournalSectionEvent: {fileID: 11400000, guid: 4af3a5e35e8bb114098c0d361cf06c51, type: 2}
+  _isBack: 0

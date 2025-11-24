@@ -10,8 +10,12 @@ public class PrologueManager : MonoBehaviour
     private int _index = 0;
 
 
-    //[Header("Broadcasting on")]
+    [Header("Broadcasting on")]
+    [SerializeField] private VoidEventChannelSO _prologueEndedEvent;
+    [SerializeField] private VoidEventChannelSO _initializeJournalEvent;
 
+    [Header("Listening to")]
+    [SerializeField] private VoidEventChannelSO _journalSectionEndedEvent;
 
     private void Start()
     {
@@ -20,11 +24,12 @@ public class PrologueManager : MonoBehaviour
 
     private void OnEnable()
     {
-
+        _journalSectionEndedEvent.OnEventRaised += NextSection;
     }
 
     private void OnDisable()
     {
+        _journalSectionEndedEvent.OnEventRaised -= NextSection;
     }
 
     public void NextSection() => PlaySection(_index + 1);
@@ -33,19 +38,40 @@ public class PrologueManager : MonoBehaviour
     {
         if (index >= _sections.Count)
         {
-            //EndPrologue();
+            EndPrologue();
             return;
         }
 
         _index = index;
-        //_sections[index].Play(this); // Pass manager to callback
+        _sections[index].Play();
+    }
+
+    void EndPrologue()
+    {
+        _prologueEndedEvent.RaiseEvent();
     }
 
 
     private void StartPrologue()
     {
         _gameState.UpdateGameState(GameState.Prologue);
+
+        InitializeJournal();
+
         PlaySection(0);
+    }
+
+    private void InitializeJournal()
+    {
+        Debug.Log(_sections.Count);
+        foreach (var section in _sections)
+        {
+            if (section is JournalSectionSO)
+            {
+                Debug.Log("Initializing Journal Section" + section);
+                (section as JournalSectionSO).InitializeJournalSection();
+            }
+        }
     }
 
 }

@@ -12,9 +12,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e5ce493149272e41b8b304638872948, type: 3}
   m_Name: P1-S1-Q1-QLP
   m_EditorClassIdentifier: 
-  _text: 
-  _date: 
-  _time: 
+  _text:
+    m_TableReference:
+      m_TableCollectionName: GUID:3f170558d1a354e4bb0cbda3ec743a4a
+    m_TableEntryReference:
+      m_KeyId: 6202458112
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  _date:
+    m_TableReference:
+      m_TableCollectionName: GUID:f5696422ca4a90841921a18bc05dfdb1
+    m_TableEntryReference:
+      m_KeyId: 21343895552
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  _time:
+    m_TableReference:
+      m_TableCollectionName: GUID:238995cc37704e840ad10fb8e8347793
+    m_TableEntryReference:
+      m_KeyId: 12233867264
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   _image: {fileID: 0}
   _audioTrackEvent: {fileID: 0}
   _endOfPageEvent: {fileID: 0}
+  references:
+    version: 2
+    RefIds: []
