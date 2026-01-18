@@ -12,7 +12,19 @@ public class Player : Character
     //These fields are read and manipulated by the StateMachine actions
     [NonSerialized] public Vector2 InputVector;
     [NonSerialized] public bool isRunning;
+    [NonSerialized] public bool isHoldingBreath;
     [NonSerialized] public bool isCrouching;
+
+    // Indicates whether the player is currently hiding inside a hideable object. When true
+    // the state machine can transition into a hiding state which will pull the player
+    // into the hideable's position and mute their noise.
+    [NonSerialized] public bool isHiding;
+
+    // The transform of the hideable object the player is currently hiding in. This will
+    // be set by an interaction component (e.g. HideInteraction) when the player
+    // interacts with a hideable object. Hide-related state actions use this to
+    // reposition the player inside the hideable.
+    [NonSerialized] public Transform hideTarget;
 
     private void Awake()
     {
@@ -55,11 +67,11 @@ public class Player : Character
 
     private void OnHoldBreath()
     {
-        isCrouching = true;
+        isHoldingBreath = true;
     }
     private void OnHoldBreathCanceled()
     {
-        isCrouching = false;
+        isHoldingBreath = false;
     }
 
     private void OnInteract()

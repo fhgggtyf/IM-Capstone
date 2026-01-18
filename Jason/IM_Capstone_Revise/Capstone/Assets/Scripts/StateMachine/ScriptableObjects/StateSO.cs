@@ -41,7 +41,10 @@ namespace Domicile.StateMachine.ScriptableObjects
 			int count = scriptableActions.Length;
 			var actions = new StateAction[count];
 			for (int i = 0; i < count; i++)
+			{
 				actions[i] = scriptableActions[i].GetAction(stateMachine, createdInstances);
+			}
+
 
 			return actions;
 		}

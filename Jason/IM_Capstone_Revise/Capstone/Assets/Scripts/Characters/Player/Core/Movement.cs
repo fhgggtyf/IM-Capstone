@@ -4,13 +4,11 @@ public class Movement : CoreComponent
 {
     public Rigidbody2D RB { get; private set; }
 
-    public int FacingDirection { get; set; }
+    public FacingDir FacingDirection { get; set; }
 
     public bool CanSetVelocity { get; set; }
 
     public Vector2 CurrentVelocity { get; private set; }
-
-    [SerializeField] private TransformEventChannelSO _toClimb;
 
     private Vector2 workspace;
 
@@ -20,9 +18,8 @@ public class Movement : CoreComponent
 
         RB = GetComponentInParent<Rigidbody2D>();
 
-        FacingDirection = 1;
+        FacingDirection = FacingDir.Down;
         CanSetVelocity = true;
-        _toClimb.OnEventRaised += ForceChangePositionX;
     }
 
     public override void LogicUpdate()
@@ -101,17 +98,29 @@ public class Movement : CoreComponent
 
     public void Flip()
     {
-        FacingDirection *= -1;
+        switch (FacingDirection){
+            case FacingDir.Left:
+                FacingDirection = FacingDir.Right;
+                break;
+            case FacingDir.Right: 
+                FacingDirection = FacingDir.Up; 
+                break;
+            case FacingDir.Up: 
+                FacingDirection = FacingDir.Down;
+                break; 
+            case FacingDir.Down:
+                FacingDirection = FacingDir.Left;
+                break;
+        }
         RB.transform.Rotate(0.0f, 180.0f, 0.0f);
     }
 
-    public Vector2 FindRelativePoint(Vector2 offset)
-    {
-        offset.x *= FacingDirection;
-
-        return transform.position + (Vector3)offset;
-    }
 
     #endregion
+}
+
+public enum FacingDir
+{
+    Up, Down, Left, Right,
 }
 

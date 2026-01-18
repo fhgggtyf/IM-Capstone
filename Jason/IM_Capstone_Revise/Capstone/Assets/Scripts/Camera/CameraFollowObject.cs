@@ -33,23 +33,6 @@ public class CameraFollowObject : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, 30 * Time.deltaTime);
     }
 
-    public void CallTurn()
-    {
-        LeanTween.rotateY(gameObject, DetermineEndRotation(), _flipRotationTime).setEaseInOutSine();
-    }
-
-    private float DetermineEndRotation()
-    {
-        if (Movement.FacingDirection == 1)
-        {
-            return 0f;
-        }
-        else
-        {
-            return 180f;
-        }
-    }
-
     void AddPlayer(Transform value)
     {
         _player = value.gameObject.GetComponent<Player>();
