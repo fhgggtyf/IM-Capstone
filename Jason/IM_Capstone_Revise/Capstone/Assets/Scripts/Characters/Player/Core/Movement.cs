@@ -85,6 +85,12 @@ public class Movement : CoreComponent
         RB.transform.position = new Vector2(RB.transform.position.x, transform.position.y);
         RB.velocity = new Vector2(0, 0);
     }
+
+    public void ForceChangePositionZ(float Zval)
+    {
+        RB.transform.position = new Vector3(RB.transform.position.x, RB.transform.position.y, Zval);
+        RB.velocity = new Vector2(0, 0);
+    }
     public void ForceChangePosition(Transform transform)
     {
         RB.transform.position = new Vector2(transform.position.x, transform.position.y);

@@ -33,11 +33,9 @@ public class HideAction : StateAction
         _player.isHiding = true;
         // Mute all noise while hiding.
         _statsManager.SetCurrentNoise(0);
-        // Snap the player to the hideable's position if one has been set via interaction.
-        if (_player.hideTarget != null)
-        {
-            _movement.ForceChangePosition(_player.hideTarget);
-        }
+
+        _movement.ForceChangePositionZ(97);
+
         // Ensure the player isn't moving when entering the hide state.
         _movement.SetVelocityZero();
     }
@@ -55,5 +53,6 @@ public class HideAction : StateAction
         // Clear hiding flags when exiting the hide state.
         _player.isHiding = false;
         _player.hideTarget = null;
+        _movement.ForceChangePositionZ(0);
     }
 }

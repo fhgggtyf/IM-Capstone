@@ -16,8 +16,13 @@ public class InteractableDetector : CoreComponent
     [ContextMenu("TryInteract")]
     public void TryInteract()
     {
+        Debug.Log("Trying to interact");
+
         if (closestInteractable is null)
+        {
+            Debug.Log("No closest interactable");
             return;
+        }
 
         OnTryInteract?.Invoke(closestInteractable);
     }

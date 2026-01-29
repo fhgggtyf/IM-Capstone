@@ -12,7 +12,7 @@ public class NonPlayerCharacter : Character
     [SerializeField]
     public VoidEventChannelSO playerIsDeadChannel;
 
-    [NonSerialized] public bool shouldTransit = false;
+    [NonSerialized] public bool nonIdle = false;
     [NonSerialized] public bool targetIsDead = false;
 
     protected virtual void OnEnable()

@@ -106,7 +106,6 @@ public class MoveAndNoiseAction : StateAction
                     Vector2 input = _player.InputVector;
                     Vector2 velocity = new Vector2(input.x, input.y) * speed;
                     _movement.SetVelocity(velocity);
-                    // Noise remains constant in run state.
                     break;
                 }
             case MoveType.Walk:

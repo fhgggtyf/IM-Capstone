@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\Generics\GenericPhysicsData.cs" />
     <Compile Include="Assets\Scripts\Inventory\ScriptableObjects\InventorySO.cs" />
     <Compile Include="Assets\Scripts\Systems\Settings\SettingsSO.cs" />
+    <Compile Include="Assets\Scripts\Characters\NPC\Enemies\Tutorial\GeneralNPCEnemy.cs" />
     <Compile Include="Assets\Scripts\SceneManagement\ScriptableObjects\SessionManagerSO.cs" />
     <Compile Include="Assets\Scripts\Quests\QuestManagerSO.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanTest.cs" />
@@ -91,6 +92,7 @@
     <Compile Include="Assets\Scripts\Quests\ScriptableObjects\QuestlineSO.cs" />
     <Compile Include="Assets\Scripts\Characters\Player\Core\CoreComp.cs" />
     <Compile Include="Assets\Scripts\Utilities\ComponentUtilities.cs" />
+    <Compile Include="Assets\Scripts\Characters\StateProperties\EnemiesStateMachines\Actions\GeneralEnemyIdleSO.cs" />
     <Compile Include="Assets\Scripts\Quests\ScriptableObjects\StepSO.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralBasics2d.cs" />
     <Compile Include="Assets\Scripts\SceneManagement\ScriptableObjects\PrologueManagerSO.cs" />
@@ -106,6 +108,7 @@
     <Compile Include="Assets\Scripts\UI\UIStatElement.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerSpawnSystem.cs" />
     <Compile Include="Assets\Scripts\Journals\UI\JournalUI.cs" />
+    <Compile Include="Assets\Scripts\Characters\StateProperties\EnemiesStateMachines\Signals\EnemySignals.cs" />
     <Compile Include="Assets\Scripts\Pickups\Potions\StatModification.cs" />
     <Compile Include="Assets\Scripts\UI\Settings\UISettingItemFiller.cs" />
     <Compile Include="Assets\Scripts\UI\Settings\UISettingsLanguageComponent.cs" />
@@ -186,6 +189,7 @@
     <Compile Include="Assets\Scripts\Interactions\Interactables\Climbable.cs" />
     <Compile Include="Assets\Scripts\UI\Settings\UISettingsController.cs" />
     <Compile Include="Assets\Scripts\UI\UIPopup.cs" />
+    <Compile Include="Assets\Scripts\Interactions\Interactables\HideInteractable.cs" />
     <Compile Include="Assets\Scripts\Characters\StateProperties\PlayerStateMachines\Actions\HideActionSO.cs" />
     <Compile Include="Assets\Book-Page Curl Pro\Scripts\Tween.cs" />
     <Compile Include="Assets\Scripts\Events\ScriptableObjects\IntEventChannelSO.cs" />
@@ -193,6 +197,7 @@
     <Compile Include="Assets\LeanTween\Testing\FollowingTests.cs" />
     <Compile Include="Assets\Scripts\Events\ScriptableObjects\UI\FadeChannelSO.cs" />
     <Compile Include="Assets\Scripts\SceneManagement\ScriptableObjects\PathSO.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player\Core\NoiseRadiusVisualization.cs" />
     <Compile Include="Assets\Scripts\SaveSystem\FileManager.cs" />
     <Compile Include="Assets\Scripts\Tools\GameTimeChange.cs" />
     <Compile Include="Assets\Scripts\SaveSystem\Save.cs" />
@@ -209,7 +214,6 @@
     <Compile Include="Assets\Scripts\Events\ScriptableObjects\DialogueDataChannelSO.cs" />
     <Compile Include="Assets\LeanTween\Framework\LTDescr.cs" />
     <Compile Include="Assets\Scripts\Generics\GenericNotImplementedError.cs" />
-    <Compile Include="Assets\Scripts\Interactions\Interactables\DoorInteractable.cs" />
     <Compile Include="Assets\LeanTween\Testing\TestingIssue2.cs" />
     <Compile Include="Assets\Scripts\Prologue\ScriptableObjects\CGFormatSO.cs" />
     <Compile Include="Assets\LeanTween\Testing\Testing248.cs" />
@@ -219,6 +223,7 @@
     <Compile Include="Assets\Scripts\UI\UIInteraction.cs" />
     <Compile Include="Assets\Scripts\Prologue\ScriptableObjects\JournalSectionSO.cs" />
     <Compile Include="Assets\Scripts\Dialogues\DialogueManager.cs" />
+    <Compile Include="Assets\Scripts\Characters\StateProperties\EnemiesStateMachines\Actions\GeneralEnemyMovingSO.cs" />
     <Compile Include="Assets\Scripts\Events\ScriptableObjects\InteractionUIEventChannelSO.cs" />
     <Compile Include="Assets\Scripts\Events\ScriptableObjects\UI\DialogueLineChannelSO.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralSimpleUI.cs" />
@@ -264,12 +269,12 @@
     <Compile Include="Assets\Scripts\BaseClasses\DescriptionBaseSO.cs" />
     <Compile Include="Assets\Scripts\RuntimeAnchors\TransformAnchor.cs" />
     <Compile Include="Assets\Book-Page Curl Pro\Examples\scripts\AddPagesDynamically.cs" />
+    <Compile Include="Assets\Scripts\Characters\Player\Core\HideInteraction.cs" />
     <Compile Include="Assets\Scripts\Characters\IngameStatsSO.cs" />
     <Compile Include="Assets\Scripts\UI\UIElement.cs" />
     <Compile Include="Assets\Scripts\UI\UIGenericButton.cs" />
     <Compile Include="Assets\Scripts\SceneManagement\ScriptableObjects\GameSceneSO.cs" />
     <Compile Include="Assets\Scripts\Factory\IFactory.cs" />
-    <Compile Include="Assets\Scripts\Characters\NPC\Enemies\Tutorial\Swordman.cs" />
     <Compile Include="Assets\Scripts\Events\ScriptableObjects\AudioCueEventChannelSO.cs" />
     <Compile Include="Assets\LeanTween\Testing\Testing246.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\TestingZLegacyExt.cs" />
@@ -323,6 +328,7 @@
     <None Include="Assets\LeanTween\License.txt" />
     <None Include="Assets\Assets\Background\Tutorial\neighbour&apos;s items\1x\items with text\Pixelify_Sans\README.txt" />
     <None Include="Assets\Addons\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\Assets\Shader\NoiseRadialFade.shader" />
     <None Include="Assets\Addons\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\Addons\DOTween\readme.txt" />
     <None Include="Assets\Addons\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
