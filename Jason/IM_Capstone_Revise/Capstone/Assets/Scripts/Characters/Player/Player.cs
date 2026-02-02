@@ -11,9 +11,6 @@ public class Player : Character
 
     //These fields are read and manipulated by the StateMachine actions
     [NonSerialized] public Vector2 InputVector;
-    [NonSerialized] public bool isRunning;
-    [NonSerialized] public bool isHoldingBreath;
-    [NonSerialized] public bool isCrouching;
 
     // Indicates whether the player is currently hiding inside a hideable object. When true
     // the state machine can transition into a hiding state which will pull the player
@@ -35,8 +32,6 @@ public class Player : Character
         _inputReader.MoveEvent += OnMove;
         _inputReader.MoveCanceledEvent += OnMoveCanceled;
         _inputReader.InteractEvent += OnInteract;
-        _inputReader.HoldBreathEvent += OnHoldBreath;
-        _inputReader.HoldBreathCanceledEvent += OnHoldBreathCanceled;
         _inputReader.GameplayInputToggled += _inputReader.BlockGameplayInput;
     }
 
@@ -44,8 +39,6 @@ public class Player : Character
     {
         _inputReader.MoveEvent -= OnMove;
         _inputReader.InteractEvent -= OnInteract;
-        _inputReader.HoldBreathEvent -= OnHoldBreath;
-        _inputReader.HoldBreathCanceledEvent -= OnHoldBreathCanceled;
         _inputReader.GameplayInputToggled -= _inputReader.BlockGameplayInput;
     }
 
@@ -63,15 +56,6 @@ public class Player : Character
     {
         Debug.Log("Move Canceled");
         InputVector = new Vector2(0, 0);
-    }
-
-    private void OnHoldBreath()
-    {
-        isHoldingBreath = true;
-    }
-    private void OnHoldBreathCanceled()
-    {
-        isHoldingBreath = false;
     }
 
     private void OnInteract()

@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class PlayerStatsManager : StatsManager
 {
-    [SerializeField] private StatsConfigSO playerStatsConfig = default;
-
     /// <summary>
     /// Assign the stats configuration from the inspector to the base StatsManager field.
-    /// Without this, calls to GetRunningSpeed(), GetWalkingSpeed(), etc. will fall back
+    /// Without this, calls to GetInvestigateSpeed(), GetPatrolSpeed(), etc. will fall back
     /// to default values on the StatsConfigSO.
     /// </summary>
     private void Awake()
     {
-        statsConfig = playerStatsConfig;
     }
 
     [Header("Broadcast On")]
@@ -50,29 +47,9 @@ public class PlayerStatsManager : StatsManager
     public float GetWalkingSpeed() => statsConfig != null ? statsConfig.WalkingSpeed : 0f;
 
     /// <summary>
-    /// Returns the running speed configured in the StatsConfigSO.
-    /// </summary>
-    public float GetRunningSpeed() => statsConfig != null ? statsConfig.RunningSpeed : 0f;
-
-    /// <summary>
-    /// Returns the crouching speed configured in the StatsConfigSO.
-    /// </summary>
-    public float GetCrouchingSpeed() => statsConfig != null ? statsConfig.CrouchingSpeed : 0f;
-
-    /// <summary>
-    /// Returns the noise value associated with running from the StatsConfigSO.
-    /// </summary>
-    public int GetRunningNoise() => statsConfig != null ? statsConfig.RunningSound : 0;
-
-    /// <summary>
     /// Returns the noise value associated with walking from the StatsConfigSO.
     /// </summary>
     public int GetWalkingNoise() => statsConfig != null ? statsConfig.WalkingSound : 0;
-
-    /// <summary>
-    /// Returns the noise value associated with crouching from the StatsConfigSO.
-    /// </summary>
-    public int GetCrouchingNoise() => statsConfig != null ? statsConfig.CrouchingSound : 0;
 
     /// <summary>
     /// Returns the noise value associated with idle from the StatsConfigSO.

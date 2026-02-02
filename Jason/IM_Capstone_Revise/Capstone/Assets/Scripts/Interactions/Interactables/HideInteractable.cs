@@ -7,10 +7,14 @@ public class HideInteractable : InteractableItems
 {
     [SerializeField] private GameObject _hideIndicator;
 
+    [SerializeField] public bool CanHide = false;
+
     private bool _isHidden = false;
 
     public override void Interact()
     {
+        if (!CanHide) return;
+
         if (_isHidden)
         {
             ExitHiding();

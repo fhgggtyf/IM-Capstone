@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a00cce60e024aee48abfcc862946921e, type: 3}
   m_Name: InvestigateState
   m_EditorClassIdentifier: 
-  _actions: []
-  stateTag: 0
+  _actions:
+  - {fileID: 11400000, guid: 868e9cb38b1c92d458cdc9eebbefad13, type: 2}
+  - {fileID: 11400000, guid: 0ea6b6ec09c835241afa10b40691401e, type: 2}
+  - {fileID: 11400000, guid: 8646fbedde0827b43b08486f22b6cd88, type: 2}

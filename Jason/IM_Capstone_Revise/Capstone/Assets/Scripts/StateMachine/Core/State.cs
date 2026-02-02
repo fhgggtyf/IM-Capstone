@@ -9,8 +9,6 @@ namespace Domicile.StateMachine
         internal StateTransition[] _transitions;
         internal StateAction[] _actions;
 
-        public StateTag stateTag;
-
         internal State() { }
 
         public State(
@@ -23,7 +21,6 @@ namespace Domicile.StateMachine
             _stateMachine = stateMachine;
             _transitions = transitions;
             _actions = actions;
-            stateTag = originSO.stateTag;
         }
 
         public void OnStateEnter()
@@ -68,12 +65,4 @@ namespace Domicile.StateMachine
             return state != null;
         }
     }
-}
-
-public enum StateTag
-{
-    Run,
-    Walk,
-    Ability,
-    Flex
 }

@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a00cce60e024aee48abfcc862946921e, type: 3}
   m_Name: EngageState
   m_EditorClassIdentifier: 
-  _actions: []
-  stateTag: 0
+  _actions:
+  - {fileID: 11400000, guid: f7e56c23890e98a44b35c2cc32167369, type: 2}
+  - {fileID: 11400000, guid: 8646fbedde0827b43b08486f22b6cd88, type: 2}

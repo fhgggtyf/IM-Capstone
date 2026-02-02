@@ -10,7 +10,6 @@ namespace Domicile.StateMachine.Editor
 	{
 		private ReorderableList _list;
 		private SerializedProperty _actions;
-		private SerializedProperty _types;
 
 		private void OnEnable()
 		{
@@ -18,7 +17,6 @@ namespace Domicile.StateMachine.Editor
 			_actions = serializedObject.FindProperty("_actions");
 
 			_list = new ReorderableList(serializedObject, _actions, true, true, true, true); 
-			_types = serializedObject.FindProperty("stateTag");
 			SetupActionsList(_list);
 								    
 
@@ -32,7 +30,6 @@ namespace Domicile.StateMachine.Editor
 		public override void OnInspectorGUI()
 		{
 			_list.DoLayoutList();
-			EditorGUILayout.PropertyField(_types);
 			serializedObject.ApplyModifiedProperties();
 
 		}

@@ -11,8 +11,6 @@ public enum MoveType
 {
     Idle,
     Walk,
-    Run,
-    Crouch
 }
 
 /// <summary>
@@ -54,24 +52,10 @@ public class MoveAndNoiseAction : StateAction
         // during the state's lifetime except when idle and holding breath/hiding.
         switch (_originSO.moveType)
         {
-            case MoveType.Run:
-                _player.isRunning = true;
-                _player.isCrouching = false;
-                _statsManager.SetCurrentNoise(_statsManager.GetRunningNoise());
-                break;
             case MoveType.Walk:
-                _player.isRunning = false;
-                _player.isCrouching = false;
                 _statsManager.SetCurrentNoise(_statsManager.GetWalkingNoise());
                 break;
-            case MoveType.Crouch:
-                _player.isRunning = false;
-                _player.isCrouching = true;
-                _statsManager.SetCurrentNoise(_statsManager.GetCrouchingNoise());
-                break;
             case MoveType.Idle:
-                _player.isRunning = false;
-                _player.isCrouching = false;
                 // Idle noise will be set in OnUpdate depending on whether the player is
                 // holding their breath or not. Initialise to zero here.
                 _statsManager.SetCurrentNoise(0);
@@ -81,16 +65,6 @@ public class MoveAndNoiseAction : StateAction
 
     public override void OnStateExit()
     {
-        // Clear transient flags when leaving certain movement states.
-        switch (_originSO.moveType)
-        {
-            case MoveType.Run:
-                _player.isRunning = false;
-                break;
-            case MoveType.Crouch:
-                _player.isCrouching = false;
-                break;
-        }
     }
 
     public override void OnUpdate()
@@ -100,25 +74,9 @@ public class MoveAndNoiseAction : StateAction
         // update the noise level if necessary.
         switch (_originSO.moveType)
         {
-            case MoveType.Run:
-                {
-                    float speed = _statsManager.GetRunningSpeed();
-                    Vector2 input = _player.InputVector;
-                    Vector2 velocity = new Vector2(input.x, input.y) * speed;
-                    _movement.SetVelocity(velocity);
-                    break;
-                }
             case MoveType.Walk:
                 {
                     float speed = _statsManager.GetWalkingSpeed();
-                    Vector2 input = _player.InputVector;
-                    Vector2 velocity = new Vector2(input.x, input.y) * speed;
-                    _movement.SetVelocity(velocity);
-                    break;
-                }
-            case MoveType.Crouch:
-                {
-                    float speed = _statsManager.GetCrouchingSpeed();
                     Vector2 input = _player.InputVector;
                     Vector2 velocity = new Vector2(input.x, input.y) * speed;
                     _movement.SetVelocity(velocity);
@@ -130,7 +88,7 @@ public class MoveAndNoiseAction : StateAction
                     _movement.SetVelocityZero();
                     // If the player is holding breath or hiding, there should be no noise. If not,
                     // keep noise at zero (idle by default makes no noise in this implementation).
-                    if (_player.isHoldingBreath || _player.isHiding)
+                    if (_player.isHiding)
                     {
                         _statsManager.SetCurrentNoise(0);
                     }

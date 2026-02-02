@@ -12,6 +12,7 @@ using Domicile.StateMachine.ScriptableObjects;
 [CreateAssetMenu(fileName = "HideAction", menuName = "State Machines/Actions/Hide")]
 public class HideActionSO : StateActionSO<HideAction>
 {
+    public BoolEventChannelSO onHideEvent;
 }
 
 public class HideAction : StateAction
@@ -19,18 +20,26 @@ public class HideAction : StateAction
     private Player _player;
     private Movement _movement;
     private PlayerStatsManager _statsManager;
+    private BoolEventChannelSO onHideEvent;
+
+    HideActionSO _originSO => (HideActionSO)base.OriginSO;
 
     public override void Awake(StateMachine stateMachine)
     {
         _player = stateMachine.GetComponent<Player>();
         _movement = _player.Core.GetCoreComponent<Movement>();
         _statsManager = stateMachine.GetComponent<PlayerStatsManager>();
+        onHideEvent = _originSO.onHideEvent;
     }
 
     public override void OnStateEnter()
     {
         // Flag the player as hiding so that other systems know the state is active.
         _player.isHiding = true;
+
+        onHideEvent.RaiseEvent(true);
+        Debug.Log("Player has entered hiding state.");
+
         // Mute all noise while hiding.
         _statsManager.SetCurrentNoise(0);
 
@@ -54,5 +63,7 @@ public class HideAction : StateAction
         _player.isHiding = false;
         _player.hideTarget = null;
         _movement.ForceChangePositionZ(0);
+        onHideEvent.RaiseEvent(false);
+        Debug.Log("Player has exited hiding state.");
     }
 }
