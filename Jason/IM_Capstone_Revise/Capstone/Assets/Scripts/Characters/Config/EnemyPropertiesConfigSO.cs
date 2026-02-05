@@ -1,34 +1,14 @@
-using UnityEngine;
+//using UnityEngine;
 
-[CreateAssetMenu(fileName = "StatsConfig", menuName = "EntityConfig/Enemy Stats Config")]
-public class EnemyPropertiesConfigSO : ScriptableObject
-{
+//[CreateAssetMenu(fileName = "StatsConfig", menuName = "EntityConfig/Enemy Stats Config")]
+//public class EnemyPropertiesConfigSO : ScriptableObject
+//{
+//    [SerializeField] private int _soundThreshold = default(int);
 
-    [SerializeField] private float _baseSpeed;
+//    public LayerMask whatIsPlayer;
+
+//    public int SoundThreshold { get => _soundThreshold; set => _soundThreshold = value; }
+
+//}
 
 
-    public float minAgroDistance = 3f;
-    public float maxAgroDistance = 4f;
-    public float closeRangeActionDistance = 1f;
-    public LayerMask whatIsPlayer;
-
-    [SerializeField] public AbilityDataSO enemyAbilityData;
-    public EnemyType type;
-
-    public float BaseSpeed { get => _baseSpeed; set => _baseSpeed = value; }
-}
-
-public enum EnemyType
-{
-    Health,
-    Attack,
-    AttackSpeed,
-    Magic,
-    Armor,
-    MagicResist,
-    Mana,
-    Stamina,
-    Tenacity,
-    Luck,
-    None
-}

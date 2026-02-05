@@ -362,8 +362,8 @@
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.8\Editor\Data\Nodes\Artistic\Blend\BlendMode.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.8\Editor\Data\Nodes\GuidEncoder.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.8\Editor\Drawing\Inspector\PropertyDrawers\SampleTexture3DNodePropertyDrawer.cs" />
-    <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.8\Editor\Drawing\Controllers\SGController.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.8\Editor\Data\Nodes\Channel\SwizzleNode.cs" />
+    <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.8\Editor\Drawing\Controllers\SGController.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.8\Editor\Data\Implementation\Edge.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.8\Editor\Generation\Enumerations\StructFieldOptions.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@14.0.8\Editor\Data\Nodes\NormalMapSpace.cs" />

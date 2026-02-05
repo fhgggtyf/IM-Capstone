@@ -12,17 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 733da80fbaa467d4caadbca738d736e8, type: 3}
   m_Name: Player_Config
   m_EditorClassIdentifier: 
-  _initialActualHealth: 100
-  _initialActualArmor: 50
-  _initialActualMagicResist: 50
-  _initialActualAttack: 50
-  _initialActualAbilityPower: 50
-  _initialActualAttackSpeed: 100
-  _initialActualMana: 100
-  _initialActualTenacity: 0
-  _initialActualStamina: 100
-  _initialActualLuck: 100
-  _initialActualCooldown: 0
-  _initialCritChance: 0
-  _initialCritDamage: 0
-  _initialJumpCount: 2
+  _patrolSpeed: 0
+  _investigateSpeed: 0
+  _engageSpeed: 0
+  _walkingSpeed: 2
+  _walkingSound: 4
+  _idleSound: 2
+  _soundThreshold: 0
+  _visionRange: 5
+  _visionAngle: 90

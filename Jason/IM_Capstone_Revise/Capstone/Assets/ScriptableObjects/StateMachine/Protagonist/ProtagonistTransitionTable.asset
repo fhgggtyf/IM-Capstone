@@ -12,4 +12,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78b55574a6e9d2e4aaebcc51a63d6632, type: 3}
   m_Name: ProtagonistTransitionTable
   m_EditorClassIdentifier: 
-  _transitions: []
+  _transitions:
+  - FromState: {fileID: 11400000, guid: c6d4846e7386b5242834ef19d84029e6, type: 2}
+    ToState: {fileID: 11400000, guid: 224ad6a5a5119ee4b9f6297009974fa0, type: 2}
+    Conditions:
+    - ExpectedResult: 0
+      Condition: {fileID: 11400000, guid: ced446247e9f74f44b4f53c4f5356f5c, type: 2}
+      Operator: 0
+  - FromState: {fileID: 11400000, guid: 224ad6a5a5119ee4b9f6297009974fa0, type: 2}
+    ToState: {fileID: 11400000, guid: c6d4846e7386b5242834ef19d84029e6, type: 2}
+    Conditions:
+    - ExpectedResult: 0
+      Condition: {fileID: 11400000, guid: 9cbdd654a03ab684183958c9843f8212, type: 2}
+      Operator: 0
+  - FromState: {fileID: 11400000, guid: 224ad6a5a5119ee4b9f6297009974fa0, type: 2}
+    ToState: {fileID: 11400000, guid: 53ff9903aa7763345ad65e03939dd4d6, type: 2}
+    Conditions:
+    - ExpectedResult: 0
+      Condition: {fileID: 11400000, guid: 98a1aeeb618949246b645234f2a12f32, type: 2}
+      Operator: 0
+  - FromState: {fileID: 11400000, guid: c6d4846e7386b5242834ef19d84029e6, type: 2}
+    ToState: {fileID: 11400000, guid: 53ff9903aa7763345ad65e03939dd4d6, type: 2}
+    Conditions:
+    - ExpectedResult: 0
+      Condition: {fileID: 11400000, guid: 98a1aeeb618949246b645234f2a12f32, type: 2}
+      Operator: 0
+    - ExpectedResult: 0
+      Condition: {fileID: 11400000, guid: 98a1aeeb618949246b645234f2a12f32, type: 2}
+      Operator: 0
+  - FromState: {fileID: 11400000, guid: 53ff9903aa7763345ad65e03939dd4d6, type: 2}
+    ToState: {fileID: 11400000, guid: c6d4846e7386b5242834ef19d84029e6, type: 2}
+    Conditions:
+    - ExpectedResult: 1
+      Condition: {fileID: 11400000, guid: 98a1aeeb618949246b645234f2a12f32, type: 2}
+      Operator: 0

@@ -206,8 +206,8 @@
     <Compile Include="Library\PackageCache\com.unity.addressables@1.21.21\Editor\Diagnostics\AddressableIconNames.cs" />
     <Compile Include="Library\PackageCache\com.unity.addressables@1.21.21\Editor\Settings\AddressableAssetEntryCollection.cs" />
     <Compile Include="Library\PackageCache\com.unity.addressables@1.21.21\Editor\GUI\AddressableAssetGroupTemplateInspector.cs" />
-    <Compile Include="Library\PackageCache\com.unity.addressables@1.21.21\Editor\Build\BuildPipelineTasks\ExtractDataTask.cs" />
     <Compile Include="Library\PackageCache\com.unity.addressables@1.21.21\Editor\Diagnostics\GUI\Graph\GraphLayerBase.cs" />
+    <Compile Include="Library\PackageCache\com.unity.addressables@1.21.21\Editor\Build\BuildPipelineTasks\ExtractDataTask.cs" />
     <Compile Include="Library\PackageCache\com.unity.addressables@1.21.21\Editor\Diagnostics\Data\EventDataPlayerSessionCollection.cs" />
     <Compile Include="Library\PackageCache\com.unity.addressables@1.21.21\Editor\Settings\GroupSchemas\BundledAssetGroupSchema.cs" />
     <Compile Include="Library\PackageCache\com.unity.addressables@1.21.21\Editor\Diagnostics\Data\EventDataPlayerSession.cs" />

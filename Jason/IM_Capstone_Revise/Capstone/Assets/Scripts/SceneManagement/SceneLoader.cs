@@ -12,7 +12,6 @@ public class SceneLoader : MonoBehaviour
 {
     [SerializeField] private GameSceneSO _gameplayScene = default;
     [SerializeField] private GameSceneSO _prologueScene = default;
-    [SerializeField] private GameSceneSO _sessionScene = default;
     [SerializeField] private InputReader _inputReader = default;
 
     [Header("Listening to")]
@@ -24,7 +23,6 @@ public class SceneLoader : MonoBehaviour
     [Header("Broadcasting on")]
     [SerializeField] private BoolEventChannelSO _toggleLoadingScreen = default;
     [SerializeField] private VoidEventChannelSO _onSceneReady = default; //picked up by the SpawnSystem
-    [SerializeField] private VoidEventChannelSO _onSessionStart = default; //picked up by SaveSystem
     [SerializeField] private VoidEventChannelSO _onEnterPrologue = default;
     [SerializeField] private VoidEventChannelSO _onEnterLocation = default;
     [SerializeField] private FadeChannelSO _fadeRequestChannel = default;
@@ -32,7 +30,6 @@ public class SceneLoader : MonoBehaviour
     private AsyncOperationHandle<SceneInstance> _loadingOperationHandle;
     private AsyncOperationHandle<SceneInstance> _gameplayManagerLoadingOpHandle;
     private AsyncOperationHandle<SceneInstance> _prologueManagerLoadingOpHandle;
-    private AsyncOperationHandle<SceneInstance> _sessionManagerLoadingOpHandle;
 
     //Parameters coming from scene loading requests
     private GameSceneSO _sceneToLoad;
@@ -41,7 +38,6 @@ public class SceneLoader : MonoBehaviour
 
     private SceneInstance _gameplayManagerSceneInstance = new SceneInstance();
     private SceneInstance _prologueManagerSceneInstance = new SceneInstance();
-    private SceneInstance _sessionManagerSceneInstance = new SceneInstance();
     private float _fadeOutDuration = .5f;
     private float _fadeInDuration = .5f;
     private bool _isLoading = false; //To prevent a new loading request while already loading a new scene
@@ -83,10 +79,6 @@ public class SceneLoader : MonoBehaviour
             _gameplayManagerLoadingOpHandle.WaitForCompletion();
             _gameplayManagerSceneInstance = _gameplayManagerLoadingOpHandle.Result;
 
-            _sessionManagerLoadingOpHandle = _sessionScene.sceneReference.LoadSceneAsync(LoadSceneMode.Additive, true);
-            _sessionManagerLoadingOpHandle.WaitForCompletion();
-            _sessionManagerSceneInstance = _sessionManagerLoadingOpHandle.Result;
-
             StartGameplay();
         }
         else if (_currentlyLoadedScene.sceneType == GameSceneSO.GameSceneType.Prologue)
@@ -115,10 +107,6 @@ public class SceneLoader : MonoBehaviour
         _sceneToLoad = locationToLoad;
         _showLoadingScreen = showLoadingScreen;
         _isLoading = true;
-
-        if (_sessionManagerSceneInstance.Scene != null
-            && _sessionManagerSceneInstance.Scene.isLoaded)
-            Addressables.UnloadSceneAsync(_sessionManagerLoadingOpHandle, true);
 
         //In case we are coming from the main menu, we need to load the Gameplay manager scene first
         if (_prologueManagerSceneInstance.Scene == null
@@ -151,13 +139,7 @@ public class SceneLoader : MonoBehaviour
             || !_gameplayManagerSceneInstance.Scene.isLoaded)
         {
             _gameplayManagerLoadingOpHandle = _gameplayScene.sceneReference.LoadSceneAsync(LoadSceneMode.Additive, true);
-            _gameplayManagerLoadingOpHandle.Completed += LoadSession;
-        }
-        else if (_sessionManagerSceneInstance.Scene == null
-            || !_sessionManagerSceneInstance.Scene.isLoaded)
-        {
-            _sessionManagerLoadingOpHandle = _sessionScene.sceneReference.LoadSceneAsync(LoadSceneMode.Additive, true);
-            _sessionManagerLoadingOpHandle.Completed += OnSessionManagersLoaded;
+            _gameplayManagerLoadingOpHandle.Completed += LoadGameplay;
         }
         else
         {
@@ -165,17 +147,10 @@ public class SceneLoader : MonoBehaviour
         }
     }
 
-    private void LoadSession(AsyncOperationHandle<SceneInstance> obj)
+    private void LoadGameplay(AsyncOperationHandle<SceneInstance> obj)
     {
         _gameplayManagerSceneInstance = _gameplayManagerLoadingOpHandle.Result;
 
-        _sessionManagerLoadingOpHandle = _sessionScene.sceneReference.LoadSceneAsync(LoadSceneMode.Additive, true);
-        _sessionManagerLoadingOpHandle.Completed += OnSessionManagersLoaded;
-    }
-
-    private void OnSessionManagersLoaded(AsyncOperationHandle<SceneInstance> obj)
-    {
-        _sessionManagerSceneInstance = _sessionManagerLoadingOpHandle.Result;
 
         StartCoroutine(UnloadPreviousScene());
     }
@@ -210,10 +185,6 @@ public class SceneLoader : MonoBehaviour
         if (_gameplayManagerSceneInstance.Scene != null
             && _gameplayManagerSceneInstance.Scene.isLoaded)
             Addressables.UnloadSceneAsync(_gameplayManagerLoadingOpHandle, true);
-
-        if (_sessionManagerSceneInstance.Scene != null
-            && _sessionManagerSceneInstance.Scene.isLoaded)
-            Addressables.UnloadSceneAsync(_sessionManagerLoadingOpHandle, true);
 
         StartCoroutine(UnloadPreviousScene());
     }
