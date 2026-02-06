@@ -1,6 +1,7 @@
-using UnityEngine;
+
 using Domicile.StateMachine;
 using Domicile.StateMachine.ScriptableObjects;
+using UnityEngine;
 
 /// <summary>
 /// Condition that evaluates whether the enemy has heard the player via sound. It
@@ -18,66 +19,53 @@ public class HearNoiseConditionSO : StateConditionSO<HearNoiseCondition>
 public class HearNoiseCondition : Condition
 {
     private NonPlayerCharacter _npc;
-    private NonPlayerStatsManager _enemyStats;
-    private Player _player;
-    private PlayerStatsManager _playerStats;
+    // Reference to the noise detection component on the core.  This component
+    // performs the actual sensing of player noise and exposes whether a new
+    // detection has occurred.
+    private NoiseDetection _noiseDetector;
 
     public override void Awake(StateMachine stateMachine)
     {
         _npc = stateMachine.GetComponent<NonPlayerCharacter>();
-        _enemyStats = stateMachine.GetComponent<NonPlayerStatsManager>();
-        // Attempt to find the player in the scene. It is assumed there is only one
-        // Player instance in the game. If there are multiple players this logic
-        // should be adjusted accordingly.
-        _player = GameObject.FindObjectOfType<Player>();
-        if (_player != null)
+        if (_npc != null && _npc.Core != null)
         {
-            _playerStats = _player.GetComponent<PlayerStatsManager>();
+            _noiseDetector = _npc.Core.GetCoreComponent<NoiseDetection>();
         }
     }
 
     protected override bool Statement()
     {
-        // If we already heard the player, avoid repeated triggers until reset in investigate state
-        if (_npc.hasHeardPlayer)
+        // If no detector is available or the NPC reference is missing, we cannot
+        // evaluate the condition.  Return false to indicate no transition.
+        if (_noiseDetector == null || _npc == null)
             return false;
 
-        if (_player == null || _playerStats == null || _enemyStats == null)
+        // On a new detection, copy the position of the noise into the NPC and
+        // return true to signal a transition into the investigate state.  Also
+        // set the hasHeardPlayer flag on the NPC so other conditions know that
+        // the investigation is in progress.
+        if (_noiseDetector.NewDetection)
         {
-            _player = GameObject.FindObjectOfType<Player>();
-            if (_player != null)
-            {
-                _playerStats = _player.GetComponent<PlayerStatsManager>();
-            }
-            return false;
-        }
-
-        // Player's noise radius (how far the noise travels)
-        float playerNoiseRadius = _playerStats.CurrentNoise;
-        if (playerNoiseRadius <= 0f)
-            return false;
-
-        // Enemy's sound detection radius (threshold)
-        float enemyDetectRadius = _enemyStats.GetSoundThreshold();
-        if (enemyDetectRadius <= 0f)
-            return false;
-
-        // Distance between enemy and player
-        float distance = Vector2.Distance(_npc.transform.position, _player.transform.position);
-
-        // If the player's noise circle overlaps the enemy's detection circle, we heard something
-        bool heard = distance <= (playerNoiseRadius + enemyDetectRadius);
-        if (heard)
-        {
+            _npc.lastHeardPosition = _noiseDetector.LastHeardPosition;
             _npc.hasHeardPlayer = true;
-            _npc.lastHeardPosition = _player.transform.position;
+            return true;
         }
 
-        return heard;
+        // If the detector has already registered a noise (Detected remains true)
+        // but this is not a new detection, update the NPC's last heard
+        // position so movement can continue tracking the player.  Do not
+        // trigger a new transition.
+        if (_noiseDetector.Detected)
+        {
+            _npc.lastHeardPosition = _noiseDetector.LastHeardPosition;
+        }
+
+        return false;
     }
 
     public override void OnStateExit()
     {
-        // Do nothing on exit. Flags are reset by the investigation state.
+        // Do nothing on exit.  Detection flags are cleared when the
+        // investigation completes via InvestigationCompleteCondition.
     }
 }

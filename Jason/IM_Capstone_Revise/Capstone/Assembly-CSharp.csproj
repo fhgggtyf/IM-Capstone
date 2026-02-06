@@ -239,6 +239,7 @@
     <Compile Include="Assets\Scripts\Events\ScriptableObjects\UI\DialogueLineChannelSO.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralSimpleUI.cs" />
     <Compile Include="Assets\Scripts\UI\UIMenuManager.cs" />
+    <Compile Include="Assets\Scripts\Characters\Core\NoiseDetection.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSplineEndless.cs" />
     <Compile Include="Assets\Scripts\SceneManagement\LocationEntrance.cs" />
     <Compile Include="Assets\Scripts\Interactions\InteractionManager.cs" />
