@@ -181,10 +181,10 @@ public class JournalUI : MonoBehaviour
 
     public void PreviousPage()
     {
-        if (book.CurrentPaper > 0)
-        {
-            book.CurrentPaper--;
-        }
+        //if (book.CurrentPaper > 0)
+        //{
+        //    book.CurrentPaper--;
+        //}
     }
 
     public void ChangeBookPageAccess(int unlockNum)

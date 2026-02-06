@@ -35,7 +35,7 @@ public class Movement : CoreComponent
         // to discrete facing logic. Without this, the angle defaults to
         // zero degrees (right), which may cause incorrect orientation for
         // stationary enemies.
-        FacingAngle = float.NaN;
+        FacingAngle = 270f;
         CanSetVelocity = true;
     }
 
@@ -85,10 +85,29 @@ public class Movement : CoreComponent
 
     private void SetFinalVelocity()
     {
+        Debug.Log("Setting velocity to: " + workspace);
         if (CanSetVelocity)
         {
             RB.velocity = workspace;
             CurrentVelocity = workspace;
+
+            switch (CurrentVelocity)
+            {
+                case Vector2 v when v.x > 0:
+                    FacingDirection = FacingDir.Right;
+                    break;
+                case Vector2 v when v.x < 0:
+                    FacingDirection = FacingDir.Left;
+                    break;
+                case Vector2 v when v.y > 0:
+                    FacingDirection = FacingDir.Up;
+                    break;
+                case Vector2 v when v.y < 0:
+                    FacingDirection = FacingDir.Down;
+                    break;
+                default:
+                    break;
+            }
         }
     }
 
@@ -117,26 +136,6 @@ public class Movement : CoreComponent
     {
         RB.transform.position = vec;
         RB.velocity = new Vector2(0, 0);
-    }
-
-    public void Flip()
-    {
-        switch (FacingDirection)
-        {
-            case FacingDir.Left:
-                FacingDirection = FacingDir.Right;
-                break;
-            case FacingDir.Right:
-                FacingDirection = FacingDir.Up;
-                break;
-            case FacingDir.Up:
-                FacingDirection = FacingDir.Down;
-                break;
-            case FacingDir.Down:
-                FacingDirection = FacingDir.Left;
-                break;
-        }
-        RB.transform.Rotate(0.0f, 180.0f, 0.0f);
     }
 
     /// <summary>

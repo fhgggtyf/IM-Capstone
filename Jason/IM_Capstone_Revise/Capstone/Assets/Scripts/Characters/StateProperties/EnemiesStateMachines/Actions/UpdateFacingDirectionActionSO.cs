@@ -15,7 +15,7 @@ using Domicile.StateMachine.ScriptableObjects;
 /// </summary>
 [CreateAssetMenu(
     fileName = "UpdateFacingDirectionAction",
-    menuName = "State Machines/Actions/Enemies/Update Facing Direction")]
+    menuName = "State Machines/Actions/Enemies/Update _facing Direction")]
 public class UpdateFacingDirectionActionSO : StateActionSO<UpdateFacingDirectionAction>
 {
     /// <summary>

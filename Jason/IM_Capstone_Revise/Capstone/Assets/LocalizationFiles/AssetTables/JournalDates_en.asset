@@ -19,7 +19,19 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 21343895552
-    m_Localized: 2021/1/1
+    m_Localized: Saturday
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26952802206089216
+    m_Localized: Monday
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26954180987060224
+    m_Localized: Tuesday
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26954227283787776
+    m_Localized: Thursday
     m_Metadata:
       m_Items: []
   references:

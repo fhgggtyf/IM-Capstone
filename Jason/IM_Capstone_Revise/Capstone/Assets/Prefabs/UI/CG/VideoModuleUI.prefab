@@ -149,6 +149,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 5062128952199743687}
   skipButton: {fileID: 6597835340047992983}
+  videoImage: {fileID: 554219609992907442}
+  videoRT: {fileID: 8400000, guid: 429dbbdc4a5e34a45b770ff42cd3c2a9, type: 2}
+  _videoFinished: {fileID: 11400000, guid: 8d5988a95ae0f4342a82e0f8db4b5b82, type: 2}
+  _initializeVideoContent: {fileID: 11400000, guid: ff3f4ed749d91ce4794bf6b8af2b4a59, type: 2}
 --- !u!1 &2542681583914578049
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,6 +163,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7243247996555124687}
   - component: {fileID: 5062128952199743687}
+  - component: {fileID: 2860573405514790651}
+  - component: {fileID: 554219609992907442}
   m_Layer: 5
   m_Name: Video Player
   m_TagString: Untagged
@@ -202,11 +208,11 @@ VideoPlayer:
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: <noninit>
   m_RenderMode: 2
-  m_AspectRatio: 2
+  m_AspectRatio: 5
   m_DataSource: 0
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
-  m_AudioOutputMode: 2
+  m_AudioOutputMode: 1
   m_TargetAudioSources:
   - {fileID: 0}
   m_DirectAudioVolumes:
@@ -215,12 +221,47 @@ VideoPlayer:
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_SkipOnDrop: 1
   m_Looping: 0
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
+--- !u!222 &2860573405514790651
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2542681583914578049}
+  m_CullTransparentMesh: 1
+--- !u!114 &554219609992907442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2542681583914578049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: 86f00b57256a1d94eb1124b2eb3f19b8, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
 --- !u!1 &4078450967082662618
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,7 +511,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1607, y: -974}
+  m_AnchoredPosition: {x: 721, y: -490}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3115416345036889707

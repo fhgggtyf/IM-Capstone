@@ -17359,7 +17359,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inputReader: {fileID: 11400000, guid: e56ee6ed7dd16a744a29977a83f84ef7, type: 2}
   _npcPrefab:
-  - {fileID: 412199690010508398, guid: d16103b41c360244ca0e4d25ceb58ff6, type: 3}
+  - {fileID: 412199690010508398, guid: 8056f84b7efd1bb41a4a346ec2fbc999, type: 3}
   _npcSpawnRoot: {fileID: 1638934620}
   _patrolRoute: {fileID: 1241821793}
   _onSceneReady: {fileID: 11400000, guid: 6c182f36fdb706a44b6573738b32654a, type: 2}
@@ -33132,11 +33132,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 988395070226076139, guid: 05b87d8b04d23744fb4e5e987bc8e7eb, type: 3}
       propertyPath: m_Size.y
-      value: 1.0261316
+      value: 1.1883386
       objectReference: {fileID: 0}
     - target: {fileID: 988395070226076139, guid: 05b87d8b04d23744fb4e5e987bc8e7eb, type: 3}
       propertyPath: m_Offset.y
-      value: -0.013065815
+      value: 0.06803769
       objectReference: {fileID: 0}
     - target: {fileID: 1797374244080132816, guid: 05b87d8b04d23744fb4e5e987bc8e7eb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -34310,11 +34310,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 988395070226076139, guid: 05b87d8b04d23744fb4e5e987bc8e7eb, type: 3}
       propertyPath: m_Size.y
-      value: 1
+      value: 1.0294921
       objectReference: {fileID: 0}
     - target: {fileID: 988395070226076139, guid: 05b87d8b04d23744fb4e5e987bc8e7eb, type: 3}
       propertyPath: m_Offset.y
-      value: 0.10452652
+      value: 0.11927259
       objectReference: {fileID: 0}
     - target: {fileID: 1797374244080132816, guid: 05b87d8b04d23744fb4e5e987bc8e7eb, type: 3}
       propertyPath: m_LocalPosition.x

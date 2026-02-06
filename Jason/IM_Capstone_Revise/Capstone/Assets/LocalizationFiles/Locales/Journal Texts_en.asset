@@ -19,7 +19,40 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 6202458112
-    m_Localized: oioioioioioioi
+    m_Localized: 'Today is Saturday, Kairo, and I should have gone to the park today.
+      At breakfast, Mommy said that we are no longer allowed. Kairo was very upset.
+      He told me that, but he didn''t tell mommy and daddy. He says he understands,
+      but it is still unfair.
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26952061588471808
+    m_Localized: "Today was very scary. I was helping Mommy prepare dinner in the
+      kitchen, and we heard very loud bangs coming from the door. Daddy was about
+      to open it, but a big man was already inside and even pushed Daddy to the floor.
+      I did not know what to do, Mommy also did not know, she only took me and covered
+      my eyes. I can hear Kairo crying. Daddy seemed to be in a lot of pain, too.
+      The big man approached mommy and said things I did not understand. But I understood
+      \u201CThis is the law, and he made a mistake.\u201D  Then daddy and the big
+      men were all gone. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26953370102267904
+    m_Localized: "I asked Mommy if Daddy will ever come back. She didn't really say
+      anything, but I can tell she is thinking very deeply. Kairo has been taking
+      care of different chores around the house. He even forces me to do some of
+      them. Usually, I would tell him \u201Cno,\u201D but I\u2019m only doing it
+      because Mommy is tired now. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26953397029699584
+    m_Localized: "Mommy, she needs to go look for Daddy. She doesn't know when she\u2019ll
+      be back, but she said Kairo and I need to look after each other. Kairo did
+      not say a word, he didnt even look at mommy when she stood at the door smiling
+      as she wore daddy\u2019s scarf. She warned us that it is best to stay in and
+      not go out. And most importantly to not let anyone in or trust whoever comes
+      by. "
     m_Metadata:
       m_Items: []
   references:

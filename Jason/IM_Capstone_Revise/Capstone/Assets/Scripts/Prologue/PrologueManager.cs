@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PrologueManager : MonoBehaviour
@@ -7,6 +8,8 @@ public class PrologueManager : MonoBehaviour
 
     [SerializeField] private GameStateSO _gameState = default;
     [SerializeField] private List<PrologueSectionSO> _sections;
+    [SerializeField] private JournalManager _journalManager;
+    [SerializeField] private VideoModuleController _videoModuleController;
     private int _index = 0;
 
 
@@ -43,6 +46,22 @@ public class PrologueManager : MonoBehaviour
         }
 
         _index = index;
+        switch (_sections[index].sectionType)
+        {
+            case PrologueSectionType.Cutscene:
+
+                break;
+            case PrologueSectionType.JournalEntry:
+                _journalManager.gameObject.SetActive(true);
+                _videoModuleController.gameObject.SetActive(false);
+                InitializeJournal();
+                break;
+            case PrologueSectionType.CG:
+                _journalManager.gameObject.SetActive(false);
+                _videoModuleController.gameObject.SetActive(true);
+                InitializeCG();
+                break;
+        }
         _sections[index].Play();
     }
 
@@ -55,8 +74,6 @@ public class PrologueManager : MonoBehaviour
     private void StartPrologue()
     {
         _gameState.UpdateGameState(GameState.Prologue);
-
-        InitializeJournal();
 
         PlaySection(0);
     }
@@ -74,4 +91,18 @@ public class PrologueManager : MonoBehaviour
         }
     }
 
+    private void InitializeCG()
+    {
+        Debug.Log(_sections.Count);
+        foreach (var section in _sections)
+        {
+            if (section is CGFormatSO)
+            {
+                Debug.Log("Initializing CG Section" + section);
+                (section as CGFormatSO).InitializeCGSection();
+            }
+
+
+        }
+    }
 }

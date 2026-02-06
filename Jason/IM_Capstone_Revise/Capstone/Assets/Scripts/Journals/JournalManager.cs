@@ -19,9 +19,6 @@ public class JournalManager : MonoBehaviour
     {
         _inputReader.EnableJournalInput();
 
-        if(_journalDataSO != null)
-            _journalUI.Initialize(_journalDataSO, _journalDataSO.IsBack);
-
         _inputReader.FlipNextEvent += OnFlipNext;
         _inputReader.FlipPreviousEvent += OnFlipPrevious;
         _openJournalEvent.OnEventRaised += OnJournalEntry; 
@@ -40,6 +37,7 @@ public class JournalManager : MonoBehaviour
         {
             _journalDataSO = journalContentData as JournalDataSO;
             _journalUI.Initialize(_journalDataSO,_journalDataSO.IsBack);
+            Debug.Log("JournalManager received JournalDataSO and initialized JournalUI");
         }
         else 
         {         
