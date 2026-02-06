@@ -72,7 +72,7 @@ public class InvestigateIdleAction : StateAction
             }
 
             _npc.nonIdle = true;
-            
+
         }
     }
 
@@ -81,6 +81,10 @@ public class InvestigateIdleAction : StateAction
         // Reset nonIdle when leaving idle so that subsequent states can use it
         _idleCount = 0;
         _npc.nonIdle = false;
-        _npc.hasHeardPlayer = false;
+        // We deliberately do not reset the hasHeardPlayer flag here.  Keeping this flag
+        // set allows the HearNoiseCondition to continue updating the lastHeardPosition
+        // while the enemy is already in the investigate state without retriggering
+        // the investigate transition.  The flag is cleared when the investigation
+        // completes via the InvestigationCompleteCondition.
     }
 }

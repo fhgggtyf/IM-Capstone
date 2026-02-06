@@ -428,6 +428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9771729bcaf7cc942860fd6dca0c26b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Movement: {fileID: 2781760504026871708}
 --- !u!50 &7558742246840553780
 Rigidbody2D:
   serializedVersion: 4
@@ -467,7 +468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ef37b6bb338bd84e840d7f3706f7df1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statsConfig: {fileID: 11400000, guid: daacc4dd425a7bc4fbf5add8625b7a24, type: 2}
+  statsConfig: {fileID: 11400000, guid: 90cd485c5c4206a45ab3332b5fe582ab, type: 2}
 --- !u!60 &3181760766383717921
 PolygonCollider2D:
   m_ObjectHideFlags: 0

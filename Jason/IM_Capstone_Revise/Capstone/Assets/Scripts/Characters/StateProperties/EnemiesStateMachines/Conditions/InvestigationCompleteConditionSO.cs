@@ -17,10 +17,15 @@ public class InvestigationCompleteConditionSO : StateConditionSO<InvestigationCo
 public class InvestigationCompleteCondition : Condition
 {
     private NonPlayerCharacter _npc;
+    private NoiseDetection _noiseDetector;
 
     public override void Awake(StateMachine stateMachine)
     {
         _npc = stateMachine.GetComponent<NonPlayerCharacter>();
+        if (_npc != null && _npc.Core != null)
+        {
+            _noiseDetector = _npc.Core.GetCoreComponent<NoiseDetection>();
+        }
     }
 
     protected override bool Statement()
@@ -29,9 +34,14 @@ public class InvestigationCompleteCondition : Condition
         {
             // Reset the flag so that the next investigation can proceed
             _npc.investigationComplete = false;
+            // Clear NPC flags and last heard data
             _npc.hasHeardPlayer = false;
-            // Clear last heard position to avoid stale data
             _npc.lastHeardPosition = Vector2.zero;
+            // Clear detection on the noise detector if available
+            if (_noiseDetector != null)
+            {
+                _noiseDetector.ClearDetection();
+            }
             return true;
         }
         return false;

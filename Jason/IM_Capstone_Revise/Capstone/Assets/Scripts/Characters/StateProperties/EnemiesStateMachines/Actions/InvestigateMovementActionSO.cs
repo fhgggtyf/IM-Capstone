@@ -72,6 +72,13 @@ public class InvestigateMovementAction : StateAction
 
     public override void OnUpdate()
     {
+        // Continuously sync the movement target with the most recently heard player position.
+        // This allows the enemy to adjust its destination on the fly when the player makes
+        // additional noise while the enemy is already investigating. Without this update
+        // the enemy would continue moving towards the initial heard location and allow
+        // the player to roam freely within the hearing radius.
+        _npc.moveTarget = _npc.lastHeardPosition;
+
         // Only update movement if nonIdle is true. When false, the NPC has
         // completed movement and should pause or perform another action.
         if (!_npc.nonIdle)

@@ -87,6 +87,7 @@
     <Compile Include="Assets\Scripts\UI\Inventory\UIStatPanel.cs" />
     <Compile Include="Assets\Scripts\Events\ScriptableObjects\UI\DialogueChoicesChannelSO.cs" />
     <Compile Include="Assets\Scripts\Factory\FactorySO.cs" />
+    <Compile Include="Assets\Scripts\Characters\StateProperties\PlayerStateMachines\Actions\AnimationParameterActionSO.cs" />
     <Compile Include="Assets\Scripts\CutScenes\TimelineBinder.cs" />
     <Compile Include="Assets\Scripts\Characters\NPC\BindAgentToNavMeshOnSpawn.cs" />
     <Compile Include="Assets\Scripts\Characters\Config\UpgradeConfigSO.cs" />
@@ -239,6 +240,7 @@
     <Compile Include="Assets\Scripts\Events\ScriptableObjects\UI\DialogueLineChannelSO.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralSimpleUI.cs" />
     <Compile Include="Assets\Scripts\UI\UIMenuManager.cs" />
+    <Compile Include="Assets\Scripts\Characters\Core\NoiseDetection.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSplineEndless.cs" />
     <Compile Include="Assets\Scripts\SceneManagement\LocationEntrance.cs" />
     <Compile Include="Assets\Scripts\Interactions\InteractionManager.cs" />
@@ -305,6 +307,7 @@
     <Compile Include="Assets\Scripts\Characters\Core\PathAgent.cs" />
     <Compile Include="Assets\Scripts\UI\Settings\UISettingTabFiller.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanTween.cs" />
+    <Compile Include="Assets\Scripts\Characters\StateProperties\EnemiesStateMachines\Actions\EnemyIdleMovingAnimationParameterActionSO.cs" />
     <Compile Include="Assets\Addons\DOTween\Modules\DOTweenModulePhysics2D.cs" />
     <Compile Include="Assets\Scripts\Characters\StateProperties\EnemiesStateMachines\Actions\InvestigateIdleActionSO.cs" />
     <Compile Include="Assets\Scripts\Characters\NPC\NonPlayerStatsManager.cs" />

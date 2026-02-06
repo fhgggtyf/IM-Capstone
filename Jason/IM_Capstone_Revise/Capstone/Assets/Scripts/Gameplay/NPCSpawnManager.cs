@@ -83,19 +83,19 @@ public class NPCSpawnManager : MonoBehaviour
         }
     } 
     static void DebugNavmeshDistance(Vector3 pos)
-{
-    var tri = NavMesh.CalculateTriangulation();
-    float best = float.PositiveInfinity;
-    Vector3 bestV = default;
-
-    foreach (var v in tri.vertices)
     {
-        float d = Vector3.Distance(pos, v);
-        if (d < best) { best = d; bestV = v; }
-    }
+        var tri = NavMesh.CalculateTriangulation();
+        float best = float.PositiveInfinity;
+        Vector3 bestV = default;
 
-    Debug.Log($"Closest NavMesh vertex distance = {best:F3}, closest vertex = {bestV}, pos = {pos}");
-}
+        foreach (var v in tri.vertices)
+        {
+            float d = Vector3.Distance(pos, v);
+            if (d < best) { best = d; bestV = v; }
+        }
+
+        //Debug.Log($"Closest NavMesh vertex distance = {best:F3}, closest vertex = {bestV}, pos = {pos}");
+    }
 }
 
 
