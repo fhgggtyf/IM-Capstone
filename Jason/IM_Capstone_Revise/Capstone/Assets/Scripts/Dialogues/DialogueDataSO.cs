@@ -55,7 +55,9 @@ public class DialogueDataSO : ScriptableObject
 #if UNITY_EDITOR
 	private void OnEnable()
 	{
-		SetDialogueLines(this.name);
+		if (_lines != null && _lines.Count > 0) return;
+
+        SetDialogueLines(this.name);
 	}
 	public DialogueDataSO(string dialogueName)
 	{

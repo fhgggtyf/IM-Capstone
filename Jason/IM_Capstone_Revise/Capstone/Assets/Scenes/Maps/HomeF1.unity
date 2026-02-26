@@ -16947,6 +16947,10 @@ PrefabInstance:
       propertyPath: CanHide
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6987422299562306959, guid: 05b87d8b04d23744fb4e5e987bc8e7eb, type: 3}
+      propertyPath: CanHideBehind
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7981349156637591081, guid: 05b87d8b04d23744fb4e5e987bc8e7eb, type: 3}
       propertyPath: m_Layer
       value: 6

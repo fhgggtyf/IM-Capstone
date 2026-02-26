@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-	//[SerializeField] private QuestManagerSO _questManager = default;
+	[SerializeField] private QuestManagerSO _questManager = default;
 	[SerializeField] private GameStateSO _gameState = default;
 
 	[Header("Inventory")]
@@ -58,6 +58,6 @@ public class GameManager : MonoBehaviour
 	void StartGame()
 	{
 		_gameState.UpdateGameState(GameState.Gameplay);
-		//_questManager.StartPrologue();
+		_questManager.StartGame();
 	}
 }

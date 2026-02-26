@@ -69,7 +69,7 @@ public class MoveAndNoiseAction : StateAction
 
     public override void OnUpdate()
     {
-        Debug.Log(_player.InputVector);
+        //Debug.Log(_player.InputVector);
         // Each frame, set the player's velocity according to the movement state and
         // update the noise level if necessary.
         switch (_originSO.moveType)

@@ -18,6 +18,7 @@ public class InvestigateMovementActionSO : StateActionSO<InvestigateMovementActi
     // patrolling. If needed you can add a multiplier here to scale the
     // base running speed without modifying StatsConfigSO values.
     public float speedMultiplier = 1f;
+    public TransformAnchor PlayerTransformAnchor;
 }
 
 public class InvestigateMovementAction : StateAction
@@ -26,6 +27,12 @@ public class InvestigateMovementAction : StateAction
     private NonPlayerStatsManager _stats;
     private Movement _movement;
     private InvestigateMovementActionSO _origin;
+    private TransformAnchor _playerTransformAnchor;
+
+    // Reference to the noise detection component on the core.  This provides the
+    // most recent noise position so that movement can track the player without
+    // relying on the NPC to store the heard position.
+    private NoiseDetection _noiseDetector;
 
     // Navigation controller for moving along a NavMesh. When present the
     // enemy will follow a computed path instead of moving directly to the
@@ -42,17 +49,35 @@ public class InvestigateMovementAction : StateAction
         _movement = _npc.Core.GetCoreComponent<Movement>();
         _origin = (InvestigateMovementActionSO)OriginSO;
 
-        // Attempt to locate a NavMeshAgentController on the core. If it exists
-        // and the agent is on a baked NavMesh then we can use navigation.
-        _navController = _npc.Core.GetCoreComponent<NavMeshAgentController>();
+        _playerTransformAnchor = _origin.PlayerTransformAnchor;
+
+        // Retrieve the noise detector from the core if available
+        if (_npc != null && _npc.Core != null)
+        {
+            _noiseDetector = _npc.Core.GetCoreComponent<NoiseDetection>();
+
+            // Attempt to locate a NavMeshAgentController on the core. If it exists
+            // and the agent is on a baked NavMesh then we can use navigation.
+            _navController = _npc.Core.GetCoreComponent<NavMeshAgentController>();
+        }
+
     }
 
     public override void OnStateEnter()
     {
         //// On entering movement, ensure we are in nonIdle state so movement begins.
         //_npc.nonIdle = true;
-        // Copy the last heard position into moveTarget to ensure we go to the right spot
-        _npc.moveTarget = _npc.lastHeardPosition;
+        // Copy the last heard position into moveTarget to ensure we go to the right spot.
+        // If a noise detector is present, use its stored position; otherwise fall back
+        // to any position already stored on the NPC.
+        if (_noiseDetector != null)
+        {
+            _npc.moveTarget = _noiseDetector.LastHeardPosition;
+        }
+        else
+        {
+            _npc.moveTarget = _npc.lastHeardPosition;
+        }
 
         // Reset navigation usage on state entry. We'll attempt to initialise
         // navigation if the agent is on a valid NavMesh.
@@ -68,21 +93,34 @@ public class InvestigateMovementAction : StateAction
         //    TrySetDestinationOnNavMesh(_npc.moveTarget);
         //    _useNavMesh = true;
         //}
+
+        //Debug.Log($"InvestigateMovementAction: Entered state with target={_npc.moveTarget} (noiseDetector={_noiseDetector}, lastHeard={_npc.lastHeardPosition})");
     }
 
     public override void OnUpdate()
     {
-        // Continuously sync the movement target with the most recently heard player position.
-        // This allows the enemy to adjust its destination on the fly when the player makes
-        // additional noise while the enemy is already investigating. Without this update
-        // the enemy would continue moving towards the initial heard location and allow
-        // the player to roam freely within the hearing radius.
-        _npc.moveTarget = _npc.lastHeardPosition;
-
         // Only update movement if nonIdle is true. When false, the NPC has
         // completed movement and should pause or perform another action.
         if (!_npc.nonIdle)
             return;
+
+        // Continuously sync the movement target with the most recently heard player position.
+        // Use the noise detector’s stored position when available.  This allows the enemy
+        // to adjust its destination on the fly when the player makes additional noise
+        // while the enemy is already investigating.  Without this update the enemy would
+        // continue moving towards the initial heard location and allow the player to roam
+        // freely within the hearing radius.
+        //if (_noiseDetector != null)
+        //{
+        //    _npc.moveTarget = _noiseDetector.LastHeardPosition;
+        //}
+        //else
+        //{
+        //    _npc.moveTarget = _npc.lastHeardPosition;
+        //}
+
+        // Determine the player's current position each frame as it may change
+        Vector2 playerPos = _playerTransformAnchor.Value.position;
 
         // Reset NavMesh usage each frame. We'll set this flag to true when
         // using the NavMesh below. When false, fallback direct movement is used.
@@ -100,10 +138,10 @@ public class InvestigateMovementAction : StateAction
             _navController.SetSpeed(speed);
             // Update destination only when the target has changed significantly
             Vector3 currentDest = _navController.Agent.destination;
-            Vector3 desiredDest = new Vector3(_npc.moveTarget.x, _npc.moveTarget.y, _navController.Agent.transform.position.z);
-            if ((currentDest - desiredDest).sqrMagnitude > 0.01f)
+            Vector3 desiredDest = new(playerPos.x, playerPos.y, _navController.Agent.transform.position.z);
+            if ((currentDest - desiredDest).sqrMagnitude > speed)
             {
-                TrySetDestinationOnNavMesh(_npc.moveTarget);
+                TrySetDestinationOnNavMesh(playerPos);
             }
             // Check if we have reached the destination
             if (_navController.HasReachedDestination())

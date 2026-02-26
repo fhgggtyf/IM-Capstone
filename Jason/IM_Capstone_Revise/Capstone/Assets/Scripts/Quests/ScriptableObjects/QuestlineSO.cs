@@ -33,6 +33,13 @@ public class QuestlineSO : SerializableScriptableObject
     {
         _idQuestLine = id;
     }
+    public void ResetQuestLineProgress()
+    {
+        foreach (QuestSO quest in _quests)
+        {
+            quest. ResetQuestProgress();
+        }
+    }
 #if UNITY_EDITOR
 	/// <summary>
 	/// This function is only useful for the Questline Tool in Editor to remove a Questline

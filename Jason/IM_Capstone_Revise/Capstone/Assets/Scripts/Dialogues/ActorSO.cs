@@ -3,15 +3,12 @@ using UnityEngine.Localization;
 
 public enum ActorID
 {
-	AT, // Alothai
-	BH, // Bard hare
-	H, // hamlet
-	F, // felfel
-	A, // ayoud
-	T, // terra
-	LC, //Legendary chef
-	C, // Cerise
-	N, //nar 
+	PT, // Protagonist
+	SB, // Sibling
+	BR, // Boar
+	BT, // Bat
+	ML, // Mole
+	FX, // Fox
 
 }
 

@@ -22,7 +22,7 @@ public class Core : MonoBehaviour
     {
         foreach (CoreComponent component in CoreComponents)
         {
-            Debug.Log($"Updating CoreComponent: {component.GetType().Name} on {transform.parent.name}");
+            //Debug.Log($"Updating CoreComponent: {component.GetType().Name} on {transform.parent.name}");
             component.LogicUpdate();
         }
     }

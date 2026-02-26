@@ -231,8 +231,8 @@ namespace BookCurlPro
                 if (previousPaper >= 0)
                 {
                     BookUtility.ShowPage(papers[previousPaper].Back);
-                    //papers[previousPaper].Back.transform.SetParent(BookPanel.transform);
-                    //papers[previousPaper].Back.transform.SetSiblingIndex(previousPaper);
+                    //papers[previousPaper].Right.transform.SetParent(BookPanel.transform);
+                    //papers[previousPaper].Right.transform.SetSiblingIndex(previousPaper);
                     BookUtility.CopyTransform(LeftPageTransform.transform, papers[previousPaper].Back.transform);
                 }
                 //show front of current page only

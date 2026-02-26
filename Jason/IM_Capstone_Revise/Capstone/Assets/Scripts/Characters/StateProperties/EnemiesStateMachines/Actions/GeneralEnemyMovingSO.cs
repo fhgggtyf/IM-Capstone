@@ -82,7 +82,7 @@ public class GeneralEnemyMoving : StateAction
             _navController.SetSpeed(_stats.GetPatrolSpeed());
 
             var a = _navController.Agent;
-            Debug.Log($"agentPos={a.transform.position} destBeforeSnap={_npc.moveTarget} agentDest={a.destination} remaining={a.remainingDistance}");
+            //Debug.Log($"agentPos={a.transform.position} destBeforeSnap={_npc.moveTarget} agentDest={a.destination} remaining={a.remainingDistance}");
             // Set the destination to the NPC's move target (x,y)
             TrySetDestinationOnNavMesh(_npc.moveTarget);
 

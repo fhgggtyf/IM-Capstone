@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\Characters\IngamePotentialSO.cs" />
     <Compile Include="Assets\Scripts\Events\ScriptableObjects\SOEventChannelSO.cs" />
     <Compile Include="Assets\Book-Page Curl Pro\Scripts\PageFlipper.cs" />
+    <Compile Include="Assets\Scripts\Quests\StepController.cs" />
     <Compile Include="Assets\Scripts\Interactions\Interactables\Bobber.cs" />
     <Compile Include="Assets\Scripts\Audio\AudioData\AudioCueKey.cs" />
     <Compile Include="Assets\LeanTween\Testing\TestingDescr.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="Assets\Scripts\Characters\Core\Core.cs" />
     <Compile Include="Assets\Scripts\UI\Inventory\UIStatPanel.cs" />
     <Compile Include="Assets\Scripts\Events\ScriptableObjects\UI\DialogueChoicesChannelSO.cs" />
+    <Compile Include="Assets\Scripts\Journals\Prologue\HandController.cs" />
     <Compile Include="Assets\Scripts\Factory\FactorySO.cs" />
     <Compile Include="Assets\Scripts\Characters\StateProperties\PlayerStateMachines\Actions\AnimationParameterActionSO.cs" />
     <Compile Include="Assets\Scripts\CutScenes\TimelineBinder.cs" />
@@ -116,7 +118,6 @@
     <Compile Include="Assets\Scripts\Pickups\Potions\StatModification.cs" />
     <Compile Include="Assets\Scripts\UI\Settings\UISettingItemFiller.cs" />
     <Compile Include="Assets\Scripts\UI\Settings\UISettingsLanguageComponent.cs" />
-    <Compile Include="Assets\Scripts\Journals\UI\PageUI.cs" />
     <Compile Include="Assets\Scripts\Characters\StateProperties\PlayerStateMachines\Conditions\IsMovingConditionSO.cs" />
     <Compile Include="Assets\LeanTween\Testing\TestingSequencer.cs" />
     <Compile Include="Assets\Scripts\Inventory\ScriptableObjects\ItemTypeSO.cs" />
@@ -179,6 +180,7 @@
     <Compile Include="Assets\Scripts\CutScenes\CutsceneTrigger.cs" />
     <Compile Include="Assets\Scripts\Menu\MultiInputButton.cs" />
     <Compile Include="Assets\Scripts\Dialogues\DialogueDataSO.cs" />
+    <Compile Include="Assets\Scripts\Characters\NPC\Neutral\NPC.cs" />
     <Compile Include="Assets\Scripts\Characters\StateProperties\PlayerStateMachines\Conditions\IsIdleConditionSO.cs" />
     <Compile Include="Assets\Scripts\EditorTools\Weapons\AbilityDataSOEditor.cs" />
     <Compile Include="Assets\Scripts\UI\Inventory\UIInventoryTab.cs" />
@@ -200,6 +202,7 @@
     <Compile Include="Assets\Scripts\Interactions\Interactables\HideInteractable.cs" />
     <Compile Include="Assets\Scripts\Characters\StateProperties\PlayerStateMachines\Actions\HideActionSO.cs" />
     <Compile Include="Assets\Book-Page Curl Pro\Scripts\Tween.cs" />
+    <Compile Include="Assets\Scripts\Journals\Prologue\PrologueRightSideInteractionController.cs" />
     <Compile Include="Assets\Scripts\Events\ScriptableObjects\IntEventChannelSO.cs" />
     <Compile Include="Assets\LeanTween\Testing\FollowingTests.cs" />
     <Compile Include="Assets\Scripts\Events\ScriptableObjects\UI\FadeChannelSO.cs" />
@@ -216,7 +219,6 @@
     <Compile Include="Assets\Scripts\Utilities\TimeNotifier.cs" />
     <Compile Include="Assets\Scripts\UI\FadeController.cs" />
     <Compile Include="Assets\Scripts\Characters\NPC\PatrolRoute.cs" />
-    <Compile Include="Assets\Scripts\Journals\ScriptableObjects\JournalContentSO.cs" />
     <Compile Include="Assets\LeanTween\Testing\TestingOptionalCancel.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\TestingUnitTests.cs" />
     <Compile Include="Assets\Scripts\CutScenes\CutsceneManager.cs" />
@@ -230,6 +232,7 @@
     <Compile Include="Assets\Book-Page Curl Pro\Examples\scripts\BotAnimationControl.cs" />
     <Compile Include="Assets\Scripts\Characters\Core\NoiseDetectionRadiusVisualization.cs" />
     <Compile Include="Assets\LeanTween\Testing\TestingColorTweening.cs" />
+    <Compile Include="Assets\Scripts\Journals\UI\ContentPageUI.cs" />
     <Compile Include="Assets\Scripts\UI\UIInteraction.cs" />
     <Compile Include="Assets\Scripts\Prologue\ScriptableObjects\JournalSectionSO.cs" />
     <Compile Include="Assets\Scripts\Dialogues\DialogueManager.cs" />
@@ -254,6 +257,7 @@
     <Compile Include="Assets\Scripts\Interactions\Interactables\InteractableItems.cs" />
     <Compile Include="Assets\LeanTween\Testing\TestingRotate.cs" />
     <Compile Include="Assets\LeanTween\Testing\Testing243.cs" />
+    <Compile Include="Assets\Scripts\Interactions\Interactables\NPCInteractable.cs" />
     <Compile Include="Assets\Scripts\Utilities\KeepFromRotation.cs" />
     <Compile Include="Assets\Scripts\SceneManagement\ScriptableObjects\PersistentManagersSO.cs" />
     <Compile Include="Assets\Scripts\Audio\AudioData\AudioCueSO.cs" />
@@ -274,6 +278,7 @@
     <Compile Include="Assets\Scripts\SceneManagement\ScriptableObjects\MenuSO.cs" />
     <Compile Include="Assets\LeanTween\Testing\Scripts\LeanPool.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraFollowObject.cs" />
+    <Compile Include="Assets\Scripts\Journals\BookNoFlipAnimation.cs" />
     <Compile Include="Assets\Scripts\Events\ScriptableObjects\LoadEventChannelSO.cs" />
     <Compile Include="Assets\Scripts\UI\UICreditsRoller.cs" />
     <Compile Include="Assets\Scripts\SaveSystem\SaveSystem.cs" />
@@ -283,6 +288,7 @@
     <Compile Include="Assets\Scripts\Inventory\ScriptableObjects\InventoryTabSO.cs" />
     <Compile Include="Assets\Scripts\BaseClasses\DescriptionBaseSO.cs" />
     <Compile Include="Assets\Scripts\RuntimeAnchors\TransformAnchor.cs" />
+    <Compile Include="Assets\Scripts\SceneManagement\StartArc1.cs" />
     <Compile Include="Assets\Book-Page Curl Pro\Examples\scripts\AddPagesDynamically.cs" />
     <Compile Include="Assets\Scripts\Characters\IngameStatsSO.cs" />
     <Compile Include="Assets\Scripts\UI\UIElement.cs" />
@@ -296,6 +302,7 @@
     <Compile Include="Assets\Scripts\Events\ScriptableObjects\UI\DialogueChoiceChannelSO.cs" />
     <Compile Include="Assets\Scripts\Characters\StatsManager.cs" />
     <Compile Include="Assets\Scripts\UI\UIBarDisplays.cs" />
+    <Compile Include="Assets\Scripts\Journals\ScriptableObjects\PrologueJournalContentSO.cs" />
     <Compile Include="Assets\Scripts\Prologue\ScriptableObjects\PrologueSectionSO.cs" />
     <Compile Include="Assets\Scripts\Characters\StateProperties\EnemiesStateMachines\Conditions\InvestigationCompleteConditionSO.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSpline2d.cs" />
@@ -314,6 +321,7 @@
     <Compile Include="Assets\Scripts\Pool\PoolSO.cs" />
     <Compile Include="Assets\Book-Page Curl Pro\Scripts\AutoFlip.cs" />
     <Compile Include="Assets\Scripts\UI\UIManager.cs" />
+    <Compile Include="Assets\Scripts\Journals\UI\PrologueInteractionPageUI.cs" />
     <Compile Include="Assets\DeadRevolver\PixelPrototypePlayerSprites\Demo\Scripts\DemoUIManager.cs" />
     <Compile Include="Assets\Scripts\Events\ScriptableObjects\TransformEventChannelSO.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanSmooth.cs" />
@@ -321,6 +329,7 @@
     <Compile Include="Assets\Scripts\UI\Settings\UISettingsGraphicsComponent.cs" />
     <Compile Include="Assets\Scripts\RuntimeAnchors\PathStorageSO.cs" />
     <Compile Include="Assets\Scripts\UI\ScriptableObject\InteractionSO.cs" />
+    <Compile Include="Assets\Scripts\Interactions\Interactables\QuestInteractable.cs" />
     <Compile Include="Assets\LeanTween\Testing\TestingMaxTweens.cs" />
     <Compile Include="Assets\Scripts\Pool\IPool.cs" />
     <Compile Include="Assets\Scripts\UI\UIBars\UIHealthbarManager.cs" />
@@ -341,9 +350,9 @@
     <None Include="Assets\Addons\DOTween\DOTween.dll" />
     <None Include="Assets\Addons\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\Addons\DOTween\DOTween.XML" />
+    <None Include="Assets\Scripts\Quests\Resources\DialogueUSS.uss" />
     <None Include="Assets\Addons\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\LeanTween\License.txt" />
-    <None Include="Assets\Assets\Background\Tutorial\neighbour&apos;s items\1x\items with text\Pixelify_Sans\README.txt" />
     <None Include="Assets\Addons\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\Assets\Shader\NoiseRadialFade.shader" />
     <None Include="Assets\Addons\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
@@ -354,11 +363,12 @@
     <None Include="Assets\Addons\TextMesh Pro\Shaders\TMP_SDF.shader" />
     <None Include="Assets\Addons\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets\Addons\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\Scripts\Quests\Resources\QuestEditorWindow.uxml" />
     <None Include="Assets\Addons\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\Addons\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\Addons\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
-    <None Include="Assets\Assets\Background\Tutorial\neighbour&apos;s items\1x\items with text\Pixelify_Sans\OFL.txt" />
     <None Include="Assets\Addons\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\Scripts\Quests\Resources\QuestEditorWindow.uss" />
     <None Include="Assets\Addons\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\Addons\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\Addons\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />

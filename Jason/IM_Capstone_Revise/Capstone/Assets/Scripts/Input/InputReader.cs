@@ -87,7 +87,10 @@ public class InputReader : DescriptionBaseSO, GameInput.IGameplayActions, GameIn
 
     public void OnInteract(InputAction.CallbackContext context)
     {
-        if (GameplayInputBlocked) return;
+        if (GameplayInputBlocked) {
+            Debug.Log("Blocked GameplayInput");
+            return; 
+        }
 
         if (context.phase == InputActionPhase.Performed)
         {
@@ -125,6 +128,7 @@ public class InputReader : DescriptionBaseSO, GameInput.IGameplayActions, GameIn
 
     public void DisableAllInput()
     {
+        Debug.Log("All input disabled");
         _gameInput.Menus.Disable();
         _gameInput.Gameplay.Disable();
         _gameInput.Dialogues.Disable();
@@ -133,6 +137,7 @@ public class InputReader : DescriptionBaseSO, GameInput.IGameplayActions, GameIn
 
     public void EnableDialogueInput()
     {
+        Debug.Log("DialogueInput Enabled");
         _gameInput.Menus.Enable();
         _gameInput.Gameplay.Disable();
         _gameInput.Dialogues.Enable();
@@ -141,6 +146,7 @@ public class InputReader : DescriptionBaseSO, GameInput.IGameplayActions, GameIn
 
     public void EnableGameplayInput()
     {
+        Debug.Log("GameplayInput Enabled");
         _gameInput.Menus.Disable();
         _gameInput.Dialogues.Disable();
         _gameInput.Gameplay.Enable();
@@ -149,6 +155,7 @@ public class InputReader : DescriptionBaseSO, GameInput.IGameplayActions, GameIn
 
     public void EnableMenuInput()
     {
+        Debug.Log("MenuInput Enabled");
         _gameInput.Dialogues.Disable();
         GameplayInputToggled.Invoke(true);
         _gameInput.Menus.Enable();
@@ -157,6 +164,7 @@ public class InputReader : DescriptionBaseSO, GameInput.IGameplayActions, GameIn
 
     public void EnableJournalInput()
     {
+        Debug.Log("JournalInput Enabled");
         _gameInput.Menus.Disable();
         _gameInput.Gameplay.Disable();
         _gameInput.Dialogues.Disable();

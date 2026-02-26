@@ -85,7 +85,6 @@ public class Movement : CoreComponent
 
     private void SetFinalVelocity()
     {
-        Debug.Log("Setting velocity to: " + workspace);
         if (CanSetVelocity)
         {
             RB.velocity = workspace;

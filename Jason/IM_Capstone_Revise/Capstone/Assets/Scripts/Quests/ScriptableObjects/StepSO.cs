@@ -1,112 +1,134 @@
 using UnityEditor;
 using UnityEngine;
-
 public enum StepType
 {
     Dialogue,
     GiveItem,
-    CheckItem
+    CheckItem,
+    InteractObjects
 }
-
 [CreateAssetMenu(fileName = "step", menuName = "Quests/Step")]
 public class StepSO : SerializableScriptableObject
 {
     [Tooltip("The Character this mission will need interaction with")]
     [SerializeField] private ActorSO _actor = default;
-
-    [Tooltip("The dialogue that will be displayed before an action, if any")]
+    [Tooltip("The dialogue that will be diplayed befor an action, if any")]
     [SerializeField] private DialogueDataSO _dialogueBeforeStep = default;
-
-    [Tooltip("The dialogue that will be displayed when the step is achieved")]
+    [Tooltip("The dialogue that will be diplayed when the step is achieved")]
     [SerializeField] private DialogueDataSO _completeDialogue = default;
-
-    [Tooltip("The dialogue that will be displayed if the step is not achieved yet")]
+    [Tooltip("The dialogue that will be diplayed if the step is not achieved yet")]
     [SerializeField] private DialogueDataSO _incompleteDialogue = default;
-
     [SerializeField] private StepType _type = default;
-
     [Tooltip("The item to check/give")]
     [SerializeField] private ItemSO _item = default;
-
     [SerializeField] private bool _hasReward = default;
-
     [Tooltip("The item to reward if any")]
     [SerializeField] private ItemSO _rewardItem = default;
-
-    [SerializeField] private int _rewardItemCount = 1;
-
-    [SerializeField] private bool _isDone = false;
-
-    [SerializeField] private VoidEventChannelSO _endStepEvent = default;
-
-
-    // ============================
-    //      PUBLIC PROPERTIES
-    // ============================
-
-    public ActorSO Actor => _actor;
+    [SerializeField] private int _rewardItemCount = 1; // by default the reward is 1 item (if any)
+    [Header("Interact Objects Step")]
+    [Tooltip("IDs of interactables the player must interact with to complete this step.")]
+    [SerializeField] private string[] _requiredInteractableIds = default;
+    [Tooltip("Runtime progress: which required IDs have been interacted with (do not edit manually).")]
+    [SerializeField]
+    private System.Collections.Generic.List<string> _interactedIds
+        = new();
+    [SerializeField] bool _isDone = false;
+    [SerializeField] VoidEventChannelSO _endStepEvent = default;
 
     public DialogueDataSO DialogueBeforeStep
     {
-        get => _dialogueBeforeStep;
-        set => _dialogueBeforeStep = value;
+        get { return _dialogueBeforeStep; }
+        set { _dialogueBeforeStep = value; }
     }
-
     public DialogueDataSO CompleteDialogue
     {
-        get => _completeDialogue;
-        set => _completeDialogue = value;
+        get { return _completeDialogue; }
+        set { _completeDialogue = value; }
     }
-
     public DialogueDataSO IncompleteDialogue
     {
-        get => _incompleteDialogue;
-        set => _incompleteDialogue = value;
+        get { return _incompleteDialogue; }
+        set { _incompleteDialogue = value; }
     }
-
-    public StepType Type => _type;
-
     public ItemSO Item
     {
         get => _item;
         set => _item = value;
     }
-
     public bool HasReward => _hasReward;
-
     public ItemSO RewardItem => _rewardItem;
-
     public int RewardItemCount => _rewardItemCount;
-
     public VoidEventChannelSO EndStepEvent
     {
-        get => _endStepEvent;
         set => _endStepEvent = value;
+        get => _endStepEvent;
     }
-
+    public StepType Type => _type;
+    public string[] RequiredInteractableIds => _requiredInteractableIds;
+    public System.Collections.Generic.List<string> InteractedIds => _interactedIds;
     public bool IsDone
     {
         get => _isDone;
         set => _isDone = value;
     }
-
-
-    // ============================
-    //      METHODS
-    // ============================
+    public ActorSO Actor => _actor;
 
     public void FinishStep()
     {
         if (_endStepEvent != null)
             _endStepEvent.RaiseEvent();
-
         _isDone = true;
+    }
+
+    //This function is a leftover of the QuestEditorWindow, which is currently non functional
+    public DialogueDataSO StepToDialogue()
+    {
+        DialogueDataSO dialogueData = ScriptableObject.CreateInstance<DialogueDataSO>();
+        /*
+				dialogueData.SetActor(Actor);
+				if (DialogueBeforeStep != null)
+				{
+					 dialogueData = new DialogueDataSO(DialogueBeforeStep);
+					if (DialogueBeforeStep.Choices != null)
+					{
+						if (CompleteDialogue != null)
+						{
+							if (dialogueData.Choices.Count > 0)
+							{
+
+								if (dialogueData.Choices[0].NextDialogue == null)
+									dialogueData.Choices[0].SetNextDialogue(CompleteDialogue);
+							}
+						}
+						if (IncompleteDialogue != null)
+						{
+							if (dialogueData.Choices.Count > 1)
+							{
+								if (dialogueData.Choices[1].NextDialogue == null)
+									dialogueData.Choices[1].SetNextDialogue(IncompleteDialogue);
+							}
+
+						}
+
+					}
+
+				}
+
+				*/
+        return dialogueData;
+    }
+
+    public void ResetStepProgress()
+    {
+        IsDone = false;
+        _interactedIds = new();
     }
 
 #if UNITY_EDITOR
     /// <summary>
-    /// Only for Questline Tool in Editor to remove a Step
+    /// This function is only useful for the Questline Tool in Editor to remove a Step
     /// </summary>
+    /// <returns>The local path</returns>
     public string GetPath()
     {
         return AssetDatabase.GetAssetPath(this);

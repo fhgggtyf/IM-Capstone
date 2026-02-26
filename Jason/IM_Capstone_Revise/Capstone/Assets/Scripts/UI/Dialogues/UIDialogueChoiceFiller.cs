@@ -26,5 +26,6 @@ public class UIDialogueChoiceFiller : MonoBehaviour
 	public void ButtonClicked()
 	{
 		_onChoiceMade.RaiseEvent(_currentChoice);
-	}
+		Debug.Log("Choice made: " + _currentChoice.Response);
+    }
 }

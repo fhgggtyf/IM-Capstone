@@ -47,8 +47,15 @@ public class InvestigateIdleAction : StateAction
 
     public override void OnUpdate()
     {
+
+        if (_npc.nonIdle)
+        {
+            return;
+        }
+
         // While idling, freeze movement vector
         _npc.movementVector = Vector2.zero;
+        Debug.Log("Idling with movement vector set to zero");
         _timer += Time.deltaTime;
         if (_timer >= _duration)
         {
@@ -72,7 +79,7 @@ public class InvestigateIdleAction : StateAction
             }
 
             _npc.nonIdle = true;
-
+            
         }
     }
 

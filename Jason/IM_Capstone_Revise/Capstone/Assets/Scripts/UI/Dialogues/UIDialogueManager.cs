@@ -36,10 +36,14 @@ public class UIDialogueManager : MonoBehaviour
 
 		if (!isMainProtagonist)
 		{
-			_actorNameText.StringReference = actor.ActorName;
+            _actorNameText.StringReference = actor.ActorName;
 		}
-		//Protagonist's LocalisedString is provided on the GameObject already
-	}
+		else 
+		{
+			_recievantNameText.StringReference = actor.ActorName;
+        }
+        //Protagonist's LocalisedString is provided on the GameObject already
+    }
 
 	private void ShowChoices(List<Choice> choices)
 	{

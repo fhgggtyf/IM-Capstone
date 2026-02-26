@@ -42,6 +42,36 @@ public class SceneLoader : MonoBehaviour
     private float _fadeInDuration = .5f;
     private bool _isLoading = false; //To prevent a new loading request while already loading a new scene
 
+    private static bool IsSceneInstanceLoaded(SceneInstance instance)
+    {
+        return instance.Scene != null && instance.Scene.IsValid() && instance.Scene.isLoaded;
+    }
+
+    /// <summary>
+    /// Ensures we don't keep the Prologue manager scene loaded when entering a Location.
+    /// </summary>
+    private IEnumerator UnloadPrologueManagersIfLoaded()
+    {
+        if (IsSceneInstanceLoaded(_prologueManagerSceneInstance))
+        {
+            // Unload via the stored SceneInstance (works whether loaded async or via WaitForCompletion)
+            var unloadHandle = Addressables.UnloadSceneAsync(_prologueManagerSceneInstance, true);
+            yield return unloadHandle;
+
+            _prologueManagerSceneInstance = new SceneInstance();
+            _prologueManagerLoadingOpHandle = default;
+        }
+    }
+
+    /// <summary>
+    /// Location flow helper: drop Prologue managers (if any), then continue with normal unload/load pipeline.
+    /// </summary>
+    private IEnumerator UnloadPrologueManagersThenUnloadPreviousScene()
+    {
+        yield return UnloadPrologueManagersIfLoaded();
+        yield return UnloadPreviousScene();
+    }
+
     private void OnEnable()
     {
         _loadLocation.OnLoadingRequested += LoadLocation;
@@ -143,7 +173,8 @@ public class SceneLoader : MonoBehaviour
         }
         else
         {
-            StartCoroutine(UnloadPreviousScene());
+            // Coming from Prologue -> Location: make sure the Prologue manager scene doesn't stick around.
+            StartCoroutine(UnloadPrologueManagersThenUnloadPreviousScene());
         }
     }
 
@@ -151,15 +182,16 @@ public class SceneLoader : MonoBehaviour
     {
         _gameplayManagerSceneInstance = _gameplayManagerLoadingOpHandle.Result;
 
-
-        StartCoroutine(UnloadPreviousScene());
+        // Coming from Prologue -> Location: make sure the Prologue manager scene doesn't stick around.
+        StartCoroutine(UnloadPrologueManagersThenUnloadPreviousScene());
     }
 
     private void OnGameplayManagersLoaded(AsyncOperationHandle<SceneInstance> obj)
     {
         _gameplayManagerSceneInstance = _gameplayManagerLoadingOpHandle.Result;
 
-        StartCoroutine(UnloadPreviousScene());
+        // Coming from Prologue -> Location: make sure the Prologue manager scene doesn't stick around.
+        StartCoroutine(UnloadPrologueManagersThenUnloadPreviousScene());
     }
     private void OnPrologueManagersLoaded(AsyncOperationHandle<SceneInstance> obj)
     {
@@ -185,6 +217,10 @@ public class SceneLoader : MonoBehaviour
         if (_gameplayManagerSceneInstance.Scene != null
             && _gameplayManagerSceneInstance.Scene.isLoaded)
             Addressables.UnloadSceneAsync(_gameplayManagerLoadingOpHandle, true);
+
+        // Also ensure Prologue managers are not left loaded when returning to menus.
+        if (IsSceneInstanceLoaded(_prologueManagerSceneInstance))
+            Addressables.UnloadSceneAsync(_prologueManagerSceneInstance, true);
 
         StartCoroutine(UnloadPreviousScene());
     }

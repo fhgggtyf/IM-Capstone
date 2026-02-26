@@ -32,6 +32,7 @@ public class InvestigationCompleteCondition : Condition
     {
         if (_npc.investigationComplete)
         {
+            Debug.Log("Investigation complete condition met");
             // Reset the flag so that the next investigation can proceed
             _npc.investigationComplete = false;
             // Clear NPC flags and last heard data

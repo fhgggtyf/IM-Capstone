@@ -1,7 +1,6 @@
-
+using UnityEngine;
 using Domicile.StateMachine;
 using Domicile.StateMachine.ScriptableObjects;
-using UnityEngine;
 
 /// <summary>
 /// Condition that evaluates whether the enemy has heard the player via sound. It
@@ -40,26 +39,21 @@ public class HearNoiseCondition : Condition
         if (_noiseDetector == null || _npc == null)
             return false;
 
-        // On a new detection, copy the position of the noise into the NPC and
-        // return true to signal a transition into the investigate state.  Also
-        // set the hasHeardPlayer flag on the NPC so other conditions know that
-        // the investigation is in progress.
+        // If a new noise has been detected, signal a transition into the
+        // investigate state.  We do not store the last heard position on the
+        // NPC here; the NoiseDetection component already tracks it and
+        // consumers should read it from there.  Setting the hasHeardPlayer
+        // flag on the NPC allows other parts of the state machine to know
+        // that an investigation is in progress.
         if (_noiseDetector.NewDetection)
         {
-            _npc.lastHeardPosition = _noiseDetector.LastHeardPosition;
             _npc.hasHeardPlayer = true;
             return true;
         }
 
-        // If the detector has already registered a noise (Detected remains true)
-        // but this is not a new detection, update the NPC's last heard
-        // position so movement can continue tracking the player.  Do not
-        // trigger a new transition.
-        if (_noiseDetector.Detected)
-        {
-            _npc.lastHeardPosition = _noiseDetector.LastHeardPosition;
-        }
-
+        // If noise is currently detected but it is not a new detection,
+        // do nothing.  The movement logic will read the latest position
+        // directly from the NoiseDetection component.
         return false;
     }
 

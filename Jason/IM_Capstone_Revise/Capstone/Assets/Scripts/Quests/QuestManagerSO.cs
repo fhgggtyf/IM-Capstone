@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEditor.SceneTemplate;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -13,6 +14,7 @@ public class QuestManagerSO : ScriptableObject
     [FormerlySerializedAs("_checkStepValidityEvent")]
     [SerializeField] private VoidEventChannelSO _continueWithStepEvent = default;
     [SerializeField] private IntEventChannelSO _endDialogueEvent = default;
+    [SerializeField] private StringEventChannelSO _objectInteractedEvent = default;
 
     [Header("Broadcasting on channels")]
     [SerializeField] private VoidEventChannelSO _playCompletionDialogueEvent = default;
@@ -28,10 +30,20 @@ public class QuestManagerSO : ScriptableObject
     private int _currentQuestlineIndex = 0;
     private int _currentStepIndex = 0;
 
+    public QuestlineSO CurrentQuestline => _currentQuestline;
+    public QuestSO CurrentQuest => _currentQuest;
+    public StepSO CurrentStep => _currentStep;
+
+    public int CurrentQuestlineIndex => _currentQuestlineIndex;
+    public int CurrentQuestIndex => _currentQuestIndex;
+    public int CurrentStepIndex => _currentStepIndex;
+
+
     public void OnDisable()
     {
         _continueWithStepEvent.OnEventRaised -= CheckStepValidity;
         _endDialogueEvent.OnEventRaised -= EndDialogue;
+        _objectInteractedEvent.OnEventRaised -= OnObjectInteracted;
     }
 
     public void StartGame()
@@ -39,6 +51,7 @@ public class QuestManagerSO : ScriptableObject
         //Add code for saved information
         _continueWithStepEvent.OnEventRaised += CheckStepValidity;
         _endDialogueEvent.OnEventRaised += EndDialogue;
+        _objectInteractedEvent.OnEventRaised += OnObjectInteracted;
         StartQuestline();
     }
 
@@ -72,9 +85,10 @@ public class QuestManagerSO : ScriptableObject
     {
         if (_currentQuest == null)//check if there's a current quest 
         {
+            Debug.Log("Check questline for quest with actor: " + actorToCheckWith);
             if (_currentQuestline != null)
             {
-
+                Debug.Log(_currentQuestline.Quests[0].Steps[0].Actor + " " + actorToCheckWith);
                 return _currentQuestline.Quests.Exists(o => !o.IsDone && o.Steps != null && o.Steps[0].Actor == actorToCheckWith);
 
             }
@@ -87,6 +101,7 @@ public class QuestManagerSO : ScriptableObject
     {
         if (_currentQuest == null)
         {
+            Debug.Log("Current no quest");
             if (CheckQuestlineForQuestWithActor(actor))
             {
                 StartQuest(actor);
@@ -147,6 +162,7 @@ public class QuestManagerSO : ScriptableObject
             if (_currentQuest.Steps.Count > _currentStepIndex)
             {
                 _currentStep = _currentQuest.Steps[_currentStepIndex];
+                Debug.Log("CurrentQuest: " + _currentQuest.name + " CurrentStep: " + _currentStep.name);
 
             }
     }
@@ -194,6 +210,23 @@ public class QuestManagerSO : ScriptableObject
                     else
                     {
                         EndStep();
+                    }
+                    break;
+
+                case StepType.InteractObjects:
+                    Debug.Log("Need to interact objects");
+                    if (IsInteractObjectsComplete())
+                    {
+                        Debug.Log("Compleyed");
+                        if (_currentStep.CompleteDialogue != null)
+                            _playCompletionDialogueEvent.RaiseEvent();
+                        else
+                            EndStep();
+                    }
+                    else
+                    {
+                        Debug.Log("INCompleyed");
+                        _playIncompleteDialogueEvent.RaiseEvent();
                     }
                     break;
 
@@ -358,23 +391,7 @@ public class QuestManagerSO : ScriptableObject
     {
         foreach (var questline in _questlines)
         {
-            questline.IsDone = false;
-
-
-            foreach (var quest in questline.Quests)
-            {
-                quest.IsDone = false;
-
-
-                foreach (var step in quest.Steps)
-                {
-                    step.IsDone = false;
-
-
-
-                }
-
-            }
+            questline.ResetQuestLineProgress();
         }
         _currentQuest = null;
         _currentQuestline = null;
@@ -391,5 +408,61 @@ public class QuestManagerSO : ScriptableObject
         bool isNew = false;
         isNew = (!_questlines.Exists(o => o.Quests.Exists(j => j.Steps.Exists(k => k.IsDone))));
         return isNew;
+    }
+
+    public bool IsInteractObjectsComplete()
+    {
+        if (_currentStep.RequiredInteractableIds == null || _currentStep.RequiredInteractableIds.Length == 0)
+            return true;
+
+        // all required IDs must exist in _currentStep.InteractedIds
+        for (int i = 0; i < _currentStep.RequiredInteractableIds.Length; i++)
+        {
+            var req = _currentStep.RequiredInteractableIds[i];
+            if (string.IsNullOrEmpty(req)) continue;
+
+            if (_currentStep.InteractedIds == null || !_currentStep.InteractedIds.Contains(req))
+                return false;
+        }
+        return true;
+    }
+
+    public bool TryRegisterInteraction(string interactableId)
+    {
+        if (string.IsNullOrEmpty(interactableId)) return false;
+        if (_currentStep.RequiredInteractableIds == null || _currentStep.RequiredInteractableIds.Length == 0) return false;
+
+        // only count if it's in the required list
+        bool isRequired = false;
+        for (int i = 0; i < _currentStep.RequiredInteractableIds.Length; i++)
+        {
+            if (_currentStep.RequiredInteractableIds[i] == interactableId)
+            {
+                isRequired = true;
+                break;
+            }
+        }
+        if (!isRequired) return false;
+
+        if (_currentStep.InteractedIds.Contains(interactableId)) return false;
+
+        _currentStep.InteractedIds.Add(interactableId);
+        return true;
+    }
+
+    private void OnObjectInteracted(string interactableId)
+    {
+        if (_currentStep == null) return;
+        if (_currentStep.Type != StepType.InteractObjects) return;
+
+        // Track progress on the step
+        bool changed = TryRegisterInteraction(interactableId);
+    }
+
+
+    public void ResetProgressForReuse()
+    {
+        // Optional: call when starting step if you want progress cleared each new run
+        if (_currentStep.InteractedIds != null) _currentStep.InteractedIds.Clear();
     }
 }

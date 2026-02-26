@@ -1,4 +1,6 @@
+using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 using UnityEngine.Localization;
 
@@ -20,10 +22,10 @@ public class DialogueManager : MonoBehaviour
 	[SerializeField] private DialogueLineChannelSO _openUIDialogueEvent = default;
 	[SerializeField] private DialogueChoicesChannelSO _showChoicesUIEvent = default;
 	[SerializeField] private IntEventChannelSO _endDialogueWithTypeEvent = default;
-	//[SerializeField] private VoidEventChannelSO _continueWithStep = default;
-	//[SerializeField] private VoidEventChannelSO _playIncompleteDialogue = default;
-	//[SerializeField] private VoidEventChannelSO _makeWinningChoice = default;
-	//[SerializeField] private VoidEventChannelSO _makeLosingChoice = default;
+	[SerializeField] private VoidEventChannelSO _continueWithStep = default;
+	[SerializeField] private VoidEventChannelSO _playIncompleteDialogue = default;
+	[SerializeField] private VoidEventChannelSO _makeWinningChoice = default;
+	[SerializeField] private VoidEventChannelSO _makeLosingChoice = default;
 
 	private int _counterDialogue;
 	private int _counterLine;
@@ -41,6 +43,8 @@ public class DialogueManager : MonoBehaviour
 	/// </summary>
 	public void DisplayDialogueData(DialogueDataSO dialogueDataSO)
 	{
+		DebugList("USE");
+
 		if (_gameState.CurrentGameState != GameState.Cutscene) // the dialogue state is implied in the cutscene state
 			_gameState.UpdateGameState(GameState.Dialogue);
 
@@ -52,8 +56,9 @@ public class DialogueManager : MonoBehaviour
 
 		if (_currentDialogue.Lines != null)
 		{
+			Debug.Log(_currentDialogue);
 			ActorSO currentActor = _actorsList.Find(o => o.ActorId == _currentDialogue.Lines[_counterDialogue].Actor); // we don't add a controle, because we need a null reference exeption if the actor is not in the list
-			DisplayDialogueLine(_currentDialogue.Lines[_counterDialogue].TextList[_counterLine], currentActor);
+            DisplayDialogueLine(_currentDialogue.Lines[_counterDialogue].TextList[_counterLine], currentActor);
 		}
 		else
 		{
@@ -61,12 +66,29 @@ public class DialogueManager : MonoBehaviour
 		}
 	}
 
-	/// <summary>
-	/// Displays a line of dialogue in the UI, by requesting it to the <c>DialogueManager</c>.
-	/// This function is also called by <c>DialogueBehaviour</c> from clips on Timeline during cutscenes.
-	/// </summary>
-	/// <param name="dialogueLine"></param>
-	public void DisplayDialogueLine(LocalizedString dialogueLine, ActorSO actor)
+    void DebugList(string tag)
+    {
+        Debug.Log(
+            $"{tag} | obj='{name}' id={GetInstanceID()} scene={gameObject.scene.name} " +
+            $"active={gameObject.activeInHierarchy} listCount={(_actorsList == null ? -1 : _actorsList.Count)} " +
+            $"path={GetPath(transform)}",
+            this
+        );
+    }
+
+    static string GetPath(Transform t)
+    {
+        var sb = new StringBuilder(t.name);
+        while (t.parent != null) { t = t.parent; sb.Insert(0, t.name + "/"); }
+        return sb.ToString();
+    }
+
+    /// <summary>
+    /// Displays a line of dialogue in the UI, by requesting it to the <c>DialogueManager</c>.
+    /// This function is also called by <c>DialogueBehaviour</c> from clips on Timeline during cutscenes.
+    /// </summary>
+    /// <param name="dialogueLine"></param>
+    public void DisplayDialogueLine(LocalizedString dialogueLine, ActorSO actor)
 	{
 		_openUIDialogueEvent.RaiseEvent(dialogueLine, actor);
 	}
@@ -116,24 +138,26 @@ public class DialogueManager : MonoBehaviour
 	{
 		_makeDialogueChoiceEvent.OnEventRaised -= MakeDialogueChoice;
 
-		switch (choice.ActionType)
+		Debug.Log("Choice made: " + choice.Response + ", Action Type: " + choice.ActionType);
+
+        switch (choice.ActionType)
 		{
-			//case ChoiceActionType.ContinueWithStep:
-			//	if (_continueWithStep != null)
-			//		_continueWithStep.RaiseEvent();
-			//	if (choice.NextDialogue != null)
-			//		DisplayDialogueData(choice.NextDialogue);
-			//	break;
+			case ChoiceActionType.ContinueWithStep:
+				if (_continueWithStep != null)
+					_continueWithStep.RaiseEvent();
+				if (choice.NextDialogue != null)
+					DisplayDialogueData(choice.NextDialogue);
+				break;
 
-			//case ChoiceActionType.WinningChoice:
-			//	if (_makeWinningChoice != null)
-			//		_makeWinningChoice.RaiseEvent();
-			//	break;
+			case ChoiceActionType.WinningChoice:
+				if (_makeWinningChoice != null)
+					_makeWinningChoice.RaiseEvent();
+				break;
 
-			//case ChoiceActionType.LosingChoice:
-			//	if (_makeLosingChoice != null)
-			//		_makeLosingChoice.RaiseEvent();
-			//	break;
+			case ChoiceActionType.LosingChoice:
+				if (_makeLosingChoice != null)
+					_makeLosingChoice.RaiseEvent();
+				break;
 
 			case ChoiceActionType.DoNothing:
 				if (choice.NextDialogue != null)
@@ -142,12 +166,18 @@ public class DialogueManager : MonoBehaviour
 					DialogueEndedAndCloseDialogueUI();
 				break;
 
-			//case ChoiceActionType.IncompleteStep:
-			//	if (_playIncompleteDialogue != null)
-			//		_playIncompleteDialogue.RaiseEvent();
-			//	if (choice.NextDialogue != null)
-			//		DisplayDialogueData(choice.NextDialogue);
-			//	break;
+			case ChoiceActionType.IncompleteStep:
+				if (_playIncompleteDialogue != null)
+				{
+					_playIncompleteDialogue.RaiseEvent();
+					Debug.Log("Raising incomplete dialogue event");
+                }
+				if (choice.NextDialogue != null)
+				{
+					Debug.Log("Displaying incomplete dialogue");
+                    DisplayDialogueData(choice.NextDialogue);
+				}
+				break;
 		}
 	}
 
@@ -173,5 +203,12 @@ public class DialogueManager : MonoBehaviour
 			|| _gameState.CurrentGameState == GameState.Combat)
 			_inputReader.EnableGameplayInput();
 	}
+
+    void OnDestroy()
+    {
+        _startDialogue.OnEventRaised -= DisplayDialogueData;
+		 _inputReader.AdvanceDialogueEvent -= OnAdvance;
+		 _makeDialogueChoiceEvent.OnEventRaised -= MakeDialogueChoice;
+    }
 }
 

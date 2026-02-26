@@ -31,7 +31,7 @@ namespace BookCurlPro.BookEditor
             list.onRemoveCallback = (ReorderableList l) =>
             {
                 if (EditorUtility.DisplayDialog("Warning!",
-                    "Are you sure you want to delete this Paper?\r\nThe paper pages (front and back) will be deleted from the scene", "Yes", "No"))
+                    "Are you sure you want to delete this Face?\r\nThe paper pages (front and back) will be deleted from the scene", "Yes", "No"))
                 {
                     BookPro book = target as BookPro;
                     if (book.EndFlippingPaper == book.papers.Length - 1)
@@ -86,7 +86,7 @@ namespace BookCurlPro.BookEditor
             rightPage.AddComponent<Image>();
             rightPage.AddComponent<Mask>().showMaskGraphic = true;
             rightPage.AddComponent<CanvasGroup>();
-            lastElement.FindPropertyRelative("Front").objectReferenceInstanceIDValue = rightPage.GetInstanceID();
+            lastElement.FindPropertyRelative("Left").objectReferenceInstanceIDValue = rightPage.GetInstanceID();
 
 
             GameObject leftPage = Instantiate(book.LeftPageTransform.gameObject) as GameObject;
@@ -99,7 +99,7 @@ namespace BookCurlPro.BookEditor
             leftPage.AddComponent<Image>();
             leftPage.AddComponent<Mask>().showMaskGraphic = true;
             leftPage.AddComponent<CanvasGroup>();
-            lastElement.FindPropertyRelative("Back").objectReferenceInstanceIDValue = leftPage.GetInstanceID();
+            lastElement.FindPropertyRelative("Right").objectReferenceInstanceIDValue = leftPage.GetInstanceID();
             list.index = list.count - 1;
 
 
@@ -122,19 +122,19 @@ namespace BookCurlPro.BookEditor
             GUIStyle style = new GUIStyle();
 
             EditorGUI.DrawRect(new Rect(rect.x, rect.y, rect.width, rect.height - 6), new Color(0.8f, 0.8f, 0.8f));
-            EditorGUI.LabelField(new Rect(rect.x, rect.y, 100, EditorGUIUtility.singleLineHeight), "Paper#" + index);
+            EditorGUI.LabelField(new Rect(rect.x, rect.y, 100, EditorGUIUtility.singleLineHeight), "Face#" + index);
 
             if (index == book.CurrentPaper)
                 EditorGUI.DrawRect(new Rect(rect.x, rect.y + EditorGUIUtility.singleLineHeight, 140, EditorGUIUtility.singleLineHeight), new Color(1, 0.3f, 0.3f));
-            EditorGUI.LabelField(new Rect(rect.x, rect.y + EditorGUIUtility.singleLineHeight, 40, EditorGUIUtility.singleLineHeight), "Front:");
+            EditorGUI.LabelField(new Rect(rect.x, rect.y + EditorGUIUtility.singleLineHeight, 40, EditorGUIUtility.singleLineHeight), "Left:");
             EditorGUI.PropertyField(
-                new Rect(rect.x + 40, rect.y + EditorGUIUtility.singleLineHeight, 100, EditorGUIUtility.singleLineHeight), serialzedpaper.FindPropertyRelative("Front"), GUIContent.none);
+                new Rect(rect.x + 40, rect.y + EditorGUIUtility.singleLineHeight, 100, EditorGUIUtility.singleLineHeight), serialzedpaper.FindPropertyRelative("Left"), GUIContent.none);
 
             if (index == book.CurrentPaper - 1)
                 EditorGUI.DrawRect(new Rect(rect.x, rect.y + 3 * EditorGUIUtility.singleLineHeight, 140, EditorGUIUtility.singleLineHeight), new Color(1, 0.3f, 0.3f));
-            EditorGUI.LabelField(new Rect(rect.x, rect.y + 3 * EditorGUIUtility.singleLineHeight, 35, EditorGUIUtility.singleLineHeight), "Back:");
+            EditorGUI.LabelField(new Rect(rect.x, rect.y + 3 * EditorGUIUtility.singleLineHeight, 35, EditorGUIUtility.singleLineHeight), "Right:");
             EditorGUI.PropertyField(
-            new Rect(rect.x + 40, rect.y + 3 * EditorGUIUtility.singleLineHeight, 100, EditorGUIUtility.singleLineHeight), serialzedpaper.FindPropertyRelative("Back"), GUIContent.none);
+            new Rect(rect.x + 40, rect.y + 3 * EditorGUIUtility.singleLineHeight, 100, EditorGUIUtility.singleLineHeight), serialzedpaper.FindPropertyRelative("Right"), GUIContent.none);
 
 
             style.padding = new RectOffset(2, 2, 2, 2);
@@ -213,8 +213,8 @@ namespace BookCurlPro.BookEditor
 
 
             EditorGUILayout.LabelField("Flipping Range", EditorStyles.boldLabel);
-            EditorGUILayout.LabelField("First Flippable Paper: " + "Paper#" + book.StartFlippingPaper);
-            EditorGUILayout.LabelField("Last Flippable Paper: " + "Paper#" + book.EndFlippingPaper);
+            EditorGUILayout.LabelField("First Flippable Face: " + "Face#" + book.StartFlippingPaper);
+            EditorGUILayout.LabelField("Last Flippable Face: " + "Face#" + book.EndFlippingPaper);
             float start = book.StartFlippingPaper;
             float end = book.EndFlippingPaper;
             EditorGUILayout.MinMaxSlider(ref start, ref end, 0, book.papers.Length - 1);
@@ -233,7 +233,7 @@ namespace BookCurlPro.BookEditor
         EditorGUILayout.BeginHorizontal(EditorStyles.textArea);
 #endif
 
-            GUILayout.Label(new GUIContent("Current Paper", "represent current paper on the right side of the book. if you want to show the back page of the last paper you may set this value with the index of last paper + 1"));
+            GUILayout.Label(new GUIContent("Current Face", "represent current paper on the right side of the book. if you want to show the back page of the last paper you may set this value with the index of last paper + 1"));
             if (GUILayout.Button("|<"))
             {
                 book.CurrentPaper = 0;

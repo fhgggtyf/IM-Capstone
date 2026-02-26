@@ -60,6 +60,7 @@ public class Player : Character
 
     private void OnInteract()
     {
+        Debug.Log("Trying to interact");
         Core.GetCoreComponent<InteractableDetector>().TryInteract();
     }
 }

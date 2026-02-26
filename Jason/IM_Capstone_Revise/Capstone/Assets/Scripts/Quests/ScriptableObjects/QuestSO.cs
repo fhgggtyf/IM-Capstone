@@ -37,6 +37,14 @@ public class QuestSO : SerializableScriptableObject
         _idQuest = id;
 
     }
+
+    public void ResetQuestProgress()
+    {
+        foreach (StepSO step in _steps)
+        {
+            step.ResetStepProgress();
+        }
+    }
 #if UNITY_EDITOR
 	/// <summary>
 	/// This function is only useful for the Questline Tool in Editor to remove a Quest

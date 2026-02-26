@@ -131,9 +131,9 @@
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@14.0.8\Editor\PostProcessing\LensFlareEditorUtils.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@14.0.8\Editor\Debugging\DebugState.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@14.0.8\Editor\LookDev\Context.cs" />
-    <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@14.0.8\Editor\Lighting\ProbeVolume\ProbeVolumeAssetEditor.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@14.0.8\Editor\RenderPipeline\RenderPipelineGlobalSettingsUI.Skin.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@14.0.8\Editor\Analytics\DebugManagerWidgetUsedAnalytic.cs" />
+    <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@14.0.8\Editor\Lighting\ProbeVolume\ProbeVolumeAssetEditor.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@14.0.8\Editor\AssemblyInfo.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@14.0.8\Editor\ShaderGenerator\ShaderTypeGeneration.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.core@14.0.8\Editor\AdditionalPropertiesPreferences.cs" />

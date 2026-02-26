@@ -10,11 +10,10 @@ public class SaveSystem : ScriptableObject
     [SerializeField] private VoidEventChannelSO _saveSettingsEvent = default;
     [SerializeField] private LoadEventChannelSO _loadLocation = default;
     [SerializeField] private LoadEventChannelSO _loadHome = default;
-    [SerializeField] private VoidEventChannelSO _saveUpgradesEvent = default;
     [SerializeField] private InventorySO _playerInventory = default;
     [SerializeField] private SettingsSO _currentSettings = default;
     [SerializeField] private UpgradeConfigSO _upgrades = default;
-    //[SerializeField] private QuestManagerSO _questManagerSO = default;
+    [SerializeField] private QuestManagerSO _questManagerSO = default;
 
     public string saveFilename = "save.zyp";
     public string backupSaveFilename = "save.zyp.bak";
@@ -24,7 +23,6 @@ public class SaveSystem : ScriptableObject
     {
         
         _saveSettingsEvent.OnEventRaised += SaveSettings;
-        _saveUpgradesEvent.OnEventRaised += SaveUpgrades;
         _loadLocation.OnLoadingRequested += CacheLoadLocations;
         _loadHome.OnLoadingRequested += CacheLoadLocations;
     }
@@ -32,7 +30,6 @@ public class SaveSystem : ScriptableObject
     void OnDisable()
     {
         _saveSettingsEvent.OnEventRaised -= SaveSettings;
-        _saveUpgradesEvent.OnEventRaised -= SaveUpgrades;
         _loadLocation.OnLoadingRequested -= CacheLoadLocations;
         _loadHome.OnLoadingRequested -= CacheLoadLocations;
     }
@@ -73,11 +70,12 @@ public class SaveSystem : ScriptableObject
             }
         }
     }
-    //public void LoadSavedQuestlineStatus()
-    //{
-    //	_questManagerSO.SetFinishedQuestlineItemsFromSave(saveData._finishedQuestlineItemsGUIds);
 
-    //}
+    public void LoadSavedQuestlineStatus()
+    {
+        _questManagerSO.SetFinishedQuestlineItemsFromSave(saveData._finishedQuestlineItemsGUIds);
+
+    }
 
     public void SaveDataToDisk()
     {
@@ -90,11 +88,11 @@ public class SaveSystem : ScriptableObject
             }
         }
 
-        //saveData._finishedQuestlineItemsGUIds.Clear();
-        //foreach (var item in _questManagerSO.GetFinishedQuestlineItemsGUIds())
-        //{
-        //	saveData._finishedQuestlineItemsGUIds.Add(item);
-        //}
+        saveData._finishedQuestlineItemsGUIds.Clear();
+        foreach (var item in _questManagerSO.GetFinishedQuestlineItemsGUIds())
+        {
+            saveData._finishedQuestlineItemsGUIds.Add(item);
+        }
 
         if (FileManager.MoveFile(saveFilename, backupSaveFilename))
         {
@@ -114,7 +112,7 @@ public class SaveSystem : ScriptableObject
     {
         FileManager.WriteToFile(saveFilename, "");
         _playerInventory.Init();
-        //_questManagerSO.ResetQuestlines();
+        _questManagerSO.ResetQuestlines();
 
         SaveDataToDisk();
 
@@ -122,10 +120,5 @@ public class SaveSystem : ScriptableObject
     void SaveSettings()
     {
         saveData.SaveSettings(_currentSettings);
-    }
-
-    void SaveUpgrades()
-    {
-        saveData.SaveUpgrades(_upgrades);
     }
 }

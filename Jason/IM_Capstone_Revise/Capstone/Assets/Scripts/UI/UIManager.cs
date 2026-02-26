@@ -93,6 +93,7 @@ public class UIManager : MonoBehaviour
 
 	void OpenUIDialogue(LocalizedString dialogueLine, ActorSO actor)
 	{
+		Debug.Log(actor);
 		bool isProtagonistTalking = (actor == _mainProtagonist);
 		_dialogueController.SetDialogue(dialogueLine, actor, isProtagonistTalking);
 		//_interactionPanel.gameObject.SetActive(false);
@@ -237,7 +238,6 @@ public class UIManager : MonoBehaviour
 		_inputReader.CloseInventoryEvent += CloseInventoryScreen;
 
         _inventoryPanel.FillInventory();
-        _inventoryPanel.FillStats();
 
         _inventoryPanel.gameObject.SetActive(true);
 		//_switchTabDisplay.SetActive(true);

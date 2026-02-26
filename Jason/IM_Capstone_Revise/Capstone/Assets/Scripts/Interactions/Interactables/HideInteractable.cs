@@ -9,6 +9,8 @@ public class HideInteractable : InteractableItems
 
     [SerializeField] public bool CanHide = false;
 
+    [SerializeField] public bool CanHideBehind = false;
+
     private bool _isHidden = false;
 
     public override void Interact()

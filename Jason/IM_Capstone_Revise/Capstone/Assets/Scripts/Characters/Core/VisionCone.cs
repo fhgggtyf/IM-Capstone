@@ -81,7 +81,8 @@ public class VisionCone : CoreComponent
         float range = _stats.GetVisionRange();
         if (range <= 0f) return false;
 
-        if (toPlayer.sqrMagnitude > range * range)
+        float dist = toPlayer.magnitude;
+        if (dist > range)
             return false;
 
         float angle = _stats.GetVisionAngle();
@@ -91,8 +92,34 @@ public class VisionCone : CoreComponent
         float half = angle * 0.5f;
 
         float angleToPlayer = Vector2.Angle(facing, toPlayer);
-        return angleToPlayer <= half;
+        if (angleToPlayer > half)
+            return false;
+
+        Vector2 dir = toPlayer.normalized;
+
+        RaycastHit2D[] hits = Physics2D.RaycastAll(npcPos, dir, dist);
+        foreach (var hit in hits)
+        {
+            if (hit.collider == null) continue;
+            if (hit.collider.isTrigger) continue;
+
+            // Ignore player's own collider(s)
+            if (hit.collider.transform == playerTransform ||
+                hit.collider.transform.IsChildOf(playerTransform))
+                continue;
+
+            HideInteractable hide = hit.collider.GetComponent<HideInteractable>();
+            if (hide != null && hide.CanHideBehind)
+            {
+                // Vision is blocked by a hide-behind object
+                return false;
+            }
+        }
+
+        // No blockers ¡ú player visible
+        return true;
     }
+
 
     private Vector2 GetFacingVector()
     {

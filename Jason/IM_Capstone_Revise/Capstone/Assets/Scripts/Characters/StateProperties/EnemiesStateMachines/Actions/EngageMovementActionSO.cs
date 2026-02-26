@@ -111,7 +111,7 @@ public class EngageMovementAction : StateAction
             // when it has changed significantly to avoid redundant calls.
             Vector3 currentDest = _navController.Agent.destination;
             Vector3 desiredDest = new Vector3(playerPos.x, playerPos.y, _navController.Agent.transform.position.z);
-            if ((currentDest - desiredDest).sqrMagnitude > 0.01f)
+            if ((currentDest - desiredDest).sqrMagnitude > speed)
             {
                 TrySetDestinationOnNavMesh(playerPos);
             }

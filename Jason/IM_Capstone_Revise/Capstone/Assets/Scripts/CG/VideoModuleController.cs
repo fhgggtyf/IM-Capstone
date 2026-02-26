@@ -73,6 +73,7 @@ public class VideoModuleController : MonoBehaviour
     {
         videoPlayer.Stop();
         _videoFinished.RaiseEvent();
+        videoPlayer.loopPointReached -= OnVideoFinished;
         //gameObject.SetActive(false);
     }
 }

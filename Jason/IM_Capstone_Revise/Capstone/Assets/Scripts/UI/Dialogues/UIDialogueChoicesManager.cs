@@ -13,7 +13,8 @@ public class UIDialogueChoicesManager : MonoBehaviour
 
 			for (int i = 0; i < maxCount; i++)
 			{
-				if (i < _choiceButtons.Length)
+				Debug.Log("Filling choice " + i + ", Choice Button Length: " + _choiceButtons.Length);
+                if (i < _choiceButtons.Length)
 				{
 					if (i < choices.Count)
 					{

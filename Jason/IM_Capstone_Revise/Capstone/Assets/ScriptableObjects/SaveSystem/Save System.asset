@@ -15,16 +15,17 @@ MonoBehaviour:
   _saveSettingsEvent: {fileID: 11400000, guid: ffa35f953268b934e8c30455056b1617, type: 2}
   _loadLocation: {fileID: 11400000, guid: 8a3cfd366d7285f4e98a2138a6db5a3b, type: 2}
   _loadHome: {fileID: 11400000, guid: 15a2a53497fe42744a1882ec8c1e085e, type: 2}
-  _saveUpgradesEvent: {fileID: 11400000, guid: b23f99d88f2e4fd43a28a60f002485c3, type: 2}
   _playerInventory: {fileID: 11400000, guid: 5eab31f84d857ee4c8ae7c0a1374ac39, type: 2}
   _currentSettings: {fileID: 11400000, guid: e47f2a6ed3fe76d4d97caecf4e1c4c8c, type: 2}
   _upgrades: {fileID: 11400000, guid: 366da4d83f70ad949a5e29d4b138e42b, type: 2}
+  _questManagerSO: {fileID: 11400000, guid: 94435826a1183ec44acbb29a83662a92, type: 2}
   saveFilename: save1.zyp
   backupSaveFilename: save1.zyp.bak
   saveData:
-    _locationId: 906070a34e7df4ffcafdaf3dc1ae7408
+    _locationId: bf3a1b81db806884d9d1d2c224eb8a0d
     _itemStacks: []
-    _powerFragmentCnt: 0
+    _finishedQuestlineItemsGUIds:
+    - b1aadfe2254af2946bfcb983de8b7a98
     _masterVolume: 0
     _musicVolume: 0
     _sfxVolume: 0
@@ -33,23 +34,3 @@ MonoBehaviour:
     _shadowDistance: 0
     _isFullscreen: 0
     _currentLocale: {fileID: 0}
-    _potentialHealthLv: 0
-    _potentialArmorLv: 0
-    _potentialMagicResistLv: 0
-    _potentialAttackLv: 0
-    _potentialAbilityPowerLv: 0
-    _potentialAttackSpeedLv: 0
-    _potentialManaLv: 0
-    _potentialTenacityLv: 0
-    _potentialStaminaLv: 0
-    _potentialLuckLv: 0
-    _baseHealthLv: 0
-    _baseArmorLv: 0
-    _baseMagicResistLv: 0
-    _baseAttackLv: 0
-    _baseAbilityPowerLv: 0
-    _baseAttackSpeedLv: 0
-    _baseManaLv: 0
-    _baseTenacityLv: 0
-    _baseStaminaLv: 0
-    _baseLuckLv: 0

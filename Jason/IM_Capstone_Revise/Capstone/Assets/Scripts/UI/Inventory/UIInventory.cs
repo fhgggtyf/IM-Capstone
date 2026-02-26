@@ -13,20 +13,15 @@ public class UIInventory : MonoBehaviour
     //[SerializeField] private GameObject _errorPotMessage = default;
     //[SerializeField] private UIInventoryInspector _inspectorPanel = default;
     [SerializeField] private List<InventoryTabSO> _inventoryTabTypesList = new List<InventoryTabSO>();
-    [SerializeField] private List<StatTabSO> _statTabTypesList = new List<StatTabSO>();
-    [SerializeField] private List<UIStatPanel> _instantiatedPanels = default;
     [SerializeField] private List<UIInventoryItem> _availableItemSlots = default;
 
     [Header("Listening to")]
     [SerializeField] private UIInventoryTabs _inventoryTabsPanel = default;
-    [SerializeField] private UIStatTabs _statTabsPanel = default;
     [SerializeField] private UIActionButton _actionButton = default;
     [SerializeField] private VoidEventChannelSO _onInteractionEndedEvent = default;
 
     [Header("Broadcasting on")]
     [SerializeField] private ItemEventChannelSO _useItemEvent = default;
-    [SerializeField] private IntEventChannelSO _restoreHealth = default;
-    [SerializeField] private ItemEventChannelSO _equipItemEvent = default;
     //[SerializeField] private ItemEventChannelSO _cookRecipeEvent = default;
 
     private InventoryTabSO _selectedInventoryTab = default;
@@ -38,7 +33,6 @@ public class UIInventory : MonoBehaviour
     {
         _actionButton.Clicked += OnActionButtonClicked;
         _inventoryTabsPanel.TabChanged += OnChangeInventoryTab;
-        _statTabsPanel.TabChanged += OnChangeStatsTab;
         _onInteractionEndedEvent.OnEventRaised += InteractionEnded;
 
         for (int i = 0; i < _availableItemSlots.Count; i++)
@@ -53,7 +47,6 @@ public class UIInventory : MonoBehaviour
     {
         _actionButton.Clicked -= OnActionButtonClicked;
         _inventoryTabsPanel.TabChanged -= OnChangeInventoryTab;
-        _statTabsPanel.TabChanged -= OnChangeStatsTab;
         _onInteractionEndedEvent.OnEventRaised -= InteractionEnded;
 
         for (int i = 0; i < _availableItemSlots.Count; i++)
@@ -282,107 +275,12 @@ public class UIInventory : MonoBehaviour
         {
             ItemSO itemToActOn = ScriptableObject.CreateInstance<ItemSO>();
             itemToActOn = _availableItemSlots[selectedItemId].currentItem.Item;
-
-            //check the selected Item type
-            //call action function depending on the itemType
-            switch (itemToActOn.ItemType.ActionType)
-            {
-                case ItemInventoryActionType.Use:
-                    UseItem(itemToActOn);
-                    break;
-                case ItemInventoryActionType.Equip:
-                    EquipItem(itemToActOn);
-                    break;
-                default:
-
-                    break;
-            }
         }
-    }
-
-    void UseItem(ItemSO itemToUse)
-    {
-        //if (itemToUse.ResorationValue > 0)
-        //{ _restoreHealth.RaiseEvent(itemToUse.ResorationValue); }
-        foreach (StatModification mod in itemToUse.Effects)
-        {
-            switch (mod.statType)
-            {
-                case StatTypes.CurrentHealth:
-                    _restoreHealth.RaiseEvent(mod.value);
-                    break;
-
-            }
-        }
-        _useItemEvent.RaiseEvent(itemToUse);
-        UpdateInventory();
-    }
-
-    void EquipItem(ItemSO itemToUse)
-    {
-        Debug.Log("Equip ITEM " + itemToUse.name);
-        _equipItemEvent.RaiseEvent(itemToUse);
     }
 
     void OnChangeInventoryTab(InventoryTabSO tabType)
     {
         FillInventory(tabType.TabType);
-    }
-
-    void OnChangeStatsTab(StatTabSO tabType)
-    {
-        FillStats(tabType.TabType);
-    }
-
-    public void FillStats(StatTabType _selectedTabType = StatTabType.Stats)
-    {
-        //_isNearPot = isNearPot;
-
-        Debug.Log(_selectedTabType);
-
-        if (_statTabTypesList.Exists(o => o.TabType == _selectedTabType))
-        {
-            _selectedStatTab = _statTabTypesList.Find(o => o.TabType == _selectedTabType);
-        }
-        else
-        {
-            if (_statTabTypesList != null)
-            {
-                if (_statTabTypesList.Count > 0)
-                {
-                    _selectedStatTab = _statTabTypesList[0];
-                }
-            }
-        }
-
-        if (_selectedStatTab != null)
-        {
-            SetStatTabs(_statTabTypesList, _selectedStatTab);
-            //List<ItemStack> listItemsToShow = new List<ItemStack>();
-            //listItemsToShow = _currentInventory.Items.FindAll(o => o.Item != null && o.Item.ItemType.TabType == _selectedInventoryTab);
-
-            //FillInvetoryItems(listItemsToShow);
-            for (int i = 0; i < _instantiatedPanels.Count; i++)
-            {
-                if (_instantiatedPanels[i].TabType == _selectedTabType)
-                {
-                    _instantiatedPanels[i].gameObject.SetActive(true);
-                }
-                else
-                {
-                    _instantiatedPanels[i].gameObject.SetActive(false);
-                }
-            }
-        }
-        else
-        {
-            Debug.LogError("There's no selected tab");
-        }
-    }
-
-    void SetStatTabs(List<StatTabSO> typesList, StatTabSO selectedType)
-    {
-        _statTabsPanel.SetTabs(typesList, selectedType);
     }
 
     public void CloseInventory()

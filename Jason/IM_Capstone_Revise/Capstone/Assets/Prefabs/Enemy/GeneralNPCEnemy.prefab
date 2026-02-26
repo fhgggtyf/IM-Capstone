@@ -300,6 +300,9 @@ MonoBehaviour:
   visionCone: {fileID: 4228013772070506154}
   segments: 30
   material: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  occluderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
   zOffset2D: -1.5
 --- !u!1 &3171143951478370520
 GameObject:
@@ -428,6 +431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9771729bcaf7cc942860fd6dca0c26b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Movement: {fileID: 0}
 --- !u!50 &7558742246840553780
 Rigidbody2D:
   serializedVersion: 4

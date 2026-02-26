@@ -36,7 +36,7 @@ public class JournalManager : MonoBehaviour
         if ( journalContentData is JournalDataSO)
         {
             _journalDataSO = journalContentData as JournalDataSO;
-            _journalUI.Initialize(_journalDataSO,_journalDataSO.IsBack);
+            _journalUI.Initialize(_journalDataSO);
             Debug.Log("JournalManager received JournalDataSO and initialized JournalUI");
         }
         else 
