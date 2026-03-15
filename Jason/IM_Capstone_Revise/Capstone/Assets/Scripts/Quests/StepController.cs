@@ -9,6 +9,7 @@ public class StepController : MonoBehaviour
 {
     [Header("Data")]
     [SerializeField] private ActorSO _actor = default;
+    [SerializeField] private LocationSO _locationToHappen = default;
     [SerializeField] private DialogueDataSO _defaultDialogue = default;
     [SerializeField] private QuestManagerSO _questData = default;
     [SerializeField] private GameStateSO _gameStateManager = default;
@@ -59,7 +60,7 @@ public class StepController : MonoBehaviour
         if (_gameStateManager.CurrentGameState == GameState.Gameplay)
         {
             Debug.Log("interact with " + _actor);
-            DialogueDataSO displayDialogue = _questData.InteractWithCharacter(_actor, false, false);
+            DialogueDataSO displayDialogue = _questData.InteractWithCharacter(_actor, _locationToHappen,false, false);
             Debug.Log("dialogue " + displayDialogue + "actor" + _actor);
             if (displayDialogue != null)
             {
@@ -101,7 +102,7 @@ public class StepController : MonoBehaviour
     {
         if (_questData != null)
         {
-            DialogueDataSO displayDialogue = _questData.InteractWithCharacter(_actor, true, false);
+            DialogueDataSO displayDialogue = _questData.InteractWithCharacter(_actor, _locationToHappen, true, false);
             if (displayDialogue != null)
             {
                 _currentDialogue = displayDialogue;
@@ -116,7 +117,7 @@ public class StepController : MonoBehaviour
     {
         if (_questData != null)
         {
-            DialogueDataSO displayDialogue = _questData.InteractWithCharacter(_actor, true, true);
+            DialogueDataSO displayDialogue = _questData.InteractWithCharacter(_actor, _locationToHappen, true, true);
             if (displayDialogue != null)
             {
                 _currentDialogue = displayDialogue;

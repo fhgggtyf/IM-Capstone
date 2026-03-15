@@ -102,8 +102,8 @@
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal@14.0.8\Runtime\IntermediateTextureMode.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal@14.0.8\Runtime\ForwardRendererData.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal@14.0.8\Runtime\Passes\DrawScreenSpaceUIPass.cs" />
-    <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal@14.0.8\Runtime\2D\CinemachineUniversalPixelPerfect.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal@14.0.8\Runtime\Data\UniversalRenderPipelineAsset.cs" />
+    <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal@14.0.8\Runtime\2D\CinemachineUniversalPixelPerfect.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal@14.0.8\Runtime\Overrides\PaniniProjection.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal@14.0.8\Runtime\Data\PostProcessData.cs" />
     <Compile Include="Library\PackageCache\com.unity.render-pipelines.universal@14.0.8\Runtime\Debug\DebugDisplaySettingsCommon.cs" />

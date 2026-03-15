@@ -18,6 +18,6 @@ MonoBehaviour:
   _walkingSpeed: 0
   _walkingSound: 0
   _idleSound: 0
-  _soundThreshold: 5
+  _soundThreshold: 2
   _visionRange: 10
-  _visionAngle: 90
+  _visionAngle: 60

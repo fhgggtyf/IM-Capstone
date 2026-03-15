@@ -26,6 +26,7 @@ public class VisionConeCondition : Condition
 
     protected override bool Statement()
     {
+        Debug.Log("npc player in sight: " + _npc.playerIsInSight);
         return _npc.playerIsInSight;
     }
 }

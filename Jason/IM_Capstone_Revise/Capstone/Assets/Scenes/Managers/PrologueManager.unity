@@ -183,6 +183,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5062128952199743687, guid: c2cc2d229e152994980c2c5cf2c2d810, type: 3}
+      propertyPath: m_AspectRatio
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -295,6 +299,7 @@ MonoBehaviour:
   _gameState: {fileID: 11400000, guid: 8566af23142b270488c6005d40819d99, type: 2}
   _sections:
   - {fileID: 11400000, guid: b60acaccb06c7914cb43d3ff7690a23e, type: 2}
+  - {fileID: 11400000, guid: dd606576f9dbd9740aa5da73786185e8, type: 2}
   - {fileID: 11400000, guid: e74d5d44bd0164e48b75373dbfbbb2da, type: 2}
   - {fileID: 11400000, guid: 114534adab43af7459c780f1cd0626e7, type: 2}
   _journalManager: {fileID: 1209490710}
@@ -303,6 +308,17 @@ MonoBehaviour:
   _initializeJournalEvent: {fileID: 11400000, guid: 3030dbd40b164af4baf6f447301cead9, type: 2}
   _journalSectionEndedEvent: {fileID: 11400000, guid: 4af3a5e35e8bb114098c0d361cf06c51, type: 2}
   _cgSectionEndedEvent: {fileID: 11400000, guid: 8d5988a95ae0f4342a82e0f8db4b5b82, type: 2}
+--- !u!114 &933686092 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7111653204822961793, guid: ca46a9ec5104dad45b8a32e051935208, type: 3}
+  m_PrefabInstance: {fileID: 1209490709}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74603b694440eb940b402c655c9b22eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1209490709
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -311,6 +327,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 244580576644111679, guid: ca46a9ec5104dad45b8a32e051935208, type: 3}
+      propertyPath: _book
+      value: 
+      objectReference: {fileID: 1209490711}
+    - target: {fileID: 244580576644111679, guid: ca46a9ec5104dad45b8a32e051935208, type: 3}
+      propertyPath: handController
+      value: 
+      objectReference: {fileID: 933686092}
+    - target: {fileID: 244580576644111679, guid: ca46a9ec5104dad45b8a32e051935208, type: 3}
+      propertyPath: stickerImageSO
+      value: 
+      objectReference: {fileID: 11400000, guid: d79dae9893a88874191de3f06bb6a91f, type: 2}
+    - target: {fileID: 265095727226681512, guid: ca46a9ec5104dad45b8a32e051935208, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.074997
+      objectReference: {fileID: 0}
+    - target: {fileID: 265095727226681512, guid: ca46a9ec5104dad45b8a32e051935208, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.9349976
+      objectReference: {fileID: 0}
     - target: {fileID: 2309781154384085140, guid: ca46a9ec5104dad45b8a32e051935208, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -330,6 +366,14 @@ PrefabInstance:
     - target: {fileID: 2309781154384085140, guid: ca46a9ec5104dad45b8a32e051935208, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -880
+      objectReference: {fileID: 0}
+    - target: {fileID: 2512678149214148061, guid: ca46a9ec5104dad45b8a32e051935208, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.074997
+      objectReference: {fileID: 0}
+    - target: {fileID: 2512678149214148061, guid: ca46a9ec5104dad45b8a32e051935208, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.9349976
       objectReference: {fileID: 0}
     - target: {fileID: 3163161975522909776, guid: ca46a9ec5104dad45b8a32e051935208, type: 3}
       propertyPath: m_LocalPosition.z
@@ -343,6 +387,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4110382587734589985, guid: ca46a9ec5104dad45b8a32e051935208, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.074997
+      objectReference: {fileID: 0}
+    - target: {fileID: 4110382587734589985, guid: ca46a9ec5104dad45b8a32e051935208, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.9349976
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179798113047137523, guid: ca46a9ec5104dad45b8a32e051935208, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5099581541374740558, guid: ca46a9ec5104dad45b8a32e051935208, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -367,6 +423,26 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -880
       objectReference: {fileID: 0}
+    - target: {fileID: 6642122898445248143, guid: ca46a9ec5104dad45b8a32e051935208, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.074997
+      objectReference: {fileID: 0}
+    - target: {fileID: 6642122898445248143, guid: ca46a9ec5104dad45b8a32e051935208, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.9349976
+      objectReference: {fileID: 0}
+    - target: {fileID: 6693664064147931928, guid: ca46a9ec5104dad45b8a32e051935208, type: 3}
+      propertyPath: _book
+      value: 
+      objectReference: {fileID: 1209490711}
+    - target: {fileID: 6693664064147931928, guid: ca46a9ec5104dad45b8a32e051935208, type: 3}
+      propertyPath: handController
+      value: 
+      objectReference: {fileID: 933686092}
+    - target: {fileID: 6693664064147931928, guid: ca46a9ec5104dad45b8a32e051935208, type: 3}
+      propertyPath: stickerImageSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 7f7e10f8c2f6b0a4da52127328637e52, type: 2}
     - target: {fileID: 6857271753136304880, guid: ca46a9ec5104dad45b8a32e051935208, type: 3}
       propertyPath: m_Name
       value: PrologueJournalUI
@@ -415,6 +491,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7368557524206434705, guid: ca46a9ec5104dad45b8a32e051935208, type: 3}
+      propertyPath: _book
+      value: 
+      objectReference: {fileID: 1209490711}
+    - target: {fileID: 7368557524206434705, guid: ca46a9ec5104dad45b8a32e051935208, type: 3}
+      propertyPath: handController
+      value: 
+      objectReference: {fileID: 933686092}
+    - target: {fileID: 7368557524206434705, guid: ca46a9ec5104dad45b8a32e051935208, type: 3}
+      propertyPath: stickerImageSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 55ef4d890ec91c84292a9dcaeffaae69, type: 2}
     - target: {fileID: 7640712334831334972, guid: ca46a9ec5104dad45b8a32e051935208, type: 3}
       propertyPath: interactable
       value: 0
@@ -423,6 +511,22 @@ PrefabInstance:
       propertyPath: JournalEndedEvent
       value: 
       objectReference: {fileID: 11400000, guid: 4af3a5e35e8bb114098c0d361cf06c51, type: 2}
+    - target: {fileID: 8018141739974906104, guid: ca46a9ec5104dad45b8a32e051935208, type: 3}
+      propertyPath: handController
+      value: 
+      objectReference: {fileID: 933686092}
+    - target: {fileID: 9049895896133643885, guid: ca46a9ec5104dad45b8a32e051935208, type: 3}
+      propertyPath: _book
+      value: 
+      objectReference: {fileID: 1209490711}
+    - target: {fileID: 9049895896133643885, guid: ca46a9ec5104dad45b8a32e051935208, type: 3}
+      propertyPath: handController
+      value: 
+      objectReference: {fileID: 933686092}
+    - target: {fileID: 9049895896133643885, guid: ca46a9ec5104dad45b8a32e051935208, type: 3}
+      propertyPath: stickerImageSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 7bbcdcdf71dee914498873de9cf428c2, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -436,7 +540,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28ea47e31d3574a4d8c9844a0134a361, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b1720a31b28632419eba8aa2d5e5db0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1209490711 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7640712334831334972, guid: ca46a9ec5104dad45b8a32e051935208, type: 3}
+  m_PrefabInstance: {fileID: 1209490709}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c81f3e85e69c22c40ba55294fc4a7f46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1463943764
@@ -491,8 +606,8 @@ MonoBehaviour:
   _openUIDialogueEvent: {fileID: 11400000, guid: 9833815a75915f0458371a1a0241892f, type: 2}
   _showChoicesUIEvent: {fileID: 11400000, guid: 1f988a87b92fe0e4791aefc063a26a1e, type: 2}
   _endDialogueWithTypeEvent: {fileID: 11400000, guid: ebf9feec8d9e6d5479ffd02357a1f430, type: 2}
-  _continueWithStep: {fileID: 0}
-  _playIncompleteDialogue: {fileID: 0}
+  _continueWithStep: {fileID: 11400000, guid: c7d0bd933426e4e498ba4cfd6b1db02c, type: 2}
+  _playIncompleteDialogue: {fileID: 11400000, guid: a7908423685fe8948b1f797a45cd90a5, type: 2}
   _makeWinningChoice: {fileID: 0}
   _makeLosingChoice: {fileID: 0}
 --- !u!1 &2026716753

@@ -40,6 +40,7 @@ public class QuestSO : SerializableScriptableObject
 
     public void ResetQuestProgress()
     {
+        _isDone = false;
         foreach (StepSO step in _steps)
         {
             step.ResetStepProgress();

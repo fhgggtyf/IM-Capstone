@@ -73,12 +73,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2a65cb08662ae4a06b0a14e9557e75a8
-    m_Address: Assets/Scenes/Maps/SessionMap2.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 02449e7a9a97e43bea5f9e31a0efdd32
-    m_Address: Assets/Scenes/Maps/SessionMap3.unity
+    m_Address: Assets/Scenes/Maps/HomeOutside.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -89,16 +84,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8a3cfd366d7285f4e98a2138a6db5a3b
     m_Address: Assets/ScriptableObjects/EventChannels/SceneManagement/LoadLocationChannel.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 83f6e65825155434ebd4990fc96a9c0f
-    m_Address: Assets/ScriptableObjects/SceneData/Locations/S3.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 8837a82845d9a4d3e978a9bb61510b12
-    m_Address: Assets/ScriptableObjects/SceneData/Locations/S2.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -134,6 +119,31 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bf3a1b81db806884d9d1d2c224eb8a0d
     m_Address: Assets/ScriptableObjects/SceneData/Locations/HomeFG_WORaiders.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a1fe8a8589efaf0488794232a5264d20
+    m_Address: Assets/Scenes/Maps/NeighborHouse.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 45b350144527ecd4fbeac0710bbe2bf7
+    m_Address: Assets/Scenes/Maps/NeighborsOutside.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 56386da98c9127b408fdee1566bbbfc5
+    m_Address: Assets/ScriptableObjects/SceneData/Locations/NeighborOutside.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 68832a51176dbb249bfdcc2fd931667c
+    m_Address: Assets/ScriptableObjects/SceneData/Locations/NeighborHouse.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aee5d5c9b317e224b883e6b127d9d1f6
+    m_Address: Assets/ScriptableObjects/SceneData/Locations/HomeOutside.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

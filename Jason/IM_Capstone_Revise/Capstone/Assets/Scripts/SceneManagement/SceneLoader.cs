@@ -248,7 +248,7 @@ public class SceneLoader : MonoBehaviour
                 //Only used when, after a "cold start", the player moves to a new scene
                 //Since the AsyncOperationHandle has not been used (the scene was already open in the editor),
                 //the scene needs to be unloaded using regular SceneManager instead of as an Addressable
-                Debug.Log(_currentlyLoadedScene);
+                Debug.Log(_currentlyLoadedScene.sceneReference.editorAsset.name);
                 SceneManager.UnloadSceneAsync(_currentlyLoadedScene.sceneReference.editorAsset.name);
             }
 #endif

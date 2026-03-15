@@ -11,7 +11,7 @@ public class PrologueManager : MonoBehaviour
 
     [SerializeField] private GameStateSO _gameState = default;
     [SerializeField] private List<PrologueSectionSO> _sections;
-    [SerializeField] private JournalManager _journalManager;
+    [SerializeField] private PrologueJournalManager _journalManager;
     [SerializeField] private VideoModuleController _videoModuleController;
     private int _index = 0;
 
@@ -31,17 +31,17 @@ public class PrologueManager : MonoBehaviour
 
     private void OnEnable()
     {
-        _journalSectionEndedEvent.OnEventRaised += InitializeNextJournal;
+        //_journalSectionEndedEvent.OnEventRaised += InitializeNextJournal;
         _journalSectionEndedEvent.OnEventRaised += NextSection;
-        _cgSectionEndedEvent.OnEventRaised += InitializeNextCG;
+        //_cgSectionEndedEvent.OnEventRaised += InitializeNextCG;
         _cgSectionEndedEvent.OnEventRaised += NextSection;
     }
 
     private void OnDisable()
     {
-        _journalSectionEndedEvent.OnEventRaised -= InitializeNextJournal;
+        //_journalSectionEndedEvent.OnEventRaised -= InitializeNextJournal;
         _journalSectionEndedEvent.OnEventRaised -= NextSection;
-        _cgSectionEndedEvent.OnEventRaised -= InitializeNextCG;
+        //_cgSectionEndedEvent.OnEventRaised -= InitializeNextCG;
         _cgSectionEndedEvent.OnEventRaised -= NextSection;
     }
 
@@ -62,11 +62,13 @@ public class PrologueManager : MonoBehaviour
 
                 break;
             case PrologueSectionType.JournalEntry:
+                Debug.Log("Playing Journal Section: " + _sections[index]);
                 _journalManager.gameObject.SetActive(true);
                 _videoModuleController.gameObject.SetActive(false);
                 InitializeJournal(_sections[index]);
                 break;
             case PrologueSectionType.CG:
+                Debug.Log("Playing CG Section: " + _sections[index]);
                 _journalManager.gameObject.SetActive(false);
                 _videoModuleController.gameObject.SetActive(true);
                 InitializeCG(_sections[index]);
@@ -112,34 +114,34 @@ public class PrologueManager : MonoBehaviour
 
     }
 
-    private void InitializeNextCG()
-    {
-        int next = Enumerable
-            .Range(_index + 1, _sections.Count - (_index + 1))
-            .FirstOrDefault(j => _sections[j] is CGFormatSO);
+    //private void InitializeNextCG()
+    //{
+    //    int next = Enumerable
+    //        .Range(_index + 1, _sections.Count - (_index + 1))
+    //        .FirstOrDefault(j => _sections[j] is CGFormatSO);
 
-        if (next <= _index) next = -1;
+    //    if (next <= _index) next = -1;
 
-        if (next != -1)
-        {
-            Debug.Log("Initializing Next CG Section" + _sections[next]);
-            InitializeCG(_sections[next]);
-        }
+    //    if (next != -1)
+    //    {
+    //        Debug.Log("Initializing Next CG Section" + _sections[next]);
+    //        InitializeCG(_sections[next]);
+    //    }
 
-    }
+    //}
 
-    private void InitializeNextJournal()
-    {
-        int next = Enumerable
-            .Range(_index + 1, _sections.Count - (_index + 1))
-            .FirstOrDefault(j => _sections[j] is JournalSectionSO);
+    //private void InitializeNextJournal()
+    //{
+    //    int next = Enumerable
+    //        .Range(_index + 1, _sections.Count - (_index + 1))
+    //        .FirstOrDefault(j => _sections[j] is JournalSectionSO);
 
-        if (next <= _index) next = -1;
+    //    if (next <= _index) next = -1;
 
-        if (next != -1)
-        {
-            Debug.Log("Initializing Next Journal Section" + _sections[next]);
-            InitializeJournal(_sections[next]);
-        }
-    }
+    //    if (next != -1)
+    //    {
+    //        Debug.Log("Initializing Next Journal Section" + _sections[next]);
+    //        InitializeJournal(_sections[next]);
+    //    }
+    //}
 }

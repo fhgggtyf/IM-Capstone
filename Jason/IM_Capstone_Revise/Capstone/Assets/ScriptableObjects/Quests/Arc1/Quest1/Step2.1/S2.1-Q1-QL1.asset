@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9562eacc0a829cf46aa2c157d588247f, type: 3}
+  m_Name: S2.1-Q1-QL1
+  m_EditorClassIdentifier: 
+  _guid: 824a7839d9754a8429e5d91199cd04b9
+  _actor: {fileID: 11400000, guid: b2925e00e27b53941a1b3fb78e3d2526, type: 2}
+  _locationToHappen: {fileID: 11400000, guid: 7130cf02598f841d8a7764e92f341260, type: 2}
+  _dialogueBeforeStep: {fileID: 0}
+  _completeDialogue: {fileID: 0}
+  _incompleteDialogue: {fileID: 0}
+  _type: 4
+  _item: {fileID: 0}
+  _hasReward: 0
+  _rewardItem: {fileID: 0}
+  _rewardItemCount: 1
+  _requiredInteractableIds: []
+  _interactedIds: []
+  _isDone: 1
+  _endStepEvent: {fileID: 0}
+  _loadToSceneEvent: {fileID: 0}
+  _locationToLoad: {fileID: 0}

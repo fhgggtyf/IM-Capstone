@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2805712665734638172}
   - component: {fileID: 7591016105395280289}
-  - component: {fileID: 3977458267217730857}
+  - component: {fileID: 658132811164654219}
   m_Layer: 6
   m_Name: Graphics
   m_TagString: Untagged
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3977458267217730857
+--- !u!114 &658132811164654219
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,45 +94,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3680112535138604047}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54b098aeffd0f9e4eada152a15aa7066, type: 3}
+  m_Script: {fileID: 11500000, guid: e46ce115ba20f254eab8ada2e3245b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yOffset: 0.2
-  bobDuration: 1
-  stopMultiplier: 4
-  bobCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.5
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 0.000000059604645
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  outlineColor: {r: 1, g: 0, b: 0, a: 1}
+  outlineWidth: 0.01
 --- !u!1 &5758128166461333042
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,7 +221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Rigidbody2D>k__BackingField: {fileID: 4953681538786014182}
   Icon: {fileID: 7591016105395280289}
-  bobber: {fileID: 3977458267217730857}
+  outlineController: {fileID: 658132811164654219}
   ItemDataStack:
     _item: {fileID: 11400000, guid: 7061811805e0da14bbc947ea8b3e549b, type: 2}
     Amount: 1

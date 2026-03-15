@@ -32,14 +32,12 @@ public class Player : Character
         _inputReader.MoveEvent += OnMove;
         _inputReader.MoveCanceledEvent += OnMoveCanceled;
         _inputReader.InteractEvent += OnInteract;
-        _inputReader.GameplayInputToggled += _inputReader.BlockGameplayInput;
     }
 
     private void OnDisable()
     {
         _inputReader.MoveEvent -= OnMove;
         _inputReader.InteractEvent -= OnInteract;
-        _inputReader.GameplayInputToggled -= _inputReader.BlockGameplayInput;
     }
 
     // Update is called once per frame
@@ -60,7 +58,6 @@ public class Player : Character
 
     private void OnInteract()
     {
-        Debug.Log("Trying to interact");
         Core.GetCoreComponent<InteractableDetector>().TryInteract();
     }
 }

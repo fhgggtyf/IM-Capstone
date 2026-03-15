@@ -80,6 +80,17 @@ public class QuestManagerSO : ScriptableObject
         }
         return false;
     }
+    bool IsHere(LocationSO ActionLocation)
+    {
+        if (_currentStep != null)
+        {
+            if (_currentStep.LocationToHappen == ActionLocation)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 
     bool CheckQuestlineForQuestWithActor(ActorSO actorToCheckWith)
     {
@@ -97,7 +108,7 @@ public class QuestManagerSO : ScriptableObject
         return false;
     }
 
-    public DialogueDataSO InteractWithCharacter(ActorSO actor, bool isCheckValidity, bool isValid)
+    public DialogueDataSO InteractWithCharacter(ActorSO actor, LocationSO location, bool isCheckValidity, bool isValid)
     {
         if (_currentQuest == null)
         {
@@ -108,7 +119,7 @@ public class QuestManagerSO : ScriptableObject
             }
         }
 
-        if (HasStep(actor))
+        if (HasStep(actor) && IsHere(location))
         {
             if (isCheckValidity)
             {
@@ -228,6 +239,9 @@ public class QuestManagerSO : ScriptableObject
                         Debug.Log("INCompleyed");
                         _playIncompleteDialogueEvent.RaiseEvent();
                     }
+                    break;
+                case StepType.PickUpItem:
+                    EndStep();
                     break;
 
             }

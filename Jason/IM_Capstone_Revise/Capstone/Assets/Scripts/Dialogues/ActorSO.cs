@@ -20,9 +20,11 @@ public class ActorSO : ScriptableObject
 {
 	[SerializeField] private ActorID _actorId = default;
 	[SerializeField] private LocalizedString _actorName = default;
+	[SerializeField] private Sprite _actorPortrait;
 
-	public ActorID ActorId { get => _actorId; }
+    public ActorID ActorId { get => _actorId; }
 	public LocalizedString ActorName { get => _actorName; }
+	public Sprite ActorPortrait { get => _actorPortrait; }
 }
 
 

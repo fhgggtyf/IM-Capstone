@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e5ce493149272e41b8b304638872948, type: 3}
+  m_Name: P2-S3-Q1-QLP
+  m_EditorClassIdentifier: 
+  _leftVideoClip: {fileID: 32900000, guid: f43ff54c5c2aef44fac3409cd24f652d, type: 3}
+  _rightVideoClip: {fileID: 32900000, guid: bf71d72e942aa324a8a4f68ca797d069, type: 3}
+  _audioTrackEvent: {fileID: 0}
+  _endOfPageEvent: {fileID: 0}
+  interactionImageSO: {fileID: 11400000, guid: 7f7e10f8c2f6b0a4da52127328637e52, type: 2}
+  _isInteractable: 1

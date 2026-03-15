@@ -35,9 +35,10 @@ public class QuestlineSO : SerializableScriptableObject
     }
     public void ResetQuestLineProgress()
     {
+        _isDone = false;
         foreach (QuestSO quest in _quests)
         {
-            quest. ResetQuestProgress();
+            quest.ResetQuestProgress();
         }
     }
 #if UNITY_EDITOR

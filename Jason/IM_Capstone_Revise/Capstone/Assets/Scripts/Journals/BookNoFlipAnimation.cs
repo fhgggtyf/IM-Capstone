@@ -162,6 +162,8 @@ public class BookNoFlipAnimation : MonoBehaviour
         BookUtility.ShowPage(papers[currentPaper].Right);
         BookUtility.CopyTransform(RightPageTransform.transform, papers[currentPaper].Right.transform);
 
+        papers[currentPaper].Left.GetComponent<ContentPageUI>().ShowAnimation();
+
     }
 
     private int ClampPaperIndex(int value)

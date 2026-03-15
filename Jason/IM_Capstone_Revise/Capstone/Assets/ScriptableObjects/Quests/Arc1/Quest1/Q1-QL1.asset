@@ -17,5 +17,7 @@ MonoBehaviour:
   _steps:
   - {fileID: 11400000, guid: b1aadfe2254af2946bfcb983de8b7a98, type: 2}
   - {fileID: 11400000, guid: c674b70cbedac3b4f87d5e1a2c800824, type: 2}
-  _isDone: 0
+  - {fileID: 11400000, guid: 824a7839d9754a8429e5d91199cd04b9, type: 2}
+  - {fileID: 11400000, guid: 6caeab33e82895f41a2b56654f707e62, type: 2}
+  _isDone: 1
   _endQuestEvent: {fileID: 0}

@@ -8,7 +8,7 @@ public class ItemPickup : MonoBehaviour, IInteractable<ItemSO>
     [field: SerializeField] public Rigidbody2D Rigidbody2D { get; private set; }
 
     [SerializeField] private SpriteRenderer Icon;
-    [SerializeField] private Bobber bobber;
+    [SerializeField] private OutlineController outlineController;
 
     [SerializeField] private ItemStack ItemDataStack;
 
@@ -26,12 +26,12 @@ public class ItemPickup : MonoBehaviour, IInteractable<ItemSO>
 
     public void EnableInteraction()
     {
-        bobber.StartBobbing();
+        outlineController.EnableOutline();
     }
 
     public void DisableInteraction()
     {
-        bobber.StopBobbing();
+        outlineController.DisableOutline();
     }
 
     public Vector3 GetPosition()

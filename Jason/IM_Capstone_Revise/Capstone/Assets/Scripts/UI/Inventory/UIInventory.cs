@@ -10,18 +10,21 @@ public class UIInventory : MonoBehaviour
     [SerializeField] private InventorySO _currentInventory = default;
     [SerializeField] private UIInventoryItem _itemPrefab = default;
     [SerializeField] private GameObject _contentParent = default;
+    [SerializeField] private GameObject _journalPanel = default;
     //[SerializeField] private GameObject _errorPotMessage = default;
     //[SerializeField] private UIInventoryInspector _inspectorPanel = default;
     [SerializeField] private List<InventoryTabSO> _inventoryTabTypesList = new List<InventoryTabSO>();
     [SerializeField] private List<UIInventoryItem> _availableItemSlots = default;
 
     [Header("Listening to")]
+    [SerializeField] private MultiInputButton _journalOpenButton = default;
     [SerializeField] private UIInventoryTabs _inventoryTabsPanel = default;
     [SerializeField] private UIActionButton _actionButton = default;
     [SerializeField] private VoidEventChannelSO _onInteractionEndedEvent = default;
 
     [Header("Broadcasting on")]
     [SerializeField] private ItemEventChannelSO _useItemEvent = default;
+    [SerializeField] private VoidEventChannelSO _openJournalEvent = default;
     //[SerializeField] private ItemEventChannelSO _cookRecipeEvent = default;
 
     private InventoryTabSO _selectedInventoryTab = default;
@@ -281,6 +284,13 @@ public class UIInventory : MonoBehaviour
     void OnChangeInventoryTab(InventoryTabSO tabType)
     {
         FillInventory(tabType.TabType);
+    }
+
+    public void OnOpenJournal()
+    {
+        _openJournalEvent.RaiseEvent();
+        _journalPanel.SetActive(true);
+        
     }
 
     public void CloseInventory()

@@ -22,6 +22,38 @@ MonoBehaviour:
     m_Localized: Tutorial - Phase 1
     m_Metadata:
       m_Items: []
+  - m_Id: 227216610454274048
+    m_Localized: Home GF N
+    m_Metadata:
+      m_Items: []
+  - m_Id: 227216753849139200
+    m_Localized: Home GF Y
+    m_Metadata:
+      m_Items: []
+  - m_Id: 227216822400843776
+    m_Localized: Home 1F N
+    m_Metadata:
+      m_Items: []
+  - m_Id: 227216888867979264
+    m_Localized: Home 1F Y
+    m_Metadata:
+      m_Items: []
+  - m_Id: 227617476533420032
+    m_Localized: 'HomeOutside
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 231316191250231296
+    m_Localized: NeighborsHouse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 231317757923438592
+    m_Localized: 'NeighborsOutside
+
+'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

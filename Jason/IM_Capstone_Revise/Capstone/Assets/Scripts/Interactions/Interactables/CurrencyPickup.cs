@@ -8,7 +8,7 @@ public class CurrencyPickup : MonoBehaviour, IInteractable<CurrencyDataSO>
     [field: SerializeField] public Rigidbody2D Rigidbody2D { get; private set; }
 
     [SerializeField] private SpriteRenderer currencyIcon;
-    [SerializeField] private Bobber bobber;
+    [SerializeField] private OutlineController bobber;
 
     [SerializeField] private CurrencyDataSO currencyData;
 
@@ -23,12 +23,12 @@ public class CurrencyPickup : MonoBehaviour, IInteractable<CurrencyDataSO>
 
     public void EnableInteraction()
     {
-        bobber.StartBobbing();
+        bobber.EnableOutline();
     }
 
     public void DisableInteraction()
     {
-        bobber.StopBobbing();
+        bobber.DisableOutline();
     }
 
     public Vector3 GetPosition()

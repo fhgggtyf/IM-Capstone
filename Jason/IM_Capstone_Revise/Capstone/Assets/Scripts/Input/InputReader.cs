@@ -21,7 +21,6 @@ public class InputReader : DescriptionBaseSO, GameInput.IGameplayActions, GameIn
     public event UnityAction MoveCanceledEvent = delegate { };
     public event UnityAction HoldBreathEvent = delegate { };
     public event UnityAction HoldBreathCanceledEvent = delegate { };
-    public event UnityAction<bool> GameplayInputToggled = delegate { };
 
     public event UnityAction<Vector2, bool> CameraMoveEvent = delegate { };
     public event UnityAction EnableMouseControlCameraEvent = delegate { };
@@ -72,12 +71,6 @@ public class InputReader : DescriptionBaseSO, GameInput.IGameplayActions, GameIn
     {
         DisableAllInput();
     }
-
-    public void BlockGameplayInput(bool block)
-    {
-        GameplayInputBlocked = block;
-    }
-
     public void OnMove(InputAction.CallbackContext context)
     {
         MoveEvent.Invoke(context.ReadValue<Vector2>());
@@ -87,10 +80,6 @@ public class InputReader : DescriptionBaseSO, GameInput.IGameplayActions, GameIn
 
     public void OnInteract(InputAction.CallbackContext context)
     {
-        if (GameplayInputBlocked) {
-            Debug.Log("Blocked GameplayInput");
-            return; 
-        }
 
         if (context.phase == InputActionPhase.Performed)
         {
@@ -157,7 +146,6 @@ public class InputReader : DescriptionBaseSO, GameInput.IGameplayActions, GameIn
     {
         Debug.Log("MenuInput Enabled");
         _gameInput.Dialogues.Disable();
-        GameplayInputToggled.Invoke(true);
         _gameInput.Menus.Enable();
         _gameInput.Gameplay.Disable();
     }

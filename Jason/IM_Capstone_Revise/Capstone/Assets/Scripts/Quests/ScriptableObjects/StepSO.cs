@@ -5,13 +5,16 @@ public enum StepType
     Dialogue,
     GiveItem,
     CheckItem,
-    InteractObjects
+    InteractObjects,
+    PickUpItem
 }
 [CreateAssetMenu(fileName = "step", menuName = "Quests/Step")]
 public class StepSO : SerializableScriptableObject
 {
     [Tooltip("The Character this mission will need interaction with")]
     [SerializeField] private ActorSO _actor = default;
+    [Tooltip("The location where the step must happen, if any")]
+    [SerializeField] private LocationSO _locationToHappen = default;
     [Tooltip("The dialogue that will be diplayed befor an action, if any")]
     [SerializeField] private DialogueDataSO _dialogueBeforeStep = default;
     [Tooltip("The dialogue that will be diplayed when the step is achieved")]
@@ -34,6 +37,8 @@ public class StepSO : SerializableScriptableObject
         = new();
     [SerializeField] bool _isDone = false;
     [SerializeField] VoidEventChannelSO _endStepEvent = default;
+    [SerializeField] LoadEventChannelSO _loadToSceneEvent = default;
+    [SerializeField] LocationSO _locationToLoad = default;
 
     public DialogueDataSO DialogueBeforeStep
     {
@@ -63,6 +68,11 @@ public class StepSO : SerializableScriptableObject
         set => _endStepEvent = value;
         get => _endStepEvent;
     }
+    public LoadEventChannelSO LoadToSceneEvent
+    {
+        set => _loadToSceneEvent = value;
+        get => _loadToSceneEvent;
+    }
     public StepType Type => _type;
     public string[] RequiredInteractableIds => _requiredInteractableIds;
     public System.Collections.Generic.List<string> InteractedIds => _interactedIds;
@@ -72,11 +82,14 @@ public class StepSO : SerializableScriptableObject
         set => _isDone = value;
     }
     public ActorSO Actor => _actor;
+    public LocationSO LocationToHappen => _locationToHappen;
 
     public void FinishStep()
     {
         if (_endStepEvent != null)
             _endStepEvent.RaiseEvent();
+        if(_loadToSceneEvent != null)
+            _loadToSceneEvent.RaiseEvent(_locationToLoad, false, true); // No scene to load by default, but if a scene loading is needed it can be set in the StepSO
         _isDone = true;
     }
 

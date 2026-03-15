@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\Inventory\ScriptableObjects\InventorySO.cs" />
     <Compile Include="Assets\Scripts\Systems\Settings\SettingsSO.cs" />
     <Compile Include="Assets\Scripts\Characters\NPC\Enemies\Tutorial\GeneralNPCEnemy.cs" />
+    <Compile Include="Assets\Scripts\Journals\ScriptableObjects\GameplayJournalDataSO.cs" />
     <Compile Include="Assets\Scripts\SceneManagement\ScriptableObjects\SessionManagerSO.cs" />
     <Compile Include="Assets\Scripts\Quests\QuestManagerSO.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanTest.cs" />
@@ -80,7 +81,6 @@
     <Compile Include="Assets\Scripts\Events\ScriptableObjects\SOEventChannelSO.cs" />
     <Compile Include="Assets\Book-Page Curl Pro\Scripts\PageFlipper.cs" />
     <Compile Include="Assets\Scripts\Quests\StepController.cs" />
-    <Compile Include="Assets\Scripts\Interactions\Interactables\Bobber.cs" />
     <Compile Include="Assets\Scripts\Audio\AudioData\AudioCueKey.cs" />
     <Compile Include="Assets\LeanTween\Testing\TestingDescr.cs" />
     <Compile Include="Assets\Scripts\Characters\Core\CoreComponent.cs" />
@@ -90,6 +90,7 @@
     <Compile Include="Assets\Scripts\Journals\Prologue\HandController.cs" />
     <Compile Include="Assets\Scripts\Factory\FactorySO.cs" />
     <Compile Include="Assets\Scripts\Characters\StateProperties\PlayerStateMachines\Actions\AnimationParameterActionSO.cs" />
+    <Compile Include="Assets\Scripts\Tools\YSortManager.cs" />
     <Compile Include="Assets\Scripts\CutScenes\TimelineBinder.cs" />
     <Compile Include="Assets\Scripts\Characters\NPC\BindAgentToNavMeshOnSpawn.cs" />
     <Compile Include="Assets\Scripts\Characters\Config\UpgradeConfigSO.cs" />
@@ -101,6 +102,7 @@
     <Compile Include="Assets\Scripts\Characters\Core\InteractableInteractions.cs" />
     <Compile Include="Assets\Scripts\Quests\ScriptableObjects\StepSO.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralBasics2d.cs" />
+    <Compile Include="Assets\Scripts\Journals\PrologueJournalManager.cs" />
     <Compile Include="Assets\Scripts\SceneManagement\ScriptableObjects\PrologueManagerSO.cs" />
     <Compile Include="Assets\Scripts\UI\UIBars\UIBarManager.cs" />
     <Compile Include="Assets\Scripts\Journals\PaperHolder.cs" />
@@ -113,7 +115,6 @@
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSpline.cs" />
     <Compile Include="Assets\Scripts\UI\UIStatElement.cs" />
     <Compile Include="Assets\Scripts\Gameplay\PlayerSpawnSystem.cs" />
-    <Compile Include="Assets\Scripts\Journals\UI\JournalUI.cs" />
     <Compile Include="Assets\Scripts\Characters\Core\ItemsInventory.cs" />
     <Compile Include="Assets\Scripts\Pickups\Potions\StatModification.cs" />
     <Compile Include="Assets\Scripts\UI\Settings\UISettingItemFiller.cs" />
@@ -151,11 +152,14 @@
     <Compile Include="Assets\LeanTween\Testing\TestingSceneSwitching.cs" />
     <Compile Include="Assets\Book-Page Curl Pro\Examples\scripts\FastForwardFlipper.cs" />
     <Compile Include="Assets\Scripts\CutScenes\CutsceneAudioConfigSetter.cs" />
+    <Compile Include="Assets\Scripts\Tools\YSortTarget.cs" />
+    <Compile Include="Assets\Scripts\Journals\UI\PrologueJournalUI.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralSequencer.cs" />
     <Compile Include="Assets\Scripts\EditorTools\Weapons\WeaponDataSOEditor.cs" />
     <Compile Include="Assets\Scripts\Systems\Settings\SettingsSystem.cs" />
     <Compile Include="Assets\Scripts\Audio\MusicPlayer.cs" />
     <Compile Include="Assets\Scripts\Interactions\Interactables\CurrencyPickup.cs" />
+    <Compile Include="Assets\Scripts\Journals\UI\GameplayContentPageUI.cs" />
     <Compile Include="Assets\Scripts\Characters\Core\NavMeshAgentController.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralEventsListeners.cs" />
     <Compile Include="Assets\Scripts\UI\UICredits.cs" />
@@ -220,11 +224,13 @@
     <Compile Include="Assets\Scripts\UI\FadeController.cs" />
     <Compile Include="Assets\Scripts\Characters\NPC\PatrolRoute.cs" />
     <Compile Include="Assets\LeanTween\Testing\TestingOptionalCancel.cs" />
+    <Compile Include="Assets\Scripts\Tools\YSortActor.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\TestingUnitTests.cs" />
     <Compile Include="Assets\Scripts\CutScenes\CutsceneManager.cs" />
     <Compile Include="Assets\Scripts\Events\ScriptableObjects\DialogueDataChannelSO.cs" />
     <Compile Include="Assets\LeanTween\Framework\LTDescr.cs" />
     <Compile Include="Assets\Scripts\Generics\GenericNotImplementedError.cs" />
+    <Compile Include="Assets\Scripts\Journals\Prologue\InteractionImage.cs" />
     <Compile Include="Assets\LeanTween\Testing\TestingIssue2.cs" />
     <Compile Include="Assets\Scripts\Prologue\ScriptableObjects\CGFormatSO.cs" />
     <Compile Include="Assets\LeanTween\Testing\Testing248.cs" />
@@ -241,7 +247,10 @@
     <Compile Include="Assets\Scripts\Characters\StateProperties\EnemiesStateMachines\Actions\EngageMovementActionSO.cs" />
     <Compile Include="Assets\Scripts\Events\ScriptableObjects\InteractionUIEventChannelSO.cs" />
     <Compile Include="Assets\Scripts\Events\ScriptableObjects\UI\DialogueLineChannelSO.cs" />
+    <Compile Include="Assets\Scripts\Characters\Core\QuestReqItemInteractable.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralSimpleUI.cs" />
+    <Compile Include="Assets\Scripts\UI\UIImageButton.cs" />
+    <Compile Include="Assets\Scripts\Interactions\Interactables\OutlineController.cs" />
     <Compile Include="Assets\Scripts\UI\UIMenuManager.cs" />
     <Compile Include="Assets\Scripts\Characters\Core\NoiseDetection.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSplineEndless.cs" />
@@ -294,9 +303,11 @@
     <Compile Include="Assets\Scripts\UI\UIElement.cs" />
     <Compile Include="Assets\Scripts\UI\UIGenericButton.cs" />
     <Compile Include="Assets\Scripts\SceneManagement\ScriptableObjects\GameSceneSO.cs" />
+    <Compile Include="Assets\Scripts\Journals\UIJournalGameplay.cs" />
     <Compile Include="Assets\Scripts\Factory\IFactory.cs" />
     <Compile Include="Assets\Scripts\Events\ScriptableObjects\AudioCueEventChannelSO.cs" />
     <Compile Include="Assets\LeanTween\Testing\Testing246.cs" />
+    <Compile Include="Assets\Scripts\Journals\GameplayJournalManager.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\TestingZLegacyExt.cs" />
     <Compile Include="Assets\Assets\Inputs\Domicile.cs" />
     <Compile Include="Assets\Scripts\Events\ScriptableObjects\UI\DialogueChoiceChannelSO.cs" />
@@ -308,8 +319,8 @@
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSpline2d.cs" />
     <Compile Include="Assets\LeanTween\Framework\LTSeq.cs" />
     <Compile Include="Assets\Scripts\Events\ScriptableObjects\FloatEventChannelSO.cs" />
-    <Compile Include="Assets\Scripts\Journals\JournalManager.cs" />
     <Compile Include="Assets\Addons\DOTween\Modules\DOTweenModuleUtils.cs" />
+    <Compile Include="Assets\Scripts\Journals\Prologue\ScriptableObjects\StickerImageSO.cs" />
     <Compile Include="Assets\Scripts\Characters\Core\CoreComp.cs" />
     <Compile Include="Assets\Scripts\Characters\Core\PathAgent.cs" />
     <Compile Include="Assets\Scripts\UI\Settings\UISettingTabFiller.cs" />
@@ -317,6 +328,7 @@
     <Compile Include="Assets\Scripts\Characters\StateProperties\EnemiesStateMachines\Actions\EnemyIdleMovingAnimationParameterActionSO.cs" />
     <Compile Include="Assets\Addons\DOTween\Modules\DOTweenModulePhysics2D.cs" />
     <Compile Include="Assets\Scripts\Characters\StateProperties\EnemiesStateMachines\Actions\InvestigateIdleActionSO.cs" />
+    <Compile Include="Assets\Scripts\Journals\ScriptableObjects\GameplayJournalContentSO.cs" />
     <Compile Include="Assets\Scripts\Characters\NPC\NonPlayerStatsManager.cs" />
     <Compile Include="Assets\Scripts\Pool\PoolSO.cs" />
     <Compile Include="Assets\Book-Page Curl Pro\Scripts\AutoFlip.cs" />
@@ -340,6 +352,7 @@
     <Compile Include="Assets\Scripts\Dialogues\ActorSO.cs" />
     <Compile Include="Assets\Scripts\Characters\StateProperties\PlayerStateMachines\Actions\MoveAndNoiseActionSO.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralBasic.cs" />
+    <Compile Include="Assets\Scripts\Interactions\Interactables\QuestReqPickup.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSplines.cs" />
     <Compile Include="Assets\Scripts\UI\UIBars\UIManaBarManager.cs" />
   </ItemGroup>
@@ -374,6 +387,7 @@
     <None Include="Assets\Addons\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\Addons\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\Scripts\Domicile.asmref" />
+    <None Include="Assets\Assets\Shader\CustomOutline.shader" />
     <None Include="Assets\Addons\DOTween\License.txt" />
     <None Include="Assets\Addons\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>

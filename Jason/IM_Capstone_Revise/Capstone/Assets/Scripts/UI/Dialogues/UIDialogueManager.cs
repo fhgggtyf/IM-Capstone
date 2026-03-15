@@ -2,15 +2,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Localization.Components;
 using UnityEngine.Localization;
+using UnityEngine.UI;
 
 public class UIDialogueManager : MonoBehaviour
 {
 	[SerializeField] private LocalizeStringEvent _lineText = default;
-	[SerializeField] private LocalizeStringEvent _actorNameText = default;
-	[SerializeField] private LocalizeStringEvent _recievantNameText = default;
 
-	[SerializeField] private GameObject _actorNamePanel = default;
-	[SerializeField] private GameObject _mainProtagonistNamePanel = default;
+	[SerializeField] private Image _actorPortrait = default;
+
+    //[SerializeField] private LocalizeStringEvent _actorNameText = default;
+    //[SerializeField] private LocalizeStringEvent _recievantNameText = default;
+
+ //   [SerializeField] private GameObject _actorNamePanel = default;
+	//[SerializeField] private GameObject _mainProtagonistNamePanel = default;
 	[SerializeField] private UIDialogueChoicesManager _choicesManager = default;
 
 	[Header("Listening to")]
@@ -31,17 +35,19 @@ public class UIDialogueManager : MonoBehaviour
 		_choicesManager.gameObject.SetActive(false);
 		_lineText.StringReference = dialogueLine;
 
-		_actorNamePanel.SetActive(!isMainProtagonist);
-		_mainProtagonistNamePanel.SetActive(isMainProtagonist);
+		_actorPortrait.sprite = actor.ActorPortrait;
 
-		if (!isMainProtagonist)
-		{
-            _actorNameText.StringReference = actor.ActorName;
-		}
-		else 
-		{
-			_recievantNameText.StringReference = actor.ActorName;
-        }
+        //_actorNamePanel.SetActive(!isMainProtagonist);
+        //_mainProtagonistNamePanel.SetActive(isMainProtagonist);
+
+        //if (!isMainProtagonist)
+        //{
+        //          _actorNameText.StringReference = actor.ActorName;
+        //}
+        //else 
+        //{
+        //	_recievantNameText.StringReference = actor.ActorName;
+        //      }
         //Protagonist's LocalisedString is provided on the GameObject already
     }
 

@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class QuestInteractable : InteractableItems
 {
+    [SerializeField]private bool _isQuestItem = true; // Optional: Flag to indicate if this interactable is related to a quest
+
     [Header("Quest Progress")]
     [SerializeField] private string _interactableId = "UniqueIdHere";
     [SerializeField] private StringEventChannelSO _objectInteractedEvent = default;
@@ -15,6 +17,14 @@ public class QuestInteractable : InteractableItems
 
     public override void Interact()
     {
+
+        Debug.Log($"Interacted with {gameObject.name} (ID: {_interactableId})");
+
+        if (!_isQuestItem)
+        {
+            return; // If this interactable is not related to a quest, exit early
+        }
+
         base.Interact();
 
         // 1) Notify quest system

@@ -23,9 +23,9 @@ MonoBehaviour:
   musicTrack: {fileID: 0}
   locationName:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:e4f9f74c723d32e4fa955c448220d2ff
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 227216610454274048
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0

@@ -52,8 +52,10 @@ public class NPCSpawnManager : MonoBehaviour
         Debug.Log("NavMesh verts: " + NavMesh.CalculateTriangulation().vertices.Length);
 
 
-        foreach (Transform spawn in _enemySpawnLocations)
+        for (int i = 0; i < _enemySpawnLocations.Count; i++)
         {
+            Transform spawn = _enemySpawnLocations[i];
+
             DebugNavmeshDistance(spawn.position);
 
             // Find a nearby point on the NavMesh (increase radius if needed)
@@ -63,20 +65,19 @@ public class NPCSpawnManager : MonoBehaviour
                 continue;
             }
 
-            foreach (NonPlayerCharacter npcPrefab in _npcPrefab)
+            NonPlayerCharacter npcPrefab = _npcPrefab[i];
+
+            // Spawn exactly on the NavMesh
+            NonPlayerCharacter enemyInstance = Instantiate(npcPrefab, hit.position, spawn.rotation);
+
+            // Extra safety: if it has a NavMeshAgent, warp it onto the mesh position
+            var agent = enemyInstance.GetComponent<NavMeshAgent>();
+            if (agent != null && agent.enabled)
             {
-                // Spawn exactly on the NavMesh
-                NonPlayerCharacter enemyInstance = Instantiate(npcPrefab, hit.position, spawn.rotation);
-
-                // Extra safety: if it has a NavMeshAgent, warp it onto the mesh position
-                var agent = enemyInstance.GetComponent<NavMeshAgent>();
-                if (agent != null && agent.enabled)
-                {
-                    agent.Warp(hit.position);
-                }
-
-                enemyInstance.patrolRoute = _patrolRoute;
+                agent.Warp(hit.position);
             }
+
+            enemyInstance.patrolRoute = _patrolRoute;
 
             // If this event is ¡°the patrol root is ready for this spawn point¡±, raise once per location
             _patrolRootSetChannel.RaiseEvent();

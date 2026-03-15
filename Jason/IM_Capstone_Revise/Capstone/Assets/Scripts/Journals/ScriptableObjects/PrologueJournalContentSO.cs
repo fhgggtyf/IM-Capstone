@@ -1,31 +1,27 @@
 using UnityEngine;
-using UnityEngine.Localization.Metadata;
-using UnityEngine.Localization;
+using UnityEngine.Video;
+
 
 #if UNITY_EDITOR
 using UnityEditor.Localization;
 using UnityEditor;
 #endif
 
-[CreateAssetMenu(fileName = "new Journal Page", menuName = "Journals/Journal Page")]
+[CreateAssetMenu(fileName = "new Journal Page", menuName = "Journals/Prologue Journal Page")]
 public class PrologueJournalContentSO : ScriptableObject
 {
-    [SerializeField] private LocalizedString _text = default;
-    [SerializeField] private LocalizedString _date = default;
-    [SerializeField] private LocalizedString _time = default;
-    [SerializeField] private Sprite _image = default;
+    [SerializeField] private VideoClip _leftVideoClip = default;
+    [SerializeField] private VideoClip _rightVideoClip = default;
     [SerializeField] private VoidEventChannelSO _audioTrackEvent = default;
     [SerializeField] private VoidEventChannelSO _endOfPageEvent = default;
-    [SerializeField] private Sprite interactionImage = default;
+    [SerializeField] private StickerImageSO interactionImageSO = default;
     [SerializeField] private bool _isInteractable = false;
 
     public VoidEventChannelSO EndOfPageEvent => _endOfPageEvent;
 
-    public LocalizedString Text => _text;
-    public LocalizedString Date => _date;
-    public LocalizedString Time => _time;
-    public Sprite Image => _image;    
-    public Sprite InteractionImage => interactionImage;
+    public VideoClip LeftVideoClip => _leftVideoClip;
+    public VideoClip RightVideoClip => _rightVideoClip;
+    public StickerImageSO InteractionImageSO => interactionImageSO;
     public bool IsInteractable => _isInteractable;
 
 }

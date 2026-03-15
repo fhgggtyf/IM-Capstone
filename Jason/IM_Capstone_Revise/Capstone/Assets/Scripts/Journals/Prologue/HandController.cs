@@ -8,14 +8,16 @@ public class HandController : MonoBehaviour
     [SerializeField] private BookNoFlipAnimation _book;
     [SerializeField] RectTransform handCursor;
     [SerializeField] Image pasteImage;
-    [SerializeField] public VoidEventChannelSO ImageStampedEvent;
+
+    private bool _isHolding;
+
+    public bool IsHolding => _isHolding;
 
     private Face currentFace = new();
 
     // Start is called before the first frame update
     void OnEnable()
     {
-        ImageStampedEvent.OnEventRaised += DisablePasteImg;
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.None;
@@ -36,8 +38,6 @@ public class HandController : MonoBehaviour
         if (currentFace != _book.papers[_book.CurrentPaper])
         {
             currentFace = _book.papers[_book.CurrentPaper];
-
-            EnablePasteImg();
 
             var sourceImg = currentFace.Right.GetComponent<PrologueInteractionPageUI>().InteractionImage;
 
@@ -60,9 +60,20 @@ public class HandController : MonoBehaviour
 
     private void OnDisable()
     {
-        ImageStampedEvent.OnEventRaised -= DisablePasteImg;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void PickUp()
+    {
+        _isHolding = true;
+        EnablePasteImg();
+    }
+
+    public void DropDown()
+    {
+        _isHolding = false;
+        DisablePasteImg();
     }
 
     void DisablePasteImg()

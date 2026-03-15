@@ -16,5 +16,5 @@ MonoBehaviour:
   _idQuestLine: 0
   _quests:
   - {fileID: 11400000, guid: d50286a2cca0c204ebdaca20fd8b0019, type: 2}
-  _isDone: 0
+  _isDone: 1
   _endQuestlineEvent: {fileID: 0}

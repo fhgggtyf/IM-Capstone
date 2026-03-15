@@ -8,6 +8,7 @@ public class PrologueRightSideInteractionController : MonoBehaviour
     public InputReader inputReader;
 
     [SerializeField] public VoidEventChannelSO ImageStampedEvent;
+    [SerializeField] private HandController handController;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,7 @@ public class PrologueRightSideInteractionController : MonoBehaviour
                     page.InteractionImage.gameObject.SetActive(true);
                     page.InteractionButton.gameObject.SetActive(false);
                     inputReader.EnableJournalInput();
+                    handController.DropDown();
                     ImageStampedEvent.RaiseEvent();
                 });
             }

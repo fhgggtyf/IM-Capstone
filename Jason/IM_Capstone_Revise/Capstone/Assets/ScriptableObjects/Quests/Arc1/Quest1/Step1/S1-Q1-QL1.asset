@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _guid: b1aadfe2254af2946bfcb983de8b7a98
   _actor: {fileID: 11400000, guid: 017c0005658ebf34bb12af91c6b0b357, type: 2}
+  _locationToHappen: {fileID: 11400000, guid: bf3a1b81db806884d9d1d2c224eb8a0d, type: 2}
   _dialogueBeforeStep: {fileID: 11400000, guid: f6b7449f48cf93046a235c82a69f2518, type: 2}
   _completeDialogue: {fileID: 0}
   _incompleteDialogue: {fileID: 0}
-  _type: 3
+  _type: 0
   _item: {fileID: 0}
   _hasReward: 0
   _rewardItem: {fileID: 0}
@@ -26,3 +27,5 @@ MonoBehaviour:
   _interactedIds: []
   _isDone: 1
   _endStepEvent: {fileID: 0}
+  _loadToSceneEvent: {fileID: 0}
+  _locationToLoad: {fileID: 0}
