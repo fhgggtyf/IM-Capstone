@@ -14,6 +14,10 @@ public class UIJournalGameplay : MonoBehaviour
     [SerializeField] IntEventChannelSO UnlockPages;
 
     private GameplayJournalDataSO _journalData;
+    private GameplayJournalDataSO _parsedJournalData;
+
+    private bool _rightPageEmpty = false;
+    private GameplayContentPageUI _waitingRightPage = null;
 
     private void OnEnable()
     {
@@ -35,17 +39,79 @@ public class UIJournalGameplay : MonoBehaviour
     // ======================================================================
     public void Initialize(GameplayJournalDataSO data)
     {
+        Debug.Log("Initializing journal UI with data: " + data.Pages.Count + " pages.");
         _journalData = data;
 
+        ParseDataPassed();
         CreatePagesForBook();
 
+    }
+
+    void ParseDataPassed()
+    {
+        var rightPageEmpty = _rightPageEmpty; 
+        GameplayJournalContentSO pendingLeftPage = null;
+        _parsedJournalData = ScriptableObject.CreateInstance<GameplayJournalDataSO>();
+
+        foreach (var page in _journalData.Pages)
+        {
+            if (page.RightIMG == null) // 只有左面的单页数据
+            {
+                if (rightPageEmpty && pendingLeftPage != null)
+                {
+                    // 将当前单页作为右页，与等待的左页合并成一个完整页面
+                    pendingLeftPage.Initialize(
+                        pendingLeftPage.LeftIMG,
+                        pendingLeftPage.LeftText,
+                        page.LeftIMG,
+                        page.LeftText
+                    );
+                    _parsedJournalData.Pages.Add(pendingLeftPage);
+                    rightPageEmpty = false;
+                    pendingLeftPage = null;
+                    Debug.Log("This is what is supposed toi happen");
+                }
+                else if(rightPageEmpty && pendingLeftPage == null)
+                {
+                    pendingLeftPage = ScriptableObject.CreateInstance<GameplayJournalContentSO>();
+                    pendingLeftPage.Initialize(null, null, page.LeftIMG, page.LeftText);
+                    rightPageEmpty = false;
+                }
+                else
+                {
+                    // 创建新的左页，等待右页
+                    pendingLeftPage = ScriptableObject.CreateInstance<GameplayJournalContentSO>();
+                    pendingLeftPage.Initialize(page.LeftIMG, page.LeftText, null, null);
+                    rightPageEmpty = true;
+                }
+            }
+            else // 完整双页（左右都有）
+            {
+                // 如果有等待配对的左页，先把它作为单独页面添加（只有左半部分）
+                if (rightPageEmpty && pendingLeftPage != null)
+                {
+                    _parsedJournalData.Pages.Add(pendingLeftPage);
+                    rightPageEmpty = false;
+                    pendingLeftPage = null;
+                }
+
+                // 直接添加完整双页
+                _parsedJournalData.Pages.Add(page);
+            }
+        }
+
+        // 处理最后未配对的左页（作为只有左半部分的页面）
+        if (pendingLeftPage != null)
+        {
+            _parsedJournalData.Pages.Add(pendingLeftPage);
+        }
     }
 
     // ======================================================================
     // CREATE PAGE INSTANCES & ASSIGN INTO BookPro
     // ======================================================================
 
-    public void AddPaper(GameObject LeftPage, GameObject RightPage, GameplayJournalContentSO journalContent)
+    public void AddPaper(GameObject LeftPage, GameObject RightPage)
     {
         Debug.Log("Adding a new paper to the book.");
         LeftPage.transform.SetParent(book.LeftPageTransform, false);
@@ -66,7 +132,16 @@ public class UIJournalGameplay : MonoBehaviour
     }
     private void CreatePagesForBook()
     {
-        List<GameplayJournalContentSO> pages = _journalData.Pages;
+        List<GameplayJournalContentSO> pages = _parsedJournalData.Pages;
+
+        if (_rightPageEmpty)
+        {
+            Debug.Log("I was waiting for right page");
+            _waitingRightPage.image.sprite = pages[0].RightIMG;
+            pages.RemoveAt(0);
+            _rightPageEmpty = false;
+        }
+
         int count = pages.Count;
         Debug.Log($"Creating {count} journal pages.");
 
@@ -87,7 +162,7 @@ public class UIJournalGameplay : MonoBehaviour
 
             // Assign the single face as the page front
             // No back side is used in your design.
-            AddPaper(lPageUI.gameObject, rPageUI.gameObject, pages[i]);
+            AddPaper(lPageUI.gameObject, rPageUI.gameObject);
 
             // Fill content (localized text, images, etc.)
             ApplyContentToPage(lPageUI, rPageUI, pages[i]);
@@ -105,14 +180,26 @@ public class UIJournalGameplay : MonoBehaviour
     // ======================================================================
     private void ApplyContentToPage(GameplayContentPageUI LPageUI, GameplayContentPageUI RPageUI, GameplayJournalContentSO content)
     {
-        if (LPageUI.image != null)
+        LPageUI.usedBackground.sprite = LPageUI.backgrounds[0];
+        RPageUI.usedBackground.sprite = RPageUI.backgrounds[1];
+
+        if (LPageUI.image != null && content.LeftIMG != null)
         {
-            LPageUI.image.sprite = content.LeftIMG.sprite;
+            LPageUI.image.sprite = content.LeftIMG;
         }
 
         if (RPageUI.image != null)
         {
-            RPageUI.image.sprite = content.RightIMG.sprite;
+            if (content.RightIMG == null)
+            {
+                _rightPageEmpty = true;
+                _waitingRightPage = RPageUI;
+            }
+            else
+            {
+                RPageUI.image.sprite = content.RightIMG;
+            }
+
         }
     }
 

@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5000
   m_Sprite: {fileID: 21300000, guid: 55d319343d6d686429960c7dce53140d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -220,9 +220,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Rigidbody2D>k__BackingField: {fileID: 4953681538786014182}
+  questManager: {fileID: 11400000, guid: 94435826a1183ec44acbb29a83662a92, type: 2}
   outlineController: {fileID: 658132811164654219}
   _continueWithStep: {fileID: 11400000, guid: c7d0bd933426e4e498ba4cfd6b1db02c, type: 2}
+  _startDialogueEvent: {fileID: 11400000, guid: 71b218837c2cbf840bbc672bc200feb6, type: 2}
   ItemQuestData: {fileID: 11400000, guid: 824a7839d9754a8429e5d91199cd04b9, type: 2}
+  _destroyOnInteract: 1
 --- !u!1 &7206682774993633501
 GameObject:
   m_ObjectHideFlags: 0

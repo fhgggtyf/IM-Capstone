@@ -19,6 +19,7 @@ public class HideAction : StateAction
 {
     private Player _player;
     private Movement _movement;
+    private YSortActor _sortActor;
     private PlayerStatsManager _statsManager;
     private BoolEventChannelSO onHideEvent;
 
@@ -28,6 +29,7 @@ public class HideAction : StateAction
     {
         _player = stateMachine.GetComponent<Player>();
         _movement = _player.Core.GetCoreComponent<Movement>();
+        _sortActor = _player.gameObject.GetComponent<YSortActor>();
         _statsManager = stateMachine.GetComponent<PlayerStatsManager>();
         onHideEvent = _originSO.onHideEvent;
     }
@@ -43,7 +45,7 @@ public class HideAction : StateAction
         // Mute all noise while hiding.
         _statsManager.SetCurrentNoise(0);
 
-        _movement.ForceChangePositionZ(97);
+        _sortActor.SortingOrderBase = -10000; // Ensure the player is rendered behind everything else while hiding.
 
         // Ensure the player isn't moving when entering the hide state.
         _movement.SetVelocityZero();
@@ -62,7 +64,7 @@ public class HideAction : StateAction
         // Clear hiding flags when exiting the hide state.
         _player.isHiding = false;
         _player.hideTarget = null;
-        _movement.ForceChangePositionZ(0);
+        _sortActor.SortingOrderBase = 1000; // Reset sorting order when exiting hiding.
         onHideEvent.RaiseEvent(false);
         Debug.Log("Player has exited hiding state.");
     }

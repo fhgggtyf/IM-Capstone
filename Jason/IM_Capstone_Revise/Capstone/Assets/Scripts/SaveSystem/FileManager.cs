@@ -48,8 +48,9 @@ public static class FileManager
 
 		if (!File.Exists(fullPath))
 		{
-			File.WriteAllText(fullPath, "");
 			Debug.Log("File does not exist");
+            result = "";
+            return false;
 		}
 		try
 		{

@@ -46,6 +46,72 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     _choices: []
+  - _actorID: 0
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:b9337267fdc92944ca13fcedc1ac1fb0
+      m_TableEntryReference:
+        m_KeyId: 16815633564184576
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
+  - _actorID: 0
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:b9337267fdc92944ca13fcedc1ac1fb0
+      m_TableEntryReference:
+        m_KeyId: 16815782583611392
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
+  - _actorID: 1
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:b9337267fdc92944ca13fcedc1ac1fb0
+      m_TableEntryReference:
+        m_KeyId: 16815892520513536
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
+  - _actorID: 0
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:b9337267fdc92944ca13fcedc1ac1fb0
+      m_TableEntryReference:
+        m_KeyId: 16815965480431616
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
+  - _actorID: 1
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:b9337267fdc92944ca13fcedc1ac1fb0
+      m_TableEntryReference:
+        m_KeyId: 16816023907086336
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
+  - _actorID: 0
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:b9337267fdc92944ca13fcedc1ac1fb0
+      m_TableEntryReference:
+        m_KeyId: 16816079318036480
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
   _dialogueType: 0
   _endOfDialogueEvent: {fileID: 0}
   references:

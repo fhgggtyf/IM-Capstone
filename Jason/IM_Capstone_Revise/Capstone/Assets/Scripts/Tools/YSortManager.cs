@@ -8,7 +8,7 @@ public class YSortManager : MonoBehaviour
 
     private YSortTarget[] targets;
 
-    private void Awake()
+    private void Reset()
     {
         targets = GetComponentsInChildren<YSortTarget>();
     }

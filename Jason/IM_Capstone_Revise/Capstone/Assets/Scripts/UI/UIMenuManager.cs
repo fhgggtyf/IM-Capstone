@@ -22,8 +22,6 @@ public class UIMenuManager : MonoBehaviour
 	[SerializeField]
 	private VoidEventChannelSO _continueGameEvent = default;
 
-
-
 	private bool _hasSaveData;
 
 	private IEnumerator Start()

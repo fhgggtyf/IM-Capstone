@@ -1,6 +1,9 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor.SceneTemplate;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "QuestManager", menuName = "Quests/QuestManager", order = 51)]
@@ -9,6 +12,7 @@ public class QuestManagerSO : ScriptableObject
     [Header("Data")]
     [SerializeField] private List<QuestlineSO> _questlines = default;
     [SerializeField] private InventorySO _inventory = default;
+    [SerializeField] private ActorSO Protagonist = default;
 
     [Header("Linstening to channels")]
     [FormerlySerializedAs("_checkStepValidityEvent")]
@@ -17,11 +21,18 @@ public class QuestManagerSO : ScriptableObject
     [SerializeField] private StringEventChannelSO _objectInteractedEvent = default;
 
     [Header("Broadcasting on channels")]
+    [SerializeField] private DialogueDataChannelSO StartDialogueEvent = default;
     [SerializeField] private VoidEventChannelSO _playCompletionDialogueEvent = default;
     [SerializeField] private VoidEventChannelSO _playIncompleteDialogueEvent = default;
+    [SerializeField] private VoidEventChannelSO _startStepEvent = default;
     [SerializeField] private ItemEventChannelSO _giveItemEvent = default;
     [SerializeField] private ItemStackEventChannelSO _rewardItemEvent = default;
     [SerializeField] private SaveSystem saveSystem = default;
+
+    [Header("Sanity Check")]
+    [SerializeField] private LocationSO[] _startingLocations = default;
+
+    private string[] _cachedStartingSceneNames;
 
     private QuestSO _currentQuest = null;
     private QuestlineSO _currentQuestline;
@@ -29,6 +40,8 @@ public class QuestManagerSO : ScriptableObject
     private int _currentQuestIndex = 0;
     private int _currentQuestlineIndex = 0;
     private int _currentStepIndex = 0;
+
+    private Dictionary<StepSO, bool> questStatus = new Dictionary<StepSO, bool>();
 
     public QuestlineSO CurrentQuestline => _currentQuestline;
     public QuestSO CurrentQuest => _currentQuest;
@@ -49,10 +62,27 @@ public class QuestManagerSO : ScriptableObject
     public void StartGame()
     {
         //Add code for saved information
+        _cachedStartingSceneNames = null;
         _continueWithStepEvent.OnEventRaised += CheckStepValidity;
         _endDialogueEvent.OnEventRaised += EndDialogue;
         _objectInteractedEvent.OnEventRaised += OnObjectInteracted;
+        InitializeQuestlineStatus();
         StartQuestline();
+    }
+
+    void InitializeQuestlineStatus()
+    {
+        questStatus.Clear();
+        foreach (var questline in _questlines)
+        {
+            foreach (var quest in questline.Quests)
+            {
+                foreach (var step in quest.Steps)
+                {
+                    questStatus[step] = step.IsDone;
+                }
+            }
+        }
     }
 
     void StartQuestline()
@@ -61,11 +91,57 @@ public class QuestManagerSO : ScriptableObject
         {
             if (_questlines.Exists(o => !o.IsDone))
             {
-                _currentQuestlineIndex = _questlines.FindIndex(o => !o.IsDone);
+                int firstIncomplete = _questlines.FindIndex(o => !o.IsDone);
 
-                if (_currentQuestlineIndex >= 0)
-                    _currentQuestline = _questlines.Find(o => !o.IsDone);
+                // SANITY CHECK: If we're skipping questline 0 but it's actually not complete in save data
+                if (firstIncomplete > 0 && _questlines[0] != null)
+                {
+                    // Double-check if questline 0 should actually be complete
+                    bool shouldBeComplete = ShouldQuestlineBeComplete(_questlines[0]);
+
+                    if (!shouldBeComplete && _questlines[0].IsDone)
+                    {
+                        Debug.LogWarning("Detected inconsistent questline state - correcting...");
+                        _questlines[0].IsDone = false; // Fix it
+                        firstIncomplete = 0; // Reset to questline 0
+                    }
+                }
+
+                if (firstIncomplete >= 0)
+                {
+                    _currentQuestlineIndex = firstIncomplete;
+                    _currentQuestline = _questlines[firstIncomplete];
+                }
             }
+        }
+    }
+
+    bool ShouldQuestlineBeComplete(QuestlineSO questline)
+    {
+        CacheStartingSceneNames();
+
+        for (int i = 0; i < SceneManager.sceneCount; i++)
+        {
+            Scene scene = SceneManager.GetSceneAt(i);
+            Debug.Log($"checking if scene '{scene.name}' is one of '{_cachedStartingSceneNames[0]}' or '{_cachedStartingSceneNames[1]}'");
+
+            if (scene.isLoaded && _cachedStartingSceneNames.Contains(scene.name))
+            {
+                Debug.Log($"In starting scene '{scene.name}' - questline should not be complete");
+                return false;
+            }
+        }
+
+        return questline.IsDone;
+    }
+    void CacheStartingSceneNames()
+    {
+        if ((_cachedStartingSceneNames == null || _cachedStartingSceneNames.Length == 0) && _startingLocations != null)
+        {
+            _cachedStartingSceneNames = _startingLocations
+                .Where(l => l != null && l.locationName != null)
+                .Select(l => l.locationName.GetLocalizedString())
+                .ToArray();
         }
     }
 
@@ -175,6 +251,9 @@ public class QuestManagerSO : ScriptableObject
                 _currentStep = _currentQuest.Steps[_currentStepIndex];
                 Debug.Log("CurrentQuest: " + _currentQuest.name + " CurrentStep: " + _currentStep.name);
 
+                if(_currentStep.BraodcastOnEnter)
+                    _startStepEvent.RaiseEvent();
+
             }
     }
 
@@ -273,11 +352,13 @@ public class QuestManagerSO : ScriptableObject
 
     void EndStep()
     {
+        questStatus[_currentStep] = true;
         _currentStep = null;
         if (_currentQuest != null)
             if (_currentQuest.Steps.Count > _currentStepIndex)
             {
                 _currentQuest.Steps[_currentStepIndex].FinishStep();
+                Debug.Log(_currentQuest.Steps[_currentStepIndex]);
                 saveSystem.SaveDataToDisk();
                 if (_currentQuest.Steps.Count > _currentStepIndex + 1)
                 {
@@ -407,6 +488,7 @@ public class QuestManagerSO : ScriptableObject
         {
             questline.ResetQuestLineProgress();
         }
+        Debug.Log("Reset Questlines");
         _currentQuest = null;
         _currentQuestline = null;
         _currentStep = null;
@@ -473,6 +555,11 @@ public class QuestManagerSO : ScriptableObject
         bool changed = TryRegisterInteraction(interactableId);
     }
 
+    public bool IsStepCompleted(StepSO questId)
+    {
+        Debug.Log($"Checking if step is completed for step: {questId.name}");
+        return questStatus.TryGetValue(questId, out bool completed) && completed;
+    }
 
     public void ResetProgressForReuse()
     {

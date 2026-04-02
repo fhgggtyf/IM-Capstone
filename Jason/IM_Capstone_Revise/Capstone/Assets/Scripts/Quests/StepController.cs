@@ -13,6 +13,8 @@ public class StepController : MonoBehaviour
     [SerializeField] private DialogueDataSO _defaultDialogue = default;
     [SerializeField] private QuestManagerSO _questData = default;
     [SerializeField] private GameStateSO _gameStateManager = default;
+    [SerializeField] private QuestManagerSO _questManager = default;
+    [SerializeField] private StepSO[] _showStep;
 
     [Header("Listening to channels")]
     [SerializeField] private VoidEventChannelSO _winDialogueEvent = default;
@@ -38,7 +40,15 @@ public class StepController : MonoBehaviour
             dialogueShot.SetActive(false);
         }
 
+        foreach(var step in _showStep)
+        {
+            if(_questManager.CurrentStep == step || _questManager.CurrentStep == null)
+            {
+                return;
+            }
+        }
 
+        gameObject.SetActive(false);
     }
 
     void PlayDefaultDialogue()

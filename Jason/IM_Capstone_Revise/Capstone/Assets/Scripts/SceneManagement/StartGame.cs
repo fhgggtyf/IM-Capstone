@@ -23,7 +23,7 @@ public class StartGame : MonoBehaviour
 
 	private void Start()
 	{
-		_saveSystem.LoadSaveDataFromDisk();
+		//_saveSystem.LoadSaveDataFromDisk();
 		_onNewGameButton.OnEventRaised += StartNewGame;
 		_onContinueButton.OnEventRaised += ContinuePreviousGame;
 	}
@@ -52,7 +52,9 @@ public class StartGame : MonoBehaviour
 
 	private IEnumerator LoadSaveGame()
 	{
-		yield return StartCoroutine(_saveSystem.LoadSavedInventory());
+        _saveSystem.LoadSaveDataFromDisk();
+
+        yield return StartCoroutine(_saveSystem.LoadSavedInventory());
 
 		//_saveSystem.LoadSavedQuestlineStatus();
 		var locationGuid = _saveSystem.saveData._locationId;

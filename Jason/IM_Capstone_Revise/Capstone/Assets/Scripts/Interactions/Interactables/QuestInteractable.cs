@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class QuestInteractable : InteractableItems
 {
-    [SerializeField]private bool _isQuestItem = true; // Optional: Flag to indicate if this interactable is related to a quest
+    [SerializeField] private bool _isQuestItem = true; // Optional: Flag to indicate if this interactable is related to a quest
+    [SerializeField] private bool _endsQuest = false; // Optional: Flag to indicate if interacting with this completes a quest
+    [SerializeField] private StepSO _forStep; // Optional: Reference to the quest step this interactable is associated with (for editor organization)
+    [SerializeField] private QuestManagerSO questManager; // Reference to your existing QuestManager scriptable object
 
     [Header("Quest Progress")]
     [SerializeField] private string _interactableId = "UniqueIdHere";
@@ -20,7 +23,7 @@ public class QuestInteractable : InteractableItems
 
         Debug.Log($"Interacted with {gameObject.name} (ID: {_interactableId})");
 
-        if (!_isQuestItem)
+        if (!_isQuestItem || questManager.CurrentStep != _forStep)
         {
             return; // If this interactable is not related to a quest, exit early
         }

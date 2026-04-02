@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FG-O1-D1-S2-Q1-QL1
   m_EditorClassIdentifier: 
   _lines:
-  - _actorID: 0
+  - _actorID: 6
     _textList:
     - m_TableReference:
         m_TableCollectionName: GUID:b9337267fdc92944ca13fcedc1ac1fb0

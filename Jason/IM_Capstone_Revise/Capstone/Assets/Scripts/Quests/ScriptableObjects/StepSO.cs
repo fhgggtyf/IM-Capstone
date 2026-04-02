@@ -1,5 +1,6 @@
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Localization;
 public enum StepType
 {
     Dialogue,
@@ -39,7 +40,11 @@ public class StepSO : SerializableScriptableObject
     [SerializeField] VoidEventChannelSO _endStepEvent = default;
     [SerializeField] LoadEventChannelSO _loadToSceneEvent = default;
     [SerializeField] LocationSO _locationToLoad = default;
+    [SerializeField] private LocalizedString _stepDescription = default;
+    [SerializeField] private bool _braodcastOnEnter = true;
 
+    public bool BraodcastOnEnter => _braodcastOnEnter;
+    public LocalizedString StepDescription => _stepDescription;
     public DialogueDataSO DialogueBeforeStep
     {
         get { return _dialogueBeforeStep; }
@@ -86,8 +91,12 @@ public class StepSO : SerializableScriptableObject
 
     public void FinishStep()
     {
+        Debug.Log("Finishing step: " + name);
         if (_endStepEvent != null)
+        {
+            Debug.Log("raised " + _endStepEvent);
             _endStepEvent.RaiseEvent();
+        }
         if(_loadToSceneEvent != null)
             _loadToSceneEvent.RaiseEvent(_locationToLoad, false, true); // No scene to load by default, but if a scene loading is needed it can be set in the StepSO
         _isDone = true;

@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: FullJournal
   m_EditorClassIdentifier: 
   _pages:
+  - {fileID: 11400000, guid: 91501b1f617005c4f8c1f16885943bca, type: 2}
+  - {fileID: 11400000, guid: 91501b1f617005c4f8c1f16885943bca, type: 2}
+  - {fileID: 11400000, guid: 91501b1f617005c4f8c1f16885943bca, type: 2}
+  - {fileID: 11400000, guid: 91501b1f617005c4f8c1f16885943bca, type: 2}
+  - {fileID: 11400000, guid: 1eba315b056e8254bbb1811b246e5638, type: 2}
   - {fileID: 11400000, guid: 24c058c0051afe141baa1102e9d938d0, type: 2}
-  - {fileID: 11400000, guid: 24c058c0051afe141baa1102e9d938d0, type: 2}
-  - {fileID: 11400000, guid: 24c058c0051afe141baa1102e9d938d0, type: 2}
-  - {fileID: 11400000, guid: 24c058c0051afe141baa1102e9d938d0, type: 2}
-  - {fileID: 11400000, guid: 24c058c0051afe141baa1102e9d938d0, type: 2}
-  - {fileID: 11400000, guid: 24c058c0051afe141baa1102e9d938d0, type: 2}
+  - {fileID: 11400000, guid: 400ee60b2f2134c45b28f7be1a0d06ba, type: 2}
   _endOfJournalSectionEvent: {fileID: 0}

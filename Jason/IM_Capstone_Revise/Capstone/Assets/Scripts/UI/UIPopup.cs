@@ -56,7 +56,7 @@ public class UIPopup : MonoBehaviour
 
                 _popupButton1.SetButton(tableEntryReferenceConfirm, true);
                 _popupButton2.SetButton(tableEntryReferenceCancel, false);
-                hasExitButton = true;
+                hasExitButton = false;
                 break;
             case PopupType.Quit:
                 isConfirmation = true;
@@ -86,7 +86,8 @@ public class UIPopup : MonoBehaviour
             _popupButton1.Clicked += ConfirmButtonClicked;
         }
 
-        _buttonClose.gameObject.SetActive(hasExitButton);
+        if(_buttonClose != null)
+            _buttonClose.gameObject.SetActive(hasExitButton);
 
         if (hasExitButton) // can exit : Has to take the decision or aknowledge the information
         {

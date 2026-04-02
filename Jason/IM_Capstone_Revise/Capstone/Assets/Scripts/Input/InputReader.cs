@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.Events;
-using UnityEngine.InputSystem.Interactions;
+using UnityEngine.InputSystem;
 
 [CreateAssetMenu(fileName = "InputReader", menuName = "Game/Input Reader")]
 public class InputReader : DescriptionBaseSO, GameInput.IGameplayActions, GameInput.IMenusActions, GameInput.IDialoguesActions, GameInput.IJournalActions
@@ -21,6 +20,7 @@ public class InputReader : DescriptionBaseSO, GameInput.IGameplayActions, GameIn
     public event UnityAction MoveCanceledEvent = delegate { };
     public event UnityAction HoldBreathEvent = delegate { };
     public event UnityAction HoldBreathCanceledEvent = delegate { };
+    public event UnityAction ReadQuestEvent = delegate { };
 
     public event UnityAction<Vector2, bool> CameraMoveEvent = delegate { };
     public event UnityAction EnableMouseControlCameraEvent = delegate { };
@@ -38,8 +38,8 @@ public class InputReader : DescriptionBaseSO, GameInput.IGameplayActions, GameIn
     public event UnityAction MenuUnpauseEvent = delegate { };
     public event UnityAction MenuPauseEvent = delegate { };
     public event UnityAction MenuCloseEvent = delegate { };
-    public event UnityAction OpenInventoryEvent = delegate { }; 
-    public event UnityAction CloseInventoryEvent = delegate { }; 
+    public event UnityAction OpenJournalEvent = delegate { }; 
+    public event UnityAction CloseJournalEvent = delegate { }; 
     public event UnityAction<float> TabSwitched = delegate { };
 
     // Journal
@@ -71,6 +71,14 @@ public class InputReader : DescriptionBaseSO, GameInput.IGameplayActions, GameIn
     {
         DisableAllInput();
     }
+
+    public void OnReadQuest(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed)
+        {
+            ReadQuestEvent.Invoke();
+        }
+    }
     public void OnMove(InputAction.CallbackContext context)
     {
         MoveEvent.Invoke(context.ReadValue<Vector2>());
@@ -99,19 +107,19 @@ public class InputReader : DescriptionBaseSO, GameInput.IGameplayActions, GameIn
             HoldBreathCanceledEvent.Invoke();
     }
 
-    public void OnOpenInventory(InputAction.CallbackContext context)
+    public void OnOpenJournal(InputAction.CallbackContext context)
     {
         if (context.phase == InputActionPhase.Performed)
         {
-            OpenInventoryEvent.Invoke();
+            OpenJournalEvent.Invoke();
         }
     }
 
-    public void OnCloseInventory(InputAction.CallbackContext context)
+    public void OnCloseJournal(InputAction.CallbackContext context)
     {
         if (context.phase == InputActionPhase.Performed)
         {
-            CloseInventoryEvent.Invoke();
+            CloseJournalEvent.Invoke();
         }
     }
 

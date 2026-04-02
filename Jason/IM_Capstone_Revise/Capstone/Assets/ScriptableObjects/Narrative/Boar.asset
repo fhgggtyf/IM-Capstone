@@ -22,6 +22,9 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  _actorPortrait: {fileID: 21300000, guid: 439f085c2c197584ba473bb35ef78f97, type: 3}
+  _actorPortraitUnknown: {fileID: 21300000, guid: 4f1db3c7eaea15843bef07af4aae27ae, type: 3}
+  _meetStep: {fileID: 11400000, guid: 6caeab33e82895f41a2b56654f707e62, type: 2}
   references:
     version: 2
     RefIds: []

@@ -27,16 +27,20 @@ MonoBehaviour:
     m_Key: Boar
     m_Metadata:
       m_Items: []
-  - m_Id: 17982670635008
-    m_Key: Mole
-    m_Metadata:
-      m_Items: []
   - m_Id: 18027268669440
     m_Key: Bat
     m_Metadata:
       m_Items: []
   - m_Id: 18076132311040
     m_Key: Fox
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15482786790256640
+    m_Key: Narrator
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16962736806440960
+    m_Key: Unknown
     m_Metadata:
       m_Items: []
   m_Metadata:

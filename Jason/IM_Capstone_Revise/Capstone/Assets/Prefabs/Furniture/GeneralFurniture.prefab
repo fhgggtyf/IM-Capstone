@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 6987422299562306959}
   - component: {fileID: -1887311333482088834}
   - component: {fileID: 9197009476228377292}
+  - component: {fileID: 3374886351325842461}
+  - component: {fileID: 4392040612331608997}
   m_Layer: 6
   m_Name: GeneralFurniture
   m_TagString: Untagged
@@ -137,6 +139,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isQuestItem: 1
+  _endsQuest: 0
+  _continueWithStep: {fileID: 0}
+  _forStep: {fileID: 0}
+  questManager: {fileID: 11400000, guid: 94435826a1183ec44acbb29a83662a92, type: 2}
   _interactableId: UniqueIdHere
   _objectInteractedEvent: {fileID: 11400000, guid: 5c9d9dcc3ba951e4a91abddbf79feacd, type: 2}
   _onInteractDialogue: {fileID: 0}
@@ -157,6 +163,34 @@ MonoBehaviour:
   sortPoint: {fileID: 0}
   _renderers:
   - {fileID: 0}
+--- !u!208 &3374886351325842461
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3006166375460654430}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
+--- !u!114 &4392040612331608997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3006166375460654430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d20f511762190d0469bdb6bf1332d301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7981349156637591081
 GameObject:
   m_ObjectHideFlags: 0

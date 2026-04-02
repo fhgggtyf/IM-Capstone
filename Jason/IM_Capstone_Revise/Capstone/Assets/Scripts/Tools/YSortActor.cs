@@ -11,6 +11,12 @@ public class YSortActor : MonoBehaviour
     private SpriteRenderer[] _renderers;
     private int[] _initialOffsets;
 
+    public int SortingOrderBase
+    {
+        get => sortingOrderBase;
+        set => sortingOrderBase = value;
+    }
+
     private void Awake()
     {
         _renderers = GetComponentsInChildren<SpriteRenderer>();

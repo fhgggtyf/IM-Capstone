@@ -16,18 +16,30 @@ MonoBehaviour:
   _actor: {fileID: 11400000, guid: 017c0005658ebf34bb12af91c6b0b357, type: 2}
   _locationToHappen: {fileID: 11400000, guid: bf3a1b81db806884d9d1d2c224eb8a0d, type: 2}
   _dialogueBeforeStep: {fileID: 11400000, guid: 6d925fb352f1867429abb0fc2c30ae32, type: 2}
-  _completeDialogue: {fileID: 11400000, guid: f627d080c0ed8834c98ad876f1b14794, type: 2}
-  _incompleteDialogue: {fileID: 11400000, guid: c727377f5c0d4d24b84b3ba5bd5541df, type: 2}
+  _completeDialogue: {fileID: 0}
+  _incompleteDialogue: {fileID: 0}
   _type: 3
   _item: {fileID: 0}
   _hasReward: 0
   _rewardItem: {fileID: 0}
   _rewardItemCount: 1
   _requiredInteractableIds:
-  - GF_1
-  - 1F_1
+  - Endgame
   _interactedIds: []
   _isDone: 0
   _endStepEvent: {fileID: 0}
-  _loadToSceneEvent: {fileID: 11400000, guid: 8a3cfd366d7285f4e98a2138a6db5a3b, type: 2}
-  _locationToLoad: {fileID: 11400000, guid: 906070a34e7df4ffcafdaf3dc1ae7408, type: 2}
+  _loadToSceneEvent: {fileID: 0}
+  _locationToLoad: {fileID: 0}
+  _stepDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:6bfb6725cfcf1f34380135f0f41c515f
+    m_TableEntryReference:
+      m_KeyId: 115364605952
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  _braodcastOnEnter: 1
+  references:
+    version: 2
+    RefIds: []

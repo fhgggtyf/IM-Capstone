@@ -30,16 +30,20 @@ MonoBehaviour:
     m_Localized: Boar(name)
     m_Metadata:
       m_Items: []
-  - m_Id: 17982670635008
-    m_Localized: Mole(name)
-    m_Metadata:
-      m_Items: []
   - m_Id: 18027268669440
     m_Localized: Bat(name)
     m_Metadata:
       m_Items: []
   - m_Id: 18076132311040
     m_Localized: foxname(
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15482786790256640
+    m_Localized: Narrator
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16962736806440960
+    m_Localized: Unknown
     m_Metadata:
       m_Items: []
   references:

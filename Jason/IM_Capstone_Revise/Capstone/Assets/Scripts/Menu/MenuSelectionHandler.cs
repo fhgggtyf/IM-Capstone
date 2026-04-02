@@ -5,16 +5,19 @@ using UnityEngine.EventSystems;
 public class MenuSelectionHandler : MonoBehaviour
 {
 	[SerializeField] private InputReader _inputReader;
-	[SerializeField] [ReadOnly] private GameObject _defaultSelection;
+	[SerializeField] private bool _selectDefaultOnEnable;
+    [SerializeField] [ReadOnly] private GameObject _defaultSelection;
 	[SerializeField] [ReadOnly] private GameObject _currentSelection;
 	[SerializeField] [ReadOnly] private GameObject _mouseSelection;
 
 	private void OnEnable()
 	{
-		_inputReader.MenuMouseMoveEvent += HandleMoveCursor;
+		Unselect();
+        _inputReader.MenuMouseMoveEvent += HandleMoveCursor;
 		_inputReader.MoveSelectionEvent += HandleMoveSelection;
 
-		StartCoroutine(SelectDefault());
+		if (_selectDefaultOnEnable)
+            StartCoroutine(SelectDefault());
 	}
 
 	private void OnDisable()
@@ -76,23 +79,24 @@ public class MenuSelectionHandler : MonoBehaviour
 		EventSystem.current.SetSelectedGameObject(UIElement);
 	}
 
-	public void HandleMouseExit(GameObject UIElement)
-	{
-		if (EventSystem.current.currentSelectedGameObject != UIElement)
-		{
-			return;
-		}
+    public void HandleMouseExit(GameObject UIElement)
+    {
+        // Clear mouse selection
+        _mouseSelection = null;
 
-		// keep selecting the last thing the mouse has selected 
-		_mouseSelection = null;
-		EventSystem.current.SetSelectedGameObject(_currentSelection);
-	}
+        // If the object being exited was the current selection, clear it
+        if (EventSystem.current.currentSelectedGameObject == UIElement)
+        {
+            _currentSelection = null;
+            EventSystem.current.SetSelectedGameObject(null);
+        }
+    }
 
-	/// <summary>
-	/// Method interactable UI elements should call on Submit interaction to determine whether to continue or not.
-	/// </summary>
-	/// <returns></returns>
-	public bool AllowsSubmit()
+    /// <summary>
+    /// Method interactable UI elements should call on Submit interaction to determine whether to continue or not.
+    /// </summary>
+    /// <returns></returns>
+    public bool AllowsSubmit()
 	{
 		// if LMB is not down, there is no edge case to handle, allow the event to continue
 		return !_inputReader.LeftMouseDown()

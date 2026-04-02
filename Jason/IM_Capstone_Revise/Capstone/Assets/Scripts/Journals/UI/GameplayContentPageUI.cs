@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class GameplayContentPageUI : MonoBehaviour
 {
+    public Sprite[] backgrounds;
+    public Image usedBackground;
     public Image image;
     public TMP_Text text;
 }

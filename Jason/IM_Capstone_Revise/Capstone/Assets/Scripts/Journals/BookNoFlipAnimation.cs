@@ -97,9 +97,13 @@ public class BookNoFlipAnimation : MonoBehaviour
     public void NextPage()
     {
         if (papers == null || papers.Length == 0) return;
+
         if (currentPaper >= EndFlippingPaper)
         {
-            JournalEndedEvent.RaiseEvent();
+            if (JournalEndedEvent != null)
+            {
+                JournalEndedEvent.RaiseEvent();
+            }
             return;
         }
 
@@ -161,8 +165,6 @@ public class BookNoFlipAnimation : MonoBehaviour
         BookUtility.CopyTransform(LeftPageTransform.transform, papers[currentPaper].Left.transform);
         BookUtility.ShowPage(papers[currentPaper].Right);
         BookUtility.CopyTransform(RightPageTransform.transform, papers[currentPaper].Right.transform);
-
-        papers[currentPaper].Left.GetComponent<ContentPageUI>().ShowAnimation();
 
     }
 

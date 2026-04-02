@@ -17,7 +17,7 @@ public class HideInteraction : CoreComponent
 
     [SerializeField] private Player _player;
 
-    public HideInteractable Climbable { get => _hideable; set => _hideable = value; }
+    public HideInteractable Hidable { get => _hideable; set => _hideable = value; }
 
     private void HandleTryInteract(IInteractable interactable)
     {

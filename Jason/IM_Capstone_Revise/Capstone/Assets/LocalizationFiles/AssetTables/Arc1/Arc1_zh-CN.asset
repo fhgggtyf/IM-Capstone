@@ -16,12 +16,26 @@ MonoBehaviour:
     m_Code: zh-CN
   m_SharedData: {fileID: 11400000, guid: b9337267fdc92944ca13fcedc1ac1fb0, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 4250922634619912200
   m_TableData:
   - m_Id: 30030299136
     m_Localized: i
     m_Metadata:
       m_Items: []
+  - m_Id: 28230647152640
+    m_Localized: 
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16962534661959680
+    m_Localized: 
+    m_Metadata:
+      m_Items:
+      - rid: 4250922634619912200
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 4250922634619912200
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 003004dd55433c00

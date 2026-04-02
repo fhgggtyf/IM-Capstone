@@ -6,8 +6,9 @@ public class GameManager : MonoBehaviour
 {
 	[SerializeField] private QuestManagerSO _questManager = default;
 	[SerializeField] private GameStateSO _gameState = default;
+	[SerializeField] private UIDialogueManager _dialogueManager = default;
 
-	[Header("Inventory")]
+    [Header("Inventory")]
 	[SerializeField] private InventorySO _inventory = default;
 
 	/// <summary>
@@ -58,6 +59,7 @@ public class GameManager : MonoBehaviour
 	void StartGame()
 	{
 		_gameState.UpdateGameState(GameState.Gameplay);
-		_questManager.StartGame();
+        _dialogueManager.IsQuestCompleted = _questManager.IsStepCompleted;
+        _questManager.StartGame();
 	}
 }

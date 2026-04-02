@@ -16,11 +16,17 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 411924ad24709684fac053ae7f02fc1f, type: 2}
   - {fileID: 11400000, guid: d1de885c9899c9743aacb5dbb964f0c2, type: 2}
   _inventory: {fileID: 11400000, guid: 5eab31f84d857ee4c8ae7c0a1374ac39, type: 2}
+  Protagonist: {fileID: 11400000, guid: b2925e00e27b53941a1b3fb78e3d2526, type: 2}
   _continueWithStepEvent: {fileID: 11400000, guid: c7d0bd933426e4e498ba4cfd6b1db02c, type: 2}
   _endDialogueEvent: {fileID: 11400000, guid: ebf9feec8d9e6d5479ffd02357a1f430, type: 2}
   _objectInteractedEvent: {fileID: 11400000, guid: 5c9d9dcc3ba951e4a91abddbf79feacd, type: 2}
+  StartDialogueEvent: {fileID: 11400000, guid: 71b218837c2cbf840bbc672bc200feb6, type: 2}
   _playCompletionDialogueEvent: {fileID: 11400000, guid: 67c1f69ffadc16e408b89b708d5125cd, type: 2}
   _playIncompleteDialogueEvent: {fileID: 11400000, guid: a7908423685fe8948b1f797a45cd90a5, type: 2}
+  _startStepEvent: {fileID: 11400000, guid: 37e0bfb82cd16764ba72a5e08a82ad4e, type: 2}
   _giveItemEvent: {fileID: 0}
   _rewardItemEvent: {fileID: 0}
   saveSystem: {fileID: 11400000, guid: daf7780e9a1c201469facf9e56b86f3e, type: 2}
+  _startingLocations:
+  - {fileID: 11400000, guid: 31eb79f328fa3fa46a5b7e5da271e05f, type: 2}
+  - {fileID: 11400000, guid: bf3a1b81db806884d9d1d2c224eb8a0d, type: 2}

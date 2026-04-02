@@ -67,6 +67,7 @@ public class VisionCone : CoreComponent
 
         IsPlayerInSight = ComputeIsPlayerInSight();
         _npc.playerIsInSight = IsPlayerInSight;
+
     }
 
     private bool ComputeIsPlayerInSight()

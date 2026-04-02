@@ -55,9 +55,18 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""OpenInventory"",
+                    ""name"": ""OpenJournal"",
                     ""type"": ""Button"",
                     ""id"": ""4f1ce12b-9f27-43e1-89a5-edab2f73656b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ReadQuest"",
+                    ""type"": ""Button"",
+                    ""id"": ""c1cea995-3da8-4aa9-9f53-a958f8c9c787"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -149,7 +158,18 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""OpenInventory"",
+                    ""action"": ""OpenJournal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""80ea3de2-95a4-433b-94b6-784dd852909a"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ReadQuest"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -190,15 +210,6 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
                     ""name"": ""Confirm"",
                     ""type"": ""Button"",
                     ""id"": ""b347348b-580c-4731-a5f0-af02f7b7f4c3"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Cancel"",
-                    ""type"": ""Button"",
-                    ""id"": ""62711d14-e22c-4d89-82a6-e1e4aae4997a"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -286,18 +297,18 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""CloseInventory"",
+                    ""name"": ""Pause"",
                     ""type"": ""Button"",
-                    ""id"": ""cb03041f-5ad6-424b-b065-7ee6f355c94a"",
+                    ""id"": ""8d5cf358-34d2-48b3-8962-17c21ddc911f"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Pause"",
+                    ""name"": ""Cancel"",
                     ""type"": ""Button"",
-                    ""id"": ""8d5cf358-34d2-48b3-8962-17c21ddc911f"",
+                    ""id"": ""40bfee51-2b46-46e9-a1da-5724d65d33b6"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -450,17 +461,6 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""4d9d59a2-0807-40a5-9ae6-8b3aac186ea6"",
-                    ""path"": ""<Keyboard>/escape"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Cancel"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""a378c844-5262-407e-8c2a-154bd32ed8de"",
                     ""path"": ""<Mouse>/position"",
                     ""interactions"": """",
@@ -571,17 +571,6 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""4b7d8803-0bb9-4cc8-a196-a85eae4e9ead"",
-                    ""path"": ""<Keyboard>/tab"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""CloseInventory"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""44f8fe0e-c917-437e-b74d-da331577b775"",
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
@@ -599,6 +588,17 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""40a70712-f444-44d6-93aa-eb40a10b17e4"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cancel"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -717,6 +717,24 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CloseJournal"",
+                    ""type"": ""Button"",
+                    ""id"": ""233c21d6-ada4-40c7-b270-6c847806594f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Cancel"",
+                    ""type"": ""Button"",
+                    ""id"": ""6f948846-18e4-49b2-a7a7-ee18d55f1db5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -741,6 +759,28 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
                     ""action"": ""FlipPrevious"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d3c4fd20-64c4-447d-b05f-48665e3cd168"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CloseJournal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e0eb6a5b-e5f4-41b6-972c-5417c4ad511a"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cancel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -752,14 +792,14 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
         m_Gameplay_Move = m_Gameplay.FindAction("Move", throwIfNotFound: true);
         m_Gameplay_Interact = m_Gameplay.FindAction("Interact", throwIfNotFound: true);
         m_Gameplay_HoldBreath = m_Gameplay.FindAction("HoldBreath", throwIfNotFound: true);
-        m_Gameplay_OpenInventory = m_Gameplay.FindAction("OpenInventory", throwIfNotFound: true);
+        m_Gameplay_OpenJournal = m_Gameplay.FindAction("OpenJournal", throwIfNotFound: true);
+        m_Gameplay_ReadQuest = m_Gameplay.FindAction("ReadQuest", throwIfNotFound: true);
         // Menus
         m_Menus = asset.FindActionMap("Menus", throwIfNotFound: true);
         m_Menus_MoveSelection = m_Menus.FindAction("MoveSelection", throwIfNotFound: true);
         m_Menus_Navigate = m_Menus.FindAction("Navigate", throwIfNotFound: true);
         m_Menus_Submit = m_Menus.FindAction("Submit", throwIfNotFound: true);
         m_Menus_Confirm = m_Menus.FindAction("Confirm", throwIfNotFound: true);
-        m_Menus_Cancel = m_Menus.FindAction("Cancel", throwIfNotFound: true);
         m_Menus_MouseMove = m_Menus.FindAction("MouseMove", throwIfNotFound: true);
         m_Menus_Unpause = m_Menus.FindAction("Unpause", throwIfNotFound: true);
         m_Menus_ChangeTab = m_Menus.FindAction("ChangeTab", throwIfNotFound: true);
@@ -769,8 +809,8 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
         m_Menus_Click = m_Menus.FindAction("Click", throwIfNotFound: true);
         m_Menus_Point = m_Menus.FindAction("Point", throwIfNotFound: true);
         m_Menus_RightClick = m_Menus.FindAction("RightClick", throwIfNotFound: true);
-        m_Menus_CloseInventory = m_Menus.FindAction("CloseInventory", throwIfNotFound: true);
         m_Menus_Pause = m_Menus.FindAction("Pause", throwIfNotFound: true);
+        m_Menus_Cancel = m_Menus.FindAction("Cancel", throwIfNotFound: true);
         // Dialogues
         m_Dialogues = asset.FindActionMap("Dialogues", throwIfNotFound: true);
         m_Dialogues_MoveSelection = m_Dialogues.FindAction("MoveSelection", throwIfNotFound: true);
@@ -779,6 +819,8 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
         m_Journal = asset.FindActionMap("Journal", throwIfNotFound: true);
         m_Journal_FlipNext = m_Journal.FindAction("FlipNext", throwIfNotFound: true);
         m_Journal_FlipPrevious = m_Journal.FindAction("FlipPrevious", throwIfNotFound: true);
+        m_Journal_CloseJournal = m_Journal.FindAction("CloseJournal", throwIfNotFound: true);
+        m_Journal_Cancel = m_Journal.FindAction("Cancel", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -843,7 +885,8 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Move;
     private readonly InputAction m_Gameplay_Interact;
     private readonly InputAction m_Gameplay_HoldBreath;
-    private readonly InputAction m_Gameplay_OpenInventory;
+    private readonly InputAction m_Gameplay_OpenJournal;
+    private readonly InputAction m_Gameplay_ReadQuest;
     public struct GameplayActions
     {
         private @GameInput m_Wrapper;
@@ -851,7 +894,8 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Gameplay_Move;
         public InputAction @Interact => m_Wrapper.m_Gameplay_Interact;
         public InputAction @HoldBreath => m_Wrapper.m_Gameplay_HoldBreath;
-        public InputAction @OpenInventory => m_Wrapper.m_Gameplay_OpenInventory;
+        public InputAction @OpenJournal => m_Wrapper.m_Gameplay_OpenJournal;
+        public InputAction @ReadQuest => m_Wrapper.m_Gameplay_ReadQuest;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -870,9 +914,12 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
             @HoldBreath.started += instance.OnHoldBreath;
             @HoldBreath.performed += instance.OnHoldBreath;
             @HoldBreath.canceled += instance.OnHoldBreath;
-            @OpenInventory.started += instance.OnOpenInventory;
-            @OpenInventory.performed += instance.OnOpenInventory;
-            @OpenInventory.canceled += instance.OnOpenInventory;
+            @OpenJournal.started += instance.OnOpenJournal;
+            @OpenJournal.performed += instance.OnOpenJournal;
+            @OpenJournal.canceled += instance.OnOpenJournal;
+            @ReadQuest.started += instance.OnReadQuest;
+            @ReadQuest.performed += instance.OnReadQuest;
+            @ReadQuest.canceled += instance.OnReadQuest;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -886,9 +933,12 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
             @HoldBreath.started -= instance.OnHoldBreath;
             @HoldBreath.performed -= instance.OnHoldBreath;
             @HoldBreath.canceled -= instance.OnHoldBreath;
-            @OpenInventory.started -= instance.OnOpenInventory;
-            @OpenInventory.performed -= instance.OnOpenInventory;
-            @OpenInventory.canceled -= instance.OnOpenInventory;
+            @OpenJournal.started -= instance.OnOpenJournal;
+            @OpenJournal.performed -= instance.OnOpenJournal;
+            @OpenJournal.canceled -= instance.OnOpenJournal;
+            @ReadQuest.started -= instance.OnReadQuest;
+            @ReadQuest.performed -= instance.OnReadQuest;
+            @ReadQuest.canceled -= instance.OnReadQuest;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -914,7 +964,6 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Menus_Navigate;
     private readonly InputAction m_Menus_Submit;
     private readonly InputAction m_Menus_Confirm;
-    private readonly InputAction m_Menus_Cancel;
     private readonly InputAction m_Menus_MouseMove;
     private readonly InputAction m_Menus_Unpause;
     private readonly InputAction m_Menus_ChangeTab;
@@ -924,8 +973,8 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Menus_Click;
     private readonly InputAction m_Menus_Point;
     private readonly InputAction m_Menus_RightClick;
-    private readonly InputAction m_Menus_CloseInventory;
     private readonly InputAction m_Menus_Pause;
+    private readonly InputAction m_Menus_Cancel;
     public struct MenusActions
     {
         private @GameInput m_Wrapper;
@@ -934,7 +983,6 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
         public InputAction @Navigate => m_Wrapper.m_Menus_Navigate;
         public InputAction @Submit => m_Wrapper.m_Menus_Submit;
         public InputAction @Confirm => m_Wrapper.m_Menus_Confirm;
-        public InputAction @Cancel => m_Wrapper.m_Menus_Cancel;
         public InputAction @MouseMove => m_Wrapper.m_Menus_MouseMove;
         public InputAction @Unpause => m_Wrapper.m_Menus_Unpause;
         public InputAction @ChangeTab => m_Wrapper.m_Menus_ChangeTab;
@@ -944,8 +992,8 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
         public InputAction @Click => m_Wrapper.m_Menus_Click;
         public InputAction @Point => m_Wrapper.m_Menus_Point;
         public InputAction @RightClick => m_Wrapper.m_Menus_RightClick;
-        public InputAction @CloseInventory => m_Wrapper.m_Menus_CloseInventory;
         public InputAction @Pause => m_Wrapper.m_Menus_Pause;
+        public InputAction @Cancel => m_Wrapper.m_Menus_Cancel;
         public InputActionMap Get() { return m_Wrapper.m_Menus; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -967,9 +1015,6 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
             @Confirm.started += instance.OnConfirm;
             @Confirm.performed += instance.OnConfirm;
             @Confirm.canceled += instance.OnConfirm;
-            @Cancel.started += instance.OnCancel;
-            @Cancel.performed += instance.OnCancel;
-            @Cancel.canceled += instance.OnCancel;
             @MouseMove.started += instance.OnMouseMove;
             @MouseMove.performed += instance.OnMouseMove;
             @MouseMove.canceled += instance.OnMouseMove;
@@ -997,12 +1042,12 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
             @RightClick.started += instance.OnRightClick;
             @RightClick.performed += instance.OnRightClick;
             @RightClick.canceled += instance.OnRightClick;
-            @CloseInventory.started += instance.OnCloseInventory;
-            @CloseInventory.performed += instance.OnCloseInventory;
-            @CloseInventory.canceled += instance.OnCloseInventory;
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
+            @Cancel.started += instance.OnCancel;
+            @Cancel.performed += instance.OnCancel;
+            @Cancel.canceled += instance.OnCancel;
         }
 
         private void UnregisterCallbacks(IMenusActions instance)
@@ -1019,9 +1064,6 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
             @Confirm.started -= instance.OnConfirm;
             @Confirm.performed -= instance.OnConfirm;
             @Confirm.canceled -= instance.OnConfirm;
-            @Cancel.started -= instance.OnCancel;
-            @Cancel.performed -= instance.OnCancel;
-            @Cancel.canceled -= instance.OnCancel;
             @MouseMove.started -= instance.OnMouseMove;
             @MouseMove.performed -= instance.OnMouseMove;
             @MouseMove.canceled -= instance.OnMouseMove;
@@ -1049,12 +1091,12 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
             @RightClick.started -= instance.OnRightClick;
             @RightClick.performed -= instance.OnRightClick;
             @RightClick.canceled -= instance.OnRightClick;
-            @CloseInventory.started -= instance.OnCloseInventory;
-            @CloseInventory.performed -= instance.OnCloseInventory;
-            @CloseInventory.canceled -= instance.OnCloseInventory;
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
+            @Cancel.started -= instance.OnCancel;
+            @Cancel.performed -= instance.OnCancel;
+            @Cancel.canceled -= instance.OnCancel;
         }
 
         public void RemoveCallbacks(IMenusActions instance)
@@ -1132,12 +1174,16 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
     private List<IJournalActions> m_JournalActionsCallbackInterfaces = new List<IJournalActions>();
     private readonly InputAction m_Journal_FlipNext;
     private readonly InputAction m_Journal_FlipPrevious;
+    private readonly InputAction m_Journal_CloseJournal;
+    private readonly InputAction m_Journal_Cancel;
     public struct JournalActions
     {
         private @GameInput m_Wrapper;
         public JournalActions(@GameInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @FlipNext => m_Wrapper.m_Journal_FlipNext;
         public InputAction @FlipPrevious => m_Wrapper.m_Journal_FlipPrevious;
+        public InputAction @CloseJournal => m_Wrapper.m_Journal_CloseJournal;
+        public InputAction @Cancel => m_Wrapper.m_Journal_Cancel;
         public InputActionMap Get() { return m_Wrapper.m_Journal; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1153,6 +1199,12 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
             @FlipPrevious.started += instance.OnFlipPrevious;
             @FlipPrevious.performed += instance.OnFlipPrevious;
             @FlipPrevious.canceled += instance.OnFlipPrevious;
+            @CloseJournal.started += instance.OnCloseJournal;
+            @CloseJournal.performed += instance.OnCloseJournal;
+            @CloseJournal.canceled += instance.OnCloseJournal;
+            @Cancel.started += instance.OnCancel;
+            @Cancel.performed += instance.OnCancel;
+            @Cancel.canceled += instance.OnCancel;
         }
 
         private void UnregisterCallbacks(IJournalActions instance)
@@ -1163,6 +1215,12 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
             @FlipPrevious.started -= instance.OnFlipPrevious;
             @FlipPrevious.performed -= instance.OnFlipPrevious;
             @FlipPrevious.canceled -= instance.OnFlipPrevious;
+            @CloseJournal.started -= instance.OnCloseJournal;
+            @CloseJournal.performed -= instance.OnCloseJournal;
+            @CloseJournal.canceled -= instance.OnCloseJournal;
+            @Cancel.started -= instance.OnCancel;
+            @Cancel.performed -= instance.OnCancel;
+            @Cancel.canceled -= instance.OnCancel;
         }
 
         public void RemoveCallbacks(IJournalActions instance)
@@ -1185,7 +1243,8 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnHoldBreath(InputAction.CallbackContext context);
-        void OnOpenInventory(InputAction.CallbackContext context);
+        void OnOpenJournal(InputAction.CallbackContext context);
+        void OnReadQuest(InputAction.CallbackContext context);
     }
     public interface IMenusActions
     {
@@ -1193,7 +1252,6 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
         void OnNavigate(InputAction.CallbackContext context);
         void OnSubmit(InputAction.CallbackContext context);
         void OnConfirm(InputAction.CallbackContext context);
-        void OnCancel(InputAction.CallbackContext context);
         void OnMouseMove(InputAction.CallbackContext context);
         void OnUnpause(InputAction.CallbackContext context);
         void OnChangeTab(InputAction.CallbackContext context);
@@ -1203,8 +1261,8 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
         void OnClick(InputAction.CallbackContext context);
         void OnPoint(InputAction.CallbackContext context);
         void OnRightClick(InputAction.CallbackContext context);
-        void OnCloseInventory(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnCancel(InputAction.CallbackContext context);
     }
     public interface IDialoguesActions
     {
@@ -1215,5 +1273,7 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
     {
         void OnFlipNext(InputAction.CallbackContext context);
         void OnFlipPrevious(InputAction.CallbackContext context);
+        void OnCloseJournal(InputAction.CallbackContext context);
+        void OnCancel(InputAction.CallbackContext context);
     }
 }

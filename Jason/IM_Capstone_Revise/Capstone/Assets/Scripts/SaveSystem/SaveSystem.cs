@@ -41,7 +41,6 @@ public class SaveSystem : ScriptableObject
         {
             saveData._locationId = locationSO.Guid;
         }
-
         SaveDataToDisk();
     }
 
@@ -105,11 +104,13 @@ public class SaveSystem : ScriptableObject
 
     public void WriteEmptySaveFile()
     {
+        Debug.Log("Write empty save file");
         FileManager.WriteToFile(saveFilename, "");
 
     }
     public void SetNewGameData()
     {
+        Debug.Log("New Game");
         FileManager.WriteToFile(saveFilename, "");
         _playerInventory.Init();
         _questManagerSO.ResetQuestlines();

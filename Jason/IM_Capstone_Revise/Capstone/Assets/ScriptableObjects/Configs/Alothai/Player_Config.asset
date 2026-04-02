@@ -15,7 +15,7 @@ MonoBehaviour:
   _patrolSpeed: 0
   _investigateSpeed: 0
   _engageSpeed: 0
-  _walkingSpeed: 20
+  _walkingSpeed: 4
   _walkingSound: 4
   _idleSound: 2
   _soundThreshold: 0

@@ -40,12 +40,13 @@ public class CameraManager : MonoBehaviour
     void LateUpdate()
     {
         if (cameraIsStationary)
-            return; // ¡û STOP CAMERA MOVING ENTIRELY
+            return;
 
         if (!characterLoaded || player == null)
             return;
 
         Vector3 desiredPos = player.position;
+        desiredPos.z = 0f; // ¡û FORCE Z TO 0
 
         // No boundaries ¡ú just follow
         if (cameraBoundsCollider == null)
@@ -62,7 +63,7 @@ public class CameraManager : MonoBehaviour
 
         if ((closest - camCenter).sqrMagnitude > 0.0001f)
         {
-            desiredPos = new Vector3(closest.x, closest.y, desiredPos.z);
+            desiredPos = new Vector3(closest.x, closest.y, 0f); // also force Z
         }
 
         vcam.Follow.position = desiredPos;

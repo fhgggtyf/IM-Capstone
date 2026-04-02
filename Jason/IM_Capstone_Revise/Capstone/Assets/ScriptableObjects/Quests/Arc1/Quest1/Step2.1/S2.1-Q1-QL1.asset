@@ -12,20 +12,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9562eacc0a829cf46aa2c157d588247f, type: 3}
   m_Name: S2.1-Q1-QL1
   m_EditorClassIdentifier: 
-  _guid: 824a7839d9754a8429e5d91199cd04b9
-  _actor: {fileID: 11400000, guid: b2925e00e27b53941a1b3fb78e3d2526, type: 2}
-  _locationToHappen: {fileID: 11400000, guid: 7130cf02598f841d8a7764e92f341260, type: 2}
-  _dialogueBeforeStep: {fileID: 0}
+  _guid: cc07e58f5126e2e40ab9b707d8974709
+  _actor: {fileID: 11400000, guid: 6252657df771abe43b64f0279bc92375, type: 2}
+  _locationToHappen: {fileID: 11400000, guid: bf3a1b81db806884d9d1d2c224eb8a0d, type: 2}
+  _dialogueBeforeStep: {fileID: 11400000, guid: c2f6b2cf8874de14a9a95219966cb9fd, type: 2}
   _completeDialogue: {fileID: 0}
   _incompleteDialogue: {fileID: 0}
-  _type: 4
+  _type: 0
   _item: {fileID: 0}
   _hasReward: 0
   _rewardItem: {fileID: 0}
   _rewardItemCount: 1
   _requiredInteractableIds: []
   _interactedIds: []
-  _isDone: 1
+  _isDone: 0
   _endStepEvent: {fileID: 0}
-  _loadToSceneEvent: {fileID: 0}
-  _locationToLoad: {fileID: 0}
+  _loadToSceneEvent: {fileID: 11400000, guid: 8a3cfd366d7285f4e98a2138a6db5a3b, type: 2}
+  _locationToLoad: {fileID: 11400000, guid: 906070a34e7df4ffcafdaf3dc1ae7408, type: 2}
+  _stepDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:6bfb6725cfcf1f34380135f0f41c515f
+    m_TableEntryReference:
+      m_KeyId: 225854131286016
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  _braodcastOnEnter: 1
+  references:
+    version: 2
+    RefIds: []

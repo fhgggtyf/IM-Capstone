@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// This class is a base class which contains what is common to all game scenes (Locations, Menus, Managers)

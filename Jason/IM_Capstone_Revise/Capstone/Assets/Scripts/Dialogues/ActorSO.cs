@@ -9,6 +9,7 @@ public enum ActorID
 	BT, // Bat
 	ML, // Mole
 	FX, // Fox
+	NAR,
 
 }
 
@@ -21,10 +22,14 @@ public class ActorSO : ScriptableObject
 	[SerializeField] private ActorID _actorId = default;
 	[SerializeField] private LocalizedString _actorName = default;
 	[SerializeField] private Sprite _actorPortrait;
+	[SerializeField] private Sprite _actorPortraitUnknown = default;
+	[SerializeField] private StepSO _meetStep = default;
 
     public ActorID ActorId { get => _actorId; }
 	public LocalizedString ActorName { get => _actorName; }
 	public Sprite ActorPortrait { get => _actorPortrait; }
+	public Sprite ActorPortraitUnknown { get => _actorPortraitUnknown; }
+	public StepSO MeetStep { get => _meetStep; }
 }
 
 
