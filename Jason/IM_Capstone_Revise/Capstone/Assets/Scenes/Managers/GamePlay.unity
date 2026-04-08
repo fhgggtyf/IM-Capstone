@@ -432,6 +432,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5548826192982314912, guid: 9b81818005aad9249a360e12867747d6, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548826192982314912, guid: 9b81818005aad9249a360e12867747d6, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548826192982314912, guid: 9b81818005aad9249a360e12867747d6, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8140486717444799429, guid: 9b81818005aad9249a360e12867747d6, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1434,6 +1446,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6252657df771abe43b64f0279bc92375, type: 2}
   _inputReader: {fileID: 11400000, guid: e56ee6ed7dd16a744a29977a83f84ef7, type: 2}
   _gameState: {fileID: 11400000, guid: 8566af23142b270488c6005d40819d99, type: 2}
+  _audioConfiguration: {fileID: 11400000, guid: 2fcf67deed91ff34498fa2d153597d71, type: 2}
   _startDialogue: {fileID: 11400000, guid: 71b218837c2cbf840bbc672bc200feb6, type: 2}
   _makeDialogueChoiceEvent: {fileID: 11400000, guid: 7d8b159e0254f0a41976beebee9a8efd, type: 2}
   _openUIDialogueEvent: {fileID: 11400000, guid: 9833815a75915f0458371a1a0241892f, type: 2}
@@ -1443,6 +1456,7 @@ MonoBehaviour:
   _playIncompleteDialogue: {fileID: 11400000, guid: a7908423685fe8948b1f797a45cd90a5, type: 2}
   _makeWinningChoice: {fileID: 11400000, guid: 30160418af01c1a47b62985138a1c722, type: 2}
   _makeLosingChoice: {fileID: 11400000, guid: c2431c48c0c414540afea39298d86c16, type: 2}
+  _sfxEventChannel: {fileID: 11400000, guid: 0d83966be85018b4d932e68e62eb8224, type: 2}
 --- !u!1001 &371503088
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2341,6 +2355,14 @@ MonoBehaviour:
   _questManager: {fileID: 11400000, guid: 94435826a1183ec44acbb29a83662a92, type: 2}
   _gameState: {fileID: 11400000, guid: 8566af23142b270488c6005d40819d99, type: 2}
   _dialogueManager: {fileID: 1386761967}
+  _showLoadScreen: 1
+  _popupPanel: {fileID: 469420387}
+  _currentSceneUnloaded: {fileID: 11400000, guid: ef785204d74fabf4dab0704195b0e1a2, type: 2}
+  _playerDead: {fileID: 11400000, guid: 3b6672b55a76a4544852f07b00829a25, type: 2}
+  _saveSystem: {fileID: 11400000, guid: daf7780e9a1c201469facf9e56b86f3e, type: 2}
+  _loadLocation: {fileID: 11400000, guid: 8a3cfd366d7285f4e98a2138a6db5a3b, type: 2}
+  _exitGameEvent: {fileID: 11400000, guid: fd46afb509d32b342aa248ab1362e9f3, type: 2}
+  _unloadCurrentScene: {fileID: 11400000, guid: ed14cebc82057554a9cd012df8946b8e, type: 2}
   _inventory: {fileID: 11400000, guid: 5eab31f84d857ee4c8ae7c0a1374ac39, type: 2}
 --- !u!4 &512366275
 Transform:
@@ -3663,6 +3685,7 @@ MonoBehaviour:
   rightPagePrefab: {fileID: 8174035643171111041, guid: 5db937d39306c8d4c83965a1272ad097, type: 3}
   FlipToLeft: {fileID: 11400000, guid: 4202db81e8ae3db4fb246d60b55bd704, type: 2}
   UnlockPages: {fileID: 11400000, guid: c03789e1bc466bf46b6332931b003ede, type: 2}
+  _defaultImg: {fileID: 21300000, guid: a669b94795cbd3b479ba4897ef173d7a, type: 3}
 --- !u!1 &979254301
 GameObject:
   m_ObjectHideFlags: 0
@@ -3677,6 +3700,7 @@ GameObject:
   - component: {fileID: 979254302}
   - component: {fileID: 979254306}
   - component: {fileID: 979254307}
+  - component: {fileID: 979254308}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3821,6 +3845,20 @@ MonoBehaviour:
   _loadMenuEvent: {fileID: 11400000, guid: a8d9c67252b65f943a9ad544e8f909f3, type: 2}
   _onInteractionEndedEvent: {fileID: 11400000, guid: e86b5b9367ea3e043ba6b67ff0392a5e, type: 2}
   _openJournalEvent: {fileID: 11400000, guid: 4ddc6a0256c7526439731cc97f29dd02, type: 2}
+--- !u!114 &979254308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979254301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29d7d7186e69e09488bd69ae1909d263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _RestartGameButton: {fileID: 2035559320}
+  _ExitButton: {fileID: 309434686}
 --- !u!1 &1101060228
 GameObject:
   m_ObjectHideFlags: 0

@@ -516,11 +516,13 @@ MonoBehaviour:
   _loadMenu: {fileID: 11400000, guid: a8d9c67252b65f943a9ad544e8f909f3, type: 2}
   _loadPrologue: {fileID: 11400000, guid: 15a2a53497fe42744a1882ec8c1e085e, type: 2}
   _coldStartupLocation: {fileID: 11400000, guid: d585d6c66b7db27478771c8f0b4a7967, type: 2}
+  _unloadCurrentScene: {fileID: 11400000, guid: ed14cebc82057554a9cd012df8946b8e, type: 2}
   _toggleLoadingScreen: {fileID: 11400000, guid: 8c9a2dc69d1f5ff44a5540ab93de7420, type: 2}
   _onSceneReady: {fileID: 11400000, guid: 6c182f36fdb706a44b6573738b32654a, type: 2}
   _onEnterPrologue: {fileID: 11400000, guid: 161ec19cfea9d224b8a97458471bf427, type: 2}
   _onEnterLocation: {fileID: 11400000, guid: d17675f4e68d44605a9908a995a8dac5, type: 2}
   _fadeRequestChannel: {fileID: 11400000, guid: 306df8a505d7cd347890c4d8aef4fd16, type: 2}
+  _currentSceneUnloaded: {fileID: 11400000, guid: ef785204d74fabf4dab0704195b0e1a2, type: 2}
 --- !u!1 &1242883679
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,6 +649,52 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &1942190678
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1942190679}
+  - component: {fileID: 1942190680}
+  m_Layer: 0
+  m_Name: ExitGameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1942190679
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942190678}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1040.4751, y: 1944.0978, z: -5.821904}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1942190680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942190678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f597e214549440f429be09e3d5c628b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _saveSystem: {fileID: 11400000, guid: daf7780e9a1c201469facf9e56b86f3e, type: 2}
+  _exitGame: {fileID: 11400000, guid: fd46afb509d32b342aa248ab1362e9f3, type: 2}
 --- !u!1 &2084768452
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,3 +785,4 @@ SceneRoots:
   - {fileID: 444482014}
   - {fileID: 2084768455}
   - {fileID: 416645211}
+  - {fileID: 1942190679}

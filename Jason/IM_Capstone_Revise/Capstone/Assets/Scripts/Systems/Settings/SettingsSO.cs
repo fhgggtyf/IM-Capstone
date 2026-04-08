@@ -38,8 +38,18 @@ public class SettingsSO : ScriptableObject
         _currentLocale = local;
     }
     public SettingsSO() { }
+
+	public void ResetSettings()
+	{
+		_masterVolume = 1;
+		_sfxVolume = 1;
+		_musicVolume = 1;
+
+	}
 	public void LoadSavedSettings(Save savedFile)
 	{
+		Debug.Log("adasdafasdasd saved file " + savedFile._masterVolume);
+
 		_masterVolume = savedFile._masterVolume;
 		_musicVolume = savedFile._musicVolume;
 		_sfxVolume = savedFile._sfxVolume;

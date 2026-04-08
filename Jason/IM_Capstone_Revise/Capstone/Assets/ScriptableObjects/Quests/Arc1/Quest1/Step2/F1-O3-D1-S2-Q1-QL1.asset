@@ -23,6 +23,10 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    _choices: []
+    _lineAudio: []
+  - _actorID: 0
+    _textList:
     - m_TableReference:
         m_TableCollectionName: GUID:b9337267fdc92944ca13fcedc1ac1fb0
       m_TableEntryReference:
@@ -32,6 +36,8 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     _choices: []
+    _lineAudio:
+    - {fileID: 11400000, guid: cd3d005ca46624a4ba1783d180d4d144, type: 2}
   _dialogueType: 0
   _endOfDialogueEvent: {fileID: 0}
   references:

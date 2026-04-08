@@ -19,6 +19,7 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] private LoadEventChannelSO _loadMenu = default;
     [SerializeField] private LoadEventChannelSO _loadPrologue = default;
     [SerializeField] private LoadEventChannelSO _coldStartupLocation = default;
+    [SerializeField] private VoidEventChannelSO _unloadCurrentScene = default;
 
     [Header("Broadcasting on")]
     [SerializeField] private BoolEventChannelSO _toggleLoadingScreen = default;
@@ -26,6 +27,7 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] private VoidEventChannelSO _onEnterPrologue = default;
     [SerializeField] private VoidEventChannelSO _onEnterLocation = default;
     [SerializeField] private FadeChannelSO _fadeRequestChannel = default;
+    [SerializeField] private VoidEventChannelSO _currentSceneUnloaded = default;
 
     private AsyncOperationHandle<SceneInstance> _loadingOperationHandle;
     private AsyncOperationHandle<SceneInstance> _gameplayManagerLoadingOpHandle;
@@ -33,7 +35,7 @@ public class SceneLoader : MonoBehaviour
 
     //Parameters coming from scene loading requests
     private GameSceneSO _sceneToLoad;
-    private GameSceneSO _currentlyLoadedScene;
+    private static GameSceneSO _currentlyLoadedScene;
     private bool _showLoadingScreen;
 
     private SceneInstance _gameplayManagerSceneInstance = new SceneInstance();
@@ -77,6 +79,7 @@ public class SceneLoader : MonoBehaviour
         _loadLocation.OnLoadingRequested += LoadLocation;
         _loadMenu.OnLoadingRequested += LoadMenu;
         _loadPrologue.OnLoadingRequested += LoadPrologue;
+        _unloadCurrentScene.OnEventRaised += UnloadCurrentLocationOnly;
 #if UNITY_EDITOR
         _coldStartupLocation.OnLoadingRequested += LocationColdStartup;
 #endif
@@ -87,6 +90,7 @@ public class SceneLoader : MonoBehaviour
         _loadLocation.OnLoadingRequested -= LoadLocation;
         _loadMenu.OnLoadingRequested -= LoadMenu;
         _loadPrologue.OnLoadingRequested -= LoadPrologue;
+        _unloadCurrentScene.OnEventRaised -= UnloadCurrentLocationOnly;
 #if UNITY_EDITOR
         _coldStartupLocation.OnLoadingRequested -= LocationColdStartup;
 #endif
@@ -257,6 +261,58 @@ public class SceneLoader : MonoBehaviour
         LoadNewScene();
     }
 
+    public void UnloadCurrentLocationOnly()
+    {
+        if (_isLoading)
+            return;
+
+        StartCoroutine(UnloadCurrentLocationOnlyCoroutine());
+    }
+
+    private IEnumerator UnloadCurrentLocationOnlyCoroutine()
+    {
+        _isLoading = true;
+
+        _inputReader.DisableAllInput();
+        _fadeRequestChannel.FadeOut(_fadeOutDuration);
+
+        yield return new WaitForSeconds(_fadeOutDuration);
+
+        if (_currentlyLoadedScene != null)
+        {
+            if (_loadingOperationHandle.IsValid()
+                && _loadingOperationHandle.Result.Scene.IsValid()
+                && _loadingOperationHandle.Result.Scene.isLoaded)
+            {
+                yield return Addressables.UnloadSceneAsync(
+                    _loadingOperationHandle,
+                    UnloadSceneOptions.UnloadAllEmbeddedSceneObjects,
+                    true
+                );
+            }
+#if UNITY_EDITOR
+            else if (_currentlyLoadedScene.sceneReference.editorAsset != null)
+            {
+                var editorSceneName = _currentlyLoadedScene.sceneReference.editorAsset.name;
+                var editorScene = SceneManager.GetSceneByName(editorSceneName);
+
+                if (editorScene.IsValid() && editorScene.isLoaded)
+                {
+                    yield return SceneManager.UnloadSceneAsync(editorSceneName);
+                }
+            }
+#endif
+        }
+
+        _loadingOperationHandle = default;
+        _currentlyLoadedScene = null;
+        _sceneToLoad = null;
+        _showLoadingScreen = false;
+        _isLoading = false;
+
+        _currentSceneUnloaded.RaiseEvent();
+    }
+
     /// <summary>
     /// Kicks off the asynchronous loading of a scene, either menu or Location.
     /// </summary>
@@ -267,7 +323,12 @@ public class SceneLoader : MonoBehaviour
             _toggleLoadingScreen.RaiseEvent(true);
         }
 
-        _loadingOperationHandle = _sceneToLoad.sceneReference.LoadSceneAsync(LoadSceneMode.Additive, true, 0);
+        _loadingOperationHandle = Addressables.LoadSceneAsync(
+            _sceneToLoad.sceneReference,
+            LoadSceneMode.Additive,
+            true,
+            0
+        );
         _loadingOperationHandle.Completed += OnNewSceneLoaded;
     }
 
@@ -306,6 +367,11 @@ public class SceneLoader : MonoBehaviour
                 break;
 
         }
+    }
+
+    public static GameSceneSO GetCurrentScene()
+    {
+        return _currentlyLoadedScene;
     }
 
     private void ExitGame()

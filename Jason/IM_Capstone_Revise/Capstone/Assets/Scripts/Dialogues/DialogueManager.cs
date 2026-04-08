@@ -13,6 +13,8 @@ public class DialogueManager : MonoBehaviour
 	[SerializeField] private List<ActorSO> _actorsList = default;
 	[SerializeField] private InputReader _inputReader = default;
 	[SerializeField] private GameStateSO _gameState = default;
+	[SerializeField] private AudioConfigurationSO
+		_audioConfiguration = default;
 
 	[Header("Listening on")]
 	[SerializeField] private DialogueDataChannelSO _startDialogue = default;
@@ -26,16 +28,19 @@ public class DialogueManager : MonoBehaviour
 	[SerializeField] private VoidEventChannelSO _playIncompleteDialogue = default;
 	[SerializeField] private VoidEventChannelSO _makeWinningChoice = default;
 	[SerializeField] private VoidEventChannelSO _makeLosingChoice = default;
+	[SerializeField] private AudioCueEventChannelSO _sfxEventChannel = default;
 
 	private int _counterDialogue;
 	private int _counterLine;
 	private bool _reachedEndOfDialogue { get => _counterDialogue >= _currentDialogue.Lines.Count; }
 	private bool _reachedEndOfLine { get => _counterLine >= _currentDialogue.Lines[_counterDialogue].TextList.Count; }
 	private DialogueDataSO _currentDialogue = default;
+	private AudioCueKey _currentLineAudioCue;
 
-	private void Start()
+    private void Start()
 	{
 		_startDialogue.OnEventRaised += DisplayDialogueData;
+		_currentLineAudioCue = AudioCueKey.Invalid;
 	}
 
 	/// <summary>
@@ -58,8 +63,17 @@ public class DialogueManager : MonoBehaviour
 		{
 			Debug.Log(_currentDialogue);
 			ActorSO currentActor = _actorsList.Find(o => o.ActorId == _currentDialogue.Lines[_counterDialogue].Actor); // we don't add a controle, because we need a null reference exeption if the actor is not in the list
-            DisplayDialogueLine(_currentDialogue.Lines[_counterDialogue].TextList[_counterLine], currentActor);
-		}
+            if (_currentDialogue.Lines[_counterDialogue].LineAudio.Count != 0)
+            {
+                PresentDialogueLine(_currentDialogue.Lines[_counterDialogue].TextList[_counterLine], currentActor, _currentDialogue.Lines[_counterDialogue].LineAudio[_counterLine]);
+            }
+            else
+            {
+                if (_currentLineAudioCue != AudioCueKey.Invalid)
+                    _sfxEventChannel.RaiseStopEvent(_currentLineAudioCue);
+                PresentDialogueLine(_currentDialogue.Lines[_counterDialogue].TextList[_counterLine], currentActor, null);
+            }
+        }
 		else
 		{
 			Debug.LogError("Check Dialogue");
@@ -88,9 +102,17 @@ public class DialogueManager : MonoBehaviour
     /// This function is also called by <c>DialogueBehaviour</c> from clips on Timeline during cutscenes.
     /// </summary>
     /// <param name="dialogueLine"></param>
-    public void DisplayDialogueLine(LocalizedString dialogueLine, ActorSO actor)
+    public void PresentDialogueLine(LocalizedString dialogueLine, ActorSO actor, AudioCueSO audioCue)
 	{
 		_openUIDialogueEvent.RaiseEvent(dialogueLine, actor);
+		if (audioCue != null)
+		{
+			Debug.Log("Adio: " + audioCue + " audioconfig: " + _audioConfiguration);
+			if(_currentLineAudioCue != AudioCueKey.Invalid)
+				_sfxEventChannel.RaiseStopEvent(_currentLineAudioCue);
+            _currentLineAudioCue = _sfxEventChannel.RaisePlayEvent(audioCue, _audioConfiguration);
+		}
+
 	}
 
 	private void OnAdvance()
@@ -99,8 +121,17 @@ public class DialogueManager : MonoBehaviour
 		if (!_reachedEndOfLine)
 		{
 			ActorSO currentActor = _actorsList.Find(o => o.ActorId == _currentDialogue.Lines[_counterDialogue].Actor); // we don't add a controle, because we need a null reference exeption if the actor is not in the list
-			DisplayDialogueLine(_currentDialogue.Lines[_counterDialogue].TextList[_counterLine], currentActor);
-		}
+            if (_currentDialogue.Lines[_counterDialogue].LineAudio.Count != 0)
+            {
+                PresentDialogueLine(_currentDialogue.Lines[_counterDialogue].TextList[_counterLine], currentActor, _currentDialogue.Lines[_counterDialogue].LineAudio[_counterLine]);
+            }
+            else
+            {
+                if (_currentLineAudioCue != AudioCueKey.Invalid)
+                    _sfxEventChannel.RaiseStopEvent(_currentLineAudioCue);
+                PresentDialogueLine(_currentDialogue.Lines[_counterDialogue].TextList[_counterLine], currentActor, null);
+            }
+        }
 		else if (_currentDialogue.Lines[_counterDialogue].Choices != null
 				&& _currentDialogue.Lines[_counterDialogue].Choices.Count > 0)
 		{
@@ -117,7 +148,16 @@ public class DialogueManager : MonoBehaviour
 				_counterLine = 0;
 
 				ActorSO currentActor = _actorsList.Find(o => o.ActorId == _currentDialogue.Lines[_counterDialogue].Actor); // we don't add a controle, because we need a null reference exeption if the actor is not in the list
-				DisplayDialogueLine(_currentDialogue.Lines[_counterDialogue].TextList[_counterLine], currentActor);
+				if(_currentDialogue.Lines[_counterDialogue].LineAudio.Count != 0) {
+					PresentDialogueLine(_currentDialogue.Lines[_counterDialogue].TextList[_counterLine], currentActor, _currentDialogue.Lines[_counterDialogue].LineAudio[_counterLine]); 
+				}
+				else
+				{
+                    if (_currentLineAudioCue != AudioCueKey.Invalid)
+                        _sfxEventChannel.RaiseStopEvent(_currentLineAudioCue);
+                    PresentDialogueLine(_currentDialogue.Lines[_counterDialogue].TextList[_counterLine], currentActor, null);
+                }
+					
 			}
 			else
 			{
@@ -189,8 +229,11 @@ public class DialogueManager : MonoBehaviour
 
 	private void DialogueEndedAndCloseDialogueUI()
 	{
-		//raise the special event for end of dialogue if any 
-		_currentDialogue.FinishDialogue();
+        if (_currentLineAudioCue != AudioCueKey.Invalid)
+            _sfxEventChannel.RaiseStopEvent(_currentLineAudioCue);
+
+        //raise the special event for end of dialogue if any 
+        _currentDialogue.FinishDialogue();
 
 		//raise end dialogue event 
 		if (_endDialogueWithTypeEvent != null)

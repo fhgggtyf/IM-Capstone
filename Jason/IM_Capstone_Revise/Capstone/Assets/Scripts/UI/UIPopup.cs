@@ -16,6 +16,7 @@ public enum PopupType
     Quit,
     NewGame,
     BackToMenu,
+    Restart
 }
 
 public class UIPopup : MonoBehaviour
@@ -59,6 +60,12 @@ public class UIPopup : MonoBehaviour
                 hasExitButton = false;
                 break;
             case PopupType.Quit:
+                isConfirmation = true;
+                _popupButton1.SetButton(tableEntryReferenceConfirm, true);
+                _popupButton2.SetButton(tableEntryReferenceCancel, false);
+                hasExitButton = false;
+                break;
+            case PopupType.Restart:
                 isConfirmation = true;
                 _popupButton1.SetButton(tableEntryReferenceConfirm, true);
                 _popupButton2.SetButton(tableEntryReferenceCancel, false);

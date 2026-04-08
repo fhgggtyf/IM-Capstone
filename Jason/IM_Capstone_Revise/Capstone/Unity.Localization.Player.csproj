@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>UnityEngine.Localization</RootNamespace>
-    <ProjectGuid>{5908EAE9-74B3-D124-B849-83B66A2B435C}</ProjectGuid>
+    <ProjectGuid>{9965740C-9D6F-1846-7D8C-FC56CF07C993}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Unity.Localization</AssemblyName>
@@ -819,23 +819,23 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.Addressables.Player.csproj">
-      <Project>{E576FB86-2FD3-1458-2FEE-5F8F83534D63}</Project>
+      <Project>{A21E6C15-A0E5-F946-D675-7020B2E78470}</Project>
       <Name>Unity.Addressables.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.ResourceManager.Player.csproj">
-      <Project>{8638E3DA-ABA1-3286-B093-515A567B9AF3}</Project>
+      <Project>{F2EBD9B1-D610-0128-3846-D5ED3224A9ED}</Project>
       <Name>Unity.ResourceManager.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.InternalAPIEngineBridge.013.Player.csproj">
-      <Project>{23A67CFC-FF49-8705-0979-6FB5085542C7}</Project>
+      <Project>{CAF8D310-8D34-A6EE-C1FA-7B26FBBD3F69}</Project>
       <Name>Unity.InternalAPIEngineBridge.013.Player</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.Player.csproj">
-      <Project>{C3FA0F9A-B31F-A7DA-B606-D345E1F09ACD}</Project>
+      <Project>{430BC787-3B6E-B525-5C9E-164F4BB712EB}</Project>
       <Name>UnityEngine.UI.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.TextMeshPro.Player.csproj">
-      <Project>{0F2FE187-FF1E-1154-28CA-B61CEA847656}</Project>
+      <Project>{50ADD25C-EEA1-BE91-5CEB-0E1586C5B33D}</Project>
       <Name>Unity.TextMeshPro.Player</Name>
     </ProjectReference>
   </ItemGroup>

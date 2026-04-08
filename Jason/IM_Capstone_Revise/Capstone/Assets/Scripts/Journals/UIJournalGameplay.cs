@@ -13,6 +13,8 @@ public class UIJournalGameplay : MonoBehaviour
     [SerializeField] BoolEventChannelSO FlipToLeft;
     [SerializeField] IntEventChannelSO UnlockPages;
 
+    [SerializeField] private Sprite _defaultImg;
+
     private GameplayJournalDataSO _journalData;
     private GameplayJournalDataSO _parsedJournalData;
 
@@ -193,6 +195,7 @@ public class UIJournalGameplay : MonoBehaviour
             if (content.RightIMG == null)
             {
                 _rightPageEmpty = true;
+                RPageUI.image.sprite = _defaultImg;
                 _waitingRightPage = RPageUI;
             }
             else

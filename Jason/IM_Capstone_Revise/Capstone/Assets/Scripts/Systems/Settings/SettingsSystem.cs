@@ -17,9 +17,14 @@ public class SettingsSystem : MonoBehaviour
 
 	private void Awake()
 	{
-		_saveSystem.LoadSaveDataFromDisk();
-		_currentSettings.LoadSavedSettings(_saveSystem.saveData);
-		SetCurrentSettings();
+
+        Debug.Log("Settings System Awake, current settings1: " + _currentSettings.MusicVolume);
+        _saveSystem.LoadSaveDataFromDisk();
+        Debug.Log("Settings System Awake, current settings2: " + _currentSettings.MusicVolume);
+		Debug.Log("Settings System Awake, save data settings: " + _saveSystem.saveData);
+        _currentSettings.LoadSavedSettings(_saveSystem.saveData);
+		Debug.Log("Settings System Awake, current settings3: " + _currentSettings.MusicVolume);
+        SetCurrentSettings();
 	}
 	private void OnEnable()
 	{

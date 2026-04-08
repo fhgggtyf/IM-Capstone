@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: 
   _inputReader: {fileID: 11400000, guid: e56ee6ed7dd16a744a29977a83f84ef7, type: 2}
+  _playerIsDead: {fileID: 11400000, guid: 3b6672b55a76a4544852f07b00829a25, type: 2}

@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{C45B69DE-DFA6-ACA6-14B9-183F8BD77AD7}</ProjectGuid>
+    <ProjectGuid>{DD2BEEDB-A3C4-617B-F742-7781BA9BBFED}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>PPv2URPConverters</AssemblyName>
@@ -329,6 +329,9 @@
     </Reference>
     <Reference Include="UnityEditor.Graphs">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.9f1\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.WebGL.Extensions">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.9f1\Editor\Data\PlaybackEngines\WebGLSupport\UnityEditor.WebGL.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.9f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
@@ -780,43 +783,43 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.RenderPipelines.Universal.Editor.csproj">
-      <Project>{B815C48F-9B87-1F3B-8069-3591B8014E47}</Project>
+      <Project>{5CBE111A-6335-4AA4-3E82-9453E478ADE9}</Project>
       <Name>Unity.RenderPipelines.Universal.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Postprocessing.Editor.csproj">
-      <Project>{926F6B84-1B06-4F36-223A-850CBC1C395F}</Project>
+      <Project>{E236AA70-B8CF-DF17-8A32-A07808AFDFBE}</Project>
       <Name>Unity.Postprocessing.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.RenderPipelines.Universal.Runtime.csproj">
-      <Project>{DE5D389F-A63B-8AD0-B70A-7293D3A89361}</Project>
+      <Project>{83429347-59A0-EE8E-F7F5-D7C2024CA8FA}</Project>
       <Name>Unity.RenderPipelines.Universal.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Postprocessing.Runtime.csproj">
-      <Project>{F3791B5A-BD9B-497E-C41C-FF28B14429AE}</Project>
+      <Project>{5EAF43A1-F222-61D4-0253-A53E67295117}</Project>
       <Name>Unity.Postprocessing.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.RenderPipelines.Core.Editor.csproj">
-      <Project>{DB231E43-1DD6-76E0-04A6-A3A60B1C493C}</Project>
+      <Project>{A3BD7C75-6997-5EF3-9919-7A15352F9DED}</Project>
       <Name>Unity.RenderPipelines.Core.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.RenderPipelines.Core.Runtime.csproj">
-      <Project>{3AB0A0D6-1DA1-E03A-AD25-93B55AEEFCA2}</Project>
+      <Project>{DAD561CE-5435-AC67-F5BA-195AC16CBFBB}</Project>
       <Name>Unity.RenderPipelines.Core.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{654CCE82-BDC3-2D80-004C-C53084781849}</Project>
+      <Project>{F3DDD734-94FA-08B3-48FF-4009BDBA1D07}</Project>
       <Name>UnityEditor.UI</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{BBBA9BEA-84AA-094C-FE3D-D95FA783CD2F}</Project>
+      <Project>{5FC071BD-4A42-4270-D6BB-ECA644178C60}</Project>
       <Name>UnityEngine.UI</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.TestRunner.csproj">
-      <Project>{C6E4E1C8-3865-6B87-E4A6-AFD750D2FBD3}</Project>
+      <Project>{D05E30EB-41A8-3AE4-7E36-E79B26641B87}</Project>
       <Name>UnityEditor.TestRunner</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.TestRunner.csproj">
-      <Project>{7A320F0F-6DC0-924D-CC42-35D49CDFE081}</Project>
+      <Project>{663B7D33-9DD6-32A7-42E2-900A006C0013}</Project>
       <Name>UnityEngine.TestRunner</Name>
     </ProjectReference>
   </ItemGroup>

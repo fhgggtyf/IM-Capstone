@@ -51,6 +51,22 @@ MonoBehaviour:
     m_Key: UseItem
     m_Metadata:
       m_Items: []
+  - m_Id: 240159811889803264
+    m_Key: RestartPopupTitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 240159869662146560
+    m_Key: RestartPopupDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 240160780866301952
+    m_Key: ConfirmRestart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 240160813544124416
+    m_Key: CancelRestart
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

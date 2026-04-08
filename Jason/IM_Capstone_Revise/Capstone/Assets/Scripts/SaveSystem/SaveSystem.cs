@@ -17,7 +17,7 @@ public class SaveSystem : ScriptableObject
 
     public string saveFilename = "save.zyp";
     public string backupSaveFilename = "save.zyp.bak";
-    public Save saveData = new Save();
+    public Save saveData = new();
 
     void OnEnable()
     {
@@ -100,6 +100,8 @@ public class SaveSystem : ScriptableObject
                 Debug.Log("Save successful " + saveFilename);
             }
         }
+
+        SaveSettings();
     }
 
     public void WriteEmptySaveFile()
@@ -114,6 +116,7 @@ public class SaveSystem : ScriptableObject
         FileManager.WriteToFile(saveFilename, "");
         _playerInventory.Init();
         _questManagerSO.ResetQuestlines();
+        _currentSettings.ResetSettings();
 
         SaveDataToDisk();
 

@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>UnityEditor.Localization</RootNamespace>
-    <ProjectGuid>{0B43402E-0BF2-6852-C031-58DF52467E08}</ProjectGuid>
+    <ProjectGuid>{320E916F-B55A-9C9B-2F41-20E8709B064B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Unity.Localization.Editor</AssemblyName>
@@ -509,6 +509,9 @@
     <Reference Include="UnityEditor.Graphs">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.9f1\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.WebGL.Extensions">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.9f1\Editor\Data\PlaybackEngines\WebGLSupport\UnityEditor.WebGL.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.9f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
@@ -896,43 +899,43 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.Localization.csproj">
-      <Project>{45A0834D-70CE-EB51-2E0D-F6638B3F7AFD}</Project>
+      <Project>{48A1B17C-330C-9814-C70F-6EA4C6762D38}</Project>
       <Name>Unity.Localization</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Addressables.Editor.csproj">
-      <Project>{D9747591-7B5A-A494-6CB5-31F38AF53A2B}</Project>
+      <Project>{54FE9C0B-C409-1286-1993-37E5C674ADDF}</Project>
       <Name>Unity.Addressables.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Addressables.csproj">
-      <Project>{3A5EA78B-33BA-85E6-D9F4-A94385B38C99}</Project>
+      <Project>{CDFC017E-C1BA-5D6F-1D29-2CD992DAEA12}</Project>
       <Name>Unity.Addressables</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.InternalAPIEditorBridge.013.csproj">
-      <Project>{13CD728B-E15F-4E6C-C5B6-579251CDB237}</Project>
+      <Project>{89D93297-02F0-FDDE-1010-BF67541F31E9}</Project>
       <Name>Unity.InternalAPIEditorBridge.013</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.ResourceManager.csproj">
-      <Project>{9B68A1FF-535D-A88B-E698-77EF2FABD21B}</Project>
+      <Project>{8F998DD5-D5A0-732E-A09B-E0DB05078FE7}</Project>
       <Name>Unity.ResourceManager</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.TextMeshPro.csproj">
-      <Project>{6BAD3998-3D66-52A8-A2C6-43D91E88DB2F}</Project>
+      <Project>{05772A53-2D1E-3EAD-78D3-1C1FCB2CC022}</Project>
       <Name>Unity.TextMeshPro</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{654CCE82-BDC3-2D80-004C-C53084781849}</Project>
+      <Project>{F3DDD734-94FA-08B3-48FF-4009BDBA1D07}</Project>
       <Name>UnityEditor.UI</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{BBBA9BEA-84AA-094C-FE3D-D95FA783CD2F}</Project>
+      <Project>{5FC071BD-4A42-4270-D6BB-ECA644178C60}</Project>
       <Name>UnityEngine.UI</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.TestRunner.csproj">
-      <Project>{C6E4E1C8-3865-6B87-E4A6-AFD750D2FBD3}</Project>
+      <Project>{D05E30EB-41A8-3AE4-7E36-E79B26641B87}</Project>
       <Name>UnityEditor.TestRunner</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.TestRunner.csproj">
-      <Project>{7A320F0F-6DC0-924D-CC42-35D49CDFE081}</Project>
+      <Project>{663B7D33-9DD6-32A7-42E2-900A006C0013}</Project>
       <Name>UnityEngine.TestRunner</Name>
     </ProjectReference>
   </ItemGroup>

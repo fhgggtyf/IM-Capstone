@@ -68,7 +68,7 @@ public class CutsceneManager : MonoBehaviour
 
 	void PlayDialogueFromClip(LocalizedString dialogueLine, ActorSO actor)
 	{
-		_dialogueManager.DisplayDialogueLine(dialogueLine, actor);
+		//_dialogueManager.PresentDialogueLine(dialogueLine, actor);
 	}
 
 	/// <summary>

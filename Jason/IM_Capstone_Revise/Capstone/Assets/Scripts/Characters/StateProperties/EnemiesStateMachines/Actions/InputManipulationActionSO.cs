@@ -13,17 +13,20 @@ using Domicile.StateMachine.ScriptableObjects;
 public class InputManipulationActionSO : StateActionSO<InputManipulationAction>
 {
     public InputReader _inputReader;
+    public VoidEventChannelSO _playerIsDead;
 }
 
 public class InputManipulationAction : StateAction
 {
 
     private InputReader _inputReader;
+    private VoidEventChannelSO _playerIsDead;
     InputManipulationActionSO _originSO => (InputManipulationActionSO)base.OriginSO;
 
     public override void Awake(StateMachine stateMachine)
     {
         _inputReader = _originSO._inputReader;
+        _playerIsDead = _originSO._playerIsDead;
     }
 
     public override void OnStateEnter()
@@ -38,6 +41,6 @@ public class InputManipulationAction : StateAction
 
     public override void OnStateExit()
     {
-       
+        _playerIsDead.RaiseEvent();
     }
 }

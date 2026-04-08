@@ -9466,6 +9466,14 @@ PrefabInstance:
       propertyPath: _locationToHappen
       value: 
       objectReference: {fileID: 11400000, guid: aee5d5c9b317e224b883e6b127d9d1f6, type: 2}
+    - target: {fileID: 8307659344095806668, guid: 2a69561cf8d9b8545b334433caefe982, type: 3}
+      propertyPath: _showStep.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8307659344095806668, guid: 2a69561cf8d9b8545b334433caefe982, type: 3}
+      propertyPath: _showStep.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6caeab33e82895f41a2b56654f707e62, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

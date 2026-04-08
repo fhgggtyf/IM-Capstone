@@ -19,16 +19,24 @@ public class Save
 
 	public List<string> _finishedQuestlineItemsGUIds = new List<string>();
 
-	public float _masterVolume = default;
-	public float _musicVolume = default;
-	public float _sfxVolume = default;
+	public float _masterVolume = 1;
+	public float _musicVolume = 1;
+	public float _sfxVolume = 1;
 	public int _resolutionsIndex = default;
 	public int _antiAliasingIndex = default;
 	public float _shadowDistance = default;
 	public bool _isFullscreen = default;
     public Locale _currentLocale = default;
 
-	public void SaveSettings(SettingsSO settings)
+    public Save()
+    {
+        _masterVolume = 10;
+        _musicVolume = 10;
+        _sfxVolume = 10;
+
+    }
+
+    public void SaveSettings(SettingsSO settings)
 	{
 		_masterVolume = settings.MasterVolume;
 		_musicVolume = settings.MusicVolume;

@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{E576FB86-2FD3-1458-2FEE-5F8F83534D63}</ProjectGuid>
+    <ProjectGuid>{A21E6C15-A0E5-F946-D675-7020B2E78470}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Unity.Addressables</AssemblyName>
@@ -672,11 +672,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.ResourceManager.Player.csproj">
-      <Project>{8638E3DA-ABA1-3286-B093-515A567B9AF3}</Project>
+      <Project>{F2EBD9B1-D610-0128-3846-D5ED3224A9ED}</Project>
       <Name>Unity.ResourceManager.Player</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.Player.csproj">
-      <Project>{C3FA0F9A-B31F-A7DA-B606-D345E1F09ACD}</Project>
+      <Project>{430BC787-3B6E-B525-5C9E-164F4BB712EB}</Project>
       <Name>UnityEngine.UI.Player</Name>
     </ProjectReference>
   </ItemGroup>

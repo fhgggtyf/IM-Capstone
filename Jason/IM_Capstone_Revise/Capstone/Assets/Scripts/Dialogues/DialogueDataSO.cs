@@ -133,12 +133,14 @@ public class Line
 	[SerializeField] private ActorID _actorID = default;
 	[SerializeField] private List<LocalizedString> _textList = default;
 	[SerializeField] private List<Choice> _choices = null;
+	[SerializeField] private List<AudioCueSO> _lineAudio = default;
 
 	public ActorID Actor => _actorID;
 	public List<LocalizedString> TextList => _textList;
 	public List<Choice> Choices => _choices;
+	public List<AudioCueSO> LineAudio => _lineAudio;
 
-	public Line()
+    public Line()
 	{
 		_textList = null;
 	}
