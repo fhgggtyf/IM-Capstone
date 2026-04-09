@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{DA43B3A3-B08B-9171-B425-AD5A68D3380F}</ProjectGuid>
+    <ProjectGuid>{C9C28A68-F806-A58D-AD7D-63060646B4AA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Unity.2D.SpriteShape.Runtime</AssemblyName>
@@ -776,23 +776,23 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.2D.Common.Runtime.csproj">
-      <Project>{E87F2E6E-6380-A973-D7E8-47DE51DCF1F2}</Project>
+      <Project>{954AD95A-918E-3B07-61AD-FABE14C7C68D}</Project>
       <Name>Unity.2D.Common.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Mathematics.csproj">
-      <Project>{A9E77FB1-D742-4434-983B-08A1C495205D}</Project>
+      <Project>{F9A34661-5741-53A6-6FAB-341713787B47}</Project>
       <Name>Unity.Mathematics</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Burst.csproj">
-      <Project>{093538C8-5301-3E58-B3F2-E37223EE2AA1}</Project>
+      <Project>{0C044554-3250-9BE3-F2E0-1007B7A07FFE}</Project>
       <Name>Unity.Burst</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{F3DDD734-94FA-08B3-48FF-4009BDBA1D07}</Project>
+      <Project>{654CCE82-BDC3-2D80-004C-C53084781849}</Project>
       <Name>UnityEditor.UI</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{5FC071BD-4A42-4270-D6BB-ECA644178C60}</Project>
+      <Project>{BBBA9BEA-84AA-094C-FE3D-D95FA783CD2F}</Project>
       <Name>UnityEngine.UI</Name>
     </ProjectReference>
   </ItemGroup>
