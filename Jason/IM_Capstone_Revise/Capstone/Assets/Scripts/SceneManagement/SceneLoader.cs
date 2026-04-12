@@ -319,12 +319,9 @@ public class SceneLoader : MonoBehaviour
     private void LoadNewScene()
     {
         if (_showLoadingScreen)
-        {
             _toggleLoadingScreen.RaiseEvent(true);
-        }
 
-        _loadingOperationHandle = Addressables.LoadSceneAsync(
-            _sceneToLoad.sceneReference,
+        _loadingOperationHandle = _sceneToLoad.sceneReference.LoadSceneAsync(
             LoadSceneMode.Additive,
             true,
             0
