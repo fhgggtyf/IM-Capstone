@@ -83,14 +83,6 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    - m_TableReference:
-        m_TableCollectionName: GUID:b9337267fdc92944ca13fcedc1ac1fb0
-      m_TableEntryReference:
-        m_KeyId: 17016795164848128
-        m_Key: 
-      m_FallbackState: 0
-      m_WaitForCompletion: 0
-      m_LocalVariables: []
     _choices: []
     _lineAudio:
     - {fileID: 11400000, guid: 9d5e849c6335e604aa1bd5bd5fb6d6a4, type: 2}

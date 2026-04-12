@@ -101,7 +101,6 @@ GameObject:
   m_Component:
   - component: {fileID: 941649509915370018}
   - component: {fileID: 5255938851249993020}
-  - component: {fileID: 2405551647363355732}
   - component: {fileID: 1905061639047096098}
   - component: {fileID: 8307659344095806668}
   - component: {fileID: 7558742246840553780}
@@ -148,25 +147,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcState: 0
   talkingTo: []
---- !u!114 &2405551647363355732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3465768809754452173}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1901d471283a9fa45a5dd6687620e82d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _transitionTableSO: {fileID: 11400000, guid: cbe0c26d388a0e3419ada8e3402883df, type: 2}
-  _debugger:
-    debugTransitions: 0
-    appendConditionsInfo: 1
-    appendActionsInfo: 1
-    currentState: 
-    previousState: 
 --- !u!114 &1905061639047096098
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -16,6 +16,8 @@ public class VisionConeVisualizer : MonoBehaviour
 
     [Header("2D draw order")]
     public float zOffset2D = -1.5f;
+    public string sortingLayerName = "Default";
+    public int orderInLayer = 0;
 
     private MeshFilter _mf;
     private MeshRenderer _mr;
@@ -33,6 +35,9 @@ public class VisionConeVisualizer : MonoBehaviour
 
         _mr.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
         _mr.receiveShadows = false;
+
+        _mr.sortingLayerName = sortingLayerName;
+        _mr.sortingOrder = orderInLayer;
 
         if (visionCone == null)
             visionCone = GetComponentInParent<VisionCone>();

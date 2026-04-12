@@ -5074,6 +5074,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EditorInitializer
       objectReference: {fileID: 0}
+    - target: {fileID: 9203919268363836925, guid: bd4fef54f73adc14382ffede6b0be6f8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
