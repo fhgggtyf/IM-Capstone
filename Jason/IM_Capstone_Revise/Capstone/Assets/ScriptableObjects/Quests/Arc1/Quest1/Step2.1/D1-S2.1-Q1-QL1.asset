@@ -33,7 +33,8 @@ MonoBehaviour:
       m_LocalVariables: []
     _choices: []
     _lineAudio: []
-  - _actorID: 0
+    closeUpImage: {fileID: 0}
+  - _actorID: 7
     _textList:
     - m_TableReference:
         m_TableCollectionName: GUID:b9337267fdc92944ca13fcedc1ac1fb0
@@ -45,6 +46,7 @@ MonoBehaviour:
       m_LocalVariables: []
     _choices: []
     _lineAudio: []
+    closeUpImage: {fileID: 0}
   - _actorID: 6
     _textList:
     - m_TableReference:
@@ -57,7 +59,8 @@ MonoBehaviour:
       m_LocalVariables: []
     _choices: []
     _lineAudio: []
-  - _actorID: 6
+    closeUpImage: {fileID: 0}
+  - _actorID: 2
     _textList:
     - m_TableReference:
         m_TableCollectionName: GUID:b9337267fdc92944ca13fcedc1ac1fb0
@@ -67,6 +70,12 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    _choices: []
+    _lineAudio:
+    - {fileID: 11400000, guid: 9d5e849c6335e604aa1bd5bd5fb6d6a4, type: 2}
+    closeUpImage: {fileID: 0}
+  - _actorID: 3
+    _textList:
     - m_TableReference:
         m_TableCollectionName: GUID:b9337267fdc92944ca13fcedc1ac1fb0
       m_TableEntryReference:
@@ -75,6 +84,12 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+    _choices: []
+    _lineAudio:
+    - {fileID: 11400000, guid: 8b9e1963690a5e347a9952b8e5623c91, type: 2}
+    closeUpImage: {fileID: 0}
+  - _actorID: 2
+    _textList:
     - m_TableReference:
         m_TableCollectionName: GUID:b9337267fdc92944ca13fcedc1ac1fb0
       m_TableEntryReference:
@@ -85,9 +100,8 @@ MonoBehaviour:
       m_LocalVariables: []
     _choices: []
     _lineAudio:
-    - {fileID: 11400000, guid: 9d5e849c6335e604aa1bd5bd5fb6d6a4, type: 2}
-    - {fileID: 11400000, guid: 8b9e1963690a5e347a9952b8e5623c91, type: 2}
     - {fileID: 11400000, guid: 0cef362ed9eb3094f800b06d6e3414ca, type: 2}
+    closeUpImage: {fileID: 0}
   - _actorID: 6
     _textList:
     - m_TableReference:
@@ -99,9 +113,13 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     _choices: []
-    _lineAudio: []
+    _lineAudio:
+    - {fileID: 11400000, guid: 1d35f95e47d49a84eafa1f44cfbf4d39, type: 2}
+    closeUpImage: {fileID: 0}
   _dialogueType: 0
   _endOfDialogueEvent: {fileID: 0}
+  _relatedInteractiveItem: []
+  _interactableBG: {fileID: 0}
   references:
     version: 2
     RefIds: []

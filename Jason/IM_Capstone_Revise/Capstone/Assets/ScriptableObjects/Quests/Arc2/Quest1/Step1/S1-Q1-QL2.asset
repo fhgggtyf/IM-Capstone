@@ -26,6 +26,19 @@ MonoBehaviour:
   _requiredInteractableIds: []
   _interactedIds: []
   _isDone: 0
-  _endStepEvent: {fileID: 0}
+  _endStepEvent: {fileID: 11400000, guid: a8bf482e2f73b08449c1b982fe1bb6c4, type: 2}
   _loadToSceneEvent: {fileID: 0}
   _locationToLoad: {fileID: 0}
+  _stepDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:6bfb6725cfcf1f34380135f0f41c515f
+    m_TableEntryReference:
+      m_KeyId: 6307044034621440
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  _braodcastOnEnter: 1
+  references:
+    version: 2
+    RefIds: []

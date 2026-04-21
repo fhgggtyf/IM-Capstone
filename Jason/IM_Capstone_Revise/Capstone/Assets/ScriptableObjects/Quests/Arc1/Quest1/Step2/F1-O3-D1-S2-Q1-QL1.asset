@@ -25,7 +25,8 @@ MonoBehaviour:
       m_LocalVariables: []
     _choices: []
     _lineAudio: []
-  - _actorID: 0
+    closeUpImage: {fileID: 0}
+  - _actorID: 6
     _textList:
     - m_TableReference:
         m_TableCollectionName: GUID:b9337267fdc92944ca13fcedc1ac1fb0
@@ -37,9 +38,26 @@ MonoBehaviour:
       m_LocalVariables: []
     _choices: []
     _lineAudio:
+    - {fileID: 11400000, guid: 08dbec837b4bc494799236044cf136b3, type: 2}
+    closeUpImage: {fileID: 0}
+  - _actorID: 0
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:b9337267fdc92944ca13fcedc1ac1fb0
+      m_TableEntryReference:
+        m_KeyId: 24668216706215936
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
+    _lineAudio:
     - {fileID: 11400000, guid: cd3d005ca46624a4ba1783d180d4d144, type: 2}
+    closeUpImage: {fileID: 0}
   _dialogueType: 0
   _endOfDialogueEvent: {fileID: 0}
+  _relatedInteractiveItem: []
+  _interactableBG: {fileID: 0}
   references:
     version: 2
     RefIds: []

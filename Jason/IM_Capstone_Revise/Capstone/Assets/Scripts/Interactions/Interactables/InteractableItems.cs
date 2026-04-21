@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class InteractableItems : MonoBehaviour, IInteractable
 {
-    public void DisableInteraction()
+    public virtual void DisableInteraction()
     {
     }
 
-    public void EnableInteraction()
+    public virtual void EnableInteraction()
     {
     }
 

@@ -36,11 +36,15 @@ public class DialogueDataSO : ScriptableObject
 	[SerializeField] private List<Line> _lines = default;
 	[SerializeField] private DialogueType _dialogueType = default;
 	[SerializeField] private VoidEventChannelSO _endOfDialogueEvent = default;
+	[SerializeField] private List<InteractiveItemDataSO> _relatedInteractiveItem = default;
+	[SerializeField] private Sprite _interactableBG = default;
 
-	public VoidEventChannelSO EndOfDialogueEvent => _endOfDialogueEvent;
+    public VoidEventChannelSO EndOfDialogueEvent => _endOfDialogueEvent;
 	public List<Line> Lines => _lines;
+	public List<InteractiveItemDataSO> RelatedInteractiveItem => _relatedInteractiveItem;
+	public Sprite InteractableBG => _interactableBG;
 
-	public DialogueType DialogueType
+    public DialogueType DialogueType
 	{
 		get { return _dialogueType; }
 		set { _dialogueType = value; }
@@ -134,11 +138,13 @@ public class Line
 	[SerializeField] private List<LocalizedString> _textList = default;
 	[SerializeField] private List<Choice> _choices = null;
 	[SerializeField] private List<AudioCueSO> _lineAudio = default;
+	[SerializeField] private Sprite closeUpImage = default;
 
-	public ActorID Actor => _actorID;
+    public ActorID Actor => _actorID;
 	public List<LocalizedString> TextList => _textList;
 	public List<Choice> Choices => _choices;
 	public List<AudioCueSO> LineAudio => _lineAudio;
+	public Sprite CloseUpImage => closeUpImage;
 
     public Line()
 	{

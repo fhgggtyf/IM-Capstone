@@ -25,7 +25,7 @@ MonoBehaviour:
   _rewardItemCount: 1
   _requiredInteractableIds: []
   _interactedIds: []
-  _isDone: 1
+  _isDone: 0
   _endStepEvent: {fileID: 11400000, guid: a8bf482e2f73b08449c1b982fe1bb6c4, type: 2}
   _loadToSceneEvent: {fileID: 0}
   _locationToLoad: {fileID: 0}

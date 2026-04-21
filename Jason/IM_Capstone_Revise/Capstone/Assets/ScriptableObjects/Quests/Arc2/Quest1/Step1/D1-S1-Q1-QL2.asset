@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: D1-S1-Q1-QL2
   m_EditorClassIdentifier: 
   _lines:
-  - _actorID: 1
+  - _actorID: 0
     _textList:
     - m_TableReference:
         m_TableCollectionName: GUID:482dcec5d325518418ef3ac69121f79d
@@ -24,8 +24,133 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     _choices: []
+    _lineAudio:
+    - {fileID: 11400000, guid: dd5dd221748479a4eb7f5c1a0f4ad7a2, type: 2}
+    closeUpImage: {fileID: 0}
+  - _actorID: 1
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:482dcec5d325518418ef3ac69121f79d
+      m_TableEntryReference:
+        m_KeyId: 12462262208180224
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
+    _lineAudio:
+    - {fileID: 11400000, guid: 53413307d8008c24dbae7296a0b1ab1f, type: 2}
+    closeUpImage: {fileID: 0}
+  - _actorID: 6
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:482dcec5d325518418ef3ac69121f79d
+      m_TableEntryReference:
+        m_KeyId: 12462316876738560
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
+    _lineAudio: []
+    closeUpImage: {fileID: 0}
+  - _actorID: 0
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:482dcec5d325518418ef3ac69121f79d
+      m_TableEntryReference:
+        m_KeyId: 12462382505013248
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
+    _lineAudio:
+    - {fileID: 11400000, guid: fb4020a3f4ed77e44ab5760cfc0fa6b7, type: 2}
+    closeUpImage: {fileID: 0}
+  - _actorID: 1
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:482dcec5d325518418ef3ac69121f79d
+      m_TableEntryReference:
+        m_KeyId: 12462445402796032
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
+    _lineAudio:
+    - {fileID: 11400000, guid: 2617410e6cede3a47ae6ccaf8ef8572c, type: 2}
+    closeUpImage: {fileID: 0}
+  - _actorID: 0
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:482dcec5d325518418ef3ac69121f79d
+      m_TableEntryReference:
+        m_KeyId: 12462516408168448
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
+    _lineAudio:
+    - {fileID: 11400000, guid: a8afbc68174450045a7cc291fe1ff9a8, type: 2}
+    closeUpImage: {fileID: 0}
+  - _actorID: 1
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:482dcec5d325518418ef3ac69121f79d
+      m_TableEntryReference:
+        m_KeyId: 12462579700215808
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    - m_TableReference:
+        m_TableCollectionName: GUID:482dcec5d325518418ef3ac69121f79d
+      m_TableEntryReference:
+        m_KeyId: 12462644909060096
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
+    _lineAudio:
+    - {fileID: 11400000, guid: 0fa30ec65fd20c54b9540233c948d53d, type: 2}
+    - {fileID: 11400000, guid: f2d5ff94ea60498488d9600ceb1ac5f7, type: 2}
+    closeUpImage: {fileID: 0}
+  - _actorID: 1
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:482dcec5d325518418ef3ac69121f79d
+      m_TableEntryReference:
+        m_KeyId: 12462722092642304
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
+    _lineAudio:
+    - {fileID: 11400000, guid: 21eb8825fa73bbf45afbf72c2d59f761, type: 2}
+    closeUpImage: {fileID: 0}
+  - _actorID: 1
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:482dcec5d325518418ef3ac69121f79d
+      m_TableEntryReference:
+        m_KeyId: 12462798038904832
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
+    _lineAudio:
+    - {fileID: 11400000, guid: c9146cfa358e78b4a80c752168698509, type: 2}
+    closeUpImage: {fileID: 0}
   _dialogueType: 0
   _endOfDialogueEvent: {fileID: 0}
+  _relatedInteractiveItem: []
+  _interactableBG: {fileID: 0}
   references:
     version: 2
     RefIds: []

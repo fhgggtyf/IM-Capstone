@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93539290f23ef234f881854938370160, type: 3}
   m_Name: SI2-S3-Q1-QLP
   m_EditorClassIdentifier: 
-  _stickerSprite: {fileID: 21300000, guid: 5adeb9a1efa00b44ea5d0a566cbb06f4, type: 3}
+  _stickerSprite: {fileID: -1006308725, guid: 063e150c4fdeef24085f412bb838b2c8, type: 3}

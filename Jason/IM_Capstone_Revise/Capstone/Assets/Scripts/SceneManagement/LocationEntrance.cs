@@ -1,16 +1,20 @@
-using Unity.Cinemachine;
 using System.Collections;
+using System.Numerics;
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class LocationEntrance : MonoBehaviour
 {
 	[SerializeField] private PathSO _entrancePath;
 	[SerializeField] private PathStorageSO _pathStorage = default; //This is where the last path taken has been stored
-//	[SerializeField] private CinemachineCamera entranceShot;
+    //	[SerializeField] private CinemachineCamera entranceShot;
 
-	[Header("Lisenting on")]
+    [Header("Lisenting on")]
 	[SerializeField] private VoidEventChannelSO _onSceneReady;
-	public PathSO EntrancePath => _entrancePath;
+
+    [Header("Broadcasting on channels")]
+    public DialogueDataChannelSO _startDialogueEvent = default;
+    public PathSO EntrancePath => _entrancePath;
 
 	private void Awake()
 	{
@@ -18,7 +22,8 @@ public class LocationEntrance : MonoBehaviour
 		{
 //			entranceShot.Priority = 100;
 			_onSceneReady.OnEventRaised += PlanTransition;
-		}
+
+        }
 	}
 
 	private void PlanTransition()
@@ -26,7 +31,9 @@ public class LocationEntrance : MonoBehaviour
 		StartCoroutine(TransitionToGameCamera());
 	}
 
-	private IEnumerator TransitionToGameCamera()
+
+
+    private IEnumerator TransitionToGameCamera()
 	{
 
 		yield return new WaitForSeconds(.1f);

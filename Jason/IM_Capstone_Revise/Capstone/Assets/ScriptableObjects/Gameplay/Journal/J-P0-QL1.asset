@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c97fbbf96c18b148a16e5e321116a69, type: 3}
   m_Name: J-P0-QL1
   m_EditorClassIdentifier: 
-  _leftIMG: {fileID: 21300000, guid: 9e0c63f16c7b4a94886edf816026afba, type: 3}
+  _leftIMG: {fileID: 21300000, guid: 2d365926d960ca540a2708907ec3456d, type: 3}
   _leftText: 
   _rightIMG: {fileID: 0}
   _rightText: 

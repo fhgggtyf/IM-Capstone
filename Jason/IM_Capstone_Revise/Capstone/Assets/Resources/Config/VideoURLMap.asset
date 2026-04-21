@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d6007f52aa365f49a6a19a1e8350a75, type: 3}
+  m_Name: VideoURLMap
+  m_EditorClassIdentifier: 
+  mappings:
+  - clip: {fileID: 32900000, guid: 8f36b8198951fb3499f27a6029630601, type: 3}
+    streamingUrl: Assets/Assets/Videos/Prologue/Contributions.mp4
+  - clip: {fileID: 32900000, guid: ab94b5fe7ca1eb14f89aed80984decb5, type: 3}
+    streamingUrl: Assets/Assets/Videos/Prologue/AnimationClimax.mp4
+  - clip: {fileID: 32900000, guid: 348cd4fbcd7471549827997cb4ca8e03, type: 3}
+    streamingUrl: Assets/Assets/Videos/Prologue/VIDEO-2026-02-08-15-41-29.mp4
+  - clip: {fileID: 32900000, guid: 107ada73b0514be468bf8548291785c1, type: 3}
+    streamingUrl: Assets/Assets/Videos/Prologue/Page1/cropped_LeftDay1.1.mp4
+  - clip: {fileID: 32900000, guid: 0a945da256c7e7244ad6e97e1f43517a, type: 3}
+    streamingUrl: Assets/Assets/Videos/Prologue/Page2/cropped_LeftDay2.1.mp4
+  - clip: {fileID: 32900000, guid: 83b2d7df0bc1c5d4c8410f27ac534ed0, type: 3}
+    streamingUrl: Assets/Assets/Videos/Prologue/Page3/cropped_LeftDay3.1.mp4
+  - clip: {fileID: 32900000, guid: 341590d5c6a69014badf1d50739252e7, type: 3}
+    streamingUrl: Assets/Assets/Videos/Prologue/Page4/cropped_LeftDay4.1.mp4
+  - clip: {fileID: 32900000, guid: 4beb754153b8ae64e8d3c186e7eb2d5b, type: 3}
+    streamingUrl: Assets/Assets/Videos/Prologue/Page1/cropped_RightDay1.4.mp4
+  - clip: {fileID: 32900000, guid: a47b96b44dd7f614ea04de3a3f13b3f3, type: 3}
+    streamingUrl: Assets/Assets/Videos/Prologue/Page2/cropped_RightDay2.4.mp4
+  - clip: {fileID: 32900000, guid: e951ab9c07e8848438ac7d4a4c87e119, type: 3}
+    streamingUrl: Assets/Assets/Videos/Prologue/Page3/cropped_RightDay3.4.mp4
+  - clip: {fileID: 32900000, guid: 2fb3858d589632f4dbf4f81f7b409013, type: 3}
+    streamingUrl: Assets/Assets/Videos/Prologue/Page4/cropped_RightDay4.4.mp4

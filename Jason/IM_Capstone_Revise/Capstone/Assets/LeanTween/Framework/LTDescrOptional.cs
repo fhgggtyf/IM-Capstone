@@ -35,7 +35,7 @@ public class LTDescrOptional  {
 
 
 //	#if !UNITY_3_5 && !UNITY_4_0 && !UNITY_4_0_1 && !UNITY_4_1 && !UNITY_4_2
-//	public SpriteRenderer spriteRen { get; set; }
+//	public ImageComp spriteRen { get; set; }
 //	#endif
 //
 //	#if LEANTWEEN_1

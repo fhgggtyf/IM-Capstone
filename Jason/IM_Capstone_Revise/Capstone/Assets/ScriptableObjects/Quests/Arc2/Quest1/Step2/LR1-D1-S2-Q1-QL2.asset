@@ -1,0 +1,167 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6971c5d13f4fdb74ca62841846c9cb82, type: 3}
+  m_Name: LR1-D1-S2-Q1-QL2
+  m_EditorClassIdentifier: 
+  _lines:
+  - _actorID: 6
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:482dcec5d325518418ef3ac69121f79d
+      m_TableEntryReference:
+        m_KeyId: 12606905491140608
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
+    _lineAudio: []
+    closeUpImage: {fileID: -877245926, guid: bf1b82c5bb6453a45935db42a0093731, type: 3}
+  - _actorID: 0
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:482dcec5d325518418ef3ac69121f79d
+      m_TableEntryReference:
+        m_KeyId: 12607130645573632
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
+    _lineAudio:
+    - {fileID: 11400000, guid: c0f53758a8d627b43a39c57edc3d9268, type: 2}
+    closeUpImage: {fileID: -877245926, guid: bf1b82c5bb6453a45935db42a0093731, type: 3}
+  - _actorID: 6
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:482dcec5d325518418ef3ac69121f79d
+      m_TableEntryReference:
+        m_KeyId: 12607160085393408
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
+    _lineAudio: []
+    closeUpImage: {fileID: -877245926, guid: bf1b82c5bb6453a45935db42a0093731, type: 3}
+  - _actorID: 1
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:482dcec5d325518418ef3ac69121f79d
+      m_TableEntryReference:
+        m_KeyId: 12607174941618176
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
+    _lineAudio:
+    - {fileID: 11400000, guid: 92f49f02bed4d4a428f06edf0526e8ef, type: 2}
+    closeUpImage: {fileID: -877245926, guid: bf1b82c5bb6453a45935db42a0093731, type: 3}
+  - _actorID: 0
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:482dcec5d325518418ef3ac69121f79d
+      m_TableEntryReference:
+        m_KeyId: 12607337093410816
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
+    _lineAudio:
+    - {fileID: 11400000, guid: af850f7832fc72d47a335c72e7ba9787, type: 2}
+    closeUpImage: {fileID: -877245926, guid: bf1b82c5bb6453a45935db42a0093731, type: 3}
+  - _actorID: 1
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:482dcec5d325518418ef3ac69121f79d
+      m_TableEntryReference:
+        m_KeyId: 12607345951780864
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
+    _lineAudio: []
+    closeUpImage: {fileID: -877245926, guid: bf1b82c5bb6453a45935db42a0093731, type: 3}
+  - _actorID: 6
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:482dcec5d325518418ef3ac69121f79d
+      m_TableEntryReference:
+        m_KeyId: 12607349584048128
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
+    _lineAudio: []
+    closeUpImage: {fileID: -877245926, guid: bf1b82c5bb6453a45935db42a0093731, type: 3}
+  - _actorID: 1
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:482dcec5d325518418ef3ac69121f79d
+      m_TableEntryReference:
+        m_KeyId: 12607467838255104
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    - m_TableReference:
+        m_TableCollectionName: GUID:482dcec5d325518418ef3ac69121f79d
+      m_TableEntryReference:
+        m_KeyId: 12607500608352256
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
+    _lineAudio:
+    - {fileID: 11400000, guid: 52e5087f103383040b851824a5c878e4, type: 2}
+    - {fileID: 11400000, guid: 40b8020a9c5adfc48b7cbd053a3a1f66, type: 2}
+    closeUpImage: {fileID: -877245926, guid: bf1b82c5bb6453a45935db42a0093731, type: 3}
+  - _actorID: 0
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:482dcec5d325518418ef3ac69121f79d
+      m_TableEntryReference:
+        m_KeyId: 12607531633618944
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
+    _lineAudio:
+    - {fileID: 11400000, guid: 1266f2b092175f04e9ade513e9ebd3ab, type: 2}
+    closeUpImage: {fileID: -877245926, guid: bf1b82c5bb6453a45935db42a0093731, type: 3}
+  - _actorID: 1
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:482dcec5d325518418ef3ac69121f79d
+      m_TableEntryReference:
+        m_KeyId: 12607571433369600
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
+    _lineAudio:
+    - {fileID: 11400000, guid: 4a413247a139e1a4a9985f7ee04bc3b8, type: 2}
+    closeUpImage: {fileID: -877245926, guid: bf1b82c5bb6453a45935db42a0093731, type: 3}
+  _dialogueType: 0
+  _endOfDialogueEvent: {fileID: 0}
+  _relatedInteractiveItem: []
+  _interactableBG: {fileID: 0}
+  references:
+    version: 2
+    RefIds: []

@@ -23,9 +23,6 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    _choices: []
-  - _actorID: 0
-    _textList:
     - m_TableReference:
         m_TableCollectionName: GUID:b9337267fdc92944ca13fcedc1ac1fb0
       m_TableEntryReference:
@@ -35,7 +32,11 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     _choices: []
-  - _actorID: 1
+    _lineAudio:
+    - {fileID: 11400000, guid: 76ab3c5eed23e49439b5fdb51cb45226, type: 2}
+    - {fileID: 11400000, guid: cb8cf47e2fb7a6f42889809b3aa073ad, type: 2}
+    closeUpImage: {fileID: 0}
+  - _actorID: 8
     _textList:
     - m_TableReference:
         m_TableCollectionName: GUID:b9337267fdc92944ca13fcedc1ac1fb0
@@ -46,8 +47,207 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     _choices: []
+    _lineAudio: []
+    closeUpImage: {fileID: 0}
+  - _actorID: 1
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:b9337267fdc92944ca13fcedc1ac1fb0
+      m_TableEntryReference:
+        m_KeyId: 23877537239412736
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
+    _lineAudio:
+    - {fileID: 11400000, guid: 8cb852c1f5afb954a9a7eca35a3fe0a1, type: 2}
+    closeUpImage: {fileID: 0}
+  - _actorID: 7
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:b9337267fdc92944ca13fcedc1ac1fb0
+      m_TableEntryReference:
+        m_KeyId: 23877638800289792
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
+    _lineAudio: []
+    closeUpImage: {fileID: 0}
+  - _actorID: 0
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:b9337267fdc92944ca13fcedc1ac1fb0
+      m_TableEntryReference:
+        m_KeyId: 23877677744402432
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    - m_TableReference:
+        m_TableCollectionName: GUID:b9337267fdc92944ca13fcedc1ac1fb0
+      m_TableEntryReference:
+        m_KeyId: 23877707754647552
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    - m_TableReference:
+        m_TableCollectionName: GUID:b9337267fdc92944ca13fcedc1ac1fb0
+      m_TableEntryReference:
+        m_KeyId: 23877752675643392
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
+    _lineAudio:
+    - {fileID: 11400000, guid: 619f88b3ae2381a4e855a4053a962c5b, type: 2}
+    - {fileID: 11400000, guid: 9072256623dc5b64492d51d5bd1c9f36, type: 2}
+    - {fileID: 11400000, guid: 5f86e385f05fcad4a9ab1b1334d04a88, type: 2}
+    closeUpImage: {fileID: 0}
+  - _actorID: 1
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:b9337267fdc92944ca13fcedc1ac1fb0
+      m_TableEntryReference:
+        m_KeyId: 23877821768413184
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
+    _lineAudio: []
+    closeUpImage: {fileID: 0}
+  - _actorID: 1
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:b9337267fdc92944ca13fcedc1ac1fb0
+      m_TableEntryReference:
+        m_KeyId: 23877862407024640
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
+    _lineAudio:
+    - {fileID: 11400000, guid: bfab3c9b0300bf04f9fd5b94997ff83b, type: 2}
+    closeUpImage: {fileID: 0}
+  - _actorID: 7
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:b9337267fdc92944ca13fcedc1ac1fb0
+      m_TableEntryReference:
+        m_KeyId: 23877895072264192
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
+    _lineAudio: []
+    closeUpImage: {fileID: 0}
+  - _actorID: 0
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:b9337267fdc92944ca13fcedc1ac1fb0
+      m_TableEntryReference:
+        m_KeyId: 23877962759942144
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
+    _lineAudio:
+    - {fileID: 11400000, guid: 57965b916e902ca4e97fa40a32fc116a, type: 2}
+    closeUpImage: {fileID: 0}
+  - _actorID: 1
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:b9337267fdc92944ca13fcedc1ac1fb0
+      m_TableEntryReference:
+        m_KeyId: 23878041726103552
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
+    _lineAudio: []
+    closeUpImage: {fileID: 0}
+  - _actorID: 1
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:b9337267fdc92944ca13fcedc1ac1fb0
+      m_TableEntryReference:
+        m_KeyId: 23878079718109184
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
+    _lineAudio:
+    - {fileID: 11400000, guid: 46ae804696dcc8a44b5cfebde76154b6, type: 2}
+    closeUpImage: {fileID: 0}
+  - _actorID: 0
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:b9337267fdc92944ca13fcedc1ac1fb0
+      m_TableEntryReference:
+        m_KeyId: 23878144855650304
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
+    _lineAudio:
+    - {fileID: 11400000, guid: d606fc8da761aa14ea35112e02990af6, type: 2}
+    closeUpImage: {fileID: 0}
+  - _actorID: 1
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:b9337267fdc92944ca13fcedc1ac1fb0
+      m_TableEntryReference:
+        m_KeyId: 23878191735386112
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
+    _lineAudio:
+    - {fileID: 11400000, guid: 9256e6c65ff9b694ba5198c9622f453a, type: 2}
+    closeUpImage: {fileID: 0}
+  - _actorID: 0
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:b9337267fdc92944ca13fcedc1ac1fb0
+      m_TableEntryReference:
+        m_KeyId: 23878238694813696
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
+    _lineAudio: []
+    closeUpImage: {fileID: 0}
+  - _actorID: 0
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:b9337267fdc92944ca13fcedc1ac1fb0
+      m_TableEntryReference:
+        m_KeyId: 23878268092690432
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
+    _lineAudio:
+    - {fileID: 11400000, guid: ca1c3da418089bd4092bd9b58dda6d1c, type: 2}
+    closeUpImage: {fileID: 0}
   _dialogueType: 0
   _endOfDialogueEvent: {fileID: 0}
+  _relatedInteractiveItem: []
+  _interactableBG: {fileID: 0}
   references:
     version: 2
     RefIds: []

@@ -7,6 +7,8 @@ public class QuestInteractable : InteractableItems
     [SerializeField] private StepSO _forStep; // Optional: Reference to the quest step this interactable is associated with (for editor organization)
     [SerializeField] private QuestManagerSO questManager; // Reference to your existing QuestManager scriptable object
 
+    [SerializeField] private InvestigateController investigateController;
+
     [Header("Quest Progress")]
     [SerializeField] private string _interactableId = "UniqueIdHere";
     [SerializeField] private StringEventChannelSO _objectInteractedEvent = default;
@@ -43,5 +45,33 @@ public class QuestInteractable : InteractableItems
                 _hasPlayedDialogue = true;
             }
         }
+    }
+
+    public override void EnableInteraction()
+    {
+        Debug.Log("Enabled interaction for this");
+        if(_isQuestItem && questManager.CurrentStep != _forStep)
+        {
+            Debug.Log(questManager.CurrentStep + " " + _forStep);
+            return; // Only enable interaction if this is a quest item and it's the current step
+        }
+
+        if (_playDialogueOnce && _hasPlayedDialogue)
+        {
+            Debug.Log("Dialogue already played once, not enabling interaction.");
+            return; // Don't enable interaction if dialogue should only play once and it has already been played
+        }
+
+        investigateController.EnableInvestigation();
+    }
+
+    public override void DisableInteraction()
+    {
+        Debug.Log("disabled interaction for this");
+        if (_isQuestItem && questManager.CurrentStep != _forStep)
+        {
+            return; // Only disable interaction if this is a quest item and it's the current step
+        }
+        investigateController.DisableInvestigation();
     }
 }

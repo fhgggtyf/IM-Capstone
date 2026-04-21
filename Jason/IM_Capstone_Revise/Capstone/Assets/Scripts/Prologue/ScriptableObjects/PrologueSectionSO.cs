@@ -5,6 +5,7 @@ using UnityEngine;
 public class PrologueSectionSO : ScriptableObject
 {
     public PrologueSectionType sectionType;
+    public AudioCueSO audioCue;
 
     public virtual void Play()
     {

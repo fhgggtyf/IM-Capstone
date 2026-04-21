@@ -19,31 +19,309 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 8535683072
-    m_Localized: I DIDNT FIND ANYTHING OUTSIDE, SEE WHAT WE CAN FIND HERE
+    m_Localized: "It looks empty\u2026"
     m_Metadata:
       m_Items: []
   - m_Id: 812055277568
-    m_Localized: DID U SEARCH EVERYWHERE
+    m_Localized: Let's see what we can find here.
     m_Metadata:
       m_Items: []
-  - m_Id: 1068876705792
-    m_Localized: YES
+  - m_Id: 12546704046043136
+    m_Localized: "What does tem\u2026tempory mean?"
     m_Metadata:
       m_Items: []
-  - m_Id: 1145930264576
-    m_Localized: NO
+  - m_Id: 12546569576656896
+    m_Localized: "\u2026 See Neas! Temporary. Do you see this word?"
     m_Metadata:
       m_Items: []
-  - m_Id: 1379016126464
-    m_Localized: OKAY SO I THINK THIS IS THE SITUATION...
+  - m_Id: 12546427062595584
+    m_Localized: "Neas waves enthusiastically. Kairo\u2019s eyes dart frantically
+      across inked lines as his breath hitches."
     m_Metadata:
       m_Items: []
-  - m_Id: 1523044331520
-    m_Localized: CHECK, THERE MUST BE SOMETHING WE MISSED
+  - m_Id: 12545413764886528
+    m_Localized: "Kairo! Daddy\u2019s here! They\u2019re talking about daddy here!"
     m_Metadata:
       m_Items: []
-  - m_Id: 10948077432832
-    m_Localized: Dont Bother me I need to think
+  - m_Id: 12545179416539136
+    m_Localized: Eks... ee... cue... tee-ons? Eks-ee-cut-ions?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12462262208180224
+    m_Localized: It seems so.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12462316876738560
+    m_Localized: Kairo wearily closes the front door.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12462382505013248
+    m_Localized: "Maybe Mr. Chester\u2019s hiding? Or he\u2019s lost like mommy."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12462445402796032
+    m_Localized: "\u2026 Could be. But either way, he can\u2019t help us now.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12462516408168448
+    m_Localized: So what do we do? Where should we go?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12462579700215808
+    m_Localized: "\u2026 We look around. Search for food, anything that can help
+      us. Maybe we can find clues of where they might be."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12462644909060096
+    m_Localized: "Mr. Chester\u2019s friends with mum and dad. If we\u2019re lucky,
+      we might find something about them here."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12462722092642304
+    m_Localized: Okay, yeah!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12462798038904832
+    m_Localized: "Don\u2019t stray too far Neas. And call for me if anything happens."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12546782672465920
+    m_Localized: "It means only a short while! That must mean dad\u2019s on his way
+      back!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12546907520118784
+    m_Localized: "This newspaper see? It\u2019s from\u2026 3 weeks\u2026 ago\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12546983625764864
+    m_Localized: "Kairo\u2019s brow furrows, his voice losing conviction."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12547048352264192
+    m_Localized: "Then maybe\u2026 Maybe he hasn\u2019t come back to us because he\u2019s
+      still out looking for mum?\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12547165415288832
+    m_Localized: "Yeah\u2026 That must be it."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12547325167939584
+    m_Localized: "Kairo\u2019s shoulders slump. He stares motionless for a brief
+      moment before gently placing the newspaper back onto the table."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12547399893659648
+    m_Localized: "Let\u2019s keep looking. See what we find."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12603894119280640
+    m_Localized: An indescribable stench radiates from within the colorfully dappled
+      fridge.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12603998549061632
+    m_Localized: "(Disgusted) \u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12604053930651648
+    m_Localized: "Stay away Neas. We can\u2019t have you sick."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12604134905884672
+    m_Localized: Yeah, yeah. I was just looking.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12606905491140608
+    m_Localized: "\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12607130645573632
+    m_Localized: "Where is who\u2026? Where is who Kairo?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12607160085393408
+    m_Localized: Kairo takes the newspaper, scanning the lines of ink.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12607174941618176
+    m_Localized: "I don\u2019t know. It says\u2026 the soldiers took away the bad
+      people."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12607337093410816
+    m_Localized: "? But they took away daddy\u2026 And daddy is not a bad person.
+      He\u2019s good!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12607345951780864
+    m_Localized: "\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12607349584048128
+    m_Localized: Kairo falters then promptly crumples up the newspaper clipping.
+      He forces a smile.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12607467838255104
+    m_Localized: "You\u2019re right. Dad is good. He\u2019s the best."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12607500608352256
+    m_Localized: "So, they must\u2019ve made a mistake. We can tell them and set
+      things straight. I\u2019m sure they\u2019ll listen to us."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12607531633618944
+    m_Localized: "\u2026 Okay, yeah. Because we\u2019re telling the truth right?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12607571433369600
+    m_Localized: "Yes, Neas. Because we\u2019re telling the truth."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12629124262932480
+    m_Localized: "I think I\u2019ve seen this before\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12629182781861888
+    m_Localized: "It\u2019s an ironwood sapling. The one from our flag."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12629202088243200
+    m_Localized: "Oh! It\u2019s so pretty."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12629202667057152
+    m_Localized: "I thought they were all burned down\u2026 I wonder how Mr. Chester
+      got this."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12854360782680064
+    m_Localized: What's on the table...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12856981874552832
+    m_Localized: "I\u2019ve never seen someone like this before. The mask is creepy\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13024984536723456
+    m_Localized: 'What''s in the drawers...
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13026570608586752
+    m_Localized: A collection of pretty badges.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13071135679983616
+    m_Localized: "A poster of\u2026 Yellow gingerbread people."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13071260603133952
+    m_Localized: "Kairo, what\u2019s this flag?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13071262373130240
+    m_Localized: "I don\u2019t know\u2026 I\u2019ve never seen it before. Maybe it\u2019s
+      just decoration?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13071263841136640
+    m_Localized: Hmm.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13072648540270592
+    m_Localized: "Look Kairo! It\u2019s our country flag! It\u2019s huge\u2026 Really
+      dirty but huge!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13072741758676992
+    m_Localized: In a minute!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13072855197822976
+    m_Localized: "It\u2019s mummy and daddy! Huh\u2026 That\u2019s Kairo?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13073709170700288
+    m_Localized: They look different here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13233300848259072
+    m_Localized: Let's look around the house
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13375753446240256
+    m_Localized: "A creepy poster, with creepy eyes\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13573195886243840
+    m_Localized: Let's think about this, okay?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13573775014768640
+    m_Localized: "Kairo! Kairo, come quick! It\u2019s the masked person from that
+      picture. The picture with Mr. Chester."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13573783281741824
+    m_Localized: What? What are you talking about?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13573784917520384
+    m_Localized: We have to follow them!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13573786117091328
+    m_Localized: "Neas calm down! That\u2019s way too dangerous. You can\u2019t keep
+      assuming everyone\u2019s friendly. That\u2019s just not how it works anymore."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13573889083060224
+    m_Localized: "They\u2019re friends with Mr. Chester. They might know what happened.
+      What happened to Mr Chester. What happened to mommy and daddy."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13573893851983872
+    m_Localized: "Even still, it\u2019s too dangerous\u2026 We should\u2026 We need
+      to think things through.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13573894493712384
+    m_Localized: "He\u2019s getting away!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13575758316580864
+    m_Localized: A strangely familiar masked person is walking outside the house...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14196809765498880
+    m_Localized: What do you choose? Follow or hide?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14197148824645632
+    m_Localized: Follow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14197176712572928
+    m_Localized: Hide
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14197371068231680
+    m_Localized: Neas jumped out of the fence and followed the masked person, and
+      Kairo hurrily followed...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14197883448602624
+    m_Localized: The End
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14197970937589760
+    m_Localized: Neas decided to listen to Kairo and stayed put. Soon they returned
+      to Mr.Chester's house, not knowing what will come next...
     m_Metadata:
       m_Items: []
   references:

@@ -11,6 +11,8 @@ public class HandController : MonoBehaviour
 
     private bool _isHolding;
 
+    private Sprite _heldSprite;  // new field
+
     public bool IsHolding => _isHolding;
 
     private Face currentFace = new();
@@ -27,33 +29,36 @@ public class HandController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int i = _book.CurrentPaper;
-
-        if (i < 0 || i >= _book.papers.Length)
-            return;
-
+        // Always follow mouse
         handCursor.position = Input.mousePosition;
         pasteImage.transform.position = Input.mousePosition;
 
-        if (currentFace != _book.papers[_book.CurrentPaper])
+        // Only sync sprite from current page when NOT holding
+        if (!_isHolding)
         {
-            currentFace = _book.papers[_book.CurrentPaper];
+            int i = _book.CurrentPaper;
+            if (i >= 0 && i < _book.papers.Length)
+            {
+                var current = _book.papers[i];
+                if (current != currentFace)
+                {
+                    currentFace = current;
+                    var sourceImg = currentFace.Right.GetComponent<PrologueInteractionPageUI>().InteractionImage;
+                    pasteImage.sprite = sourceImg.sprite;
 
-            var sourceImg = currentFace.Right.GetComponent<PrologueInteractionPageUI>().InteractionImage;
+                    var targetRect = pasteImage.rectTransform;
+                    var sourceRect = sourceImg.rectTransform;
 
-            pasteImage.sprite = sourceImg.sprite;
+                    targetRect.SetSizeWithCurrentAnchors(
+                        RectTransform.Axis.Horizontal,
+                        sourceRect.rect.width);
 
-            var targetRect = pasteImage.rectTransform;
-            var sourceRect = sourceImg.rectTransform;
-
-            targetRect.SetSizeWithCurrentAnchors(
-                RectTransform.Axis.Horizontal,
-                sourceRect.rect.width);
-
-            targetRect.SetSizeWithCurrentAnchors(
-                RectTransform.Axis.Vertical,
-                sourceRect.rect.height
-            );
+                    targetRect.SetSizeWithCurrentAnchors(
+                        RectTransform.Axis.Vertical,
+                        sourceRect.rect.height
+                    );
+                }
+            }
         }
 
     }
@@ -64,15 +69,18 @@ public class HandController : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
     }
 
-    public void PickUp()
+    public void PickUp(Sprite stickerSprite)  // change signature
     {
         _isHolding = true;
+        _heldSprite = stickerSprite;
+        pasteImage.sprite = _heldSprite;
         EnablePasteImg();
     }
 
     public void DropDown()
     {
         _isHolding = false;
+        _heldSprite = null;
         DisablePasteImg();
     }
 

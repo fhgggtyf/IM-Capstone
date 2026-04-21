@@ -20,7 +20,7 @@ public class InteractionImage : MonoBehaviour
         if (_book.papers[_book.currentPaper].Right.GetComponent<PrologueInteractionPageUI>().InteractionImage.gameObject.GetComponent<Image>().sprite != stickerImageSO.StickerSprite)
             return;
 
-        handController.PickUp();
+        handController.PickUp(stickerImageSO.StickerSprite);  // pass the sprite
 
         if (objectToHide != null)
             objectToHide.SetActive(false);

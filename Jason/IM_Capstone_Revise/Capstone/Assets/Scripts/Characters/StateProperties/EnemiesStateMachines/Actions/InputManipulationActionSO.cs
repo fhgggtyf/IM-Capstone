@@ -41,6 +41,7 @@ public class InputManipulationAction : StateAction
 
     public override void OnStateExit()
     {
+        Debug.Log("Raised PlayerDeadEvent");
         _playerIsDead.RaiseEvent();
     }
 }

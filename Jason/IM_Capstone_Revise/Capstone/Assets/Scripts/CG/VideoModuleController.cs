@@ -54,12 +54,15 @@ public class VideoModuleController : MonoBehaviour
     {
         Debug.Log("Playing video: " + clip.name);
 
-        videoPlayer.clip = clip;
+        VideoHelper.AssignVideo(videoPlayer, clip);
         videoPlayer.loopPointReached += OnVideoFinished;
 
-        skipButton.gameObject.SetActive(skippable);
-        skipButton.onClick.RemoveAllListeners();
-        skipButton.onClick.AddListener(Finish);
+        if (skippable)
+        {
+            skipButton.gameObject.SetActive(skippable);
+            skipButton.onClick.RemoveAllListeners();
+            skipButton.onClick.AddListener(Finish);
+        }
 
         videoPlayer.Play();
 
@@ -72,7 +75,8 @@ public class VideoModuleController : MonoBehaviour
     private void Finish()
     {
         videoPlayer.Stop();
-        _videoFinished.RaiseEvent();
+        if (_videoFinished != null)
+            _videoFinished.RaiseEvent();
         videoPlayer.loopPointReached -= OnVideoFinished;
         //gameObject.SetActive(false);
     }

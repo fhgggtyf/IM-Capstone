@@ -28,6 +28,11 @@ public class UIPopup : MonoBehaviour
     [SerializeField] private UIGenericButton _popupButton2 = default;
     [SerializeField] private InputReader _inputReader = default;
 
+    [SerializeField] private AudioConfigurationSO _audioConfiguration = default;
+    [SerializeField] private AudioCueEventChannelSO _sfxEventChannel = default;
+    [SerializeField] private AudioCueSO _confirmSFX = default;
+    [SerializeField] private AudioCueSO _buttonClickedSFX = default;
+
     private PopupType _actualType;
 
     public event UnityAction<bool> ConfirmationResponseAction;
@@ -100,20 +105,25 @@ public class UIPopup : MonoBehaviour
         {
             _inputReader.MenuCloseEvent += ClosePopupButtonClicked;
         }
+
+        _sfxEventChannel.RaisePlayEvent(_confirmSFX, _audioConfiguration);
     }
 
     public void ClosePopupButtonClicked()
     {
+        _sfxEventChannel.RaisePlayEvent(_buttonClickedSFX, _audioConfiguration);
         ClosePopupAction.Invoke();
     }
 
     void ConfirmButtonClicked()
     {
+        _sfxEventChannel.RaisePlayEvent(_buttonClickedSFX, _audioConfiguration);
         ConfirmationResponseAction.Invoke(true);
     }
 
     void CancelButtonClicked()
     {
+        _sfxEventChannel.RaisePlayEvent(_buttonClickedSFX, _audioConfiguration);
         ConfirmationResponseAction.Invoke(false);
     }
 }

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16e0892a5d489fc4db076aa9c7f4d904, type: 3}
+  m_Name: BRTD-O1-S2-Q1-QL2
+  m_EditorClassIdentifier: 
+  itemName: EmptyDrawerButton
+  itemSprite: {fileID: 21300000, guid: bc53a5af20c8dcc4492e91f3f834ef45, type: 3}
+  anchorMin: {x: 0.62, y: 0.38}
+  anchorMax: {x: 0.93, y: 0.64}
+  pivot: {x: 0.5, y: 0.5}
+  anchoredPosition: {x: 0, y: 0}
+  rotation: {x: 0, y: 0, z: 0}
+  scale: {x: 1, y: 1, z: 1}
+  dialogue: {fileID: 11400000, guid: c169983b17e5eaf46bc1c748874c35ef, type: 2}

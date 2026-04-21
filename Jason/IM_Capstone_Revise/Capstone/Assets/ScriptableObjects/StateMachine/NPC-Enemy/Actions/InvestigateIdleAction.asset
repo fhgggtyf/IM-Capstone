@@ -14,3 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: 
   idleDuration: 2
+  _audioConfiguration: {fileID: 11400000, guid: 2fcf67deed91ff34498fa2d153597d71, type: 2}
+  _sfxEventChannel: {fileID: 11400000, guid: 0d83966be85018b4d932e68e62eb8224, type: 2}
+  _RaiderQuestionSFX: {fileID: 11400000, guid: 111d46e8a059ffc409b7f22f4989f3e5, type: 2}
+  _RaiderExcSFX: {fileID: 11400000, guid: 7207617a493af96448f80880d286a136, type: 2}

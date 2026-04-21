@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: ExampleJournalSection
   m_EditorClassIdentifier: 
   sectionType: 1
+  audioCue: {fileID: 0}
   _journalContent: {fileID: 11400000, guid: 3b81caabb57323343a1802c472b03e0e, type: 2}
   _journalInitializationEvent: {fileID: 11400000, guid: d3549d4c552a8f644b95de7653289c47, type: 2}
   _journalUpdatePageAccessEvent: {fileID: 11400000, guid: c03789e1bc466bf46b6332931b003ede, type: 2}

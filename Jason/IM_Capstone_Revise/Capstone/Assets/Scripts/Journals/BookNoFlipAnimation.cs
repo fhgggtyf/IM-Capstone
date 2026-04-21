@@ -16,6 +16,9 @@ public class BookNoFlipAnimation : MonoBehaviour
     [SerializeField] public RectTransform LeftPageTransform;
     [SerializeField] public RectTransform RightPageTransform;
 
+    [SerializeField] private AudioConfigurationSO _audioConfiguration = default;
+    [SerializeField] private AudioCueEventChannelSO _sfxEventChannel = default;
+    [SerializeField] private AudioCueSO _journalFlipSFX = default;
 
     [SerializeField] public InputReader inputReader;
 
@@ -108,6 +111,7 @@ public class BookNoFlipAnimation : MonoBehaviour
         }
 
         CurrentPaper = currentPaper + 1;
+        _sfxEventChannel.RaisePlayEvent(_journalFlipSFX, _audioConfiguration);
     }
 
     /// <summary>
@@ -119,6 +123,8 @@ public class BookNoFlipAnimation : MonoBehaviour
         if (currentPaper <= StartFlippingPaper) return;
 
         CurrentPaper = currentPaper - 1;
+
+        _sfxEventChannel.RaisePlayEvent(_journalFlipSFX, _audioConfiguration);
     }
 
     /// <summary>
@@ -166,6 +172,16 @@ public class BookNoFlipAnimation : MonoBehaviour
         BookUtility.ShowPage(papers[currentPaper].Right);
         BookUtility.CopyTransform(RightPageTransform.transform, papers[currentPaper].Right.transform);
 
+        for (int i = 0; i < currentPaper; i++)
+        {
+            Debug.Log($"Stabilizing page {i} (paper index {i})");
+            BookUtility.StabilizePage(papers[i].Left);
+            BookUtility.StabilizePage(papers[i].Right);
+        }
+
+        if (papers[currentPaper].Left.GetComponent<ContentPageUI>() != null)
+            papers[currentPaper].Left.GetComponent<ContentPageUI>().ShowAnimation();
+
     }
 
     private int ClampPaperIndex(int value)
@@ -198,6 +214,8 @@ public class BookNoFlipAnimation : MonoBehaviour
     public void FlipToRight()
     {
         // Same as PreviousPage(): decreases currentPaper by -1
+        BookUtility.StabilizePage(papers[currentPaper].Left);
+        BookUtility.StabilizePage(papers[currentPaper].Right);
         PreviousPage();
     }
 }
@@ -208,6 +226,7 @@ public class Face
     public GameObject Left;
     public GameObject Right;
     public bool IsInteractable;
+    public PrologueJournalContentSO pageData;   // <-- ADD THIS
 }
 
 public static class BookUtility
@@ -220,6 +239,7 @@ public static class BookUtility
         CanvasGroup cgf = page.GetComponent<CanvasGroup>();
         cgf.alpha = 1;
         cgf.blocksRaycasts = true;
+        page.SetActive(true);
     }
 
     /// <summary>
@@ -230,7 +250,25 @@ public static class BookUtility
         CanvasGroup cgf = page.GetComponent<CanvasGroup>();
         cgf.alpha = 0;
         cgf.blocksRaycasts = false;
-        page.transform.SetAsFirstSibling();
+        page.transform.SetAsFirstSibling(); 
+        page.SetActive(false);
+        
+    }
+
+    public static void StabilizePage(GameObject page)
+    {
+        if (page.GetComponent<ContentPageUI>() != null)
+        {
+            var content = page.GetComponent<ContentPageUI>();
+            content.EndImage.gameObject.SetActive(true);
+            content.videoPlayer.gameObject.SetActive(false);
+        }
+        if (page.GetComponent<PrologueInteractionPageUI>() != null)
+        {
+            var content = page.GetComponent<PrologueInteractionPageUI>();
+            content.EndImage.gameObject.SetActive(true);
+            content.videoController.gameObject.SetActive(false);
+        }
     }
 
     public static void CopyTransform(Transform from, Transform to)

@@ -18,14 +18,18 @@ MonoBehaviour:
     - m_TableReference:
         m_TableCollectionName: GUID:482dcec5d325518418ef3ac69121f79d
       m_TableEntryReference:
-        m_KeyId: 10948077432832
+        m_KeyId: 13233300848259072
         m_Key: 
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
     _choices: []
+    _lineAudio: []
+    closeUpImage: {fileID: 0}
   _dialogueType: 3
   _endOfDialogueEvent: {fileID: 0}
+  _relatedInteractiveItem: []
+  _interactableBG: {fileID: 0}
   references:
     version: 2
     RefIds: []

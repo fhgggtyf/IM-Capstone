@@ -67,16 +67,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 10498430107660288
-    m_Localized: Why are you out I thought I aksed you to stay inside
+    m_Localized: "\u2026Neas?"
     m_Metadata:
       m_Items: []
   - m_Id: 10498613843341312
-    m_Localized: strangers in our house
+    m_Localized: What are you doing out here?! I told you to stay in!
     m_Metadata:
       m_Items: []
   - m_Id: 10498722463232000
-    m_Localized: Lets hide somewhere, maybe the neybors house. you go first ill take
-      watch
+    m_Localized: (surprised)
     m_Metadata:
       m_Items: []
   - m_Id: 16651308924940288
@@ -117,7 +116,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 16961664759115776
-    m_Localized: (Door closed sound) Kairo...?
+    m_Localized: (Door closed sound)
     m_Metadata:
       m_Items: []
   - m_Id: 16961102755934208
@@ -155,6 +154,79 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 17016795164848128
     m_Localized: Neas hurried back to his room, hoping to hide from the raiders...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23738926481289216
+    m_Localized: Go to the neighbors house Neas.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23877537239412736
+    m_Localized: "You have to listen, Neas! You can\u2019t be doing whatever you
+      want, it just doesn\u2019t work\r\nlike that any\u2013"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23877638800289792
+    m_Localized: (cry)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23877677744402432
+    m_Localized: "I had to! There are people in our house. Bad People\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23877707754647552
+    m_Localized: "I \u2013 I \u2026 They broke the front door\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23877752675643392
+    m_Localized: "I told you not to leave! You promised you wouldn\u2019t leave me!\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23877821768413184
+    m_Localized: "\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23877862407024640
+    m_Localized: "You\u2019re right. I\u2019m sorry. I\u2019m sorry Neas, I never
+      should\u2019ve left. I never should\u2019ve, I\u2019m so\r\nsorry\u2026."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23877895072264192
+    m_Localized: (cry)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23877962759942144
+    m_Localized: "Our house\u2026 Where do we go Kairo?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23878041726103552
+    m_Localized: "\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23878079718109184
+    m_Localized: "Mr Chester\u2019s. He can help us. He\u2019ll for sure help us."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23878144855650304
+    m_Localized: "But mommy told us not to leave the house\u2026 Maybe\u2026 Maybe
+      we just wait till the bad\r\npeople leave\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23878191735386112
+    m_Localized: "It\u2019s not safe anymore Neas. They\u2019ve already broken in.
+      If it's not them, it\u2019ll be someone\r\nelse tomorrow. We can\u2019t risk
+      it\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23878238694813696
+    m_Localized: "\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23878268092690432
+    m_Localized: "Okay\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24668216706215936
+    m_Localized: Kairo...?
     m_Metadata:
       m_Items: []
   references:

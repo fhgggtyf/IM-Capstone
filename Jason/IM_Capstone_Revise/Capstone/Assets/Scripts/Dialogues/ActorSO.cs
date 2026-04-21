@@ -10,6 +10,8 @@ public enum ActorID
 	ML, // Mole
 	FX, // Fox
 	NAR,
+	CPT,
+	SPT
 
 }
 

@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e5ce493149272e41b8b304638872948, type: 3}
   m_Name: P1-S3-Q1-QLP
   m_EditorClassIdentifier: 
-  _leftVideoClip: {fileID: 32900000, guid: dde1a3f63401ceb49aa5c9bd5431787e, type: 3}
-  _rightVideoClip: {fileID: 32900000, guid: d947488fee519b844970af6cf30b44a7, type: 3}
+  _leftVideoClip: {fileID: 32900000, guid: 107ada73b0514be468bf8548291785c1, type: 3}
+  _rightVideoClip: {fileID: 32900000, guid: 4beb754153b8ae64e8d3c186e7eb2d5b, type: 3}
+  _LeftEnd: {fileID: 21300000, guid: cac52ce04566fc04cadac42f5d298294, type: 3}
+  _RightEnd: {fileID: 21300000, guid: 48d9834947f004e45ba6eebfb38ed31e, type: 3}
+  _rightVideoSkippable: 0
   _audioTrackEvent: {fileID: 0}
   _endOfPageEvent: {fileID: 0}
   interactionImageSO: {fileID: 11400000, guid: 7bbcdcdf71dee914498873de9cf428c2, type: 2}

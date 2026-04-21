@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6971c5d13f4fdb74ca62841846c9cb82, type: 3}
+  m_Name: KB1-D1-S2-Q1-QL2
+  m_EditorClassIdentifier: 
+  _lines:
+  - _actorID: 0
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:482dcec5d325518418ef3ac69121f79d
+      m_TableEntryReference:
+        m_KeyId: 12545179416539136
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
+    _lineAudio:
+    - {fileID: 11400000, guid: cea07c9a67b0ce8498e1f94111b5f3e5, type: 2}
+    closeUpImage: {fileID: 1319525365, guid: df884551639471e40bd5b85a79f1624c, type: 3}
+  - _actorID: 0
+    _textList:
+    - m_TableReference:
+        m_TableCollectionName: GUID:482dcec5d325518418ef3ac69121f79d
+      m_TableEntryReference:
+        m_KeyId: 13375753446240256
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    _choices: []
+    _lineAudio: []
+    closeUpImage: {fileID: 596124824, guid: 9a8767fea4a5dd6478a854408ffbcaef, type: 3}
+  _dialogueType: 0
+  _endOfDialogueEvent: {fileID: 0}
+  _relatedInteractiveItem: []
+  _interactableBG: {fileID: 0}
+  references:
+    version: 2
+    RefIds: []

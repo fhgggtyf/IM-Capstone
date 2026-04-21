@@ -13,6 +13,7 @@ public class PrologueManager : MonoBehaviour
     [SerializeField] private List<PrologueSectionSO> _sections;
     [SerializeField] private PrologueJournalManager _journalManager;
     [SerializeField] private VideoModuleController _videoModuleController;
+    [SerializeField] private GameObject _endScreen;
     private int _index = 0;
 
 
@@ -26,7 +27,9 @@ public class PrologueManager : MonoBehaviour
 
     private void Start()
     {
+        _endScreen.SetActive(false);
         StartPrologue();
+        
     }
 
     private void OnEnable()
@@ -51,11 +54,12 @@ public class PrologueManager : MonoBehaviour
     {
         if (index >= _sections.Count)
         {
-            EndPrologue();
+            ShowEndScreen();
             return;
         }
 
         _index = index;
+    
         switch (_sections[index].sectionType)
         {
             case PrologueSectionType.Cutscene:
@@ -77,11 +81,17 @@ public class PrologueManager : MonoBehaviour
         _sections[index].Play();
     }
 
-    void EndPrologue()
+    void ShowEndScreen()
+    {
+        _journalManager.gameObject.SetActive(false);
+        _videoModuleController.gameObject.SetActive(false);
+        _endScreen.SetActive(true);
+    }
+
+    public void EndPrologue()
     {
         _prologueEndedEvent.RaiseEvent();
     }
-
 
     private void StartPrologue()
     {

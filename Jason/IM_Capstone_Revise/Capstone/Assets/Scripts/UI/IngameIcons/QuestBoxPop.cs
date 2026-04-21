@@ -42,6 +42,10 @@ public class QuestBoxPop : MonoBehaviour
     [SerializeField] private StepSO _defaultStep;
     [SerializeField] private TMP_Text _questText;
 
+    [SerializeField] private AudioConfigurationSO _audioConfiguration = default;
+    [SerializeField] private AudioCueEventChannelSO _sfxEventChannel = default;
+    [SerializeField] private AudioCueSO _QuestBoxSFX = default;
+
     [Header("Animation Settings")]
     [SerializeField] private PopAnimationSettings animationSettings = new PopAnimationSettings();
 
@@ -139,6 +143,7 @@ public class QuestBoxPop : MonoBehaviour
     {
         if (isAnimating) return;
 
+        _sfxEventChannel.RaisePlayEvent(_QuestBoxSFX, _audioConfiguration);
         ChangeQuestIcon.RaiseEvent();
         StartCoroutine(PopAnimationRoutine());
     }

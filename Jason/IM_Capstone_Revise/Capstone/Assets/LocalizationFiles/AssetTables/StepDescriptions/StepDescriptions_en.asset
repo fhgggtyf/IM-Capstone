@@ -38,6 +38,24 @@ MonoBehaviour:
     m_Localized: Report back to Kairo
     m_Metadata:
       m_Items: []
+  - m_Id: 6307044034621440
+    m_Localized: 'Talk to Kairo
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6436086612242432
+    m_Localized: Search for clues.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7021012076212224
+    m_Localized: It is safe... or is it?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7417538149625856
+    m_Localized: Make a choice. Follow or hide?
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

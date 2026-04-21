@@ -11,6 +11,10 @@ public class InGameScreenManager : MonoBehaviour
 
     [SerializeField] private VoidEventChannelSO StartFirstStep;
 
+    [SerializeField] private AudioConfigurationSO _audioConfiguration = default;
+    [SerializeField] private AudioCueEventChannelSO _sfxEventChannel = default;
+    [SerializeField] private AudioCueSO _newJournalNotificationSFX = default;
+
     [Header("Event Listeners")]
     [SerializeField] private VoidEventChannelSO QuestImageSwitchEvent;
     [SerializeField] private VoidEventChannelSO JournalImageSwitchEvent; // Second event channel
@@ -53,6 +57,7 @@ public class InGameScreenManager : MonoBehaviour
         if (JournalImageSwitcher != null)
         {
             JournalImageSwitcher.SwitchImage();
+            _sfxEventChannel.RaisePlayEvent(_newJournalNotificationSFX, _audioConfiguration);
             _reader.OpenJournalEvent += ResetJournalImage;
         }
     }

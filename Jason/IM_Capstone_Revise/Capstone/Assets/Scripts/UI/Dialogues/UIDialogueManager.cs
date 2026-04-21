@@ -13,7 +13,7 @@ public class UIDialogueManager : MonoBehaviour
     [SerializeField] private Image _actorPortrait = default;
 
     [SerializeField] private GameObject _dialoguePanel = default;
-    [SerializeField] private GameObject _noActorNarrationPanel = default;    
+    [SerializeField] private GameObject _noActorNarrationPanel = default;
 
     //[SerializeField] private LocalizeStringEvent _actorNameText = default;
     //[SerializeField] private LocalizeStringEvent _recievantNameText = default;
@@ -85,7 +85,7 @@ public class UIDialogueManager : MonoBehaviour
         _lineText.StringReference = dialogueLine;
     }
 
-	private void ShowChoices(List<Choice> choices)
+    private void ShowChoices(List<Choice> choices)
 	{
 		_choicesManager.FillChoices(choices);
 		_choicesManager.gameObject.SetActive(true);

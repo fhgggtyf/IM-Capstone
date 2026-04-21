@@ -57,6 +57,7 @@ public class PrologueJournalUI : MonoBehaviour
         newPaper.Left = LeftPage;
         newPaper.Right = RightPage;
         newPaper.IsInteractable = journalContent.IsInteractable; // Example condition for interactability
+        newPaper.pageData = journalContent;   // <-- ADD THIS LINE
         Face[] papers = new Face[book.papers.Length + 1];
         for (int i = 0; i < book.papers.Length; i++)
         {
@@ -120,11 +121,20 @@ public class PrologueJournalUI : MonoBehaviour
             {
                 Debug.LogWarning("Journal content is missing a video clip.");
             }
-        }
 
-        if (InteractionPageUI.InteractionImage != null)
+            ContentPageUI.EndImage.gameObject.SetActive(false);
+            ContentPageUI.EndImage.sprite = content.LeftEnd;
+        }
+        if (InteractionPageUI != null)
         {
-            InteractionPageUI.InteractionImage.sprite = content.InteractionImageSO.StickerSprite;
+            if (InteractionPageUI.EndImage != null)
+            {
+                InteractionPageUI.EndImage.sprite = content.RightEnd;
+            }
+            if (InteractionPageUI.InteractionImage != null)
+            {
+                InteractionPageUI.InteractionImage.sprite = content.InteractionImageSO.StickerSprite;
+            }
         }
     }
 

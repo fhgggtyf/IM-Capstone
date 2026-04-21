@@ -7,7 +7,7 @@ public enum StepType
     GiveItem,
     CheckItem,
     InteractObjects,
-    PickUpItem
+    PickUpItem,
 }
 [CreateAssetMenu(fileName = "step", menuName = "Quests/Step")]
 public class StepSO : SerializableScriptableObject

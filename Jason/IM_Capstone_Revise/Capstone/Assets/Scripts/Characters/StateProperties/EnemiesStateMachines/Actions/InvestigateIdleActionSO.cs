@@ -20,6 +20,11 @@ public class InvestigateIdleActionSO : StateActionSO<InvestigateIdleAction>
     /// reaching the investigated location this might be around 2 seconds.
     /// </summary>
     public float idleDuration = 1f;
+
+    public AudioConfigurationSO _audioConfiguration = default;
+    public AudioCueEventChannelSO _sfxEventChannel = default;
+    public AudioCueSO _RaiderQuestionSFX = default;
+    public AudioCueSO _RaiderExcSFX = default;
 }
 
 public class InvestigateIdleAction : StateAction
@@ -30,10 +35,20 @@ public class InvestigateIdleAction : StateAction
     private float _duration;
     private int _idleCount = 0;
 
+    private AudioConfigurationSO _audioConfiguration = default;
+    private AudioCueEventChannelSO _sfxEventChannel = default;
+    private AudioCueSO _RaiderQuestionSFX = default;
+    private AudioCueSO _RaiderExcSFX = default;
+
     public override void Awake(StateMachine stateMachine)
     {
         _npc = stateMachine.GetComponent<NonPlayerCharacter>();
         _origin = (InvestigateIdleActionSO)OriginSO;
+
+        _audioConfiguration = _origin._audioConfiguration;
+        _sfxEventChannel = _origin._sfxEventChannel;
+        _RaiderQuestionSFX = _origin._RaiderQuestionSFX;
+        _RaiderExcSFX = _origin._RaiderExcSFX;
     }
 
     public override void OnStateEnter()
@@ -53,6 +68,11 @@ public class InvestigateIdleAction : StateAction
             return;
         }
 
+        if (_timer == 0f)
+        {
+            _sfxEventChannel.RaisePlayEvent(_RaiderQuestionSFX, _audioConfiguration);
+        }
+
         // While idling, freeze movement vector
         _npc.movementVector = Vector2.zero;
         Debug.Log("Idling with movement vector set to zero");
@@ -70,6 +90,7 @@ public class InvestigateIdleAction : StateAction
             if (_idleCount == 1)
             {
                 _idleCount++;
+                _sfxEventChannel.RaisePlayEvent(_RaiderExcSFX, _audioConfiguration);
             }
             else
             {

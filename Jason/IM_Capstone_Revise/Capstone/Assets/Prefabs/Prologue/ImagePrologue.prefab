@@ -257,6 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa5efbf4b7bcf724d9b100c7c4758bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stickerImageSO: {fileID: 0}
+  stickerImageSO: {fileID: 11400000, guid: 7bbcdcdf71dee914498873de9cf428c2, type: 2}
   handController: {fileID: 0}
   objectToHide: {fileID: 0}
+  _book: {fileID: 0}

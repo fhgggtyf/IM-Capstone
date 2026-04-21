@@ -11,7 +11,8 @@ public class UIManager : MonoBehaviour
 	[SerializeField] private UIPopup _popupPanel = default;
 	[SerializeField] private UIDialogueManager _dialogueController = default;
 	[SerializeField] private UIInventory _inventoryPanel = default;
-	[SerializeField] private GameplayJournalManager _journalPanel = default;
+    [SerializeField] private GameplayJournalManager _journalPanel = default;
+    [SerializeField] private GameplayNeighborJournalManager _neighborJournalPanel = default;
     //[SerializeField] private UIBarDisplays _barDisplay = default;
     //[SerializeField] private UIInteraction _interactionPanel = default;
     //[SerializeField] private GameObject _switchTabDisplay = default;
@@ -28,8 +29,9 @@ public class UIManager : MonoBehaviour
 	[Header("Listening on")]
 	[SerializeField] private VoidEventChannelSO _onSceneReady = default;
 	[SerializeField] private VoidEventChannelSO _onEnterHome = default;
+	[SerializeField] private VoidEventChannelSO _onEnterNeighborJournal = default;
 
-	[Header("Dialogue Events")]
+    [Header("Dialogue Events")]
 	[SerializeField] private DialogueLineChannelSO _openUIDialogueEvent = default;
 	[SerializeField] private IntEventChannelSO _closeUIDialogueEvent = default;
 
@@ -44,6 +46,7 @@ public class UIManager : MonoBehaviour
 	[SerializeField] private LoadEventChannelSO _loadMenuEvent = default;
 	[SerializeField] private VoidEventChannelSO _onInteractionEndedEvent = default;
 	[SerializeField] private VoidEventChannelSO _openJournalEvent = default;
+	[SerializeField] private VoidEventChannelSO _openNeighborJournalEvent = default;
 
     //bool isForCooking = false;
 
@@ -53,7 +56,7 @@ public class UIManager : MonoBehaviour
 		//_onEnterHome.OnEventRaised += DisableBars;
 		_openUIDialogueEvent.OnEventRaised += OpenUIDialogue;
 		_closeUIDialogueEvent.OnEventRaised += CloseUIDialogue;
-        _inputReader.MenuPauseEvent += OpenUIPause;
+        //_inputReader.MenuPauseEvent += OpenUIPause;
         // subscription to open Pause UI event happens in OnEnabled, but the close Event is only subscribed to when the popup is open
         //_openInventoryScreenForCookingEvent.OnEventRaised += SetInventoryScreenForCooking;
         //_setInteractionEvent.OnEventRaised += SetInteractionPanel;
@@ -61,6 +64,7 @@ public class UIManager : MonoBehaviour
         //_inventoryPanel.Closed += CloseInventoryScreen;
         //_cookRecipeEvent.OnEventRaised += PlayCookingAnimation;
         _inputReader.OpenJournalEvent += SetJournalScreen;
+		_onEnterNeighborJournal.OnEventRaised += SetNeighborJournalScreen;
     }
 
 	private void OnDisable()
@@ -69,7 +73,7 @@ public class UIManager : MonoBehaviour
 		//_onEnterHome.OnEventRaised -= DisableBars;
 		_openUIDialogueEvent.OnEventRaised -= OpenUIDialogue;
 		_closeUIDialogueEvent.OnEventRaised -= CloseUIDialogue;
-		_inputReader.MenuPauseEvent -= OpenUIPause;
+		//_inputReader.MenuPauseEvent -= OpenUIPause;
 		//_openInventoryScreenForCookingEvent.OnEventRaised -= SetInventoryScreenForCooking;
 		//_setInteractionEvent.OnEventRaised -= SetInteractionPanel;
 		//_inputReader.OpenJournalEvent -= SetInventoryScreen;
@@ -87,8 +91,8 @@ public class UIManager : MonoBehaviour
 	{
 		//_barDisplay.gameObject.SetActive(true);
 		_dialogueController.gameObject.SetActive(false);
-		_inventoryPanel.gameObject.SetActive(false);
-		_pauseScreen.gameObject.SetActive(false);
+		//_inventoryPanel.gameObject.SetActive(false);
+		//_pauseScreen.gameObject.SetActive(false);
 		_journalPanel.gameObject.SetActive(false);
         //_interactionPanel.gameObject.SetActive(false);
         //_switchTabDisplay.SetActive(false);
@@ -215,28 +219,55 @@ public class UIManager : MonoBehaviour
 		//going out from confirmaiton popup screen gets us back to the pause screen
 	}
 
-	//void SetInventoryScreenForCooking()
-	//{
-	//	if (_gameStateManager.CurrentGameState == GameState.Gameplay)
-	//	{
-	//		isForCooking = true;
-	//		_interactionPanel.gameObject.SetActive(false);
-	//		OpenInventoryScreen();
-	//	}
-	//}
+    //void SetInventoryScreenForCooking()
+    //{
+    //	if (_gameStateManager.CurrentGameState == GameState.Gameplay)
+    //	{
+    //		isForCooking = true;
+    //		_interactionPanel.gameObject.SetActive(false);
+    //		OpenInventoryScreen();
+    //	}
+    //}
 
-	void SetJournalScreen()
-	{
-		if (_gameStateManager.CurrentGameState == GameState.Gameplay)
-		{
-			Debug.Log("Opening Journal");
-			_openJournalEvent.RaiseEvent();
+    void SetJournalScreen()
+    {
+        if (_gameStateManager.CurrentGameState == GameState.Gameplay)
+        {
+            Debug.Log("Opening Journal");
+            _openJournalEvent.RaiseEvent();
             OpenJournalScreen();
-		}
+        }
     }
 
-	void OpenJournalScreen()
-	{
+    void SetNeighborJournalScreen()
+    {
+        if (_gameStateManager.CurrentGameState == GameState.Dialogue)
+        {
+            Debug.Log("Opening Journal");
+            _openNeighborJournalEvent.RaiseEvent();
+            OpenNeighborJournalScreen();
+        }
+    }
+
+    void OpenNeighborJournalScreen()
+    {
+        _inputReader.MenuPauseEvent -= OpenUIPause; // player cant open the UI Pause again when they are in inventory  
+        _inputReader.MenuUnpauseEvent -= CloseUIPause; // player can close the UI Pause popup when they are in inventory 
+
+        _inputReader.MenuCloseEvent += CloseNeighborJournalScreen;
+        _inputReader.CloseJournalEvent += CloseNeighborJournalScreen;
+
+        _neighborJournalPanel.gameObject.SetActive(true);
+        //_switchTabDisplay.SetActive(true);
+        _inputReader.EnableJournalInput();
+
+        GameTimeChange.PauseGame();
+
+        _gameStateManager.UpdateGameState(GameState.Journal);
+    }
+
+    void OpenJournalScreen()
+    {
         _inputReader.MenuPauseEvent -= OpenUIPause; // player cant open the UI Pause again when they are in inventory  
         _inputReader.MenuUnpauseEvent -= CloseUIPause; // player can close the UI Pause popup when they are in inventory 
 
@@ -296,6 +327,24 @@ public class UIManager : MonoBehaviour
         _gameStateManager.ResetToPreviousGameState();
         if (_gameStateManager.CurrentGameState == GameState.Gameplay || _gameStateManager.CurrentGameState == GameState.Combat)
             _inputReader.EnableGameplayInput();
+
+    }
+
+    void CloseNeighborJournalScreen()
+    {
+        _inputReader.MenuPauseEvent += OpenUIPause; // you cant open the UI Pause again when you are in inventory  
+
+        _inputReader.MenuCloseEvent -= CloseNeighborJournalScreen;
+        _inputReader.CloseJournalEvent -= CloseNeighborJournalScreen;
+
+        _neighborJournalPanel.gameObject.SetActive(false);
+
+        GameTimeChange.ResumeGame();
+
+        _selectionHandler.Unselect();
+        _gameStateManager.ResetToPreviousGameState();
+        if (_gameStateManager.CurrentGameState == GameState.Dialogue)
+            _inputReader.EnableDialogueInput();
 
     }
 

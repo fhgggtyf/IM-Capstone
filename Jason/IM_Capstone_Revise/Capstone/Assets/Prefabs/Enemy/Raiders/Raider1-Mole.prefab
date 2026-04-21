@@ -353,7 +353,7 @@ MonoBehaviour:
     m_Bits: 72
   zOffset2D: -5
   sortingLayerName: Default
-  orderInLayer: 5000
+  orderInLayer: 0
 --- !u!1 &3171143951478370520
 GameObject:
   m_ObjectHideFlags: 0

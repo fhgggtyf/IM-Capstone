@@ -51,7 +51,10 @@ public class NPCInteractable : InteractableItems
             return;
         }
 
-        ActivateIndicator();
+        if (_interactionHint != null)
+        {
+            ActivateIndicator();
+        }
 
         _stepController.InteractWithCharacter();
     }

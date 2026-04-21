@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private GameStateSO _gameState = default;
 	[SerializeField] private UIDialogueManager _dialogueManager = default;
 
+    [SerializeField] private GameSceneSO _menuScene = default;
+
     [SerializeField] private bool _showLoadScreen = default;
 
     [SerializeField] private UIPopup _popupPanel = default;
@@ -20,6 +22,12 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private LoadEventChannelSO _loadLocation = default;
 	[SerializeField] private VoidEventChannelSO _exitGameEvent = default;
 	[SerializeField] private VoidEventChannelSO _unloadCurrentScene = default;
+    [SerializeField] private VoidEventChannelSO _winEvent = default;
+    [SerializeField] private LoadEventChannelSO _returnToMenu = default;
+
+    [SerializeField] private AudioConfigurationSO _audioConfiguration = default;
+    [SerializeField] private AudioCueEventChannelSO _sfxEventChannel = default;
+    [SerializeField] private AudioCueSO _playerDieSFX = default;
 
     [Header("Inventory")]
 	[SerializeField] private InventorySO _inventory = default;
@@ -44,24 +52,38 @@ public class GameManager : MonoBehaviour
     {
         _playerDead.OnEventRaised += PlayerDied;
         _currentSceneUnloaded.OnEventRaised += OnCurrentSceneUnloaded;
+        _winEvent.OnEventRaised += WinGame;
     }
 
     private void OnDisable()
     {
         _playerDead.OnEventRaised -= PlayerDied;
         _currentSceneUnloaded.OnEventRaised -= OnCurrentSceneUnloaded;
+        _winEvent.OnEventRaised -= WinGame;
     }
 
     void PlayerDied()
 	{
-		_currentDeathLocation = (LocationSO)SceneLoader.GetCurrentScene();
+        _sfxEventChannel.RaisePlayEvent(_playerDieSFX, _audioConfiguration);
+
+        _currentDeathLocation = (LocationSO)SceneLoader.GetCurrentScene();
+
+        Time.timeScale = 0f; // Pause the game
 
         ShowGameOverUI();
+        
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
 
         //_loadLocation.RaiseEvent(_location, _showLoadScreen);
     }
 
-	void ShowGameOverUI()
+    void WinGame()
+    {
+        _returnToMenu.RaiseEvent(_menuScene, true, true);
+    }
+
+    void ShowGameOverUI()
 	{
         _popupPanel.ConfirmationResponseAction += RestartGamePopupResponse;
         _popupPanel.ClosePopupAction += HidePopup;
@@ -75,6 +97,8 @@ public class GameManager : MonoBehaviour
 	{
         _popupPanel.ConfirmationResponseAction -= RestartGamePopupResponse;
         _popupPanel.ClosePopupAction -= HidePopup;
+
+        Time.timeScale = 1f; // Unpause the game
 
         _popupPanel.gameObject.SetActive(false);
 

@@ -20,7 +20,7 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
-  musicTrack: {fileID: 0}
+  musicTrack: {fileID: 11400000, guid: 478d1dfd7558e9d458ba763691ee9647, type: 2}
   locationName:
     m_TableReference:
       m_TableCollectionName: GUID:e4f9f74c723d32e4fa955c448220d2ff

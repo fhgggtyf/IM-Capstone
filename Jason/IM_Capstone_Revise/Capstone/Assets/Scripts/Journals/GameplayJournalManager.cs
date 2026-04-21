@@ -8,12 +8,17 @@ public class GameplayJournalManager : MonoBehaviour
     [SerializeField] private GameplayJournalDataSO _journalDataSO = null;
     [SerializeField] private UIJournalGameplay _journalUI = default;
     [SerializeField] private int _entriesUnlocked = 5;
+
+    [SerializeField] private AudioConfigurationSO _audioConfiguration = default;
+    [SerializeField] private AudioCueSO _openJournalSFX = default;
+
     private GameplayJournalDataSO _initialData;
     private GameplayJournalDataSO _addedData;
     private bool _initialized = false;
 
     [Header("Broadcasting on")]
     [SerializeField] private BoolEventChannelSO _flipToLeft;
+    [SerializeField] private AudioCueEventChannelSO _sfxEventChannel = default;
 
     [Header("Listening to")]
     [SerializeField] private VoidEventChannelSO _unlockNextEvent; 
@@ -21,7 +26,7 @@ public class GameplayJournalManager : MonoBehaviour
 
     private void Awake()
     {
-        _inputReader.EnableJournalInput();
+        //_inputReader.EnableJournalInput();
 
         _initialData = ScriptableObject.CreateInstance<GameplayJournalDataSO>();
         _addedData = ScriptableObject.CreateInstance<GameplayJournalDataSO>();
@@ -35,6 +40,7 @@ public class GameplayJournalManager : MonoBehaviour
             _initialData.Pages.Add(_journalDataSO.Pages[i]);
         }
         OnJournalEntry();
+        gameObject.SetActive(false);
     }
 
     private void OnDestroy()

@@ -36,6 +36,7 @@
     <type fullname="GameplayJournalContentSO" preserve="all" />
     <type fullname="GameplayJournalDataSO" preserve="all" />
     <type fullname="GameplayJournalManager" preserve="all" />
+    <type fullname="GameplayNeighborJournalManager" preserve="all" />
     <type fullname="GameplaySO" preserve="all" />
     <type fullname="GameStateSO" preserve="all" />
     <type fullname="GeneralEnemyIdleSO" preserve="all" />
@@ -50,13 +51,17 @@
     <type fullname="InGameScreenManager" preserve="all" />
     <type fullname="InputManipulationActionSO" preserve="all" />
     <type fullname="InputReader" preserve="all" />
+    <type fullname="InteractableBackgroundController" preserve="all" />
     <type fullname="InteractableDetector" preserve="all" />
     <type fullname="InteractableInteractions" preserve="all" />
     <type fullname="InteractionImage" preserve="all" />
+    <type fullname="InteractiveItem" preserve="all" />
+    <type fullname="InteractiveItemDataSO" preserve="all" />
     <type fullname="IntEventChannelSO" preserve="all" />
     <type fullname="InventoryManager" preserve="all" />
     <type fullname="InventorySO" preserve="all" />
     <type fullname="InventoryTabSO" preserve="all" />
+    <type fullname="InvestigateController" preserve="all" />
     <type fullname="InvestigateIdleActionSO" preserve="all" />
     <type fullname="InvestigateMovementActionSO" preserve="all" />
     <type fullname="InvestigationCompleteConditionSO" preserve="all" />
@@ -81,6 +86,7 @@
     <type fullname="MenuSO" preserve="all" />
     <type fullname="MoveAndNoiseActionSO" preserve="all" />
     <type fullname="Movement" preserve="all" />
+    <type fullname="MoveTriggeredInteractable" preserve="all" />
     <type fullname="MultiInputButton" preserve="all" />
     <type fullname="MultiInputSelectableElement" preserve="all" />
     <type fullname="MusicPlayer" preserve="all" />
@@ -137,26 +143,19 @@
     <type fullname="ToggleSymbolActionSO" preserve="all" />
     <type fullname="TransformAnchor" preserve="all" />
     <type fullname="TransformEventChannelSO" preserve="all" />
-    <type fullname="UIActionButton" preserve="all" />
     <type fullname="UICredits" preserve="all" />
     <type fullname="UIDialogueChoiceFiller" preserve="all" />
     <type fullname="UIDialogueChoicesManager" preserve="all" />
     <type fullname="UIDialogueManager" preserve="all" />
     <type fullname="UIGenericButton" preserve="all" />
-    <type fullname="UIInventory" preserve="all" />
-    <type fullname="UIInventoryItem" preserve="all" />
-    <type fullname="UIInventoryTab" preserve="all" />
-    <type fullname="UIInventoryTabs" preserve="all" />
     <type fullname="UIJournalGameplay" preserve="all" />
     <type fullname="UIMainMenu" preserve="all" />
     <type fullname="UIManager" preserve="all" />
     <type fullname="UIMenuManager" preserve="all" />
-    <type fullname="UIPause" preserve="all" />
     <type fullname="UIPopup" preserve="all" />
     <type fullname="UIRestartGameMenu" preserve="all" />
     <type fullname="UISettingsController" preserve="all" />
     <type fullname="UpdateFacingDirectionActionSO" preserve="all" />
-    <type fullname="UpgradeConfigSO" preserve="all" />
     <type fullname="VideoModuleController" preserve="all" />
     <type fullname="VisionCone" preserve="all" />
     <type fullname="VisionConeConditionSO" preserve="all" />
@@ -165,10 +164,9 @@
     <type fullname="YSortActor" preserve="all" />
     <type fullname="YSortManager" preserve="all" />
     <type fullname="YSortTarget" preserve="all" />
-    <type fullname="StatModification" preserve="nothing" serialized="true" />
     <type fullname="AudioClipsGroup" preserve="nothing" serialized="true" />
+    <type fullname="StatModification" preserve="nothing" serialized="true" />
     <type fullname="Choice" preserve="nothing" serialized="true" />
-    <type fullname="ItemStack" preserve="nothing" serialized="true" />
     <type fullname="Line" preserve="nothing" serialized="true" />
     <type fullname="Save" preserve="nothing" serialized="true" />
     <type fullname="PopAnimationSettings" preserve="nothing" serialized="true" />
@@ -219,7 +217,6 @@
     <type fullname="UnityEngine.InputSystem.InputBinding" preserve="nothing" serialized="true" />
   </assembly>
   <assembly fullname="Unity.Localization, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-    <type fullname="UnityEngine.Localization.Components.LocalizeSpriteEvent" preserve="all" />
     <type fullname="UnityEngine.Localization.Components.LocalizeStringEvent" preserve="all" />
     <type fullname="UnityEngine.Localization.Locale" preserve="all" />
     <type fullname="UnityEngine.Localization.Tables.SharedTableData" preserve="all" />
@@ -228,8 +225,6 @@
     <type fullname="UnityEngine.Localization.Tables.TableEntryReference" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.Localization.Tables.TableReference" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.Localization.Events.UnityEventString" preserve="nothing" serialized="true" />
-    <type fullname="UnityEngine.Localization.Events.UnityEventSprite" preserve="nothing" serialized="true" />
-    <type fullname="UnityEngine.Localization.LocalizedSprite" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.Localization.LocaleIdentifier" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.Localization.Metadata.MetadataCollection" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.Localization.Tables.DistributedUIDGenerator" preserve="nothing" serialized="true" />
@@ -346,7 +341,6 @@
   </assembly>
   <assembly fullname="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="UnityEngine.EventSystems.EventSystem" preserve="all" />
-    <type fullname="UnityEngine.EventSystems.EventTrigger" preserve="all" />
     <type fullname="UnityEngine.EventSystems.StandaloneInputModule" preserve="all" />
     <type fullname="UnityEngine.UI.Button" preserve="all" />
     <type fullname="UnityEngine.UI.CanvasScaler" preserve="all" />
@@ -362,8 +356,6 @@
     <type fullname="UnityEngine.UI.ColorBlock" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.UI.Navigation" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.UI.SpriteState" preserve="nothing" serialized="true" />
-    <type fullname="UnityEngine.EventSystems.EventTrigger/Entry" preserve="nothing" serialized="true" />
-    <type fullname="UnityEngine.EventSystems.EventTrigger/TriggerEvent" preserve="nothing" serialized="true" />
   </assembly>
   <assembly fullname="UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="UnityEngine.Canvas" preserve="all" />

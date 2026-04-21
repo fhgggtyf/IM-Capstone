@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ce403160b13d09468ff220c3978b51b, type: 3}
+  m_Name: FullNeighborJournal
+  m_EditorClassIdentifier: 
+  _pages:
+  - {fileID: 11400000, guid: b1c6c9710bb4ba1489502bf4bd4e4ee5, type: 2}
+  - {fileID: 11400000, guid: 795080ccf8351d94cbef97370b1e9385, type: 2}
+  _endOfJournalSectionEvent: {fileID: 0}

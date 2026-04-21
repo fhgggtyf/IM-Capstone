@@ -7,10 +7,12 @@ public class ContentPageUI : MonoBehaviour
 {
     [Header("Left Side UI")]
     public VideoPlayer videoPlayer;
+    public VideoModuleController videoModuleController;
+    public Image EndImage;
 
     public void ShowAnimation()
     {
-        videoPlayer.Play();
+        videoModuleController.Play(videoPlayer.clip, false);
         Debug.Log("Playing videoclip: " + videoPlayer.clip);
     }
 
